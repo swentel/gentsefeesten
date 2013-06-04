@@ -6,10 +6,10 @@ Android application to look at the programme of the 'Gentse feesten' on an Andro
 Features
 --------
 
-    1. Works offline
-    2. List of favorites
-    3. Browse fast 'facet-style'
-    4. Google maps integration (when online)
+1. Works offline
+2. List of favorites
+3. Browse fast 'facet-style'
+4. Google maps integration (when online)
 
 License
 -------
