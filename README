@@ -1,10 +1,10 @@
 Gentse Feesten
 --------------
 
-Android applicatie om Gentste feesten te bekijken op je Android smartphone.
+Android application to look at the programme of the 'Gentse feesten' on an Android device.
 
 Features
-    1. Offline beschikbaar
-    2. Favorieten lijst
-    3. Snel zoeken via facets
-    4. Google maps integratie (indien online)
+    1. Works offline
+    2. List of favorites
+    3. Browse fast 'facet-style'
+    4. Google maps integration (when online)
