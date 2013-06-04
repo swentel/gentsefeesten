@@ -1,0 +1,7 @@
+out
+.idea
+bin
+gen/com/genschefieste/BuildConfig.java
+gen/com/genschefieste/Manifest.java
+gen/com/genschefieste/R.java
+GenscheFieste.apk
