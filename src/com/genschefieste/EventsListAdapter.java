@@ -57,9 +57,6 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             // Title.
             TextView tt = (TextView) convertView.findViewById(R.id.event_title);
             String title = event.getTitle();
-            if (title.length() > 26) {
-                title = title.substring(0, 26) + "...";
-            }
             tt.setText(title);
 
             // Favorite.

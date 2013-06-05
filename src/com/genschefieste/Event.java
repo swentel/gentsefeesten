@@ -10,8 +10,10 @@ public class Event {
     int id;
     int external_id;
     String title;
+    String description;
     String price;
-    String date;
+    String location;
+    int date;
     String start_hour;
     int favorite;
 
@@ -21,11 +23,13 @@ public class Event {
     }
 
     // Constructor
-    public Event(int id, String title, String price, String date, String start_hour, int favorite) {
+    public Event(int id, String title, String description, String price, int date, String location, String start_hour, int favorite) {
         this.id = id;
         this.title = title;
+        this.description = description;
         this.price = price;
         this.date = date;
+        this.location = location;
         this.start_hour = start_hour;
         this.favorite = favorite;
     }
@@ -55,9 +59,29 @@ public class Event {
         return this.title;
     }
 
-    // Setting title
+    // Setting title.
     public void setTitle(String title) {
         this.title = title;
+    }
+
+    // Getting description.
+    public String getDescription() {
+        return this.description;
+    }
+
+    // Setting description.
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    // Getting location name.
+    public String getLocation() {
+        return this.location;
+    }
+
+    // Setting location name.
+    public void setLocation(String location) {
+        this.location = location;
     }
 
     // Getting price.
@@ -71,12 +95,12 @@ public class Event {
     }
 
     // Getting date.
-    public String getDate() {
+    public int getDate() {
         return this.date;
     }
 
     // Setting date
-    public void setDate(String date) {
+    public void setDate(int date) {
         this.date = date;
     }
 

@@ -1,9 +1,8 @@
 package com.genschefieste;
 
 import android.app.Activity;
-import android.content.Context;
 import android.os.Bundle;
-import android.widget.Toast;
+import android.widget.TextView;
 
 public class EventDetail extends Activity {
 
@@ -15,16 +14,22 @@ public class EventDetail extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.event_detail);
 
+        // Get event.
         Bundle extras = getIntent().getExtras();
         eventId = extras.getInt("eventId");
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
 
-        Context context = getApplicationContext();
-        CharSequence text = event.getTitle();
-        int duration = Toast.LENGTH_LONG;
+        // Set title.
+        TextView title = (TextView) findViewById(R.id.event_title);
+        title.setText(event.getTitle());
 
-        Toast toast = Toast.makeText(context, text, duration);
-        toast.show();
+        // Set location.
+        TextView location = (TextView) findViewById(R.id.event_location);
+        location.setText(event.getLocation());
+
+        // Set description.
+        TextView description = (TextView) findViewById(R.id.event_description);
+        description.setText(event.getDescription());
     }
 }

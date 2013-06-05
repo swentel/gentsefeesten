@@ -1,50 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:scrollbars="none"
+    android:fillViewport="true"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:orientation="vertical" 
     android:background="#005371">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="fill_parent"
-	    android:layout_height="50dp"
-		android:weightSum="1.0"
-	    android:orientation="horizontal"
-	    android:background="#007390">
-    
-		<ImageButton
-            android:id="@+id/go_to_menu"
-            android:layout_width="0dp"
-            android:layout_weight=".25"
-            android:layout_height="wrap_content"
-            android:background="@null"
-	        android:layout_gravity="center"
-            android:contentDescription="@string/go_to_menu"
-            android:src="@drawable/go_to_menu" />	    	   
-	    
-	    <TextView
-	        xmlns:android="http://schemas.android.com/apk/res/android"
-	        android:layout_width="0dp"
-            android:layout_weight=".50"
-	        android:layout_height="wrap_content" 
-	        android:layout_gravity="center"
-	        android:gravity="center"
-	        android:textColor="#f9ffff"
-	        android:textSize="27dp"
-	        android:text="@string/menu_bar">
-	    	     
-	    </TextView>
-	    
-		<ImageButton
-            android:id="@+id/go_to_favorites"
-            android:layout_width="0dp"
-            android:layout_weight=".25"
-            android:layout_height="wrap_content"
-	        android:layout_gravity="center"
-            android:background="@null"
-            android:contentDescription="@string/go_to_menu"
-            android:src="@drawable/go_to_favorites" />	    	   
-	    
-	</LinearLayout>
-	
-</LinearLayout>
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="50dp"
+            android:weightSum="1.0"
+            android:orientation="horizontal"
+            android:background="#007390">
+
+            <ImageButton
+                android:id="@+id/go_to_menu"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_gravity="center"
+                android:contentDescription="@string/go_to_menu"
+                android:src="@drawable/go_to_menu" />
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="0dp"
+                android:layout_weight=".50"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:textColor="#f9ffff"
+                android:textSize="27dp"
+                android:text="@string/menu_bar">
+
+            </TextView>
+
+            <ImageButton
+                android:id="@+id/go_to_favorites"
+                android:layout_width="0dp"
+                android:layout_weight=".25"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:background="@null"
+                android:contentDescription="@string/go_to_menu"
+                android:src="@drawable/go_to_favorites" />
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:weightSum="1.0"
+                      android:orientation="horizontal">
+
+            <TextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/event_title"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:gravity="left"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:textColor="#fceb00"
+                    android:textSize="27dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:weightSum="1.0"
+                      android:orientation="vertical"
+                      android:background="#005371">
+
+            <TextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/event_location"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:gravity="left"
+                    android:textColor="#00394f"
+                    android:textSize="22dp" >
+
+            </TextView>
+
+            <TextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/event_description"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:gravity="left"
+                    android:textColor="#00394f"
+                    android:textSize="16dp"
+                    android:padding="2dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

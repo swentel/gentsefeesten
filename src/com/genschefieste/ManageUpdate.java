@@ -134,6 +134,18 @@ public class ManageUpdate extends Activity {
                     else if (name.equals("title")) {
                         event.setTitle(reader.nextString());
                     }
+                    else if (name.equals("start")) {
+                        event.setStartHour(reader.nextString());
+                    }
+                    else if (name.equals("datum")) {
+                        event.setDate(reader.nextInt());
+                    }
+                    else if (name.equals("omsch")) {
+                        event.setDescription(reader.nextString());
+                    }
+                    else if (name.equals("loc")) {
+                        event.setLocation(reader.nextString());
+                    }
                     else {
                         // Skip fields we don't want to parse
                         reader.skipValue();
