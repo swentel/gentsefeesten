@@ -14,6 +14,7 @@ import java.util.List;
 public class Main extends Activity {
 
     public List<Event> events;
+    public int eventId = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -23,16 +24,17 @@ public class Main extends Activity {
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
 
-        // Get events.
+        // Get all events.
         DatabaseHandler db = new DatabaseHandler(this);
-        List<Event> events = db.getAllEvents();
+        events = db.getAllEvents();
 
         // Make every item clickable.
         list.setClickable(true);
         list.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                intent.putExtra("index", position);
+                eventId = events.get(position).getID();
+                intent.putExtra("eventId", eventId);
                 startActivity(intent);
             }
         });

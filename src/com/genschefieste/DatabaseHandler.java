@@ -101,7 +101,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Get single event.
-    public Event getevent(int id) {
+    public Event getEvent(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursor = db.query(TABLE_EVENTS, new String[]{KEY_ID, KEY_TITLE, KEY_PRICE, KEY_DATE, KEY_START_HOUR, KEY_FAVORITE}, KEY_ID + "=?", new String[]{String.valueOf(id)}, null, null, null, null);

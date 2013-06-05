@@ -7,8 +7,7 @@ import android.widget.Toast;
 
 public class EventDetail extends Activity {
 
-    private int position;
-    private int id;
+    private int eventId;
     private Event event;
 
     @Override
@@ -17,10 +16,9 @@ public class EventDetail extends Activity {
         setContentView(R.layout.event_detail);
 
         Bundle extras = getIntent().getExtras();
-        position = extras.getInt("index");
-        id = position + 1;
+        eventId = extras.getInt("eventId");
         DatabaseHandler db = new DatabaseHandler(this);
-        event = db.getevent(id);
+        event = db.getEvent(eventId);
 
         Context context = getApplicationContext();
         CharSequence text = event.getTitle();
