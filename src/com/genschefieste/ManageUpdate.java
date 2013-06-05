@@ -1,6 +1,5 @@
 package com.genschefieste;
 
-import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.app.Dialog;
 import android.app.ProgressDialog;
@@ -9,7 +8,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.Toast;
 
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
@@ -30,6 +28,8 @@ public class ManageUpdate extends Activity {
     ProgressDialog dialog;
     public static InputStream is = null;
     public static JsonReader reader = null;
+    public static String sResponse = "";
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -75,10 +75,12 @@ public class ManageUpdate extends Activity {
 
             }
 
-            return null;
+            return sResponse;
         }
 
-        void onPostExecute() {
+        @Override
+        protected void onPostExecute(String sResponse) {
+            // TODO rename this method.
             searchPostExecute(getApplicationContext(), dialog);
         }
     }
@@ -149,14 +151,11 @@ public class ManageUpdate extends Activity {
         }
     }
 
-    @SuppressLint("ShowToast")
     public static void searchPostExecute(Context context, Dialog dialog) {
         // Close dialog.
         if (dialog.isShowing()) {
             dialog.dismiss();
         }
-
-        Toast.makeText(context, "Parsing done", Toast.LENGTH_LONG);
     }
 
 }

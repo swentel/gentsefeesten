@@ -56,8 +56,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Insert or update event.
     public void insertEvent(Event event) {
         SQLiteDatabase db = this.getWritableDatabase();
-        //db.execSQL("INSERT INTO " + TABLE_EVENTS + " (name, price, date, start_hour, favorite) VALUES " +
-        //        "(\""+ event.getTitle() +"\", \"Gratis\", \"Zondag 17 juli\", \"14u\", 0)");
 
         ContentValues values = new ContentValues();
         values.put(KEY_TITLE, event.getTitle());
