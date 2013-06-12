@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="location_strings">
+        <item>@string/baudeloo</item>
+        <item>@string/beverhout</item>
+        <item>@string/baudeloo</item>
+        <item>@string/sint_jacobs</item>
+        <item>@string/bisdomplein</item>
+        <item>@string/emile_braunplein</item>
+        <item>@string/francois_laurent</item>
+        <item>@string/gravensteen</item>
+        <item>@string/groentemarkt</item>
+        <item>@string/maria_hendrik</item>
+        <item>@string/korenlei</item>
+        <item>@string/korenmarkt</item>
+        <item>@string/kouter</item>
+        <item>@string/portus_ganda</item>
+        <item>@string/sint_bavo</item>
+        <item>@string/sint_baafs</item>
+        <item>@string/sint_veerle</item>
+        <item>@string/vlasmarkt</item>
+        <item>@string/vrijdagmarkt</item>
+        <item>@string/watersportbaan</item>
+        <item>@string/woodrow_wilson</item>
+    </string-array>
+
+    <integer-array name="location_ids">
+        <item>376</item>
+        <item>390</item>
+        <item>230</item>
+        <item>385</item>
+        <item>615</item>
+        <item>382</item>
+        <item>394</item>
+        <item>380</item>
+        <item>395</item>
+        <item>379</item>
+        <item>378</item>
+        <item>384</item>
+        <item>470</item>
+        <item>392</item>
+        <item>377</item>
+        <item>381</item>
+        <item>383</item>
+        <item>386</item>
+        <item>393</item>
+        <item>387</item>
+    </integer-array>
+
+    <string-array name="category_strings">
+        <item>@string/bals_dans</item>
+        <item>@string/circus</item>
+        <item>@string/comedy</item>
+        <item>@string/concerts_divers</item>
+        <item>@string/concerts_jazz</item>
+        <item>@string/concerts_classic</item>
+        <item>@string/concerts_rock_pop</item>
+        <item>@string/children</item>
+        <item>@string/market</item>
+        <item>@string/sports</item>
+        <item>@string/exhibition</item>
+        <item>@string/theatre</item>
+        <item>@string/varia</item>
+        <item>@string/poetry</item>
+        <item>@string/fireworks</item>
+        <item>@string/walks</item>
+    </string-array>
+
+    <integer-array name="category_ids">
+        <item>10</item>
+        <item>24</item>
+        <item>11</item>
+        <item>12</item>
+        <item>13</item>
+        <item>14</item>
+        <item>15</item>
+        <item>16</item>
+        <item>17</item>
+        <item>18</item>
+        <item>19</item>
+        <item>20</item>
+        <item>21</item>
+        <item>22</item>
+        <item>23</item>
+        <item>25</item>
+    </integer-array>
+
+</resources>

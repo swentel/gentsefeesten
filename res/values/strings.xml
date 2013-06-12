@@ -1,23 +1,74 @@
 <?xml version="1.0" encoding="utf-8" standalone="no"?>
 <resources>
 
+    <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
     <string name="menu_bar">#GF13</string>
+    <string name="go_to_menu">Naar het menu</string>
+    <string name="go_to_favorites">Uw favorieten</string>
+
+    <!-- Home screen -->
+    <string name="upcoming">KOMENDE ACTIVITEITEN</string>
+    <string name="everywhere">OVERAL</string>
+
+    <!-- Menu and search screen -->
     <string name="home">Home</string>
     <string name="my_favorites">Mijn favorieten</string>
     <string name="theme">Thema</string>
-    <string name="search_hint">Zoeken</string>
-    <string name="search_go">Go</string>
-    <string name="searching">Aan het zoeken ...</string>
     <string name="about">Over deze app</string>
-    <string name="manage_updates">Data updates</string>
     <string name="programme">Programma</string>
-    <string name="upcoming">KOMENDE ACTIVITEITEN</string>
-    <string name="everywhere">OVERAL</string>
-    <string name="go_to_menu">Naar het menu</string>
-    <string name="go_to_favorites">Uw favorieten</string>
-    <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
+
+    <!-- Manage updates -->
+    <string name="manage_updates">Data updates</string>
     <string name="updating">Updating ...</string>
     <string name="please_wait">Even geduld</string>
 
+    <!-- Search -->
+    <string name="search_hint">Zoeken</string>
+    <string name="search_go">Go</string>
+    <string name="searching">Aan het zoeken ...</string>
+
+    <!-- Event detail -->
+    <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
+
+    <!-- Locations -->
+    <string name="baudeloo">Baudelohof</string>
+    <string name="beverhout">Beverhoutplein</string>
+    <string name="sint_jacobs">Bij Sint-Jacobs</string>
+    <string name="bisdomplein">Bisdomplein</string>
+    <string name="emile_braunplein">Emile Braunplein</string>
+    <string name="francois_laurent">Francois Laurentplein</string>
+    <string name="gravensteen">Gravensteen</string>
+    <string name="groentemarkt">Groentemarkt</string>
+    <string name="maria_hendrik">Koningin Maria Hendrikaplein</string>
+    <string name="korenlei">Korenlei - Graslei</string>
+    <string name="korenmarkt">Korenmarkt</string>
+    <string name="kouter">Kouter</string>
+    <string name="portus_ganda">Portus Ganda, Voorhoutkaai</string>
+    <string name="sint_bavo">Sint-Bavo Humaniora - Reep 4</string>
+    <string name="sint_baafs">St-Baafsplein</string>
+    <string name="sint_veerle">St-Veerleplein</string>
+    <string name="vlasmarkt">Vlasmarkt</string>
+    <string name="vrijdagmarkt">Vrijdagmarkt</string>
+    <string name="watersportbaan">Watersportbaan</string>
+    <string name="woodrow_wilson">Woodrow Wilsonplein</string>
+
+    <!-- Categories -->
+    <string name="bals_dans">Bals / Dans</string>
+    <string name="circus">Circus</string>
+    <string name="comedy">Komedy</string>
+    <string name="concerts_divers">Concerten divers</string>
+    <string name="concerts_jazz">Jazz</string>
+    <string name="concerts_classic">Klassieke concerten</string>
+    <string name="concerts_rock_pop">Rock, pop, techno, blues, folk</string>
+    <string name="children">Kinderen</string>
+    <string name="market">Markten</string>
+    <string name="sports">Sport en recreatie</string>
+    <string name="exhibition">Tentoonstellingen</string>
+    <string name="theatre">Theater</string>
+    <string name="varia">Varia</string>
+    <string name="poetry">Poezie</string>
+    <string name="fireworks">Vuurwerk</string>
+    <string name="walks">Wandelingen</string>
+    
 </resources>

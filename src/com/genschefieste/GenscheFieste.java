@@ -8,10 +8,10 @@ import java.util.ArrayList;
 
 public class GenscheFieste extends Application {
 
-    // URI to the services.
+    // URI to the services. In theory we could import 2 other services which describe
+    // the locations and categories, however, we have made those available in the resources
+    // so they are also easily translatable.
     public static String eventUrl = "";
-    public static String locationsUrl = "";
-    public static String categoryUrl = "";
 
     // Public list of events which we can access from everywhere.
     public static ArrayList<Event> Events = new ArrayList<Event>();
