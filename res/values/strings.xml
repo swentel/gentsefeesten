@@ -6,6 +6,9 @@
     <string name="home">Home</string>
     <string name="my_favorites">Mijn favorieten</string>
     <string name="theme">Thema</string>
+    <string name="search_hint">Zoeken</string>
+    <string name="search_go">Go</string>
+    <string name="searching">Aan het zoeken ...</string>
     <string name="about">Over deze app</string>
     <string name="manage_updates">Data updates</string>
     <string name="programme">Programma</string>

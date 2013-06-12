@@ -1,173 +1,206 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TableLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
     android:layout_width="fill_parent"
     android:background="#004252"
-    android:layout_height="fill_parent">
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-    <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="#005768"
-            android:visibility="visible"
-            />
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:weightSum="1.0"
+        android:orientation="horizontal">
 
-    <TableRow
+        <EditText
+                android:layout_height="wrap_content"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:id="@+id/search"
+                android:hint="@string/search_hint"
+                android:inputType="text" />
+
+        <Button
+                android:id="@+id/search_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#cee3ab"
+                android:padding="10dp"
+                android:text="@string/search_go" />
+    </LinearLayout>
+
+    <TableLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:paddingTop="10dp"
-        android:paddingBottom="3dp"
-        android:id="@+id/go_home">
+        android:orientation="vertical"
+        android:layout_width="fill_parent"
+        android:background="#004252"
+        android:layout_height="fill_parent">
 
-        <ImageView
-            android:src="@drawable/hoedje"
-            />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textColor="#73b5c1"
-            android:text="@string/home"
-            android:gravity="bottom"
-            android:layout_gravity="bottom"/>
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:background="#005768"
+                android:visibility="visible"
+                />
 
-    </TableRow>
-
-    <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="#005768"
-            android:visibility="visible"
-            />
-
-    <TableRow
+        <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:paddingTop="10dp"
             android:paddingBottom="3dp"
-            android:id="@+id/my_favorites">
+            android:id="@+id/go_home">
 
-        <ImageView
-            android:src="@drawable/go_to_favorites"
-            />
+            <ImageView
+                android:src="@drawable/hoedje"
+                />
 
-        <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="10dp"
-            android:textColor="#73b5c1"
-            android:text="@string/my_favorites"
-            android:gravity="center_vertical"
-            android:layout_gravity="bottom"/>
-
-    </TableRow>
-
-    <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="#005768"
-            android:visibility="visible"
-            />
-
-    <TableRow
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:paddingTop="10dp"
-            android:paddingBottom="3dp"
-            android:id="@+id/programme">
-
-        <ImageView
-            android:src="@drawable/strop"
-            />
-
-        <TextView
+            <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textColor="#73b5c1"
-                android:text="@string/programme"
+                android:text="@string/home"
+                android:gravity="bottom"
+                android:layout_gravity="bottom"/>
+
+        </TableRow>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:background="#005768"
+                android:visibility="visible"
+                />
+
+        <TableRow
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:paddingTop="10dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/my_favorites">
+
+            <ImageView
+                android:src="@drawable/go_to_favorites"
+                />
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:textColor="#73b5c1"
+                android:text="@string/my_favorites"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"/>
 
-    </TableRow>
+        </TableRow>
 
-    <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="#005768"
-            android:visibility="visible"
-            />
-
-    <TableRow
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:background="#003a48"
-            android:paddingTop="10dp"
-            android:paddingBottom="3dp"
-            android:id="@+id/theme">
-
-        <TextView
+        <View
                 android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:layout_marginBottom="4dp"
-                android:textColor="#73b5c1"
-                android:text="@string/theme"
-                android:gravity="center_vertical"
-                android:layout_gravity="bottom"/>
-
-    </TableRow>
-
-    <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="#005768"
-            android:visibility="visible"
-            />
-
-    <TableRow
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:paddingTop="10dp"
-            android:paddingBottom="3dp"
-            android:id="@+id/about">
-
-        <ImageView
-                android:src="@drawable/little_flag"
+                android:layout_height="0.2dp"
+                android:background="#005768"
+                android:visibility="visible"
                 />
 
-        <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textColor="#73b5c1"
-                android:text="@string/about"
-                android:gravity="bottom"
-                android:layout_gravity="bottom"/>
-    </TableRow>
+        <TableRow
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:paddingTop="10dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/programme">
 
-    <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="#005768"
-            android:visibility="visible"
-            />
-
-    <TableRow
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:paddingTop="10dp"
-            android:paddingBottom="3dp"
-            android:id="@+id/go_to_manage_updates">
-
-        <ImageView
-                android:src="@drawable/little_flag"
+            <ImageView
+                android:src="@drawable/strop"
                 />
 
-        <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
-                android:textColor="#73b5c1"
-                android:text="@string/manage_updates"
-                android:gravity="bottom"
-                android:layout_gravity="bottom"/>
-    </TableRow>
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#73b5c1"
+                    android:text="@string/programme"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="bottom"/>
 
-</TableLayout>
+        </TableRow>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:background="#005768"
+                android:visibility="visible"
+                />
+
+        <TableRow
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:background="#003a48"
+                android:paddingTop="10dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/theme">
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginBottom="4dp"
+                    android:textColor="#73b5c1"
+                    android:text="@string/theme"
+                    android:gravity="center_vertical"
+                    android:layout_gravity="bottom"/>
+
+        </TableRow>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:background="#005768"
+                android:visibility="visible"
+                />
+
+        <TableRow
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:paddingTop="10dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/about">
+
+            <ImageView
+                    android:src="@drawable/little_flag"
+                    />
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#73b5c1"
+                    android:text="@string/about"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"/>
+        </TableRow>
+
+        <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:background="#005768"
+                android:visibility="visible"
+                />
+
+        <TableRow
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:paddingTop="10dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/go_to_manage_updates">
+
+            <ImageView
+                    android:src="@drawable/little_flag"
+                    />
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#73b5c1"
+                    android:text="@string/manage_updates"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"/>
+        </TableRow>
+    </TableLayout>
+</LinearLayout>
