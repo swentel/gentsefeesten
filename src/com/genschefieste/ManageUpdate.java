@@ -87,7 +87,7 @@ public class ManageUpdate extends Activity {
 
     public static void getJSONFromUrl() throws IOException {
         DefaultHttpClient httpClient = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet(FiesteConfig.eventUrl);
+        HttpGet httpGet = new HttpGet(GenscheFieste.eventUrl);
 
         try {
             HttpResponse httpResponse = httpClient.execute(httpGet);
