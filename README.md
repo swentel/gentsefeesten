@@ -8,10 +8,11 @@ The iOS version is available at https://github.com/TimLeytens/Gentse-Feesten-201
 Features
 --------
 
-1. Works offline
-2. List of favorites
-3. Browse fast 'facet-style'
-4. Google maps integration (when online)
+1. Build with speed in mind
+2. Works offline
+3. List of favorites
+4. Browse fast 'facet-style'
+5. Google maps integration (when online)
 
 License
 -------
