@@ -4,11 +4,6 @@
     <string name="app_name">Gentse Feesten</string>
     <string name="menu_bar">#GF13</string>
     <string name="home">Home</string>
-    <string name="my_favorites">Mijn favorieten</string>
-    <string name="theme">Thema</string>
-    <string name="about">Over deze app</string>
-    <string name="manage_updates">Data updates</string>
-    <string name="programme">Programma</string>
     <string name="upcoming">KOMENDE ACTIVITEITEN</string>
     <string name="everywhere">OVERAL</string>
     <string name="go_to_menu">Naar het menu</string>

@@ -1,7 +1,10 @@
 package com.genschefieste;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 public class EventDetail extends Activity {
@@ -31,5 +34,23 @@ public class EventDetail extends Activity {
         // Set description.
         TextView description = (TextView) findViewById(R.id.event_description);
         description.setText(event.getDescription());
+
+        // Add listener on share button.
+        ImageButton menu = (ImageButton) findViewById(R.id.share);
+        menu.setOnClickListener(actionShare);
     }
+
+    /**
+     * Share listener.
+     */
+    private final View.OnClickListener actionShare = new View.OnClickListener() {
+        public void onClick(View v) {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        intent.setType("text/plain");
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+        intent.putExtra(Intent.EXTRA_SUBJECT, event.getTitle());
+        intent.putExtra(Intent.EXTRA_TEXT, "I'm going to " +  event.getTitle());
+        startActivity(Intent.createChooser(intent, "Share"));
+        }
+    };
 }

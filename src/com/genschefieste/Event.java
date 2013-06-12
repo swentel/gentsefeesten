@@ -2,10 +2,6 @@ package com.genschefieste;
 
 public class Event {
 
-    public static String eventUrl = "";
-    public static String locationsUrl = "";
-    public static String categoryUrl = "";
-
     // Private variables.
     int id;
     int external_id;

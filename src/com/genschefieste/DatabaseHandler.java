@@ -46,7 +46,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-        String CREATE_CONTACTS_TABLE = "CREATE TABLE " + TABLE_EVENTS + "(" +
+        String CREATE_EVENTS_TABLE = "CREATE TABLE " + TABLE_EVENTS + "(" +
                 "" + KEY_ID + " INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "" + EXTERNAL_ID + " INTEGER," +
                 "" + KEY_TITLE + " TEXT," +
@@ -57,7 +57,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 "" + KEY_START_HOUR + " TEXT," +
                 "" + KEY_FAVORITE + " INTEGER" +
                 ")";
-        db.execSQL(CREATE_CONTACTS_TABLE);
+        db.execSQL(CREATE_EVENTS_TABLE);
     }
 
     @Override
@@ -83,11 +83,11 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Get all events.
-    public List<Event> getAllEvents() {
+    public List<Event> getEvents() {
         List<Event> eventList = new ArrayList<Event>();
 
         // Select All Query.
-        String selectQuery = "SELECT * FROM " + TABLE_EVENTS + " ORDER BY RANDOM() LIMIT 30";
+        String selectQuery = "SELECT * FROM " + TABLE_EVENTS + " WHERE date = 1374271200 ORDER BY id ASC limit 30";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

@@ -21,12 +21,16 @@ public class Main extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
 
+        // Check for the first download. If not redirect to 'Manage data'
+        // screen so the initial download can begin.
+        // TODO
+
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
 
         // Get all events.
         DatabaseHandler db = new DatabaseHandler(this);
-        events = db.getAllEvents();
+        events = db.getEvents();
 
         // Make every item clickable.
         list.setClickable(true);
@@ -56,8 +60,8 @@ public class Main extends Activity {
         public void onClick(View v) {
         switch (v.getId()) {
             case 1:
-                Intent manageUpdate = new Intent(getBaseContext(), ManageUpdate.class);
-                startActivity(manageUpdate);
+                Intent menu = new Intent(getBaseContext(), Menu.class);
+                startActivity(menu);
                 break;
         }
         }

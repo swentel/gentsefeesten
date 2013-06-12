@@ -12,7 +12,9 @@ Features
 2. Works offline
 3. List of favorites
 4. Browse fast 'facet-style'
-5. Google maps integration (when online)
+5. Free text search
+6. Share functionality
+7. Google maps integration (when online)
 
 License
 -------
