@@ -47,16 +47,16 @@ public class ManageUpdate extends Activity {
      */
     private final View.OnClickListener actionUpdate = new View.OnClickListener() {
         public void onClick(View v) {
-            switch (v.getId()) {
-                case 1:
-                    /*if (!common.appIsOnline()) {
-                        common.isOffline(Main.this);
-                        return;
-                    }*/
-                    dialog = ProgressDialog.show(ManageUpdate.this, getString(R.string.updating), getString(R.string.please_wait), true);
-                    new updateTask().execute();
-                    break;
-            }
+        switch (v.getId()) {
+            case 1:
+                /*if (!common.appIsOnline()) {
+                    common.isOffline(Main.this);
+                    return;
+                }*/
+                dialog = ProgressDialog.show(ManageUpdate.this, getString(R.string.updating), getString(R.string.please_wait), true);
+                new updateTask().execute();
+                break;
+        }
         }
     };
 
@@ -93,11 +93,14 @@ public class ManageUpdate extends Activity {
             HttpResponse httpResponse = httpClient.execute(httpGet);
             HttpEntity httpEntity = httpResponse.getEntity();
             is = httpEntity.getContent();
-        } catch (UnsupportedEncodingException e) {
+        }
+        catch (UnsupportedEncodingException e) {
             e.printStackTrace();
-        } catch (ClientProtocolException e) {
+        }
+        catch (ClientProtocolException e) {
             e.printStackTrace();
-        } catch (IOException e) {
+        }
+        catch (IOException e) {
             e.printStackTrace();
         }
     }
@@ -113,7 +116,8 @@ public class ManageUpdate extends Activity {
 
         try {
             reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
-        } catch (UnsupportedEncodingException e1) {
+        }
+        catch (UnsupportedEncodingException e1) {
             e1.printStackTrace();
         }
 
@@ -158,9 +162,7 @@ public class ManageUpdate extends Activity {
             }
             reader.endArray();
         }
-        catch (IOException ignored) {
-
-        }
+        catch (IOException ignored) {}
     }
 
     public static void searchPostExecute(Context context, Dialog dialog) {
