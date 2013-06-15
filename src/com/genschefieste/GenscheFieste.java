@@ -9,7 +9,7 @@ public class GenscheFieste extends Application {
     // URI to the services. In theory we could import 2 other services which describe
     // the locations and categories, however, we have made those available in the resources
     // so they are also easily translatable.
-    public static String eventUrl = "http://gfapi.timleytens.be/gf-api/events/list.json?key=XeqAsustujew6re3&secret=trezenu3uzuDrecE4upruCruq5ba4tec";
+    public static String eventUrl = "";
 
     // Connectivity manager.
     private ConnectivityManager cm;
