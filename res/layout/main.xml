@@ -5,9 +5,9 @@
     android:orientation="vertical" 
     android:background="#005371">
 
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
-	    android:layout_height="40dp"
+	    android:layout_height="45dp"
 		android:weightSum="1.0"
 	    android:orientation="horizontal"
 	    android:background="#007390">
@@ -49,18 +49,23 @@
 	    
 	</LinearLayout>
 
+    <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/stunt"
+            android:id="@+id/imageView"/>
+
     <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
-	    android:layout_height="50dp"
+	    android:layout_height="30dp"
 		android:weightSum="1.0"
 	    android:orientation="horizontal"
-	    android:background="#005371"
-        android:paddingTop="10dp">
+	    android:background="#005371">
 	
 	    <TextView
 	        xmlns:android="http://schemas.android.com/apk/res/android"
 	        android:layout_width="0dp"
-	        android:layout_height="50dp"
+	        android:layout_height="30dp"
 	        android:layout_gravity="center"
 	        android:layout_marginLeft="20dp"
 	        android:layout_marginRight="20dp"

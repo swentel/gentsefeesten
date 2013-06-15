@@ -83,11 +83,16 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     }
 
     // Get all events.
-    public List<Event> getEvents() {
+    public List<Event> getEvents(String query) {
         List<Event> eventList = new ArrayList<Event>();
 
         // Select All Query.
-        String selectQuery = "SELECT * FROM " + TABLE_EVENTS + " WHERE date = 1374271200 ORDER BY id ASC limit 30";
+        String selectQuery = "SELECT * FROM " + TABLE_EVENTS + " WHERE date = 1374271200";
+        if (query.length() > 0) {
+            selectQuery += " (AND " + KEY_TITLE + " LIKE '%" + query + "%'";
+            selectQuery += " OR " + KEY_DESCRIPTION + " LIKE '%" + query + "%') ";
+        }
+        selectQuery += " ORDER BY id ASC limit 30";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);

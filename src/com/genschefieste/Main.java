@@ -30,7 +30,7 @@ public class Main extends Activity {
 
         // Get all events.
         DatabaseHandler db = new DatabaseHandler(this);
-        events = db.getEvents();
+        events = db.getEvents("");
 
         // Make every item clickable.
         list.setClickable(true);

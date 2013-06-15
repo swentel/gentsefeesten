@@ -26,7 +26,19 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Menu"></activity>
+        <activity android:name=".Menu">
+            <!-- enable the search dialog to send searches to EventSearch -->
+            <meta-data android:name="android.app.default_searchable"
+                       android:value=".EventSearch" />
+        </activity>
+        <activity android:name=".EventSearch"
+                  android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <meta-data android:name="android.app.searchable"
+                       android:resource="@xml/searchable"/>
+        </activity>
         <activity android:name=".EventDetail"></activity>
         <activity android:name=".ManageUpdate"></activity>
 	</application>

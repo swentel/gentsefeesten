@@ -29,6 +29,7 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="10dp"
         android:layout_marginTop="10dp"
-        android:contentDescription="@string/add_or_remove_from_favorite" />
+        android:contentDescription="@string/add_or_remove_from_favorite"
+        android:scaleType="centerInside"/>
 
 </LinearLayout>
