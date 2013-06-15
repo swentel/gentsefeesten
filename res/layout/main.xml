@@ -7,7 +7,7 @@
 
 	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
-	    android:layout_height="50dp"
+	    android:layout_height="40dp"
 		android:weightSum="1.0"
 	    android:orientation="horizontal"
 	    android:background="#007390">
@@ -20,7 +20,8 @@
             android:background="@null"
 	        android:layout_gravity="center"
             android:contentDescription="@string/go_to_menu"
-            android:src="@drawable/go_to_menu" />	    	   
+            android:src="@drawable/go_to_menu"
+            android:scaleType="centerInside"/>
 	    
 	    <TextView
 	        xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,7 +31,7 @@
 	        android:layout_gravity="center"
 	        android:gravity="center"
 	        android:textColor="#f9ffff"
-	        android:textSize="27dp"
+	        android:textSize="24dp"
 	        android:text="@string/menu_bar">
 	    	     
 	    </TextView>
@@ -43,36 +44,18 @@
 	        android:layout_gravity="center"
             android:background="@null"
             android:contentDescription="@string/go_to_menu"
-            android:src="@drawable/go_to_favorites" />	    	   
+            android:src="@drawable/fav"
+            android:scaleType="centerInside"/>
 	    
 	</LinearLayout>
-	
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="fill_parent"
-	    android:layout_height="70dp"
-		android:weightSum="1.0"
-	    android:orientation="horizontal">		
-	
-	    <TextView
-	        xmlns:android="http://schemas.android.com/apk/res/android"
-	        android:layout_width="0dp"
-            android:layout_weight="1"
-	        android:layout_height="wrap_content" 
-	        android:layout_gravity="center"
-	        android:gravity="center"
-	        android:textColor="#fceb00"
-	        android:textSize="27dp"
-	        android:text="@string/everywhere">	     
-	    </TextView>
-	    
-	</LinearLayout>
-	
-	<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
 	    android:layout_width="fill_parent"
 	    android:layout_height="50dp"
 		android:weightSum="1.0"
 	    android:orientation="horizontal"
-	    android:background="#005371">		
+	    android:background="#005371"
+        android:paddingTop="10dp">
 	
 	    <TextView
 	        xmlns:android="http://schemas.android.com/apk/res/android"

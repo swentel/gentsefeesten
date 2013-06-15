@@ -21,11 +21,11 @@ public class Menu extends Activity {
         setContentView(R.layout.menu);
 
         // Add listeners on rows.
-        TableRow goHome = (TableRow) findViewById(R.id.go_home);
+        TableRow goHome = (TableRow) findViewById(R.id.menu_home);
         goHome.setId(1);
         goHome.setOnClickListener(actionMenu);
 
-        TableRow manageUpdates = (TableRow) findViewById(R.id.go_to_manage_updates);
+        TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
         manageUpdates.setId(2);
         manageUpdates.setOnClickListener(actionMenu);
 

@@ -49,7 +49,7 @@
                 android:layout_gravity="center"
                 android:background="@null"
                 android:contentDescription="@string/go_to_menu"
-                android:src="@drawable/go_to_favorites" />
+                android:src="@drawable/fav" />
 
         </LinearLayout>
 

@@ -62,9 +62,9 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             // Favorite.
             ImageView i = (ImageView) convertView.findViewById(R.id.event_favorite);
             if (event.getFavorite() == 1) {
-                i.setImageResource(R.drawable.favorited);
+                i.setImageResource(R.drawable.fav_on);
             } else {
-                i.setImageResource(R.drawable.not_favorited);
+                i.setImageResource(R.drawable.fav_off);
             }
 
         }

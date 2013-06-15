@@ -49,19 +49,19 @@
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:paddingTop="10dp"
-            android:paddingBottom="3dp"
-            android:id="@+id/go_home">
+            android:paddingBottom="5dp"
+            android:id="@+id/menu_home">
 
             <ImageView
-                android:src="@drawable/hoedje"
+                android:src="@drawable/menu_home"
                 />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="7dp"
                 android:textColor="#73b5c1"
-                android:text="@string/home"
+                android:text="@string/menu_home"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"/>
 
@@ -78,10 +78,10 @@
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:paddingTop="10dp"
                 android:paddingBottom="3dp"
-                android:id="@+id/my_favorites">
+                android:id="@+id/menu_favorites">
 
             <ImageView
-                android:src="@drawable/go_to_favorites"
+                android:src="@drawable/menu_favorites"
                 />
 
             <TextView
@@ -89,9 +89,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="10dp"
                 android:textColor="#73b5c1"
-                android:text="@string/my_favorites"
-                android:gravity="center_vertical"
-                android:layout_gravity="bottom"/>
+                android:text="@string/menu_favorites"
+                android:layout_gravity="bottom"
+                    />
 
         </TableRow>
 
@@ -106,10 +106,10 @@
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:paddingTop="10dp"
                 android:paddingBottom="3dp"
-                android:id="@+id/programme">
+                >
 
             <ImageView
-                android:src="@drawable/strop"
+                android:src="@drawable/menu_program"
                 />
 
             <TextView
@@ -117,7 +117,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textColor="#73b5c1"
-                    android:text="@string/programme"
+                    android:text="@string/menu_program"
                     android:gravity="center_vertical"
                     android:layout_gravity="bottom"/>
 
@@ -156,26 +156,6 @@
                 android:visibility="visible"
                 />
 
-        <TableRow
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:paddingTop="10dp"
-                android:paddingBottom="3dp"
-                android:id="@+id/about">
-
-            <ImageView
-                    android:src="@drawable/little_flag"
-                    />
-
-            <TextView
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:textColor="#73b5c1"
-                    android:text="@string/about"
-                    android:gravity="bottom"
-                    android:layout_gravity="bottom"/>
-        </TableRow>
-
         <View
                 android:layout_width="fill_parent"
                 android:layout_height="0.2dp"
@@ -187,10 +167,10 @@
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:paddingTop="10dp"
                 android:paddingBottom="3dp"
-                android:id="@+id/go_to_manage_updates">
+                android:id="@+id/menu_settings">
 
             <ImageView
-                    android:src="@drawable/little_flag"
+                    android:src="@drawable/menu_settings"
                     />
 
             <TextView
@@ -198,7 +178,27 @@
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="10dp"
                     android:textColor="#73b5c1"
-                    android:text="@string/manage_updates"
+                    android:text="@string/menu_settings"
+                    android:gravity="bottom"
+                    android:layout_gravity="bottom"/>
+        </TableRow>
+
+        <TableRow
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:paddingTop="10dp"
+                android:paddingBottom="3dp"
+                android:id="@+id/menu_about">
+
+            <ImageView
+                    android:src="@drawable/menu_about"
+                    />
+
+            <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:textColor="#73b5c1"
+                    android:text="@string/menu_about"
                     android:gravity="bottom"
                     android:layout_gravity="bottom"/>
         </TableRow>
