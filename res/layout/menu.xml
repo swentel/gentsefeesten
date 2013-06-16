@@ -286,7 +286,7 @@
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:paddingTop="10dp"
-            android:paddingBottom="3dp"
+            android:paddingBottom="5dp"
             android:id="@+id/menu_settings"
             android:layout_marginLeft="10dp">
 
