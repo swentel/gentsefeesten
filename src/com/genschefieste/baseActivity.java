@@ -24,7 +24,7 @@ public class baseActivity extends Activity {
     }
 
     /**
-     * Button listener.
+     * topBar button listener.
      */
     private final View.OnClickListener topBar = new View.OnClickListener() {
         public void onClick(View v) {

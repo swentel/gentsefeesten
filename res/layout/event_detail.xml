@@ -1,114 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     android:scrollbars="none"
     android:fillViewport="true"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#005371">
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:layout_width="fill_parent"
-                  android:layout_height="wrap_content"
-                  android:orientation="vertical">
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <include layout="@layout/header"></include>
+        <include layout="@layout/header" />
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                      android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:weightSum="1.0"
-                      android:orientation="horizontal"
-                      android:layout_marginTop="10dp"
-                      android:layout_marginBottom="10dp">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:orientation="horizontal"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp">
 
             <TextView
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:id="@+id/event_title"
-                    android:layout_width="0dp"
-                    android:layout_weight="1"
-                    android:layout_height="wrap_content"
-                    android:gravity="left"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:textColor="#fceb00"
-                    android:textSize="20dp"
-                    android:paddingTop="2dp"
-                    android:paddingBottom="2dp">
-            </TextView>
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/event_title"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="wrap_content"
+                android:gravity="left"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:textColor="#fceb00"
+                android:textSize="20sp"
+                android:paddingTop="2dp"
+                android:paddingBottom="2dp" />
 
         </LinearLayout>
 
-        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                      android:layout_width="fill_parent"
-                      android:layout_height="wrap_content"
-                      android:weightSum="1.0"
-                      android:orientation="vertical"
-                      android:background="#005371">
+        <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:weightSum="1.0"
+            android:orientation="vertical"
+            android:background="#005371">
 
             <TextView
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="fill_parent"
-                    android:id="@+id/event_location"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#ffffff"
-                    android:gravity="left"
-                    android:textColor="#00394f"
-                    android:textSize="15dp"
-                    android:padding="10dp">
-
-            </TextView>
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:id="@+id/event_location"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="left"
+                android:textColor="#00394f"
+                android:textSize="15sp"
+                android:padding="10dp" />
 
             <TextView
-                    xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="fill_parent"
-                    android:id="@+id/event_description"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginRight="10dp"
-                    android:layout_weight="1"
-                    android:background="#ffffff"
-                    android:gravity="left"
-                    android:textColor="#00394f"
-                    android:textSize="15dp"
-                    android:padding="10dp">
-
-            </TextView>
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:id="@+id/event_description"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="left"
+                android:textColor="#00394f"
+                android:textSize="15sp"
+                android:padding="10dp" />
 
         </LinearLayout>
 
-    <View
+        <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="#005768"
             android:visibility="visible" />
 
-    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                  android:layout_width="fill_parent"
-                  android:layout_height="60dp"
-                  android:background="#ffffff"
-                  android:orientation="horizontal"
-                  android:layout_marginLeft="10dp"
-                  android:layout_marginRight="10dp">
-
-        <ImageButton
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
+        <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/share"
-            android:layout_alignParentRight="true"
+            android:layout_width="fill_parent"
+            android:layout_height="60dp"
             android:background="#ffffff"
-            android:src="@drawable/share_button"
-            android:layout_marginLeft="5dp"
-            android:layout_marginRight="70dp"
-            android:scaleType="center"
-            android:layout_gravity="center_vertical"
-            android:layout_marginTop="13dp"/>
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
-        <ImageButton
+            <ImageButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/share"
+                android:layout_alignParentRight="true"
+                android:background="#ffffff"
+                android:src="@drawable/share_button"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="70dp"
+                android:scaleType="center"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="13dp"/>
+
+            <ImageButton
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 xmlns:android="http://schemas.android.com/apk/res/android"
@@ -122,8 +122,7 @@
                 android:layout_marginTop="13dp"
                 android:layout_marginRight="20dp"/>
 
-     </RelativeLayout>
-
+         </RelativeLayout>
 
     </LinearLayout>
 
