@@ -18,7 +18,8 @@
     <TextView
         android:id="@+id/event_title"
         android:layout_width="0dp"
-        android:layout_weight=".70"
+        android:layout_weight=".75"
+        android:paddingBottom="10dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
         android:textColor="#323232" />
@@ -26,10 +27,10 @@
     <ImageView
         android:id="@+id/event_favorite"
         android:layout_width="0dp"
-        android:layout_weight=".15"
+        android:layout_weight=".10"
         android:layout_height="wrap_content"
         android:layout_marginRight="5dp"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="12dp"
         android:contentDescription="@string/add_or_remove_from_favorite"
         android:scaleType="centerInside"/>
 

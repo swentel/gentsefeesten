@@ -38,7 +38,7 @@
         android:background="@null"
         android:contentDescription="@string/menu_bar_go_to_favorites"
         android:src="@drawable/go_to_fav"
-        android:scaleType="centerInside"
-        android:adjustViewBounds="false"/>
+        android:adjustViewBounds="false"
+        android:scaleType="centerInside"/>
 
 </LinearLayout>
