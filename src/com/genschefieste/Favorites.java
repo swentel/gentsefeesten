@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
-public class Favorites extends baseActivity {
+public class Favorites extends BaseActivity {
 
     public List<Event> events;
     public int eventId = 0;

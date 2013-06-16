@@ -22,6 +22,10 @@ public class MenuList extends Activity {
         goFavorites.setId(2);
         goFavorites.setOnClickListener(actionMenu);
 
+        TableRow goCategories = (TableRow) findViewById(R.id.menu_categories);
+        goCategories.setId(3);
+        goCategories.setOnClickListener(actionMenu);
+
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
         manageUpdates.setId(3);
         manageUpdates.setOnClickListener(actionMenu);
@@ -46,10 +50,16 @@ public class MenuList extends Activity {
                 startActivity(goFavorites);
                 break;
             case 3:
+                // Goes to days first, then typeOverview.
+                Intent goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
+                goDaysOverview.putExtra("next_screen", 1);
+                startActivity(goDaysOverview);
+                break;
+            case 4:
                 Intent manageUpdates = new Intent(getBaseContext(), ManageUpdate.class);
                 startActivity(manageUpdates);
                 break;
-            case 4:
+            case 5:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;

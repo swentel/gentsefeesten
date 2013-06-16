@@ -1,18 +1,20 @@
 package com.genschefieste;
 
 import android.content.Context;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
 /**
- * Private list adapter.
+ * Favorite list adapter.
  */
 public class FavoritesListAdapter extends BaseAdapter implements OnClickListener {
     private final Context context;
@@ -51,6 +53,11 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
         // TODO add additional row with the actual date.
 
         if (event != null) {
+
+            if ((position%2) == 0) {
+                LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
+                row.setBackgroundColor(Color.parseColor("#f5f5f5"));
+            }
 
             // Hour.
             TextView th = (TextView) convertView.findViewById(R.id.event_hour);

@@ -5,7 +5,7 @@ import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.widget.TextView;
 
-public class About extends baseActivity {
+public class About extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {

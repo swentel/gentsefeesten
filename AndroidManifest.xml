@@ -38,6 +38,8 @@
             <meta-data android:name="android.app.searchable" android:resource="@xml/searchable"/>
         </activity>
 
+        <activity android:name=".DaysOverview" />
+        <activity android:name=".TypeOverview" />
         <activity android:name=".EventDetail" />
         <activity android:name=".Favorites" />
         <activity android:name=".About" />

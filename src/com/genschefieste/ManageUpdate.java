@@ -118,7 +118,11 @@ public class ManageUpdate extends Activity {
                                 event.setDescription(reader.nextString());
                             }
                             else if (name.equals("datum")) {
-                                event.setDate(reader.nextInt());
+                                // Add 2 hours so the timestamp is actually stored
+                                // on the next day, since our timestamps are
+                                // on GMT and we don't want to bother start
+                                // converting this at runtime.
+                                event.setDate(reader.nextInt() + 7200);
                             }
                             else if (name.equals("periode")) {
                                 event.setDatePeriod(reader.nextString());

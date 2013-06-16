@@ -7,7 +7,7 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-public class EventDetail extends baseActivity {
+public class EventDetail extends BaseActivity {
 
     private int eventId;
     private Event event;
@@ -33,15 +33,22 @@ public class EventDetail extends baseActivity {
         location.setText(event.getLocation());
 
         // Set date.
-        String date_text = "";
-        date_text += event.getDate();
-        date_text += "\n" + event.getDatePeriod();
-        TextView date = (TextView) findViewById(R.id.event_date);
-        date.setText(date_text);
+        // @todo set 'Whole day' in case there's no start hour.
+        int date_int = event.getDate();
+        String date_text = GenscheFieste.createDate(date_int, getApplicationContext());
+        if (date_text.length() > 0) {
+            // Period.
+            if (event.getDatePeriod().length() > 0) {
+                date_text += "\n" + event.getDatePeriod();
+            }
+            TextView date = (TextView) findViewById(R.id.event_date);
+            date.setText(date_text);
+        }
 
         // Set price.
-        String price_text = "";
-        if (event.getFree() == 1) {
+        String price_text = getString(R.string.event_free);
+        String price_entry = event.getPrice();
+        if (event.getFree() == 1 || price_entry.length() == 0) {
             price_text = getString(R.string.event_free);
         }
         else {

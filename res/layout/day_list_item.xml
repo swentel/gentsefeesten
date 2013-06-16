@@ -1,0 +1,24 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:id="@+id/day_row"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:background="#fff" >
+
+    <TextView
+        android:id="@+id/day"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:textSize="30sp"
+        android:textColor="#005371"
+        android:layout_margin="10dp"
+        android:layout_gravity="center_vertical"/>
+
+    <View
+        android:layout_width="fill_parent"
+        android:layout_height="0.2dp"
+        android:background="#005768"
+        android:visibility="visible"/>
+
+</LinearLayout>

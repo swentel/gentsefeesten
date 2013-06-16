@@ -8,7 +8,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-public class baseActivity extends Activity {
+public class BaseActivity extends Activity {
 
     Intent intent;
 

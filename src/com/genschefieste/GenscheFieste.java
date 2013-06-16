@@ -35,4 +35,27 @@ public class GenscheFieste extends Application {
         }
         return false;
     }
+
+    /**
+     * Returns the text string for a date based on a timestamp.
+     */
+    public static String createDate(int timestamp, Context context) {
+
+        String date_text = "";
+        int index = -1;
+        int[] date_int_resources = context.getResources().getIntArray(R.array.dates_int);
+        String[] date_string_resources = context.getResources().getStringArray(R.array.dates_full);
+
+        for (int i = 0; i < date_int_resources.length; i++) {
+            if (date_int_resources[i] == timestamp) {
+                index = i;
+            }
+        }
+
+        if (index != -1) {
+            date_text = date_string_resources[index];
+        }
+
+        return date_text;
+    }
 }

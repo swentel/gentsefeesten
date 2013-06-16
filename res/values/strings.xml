@@ -13,7 +13,7 @@
     <!-- Favorites activity -->
     <string name="my_favorites">Mijn favorieten</string>
 
-    <!-- Menu and search activity -->
+    <!-- Menu activity -->
     <string name="menu_home">Home</string>
     <string name="menu_favorites">Mijn favorieten</string>
     <string name="menu_program">Programma</string>
@@ -39,6 +39,12 @@
     <string name="search_hint">Zoek evenement</string>
     <string name="search_go">Go</string>
 
+    <!-- Program activities -->
+    <string name="select_a_day">Kies een dag</string>
+    <string name="select_a_category">Kies een categorie</string>
+    <string name="select_a_location">Kies een location</string>
+    <string name="select_a_festival">Kies een festival</string>
+
     <!-- Event detail activity -->
     <string name="date_period">Datum</string>
     <string name="event_price">Prijs</string>
@@ -47,6 +53,18 @@
     <string name="share_pre_message">#GF13</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
 
+    <!-- Dates -->
+    <string name="july_20">zaterdag 20 juli</string>
+    <string name="july_21">zondag 21 juli</string>
+    <string name="july_22">maandag 22 juli</string>
+    <string name="july_23">dinsdag 23 juli</string>
+    <string name="july_24">woensdag 24 juli</string>
+    <string name="july_25">donderdag 25 juli</string>
+    <string name="july_26">vrijdag 26 juli</string>
+    <string name="july_27">zaterdag 27 juli</string>
+    <string name="july_28">zondag 28 juli</string>
+    <string name="july_29">maandag 29 juli</string>
+    
     <!-- Locations -->
     <string name="baudeloo">Baudelohof</string>
     <string name="beverhout">Beverhoutplein</string>

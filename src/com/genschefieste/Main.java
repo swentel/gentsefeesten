@@ -9,7 +9,7 @@ import android.widget.ListView;
 
 import java.util.List;
 
-public class Main extends baseActivity {
+public class Main extends BaseActivity {
 
     public List<Event> events;
     public int eventId = 0;

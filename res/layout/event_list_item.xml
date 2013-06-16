@@ -1,6 +1,7 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
+    android:id="@+id/event_row"
     android:layout_height="wrap_content"
 	android:weightSum="1.0"
     android:orientation="horizontal"
