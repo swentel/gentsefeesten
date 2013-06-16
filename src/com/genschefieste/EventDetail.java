@@ -32,6 +32,27 @@ public class EventDetail extends baseActivity {
         TextView location = (TextView) findViewById(R.id.event_location);
         location.setText(event.getLocation());
 
+        // Set date.
+        String date_text = "";
+        date_text += event.getDate();
+        date_text += "\n" + event.getDatePeriod();
+        TextView date = (TextView) findViewById(R.id.event_date);
+        date.setText(date_text);
+
+        // Set price.
+        String price_text = "";
+        if (event.getFree() == 1) {
+            price_text = getString(R.string.event_free);
+        }
+        else {
+            price_text = "€" + event.getPrice();
+            if (event.getPricePresale().length() != 0) {
+                price_text += "\n" + getString(R.string.event_pre_sale) + ": € " + event.getPricePresale();
+            }
+        }
+        TextView price = (TextView) findViewById(R.id.event_price);
+        price.setText(price_text);
+
         // Set description.
         TextView description = (TextView) findViewById(R.id.event_description);
         description.setText(event.getDescription());
