@@ -53,7 +53,12 @@ public class ManageUpdate extends Activity {
                     common.isOffline(Main.this);
                     return;
                 }*/
-                dialog = ProgressDialog.show(ManageUpdate.this, getString(R.string.updating), getString(R.string.please_wait), true);
+                dialog = new customProgressDialog(ManageUpdate.this);
+                dialog.setTitle(R.string.updating);
+                dialog.setMessage(getString(R.string.please_wait));
+                dialog.setIndeterminate(false);
+                dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                dialog.show();
                 new updateTask().execute();
                 break;
         }
@@ -63,19 +68,120 @@ public class ManageUpdate extends Activity {
     /**
      * update task.
      */
-    class updateTask extends AsyncTask<Void, Void, String> {
+    class updateTask extends AsyncTask<Context, Integer, String> {
 
-        protected String doInBackground(Void... unused) {
+        protected String doInBackground(Context... params) {
 
             try {
                 ManageUpdate.getJSONFromUrl();
-                parseJson(getApplicationContext());
-            }
-            catch (IOException ignored) {
+                DatabaseHandler db = new DatabaseHandler(getApplicationContext());
 
+                try {
+                    reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
+                }
+                catch (UnsupportedEncodingException ignored) {}
+
+                try {
+
+                    int total = GenscheFieste.numberOfEvents;
+                    int count = 0;
+
+                    reader.beginArray();
+                    while (reader.hasNext()) {
+                        Event event = new Event();
+
+                        reader.beginObject();
+
+                        while (reader.hasNext()) {
+                            String name = reader.nextName();
+
+                            // Ignore null values.
+                            if (reader.peek() == JsonToken.NULL) {
+                                reader.skipValue();
+                            }
+                            else if (name.equals("title")) {
+                                event.setTitle(reader.nextString());
+                            }
+                            else if (name.equals("id")) {
+                                event.setExternalId(reader.nextInt());
+                            }
+                            else if (name.equals("gratis")) {
+                                event.setFree(reader.nextInt());
+                            }
+                            else if (name.equals("prijs")) {
+                                event.setPrice(reader.nextString());
+                            }
+                            else if (name.equals("prijs_vvk")) {
+                                event.setPricePresale(reader.nextString());
+                            }
+                            else if (name.equals("omsch")) {
+                                event.setDescription(reader.nextString());
+                            }
+                            else if (name.equals("datum")) {
+                                event.setDate(reader.nextInt());
+                            }
+                            else if (name.equals("periode")) {
+                                event.setDatePeriod(reader.nextString());
+                            }
+                            else if (name.equals("start")) {
+                                event.setStartHour(reader.nextString());
+                            }
+                            else if (name.equals("sort")) {
+                                event.setDateSort(reader.nextInt());
+                            }
+                            else if (name.equals("cat")) {
+                                event.setCategory(reader.nextString());
+                            }
+                            else if (name.equals("cat_id")) {
+                                event.setCategoryId(reader.nextInt());
+                            }
+                            else if (name.equals("loc_id")) {
+                                event.setLocationId(reader.nextInt());
+                            }
+                            else if (name.equals("loc")) {
+                                event.setLocation(reader.nextString());
+                            }
+                            else if (name.equals("lat")) {
+                                event.setLatitude(reader.nextString());
+                            }
+                            else if (name.equals("lon")) {
+                                event.setLongitude(reader.nextString());
+                            }
+                            else if (name.equals("korting")) {
+                                event.setDiscount(reader.nextString());
+                            }
+                            else if (name.equals("festival")) {
+                                event.setFestival(reader.nextInt());
+                            }
+                            else {
+                                // Skip fields we don't want to parse
+                                reader.skipValue();
+                            }
+                        }
+
+                        reader.endObject();
+
+                        count++;
+                        // TODO this isn't entirely ok yet, but getting there.
+                        int update = (count*100/total);
+                        publishProgress(update);
+
+                        db.insertEvent(event);
+                    }
+                    reader.endArray();
+                }
+                catch (IOException ignored) {
+                }
             }
+            catch (IOException ignored) {}
 
             return sResponse;
+        }
+
+        @Override
+        public void onProgressUpdate(Integer... values){
+            super.onProgressUpdate(values);
+            dialog.setProgress(values[0]);
         }
 
         @Override
@@ -103,66 +209,6 @@ public class ManageUpdate extends Activity {
         catch (IOException e) {
             e.printStackTrace();
         }
-    }
-
-    /**
-     * Parse and store events.
-     *
-     * @param context
-     *  The application context.
-     */
-    public static void parseJson(Context context) {
-        DatabaseHandler db = new DatabaseHandler(context);
-
-        try {
-            reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
-        }
-        catch (UnsupportedEncodingException e1) {
-            e1.printStackTrace();
-        }
-
-        try {
-            reader.beginArray();
-            while (reader.hasNext()) {
-                Event event = new Event();
-
-                reader.beginObject();
-
-                while (reader.hasNext()) {
-                    String name = reader.nextName();
-
-                    // Ignore null values
-                    if (reader.peek() == JsonToken.NULL) {
-                        reader.skipValue();
-                    }
-                    else if (name.equals("title")) {
-                        event.setTitle(reader.nextString());
-                    }
-                    else if (name.equals("start")) {
-                        event.setStartHour(reader.nextString());
-                    }
-                    else if (name.equals("datum")) {
-                        event.setDate(reader.nextInt());
-                    }
-                    else if (name.equals("omsch")) {
-                        event.setDescription(reader.nextString());
-                    }
-                    else if (name.equals("loc")) {
-                        event.setLocation(reader.nextString());
-                    }
-                    else {
-                        // Skip fields we don't want to parse
-                        reader.skipValue();
-                    }
-                }
-
-                reader.endObject();
-
-                db.insertEvent(event);
-            }
-            reader.endArray();
-        }
-        catch (IOException ignored) {}
     }
 
     public static void searchPostExecute(Context context, Dialog dialog) {

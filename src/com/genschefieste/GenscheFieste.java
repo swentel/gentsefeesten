@@ -11,6 +11,10 @@ public class GenscheFieste extends Application {
     // so they are also easily translatable.
     public static String eventUrl = "";
 
+    // Number of events. Note that this doesn't have to be the exact number, it's just
+    // go give a nicer indiction of the progress dialog.
+    public static int numberOfEvents = 4045;
+
     // Connectivity manager.
     private ConnectivityManager cm;
 

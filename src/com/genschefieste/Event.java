@@ -4,119 +4,213 @@ public class Event {
 
     // Private variables.
     int id;
-    int external_id;
-    String title;
-    String description;
-    String price;
-    String location;
-    int date;
-    String start_hour;
-    int favorite;
+    String title = "";
+    int externalId = 0;
+    int free = 0;
+    String price = "";
+    String pricePresale = "";
+    String description = "";
+    int date = 0;
+    String datePeriod = "";
+    String startHour = "";
+    int dateSort = 0;
+    String category = "";
+    int categoryId = 0;
+    int locationId = 0;
+    String location = "";
+    String latitude = "";
+    String longitude = "";
+    String discount = "";
+    int festival = 0;
+    int favorite = 0;
 
     // Empty constructor.
     public Event() {
 
     }
 
-    // Constructor
-    public Event(int id, String title, String description, String price, int date, String location, String start_hour, int favorite) {
+    // Full constructor.
+    public Event(int id, String title, int externalId, int free, String price, String pricePresale, String description, int date, String datePeriod, String startHour, int dateSort, String category, int categoryId, int locationId, String location, String latitude, String longitude, String discount, int festival, int favorite) {
         this.id = id;
         this.title = title;
-        this.description = description;
+        this.externalId = externalId;
+        this.free = free;
         this.price = price;
+        this.pricePresale = pricePresale;
+        this.description = description;
         this.date = date;
+        this.datePeriod = datePeriod;
+        this.startHour = startHour;
+        this.dateSort = dateSort;
+        this.category = category;
+        this.categoryId = categoryId;
+        this.locationId = locationId;
         this.location = location;
-        this.start_hour = start_hour;
+        this.latitude = latitude;
+        this.longitude = longitude;
+        this.discount = discount;
+        this.festival = festival;
         this.favorite = favorite;
     }
 
-    // Setting ID
-    public int getID() {
-        return this.id;
+    public int getId() {
+        return id;
     }
 
-    // Setting ID
-    public void setID(int id) {
+    public void setId(int id) {
         this.id = id;
     }
 
-    // Setting External ID
-    public int getExternalID() {
-        return this.external_id;
-    }
-
-    // Setting ID
-    public void setExternalID(int external_id) {
-        this.external_id = external_id;
-    }
-
-    // Getting title.
     public String getTitle() {
-        return this.title;
+        return title;
     }
 
-    // Setting title.
     public void setTitle(String title) {
         this.title = title;
     }
 
-    // Getting description.
-    public String getDescription() {
-        return this.description;
+    public int getExternalId() {
+        return externalId;
     }
 
-    // Setting description.
-    public void setDescription(String description) {
-        this.description = description;
+    public void setExternalId(int externalId) {
+        this.externalId = externalId;
     }
 
-    // Getting location name.
-    public String getLocation() {
-        return this.location;
+    public int getFree() {
+        return free;
     }
 
-    // Setting location name.
-    public void setLocation(String location) {
-        this.location = location;
+    public void setFree(int free) {
+        this.free = free;
     }
 
-    // Getting price.
     public String getPrice() {
-        return this.price;
+        return price;
     }
 
-    // Setting price
     public void setPrice(String price) {
         this.price = price;
     }
 
-    // Getting date.
-    public int getDate() {
-        return this.date;
+    public String getPricePresale() {
+        return pricePresale;
     }
 
-    // Setting date
+    public void setPricePresale(String pricePresale) {
+        this.pricePresale = pricePresale;
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
+    }
+
+    public int getDate() {
+        return date;
+    }
+
     public void setDate(int date) {
         this.date = date;
     }
 
-    // Getting start hour.
+    public String getDatePeriod() {
+        return datePeriod;
+    }
+
+    public void setDatePeriod(String datePeriod) {
+        this.datePeriod = datePeriod;
+    }
+
     public String getStartHour() {
-        return this.start_hour;
+        return startHour;
     }
 
-    // Setting start hour
-    public void setStartHour(String start_hour) {
-        this.start_hour = start_hour;
+    public void setStartHour(String startHour) {
+        this.startHour = startHour;
     }
 
-    // Getting favorite.
-    public Integer getFavorite() {
-        return this.favorite;
+    public int getDateSort() {
+        return dateSort;
     }
 
-    // Setting favorite
+    public void setDateSort(int dateSort) {
+        this.dateSort = dateSort;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
+    }
+
+    public int getCategoryId() {
+        return categoryId;
+    }
+
+    public void setCategoryId(int categoryId) {
+        this.categoryId = categoryId;
+    }
+
+    public int getLocationId() {
+        return locationId;
+    }
+
+    public void setLocationId(int locationId) {
+        this.locationId = locationId;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getLatitude() {
+        return latitude;
+    }
+
+    public void setLatitude(String latitude) {
+        this.latitude = latitude;
+    }
+
+    public String getLongitude() {
+        return longitude;
+    }
+
+    public void setLongitude(String longitude) {
+        this.longitude = longitude;
+    }
+
+    public String getDiscount() {
+        return discount;
+    }
+
+    public void setDiscount(String discount) {
+        this.discount = discount;
+    }
+
+    public int getFestival() {
+        return festival;
+    }
+
+    public void setFestival(int festival) {
+        this.festival = festival;
+    }
+
+    public int getFavorite() {
+        return favorite;
+    }
+
     public void setFavorite(int favorite) {
         this.favorite = favorite;
     }
+
 }

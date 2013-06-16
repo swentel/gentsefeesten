@@ -30,7 +30,7 @@ public class Main extends baseActivity {
         list.setOnItemClickListener(new OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                eventId = events.get(position).getID();
+                eventId = events.get(position).getId();
                 intent.putExtra("eventId", eventId);
                 startActivity(intent);
             }

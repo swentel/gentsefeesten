@@ -5,7 +5,7 @@
     <string name="app_name">Gentse Feesten</string>
     <string name="menu_bar_title">#GF13</string>
     <string name="menu_bar_go_to_menu">Menu</string>
-    <string name="menu_bar_go_to_favorites">Uw favorieten</string>
+    <string name="menu_bar_go_to_favorites">Mijn favorieten</string>
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>
@@ -29,8 +29,8 @@
     <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie.<br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@Swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - webdesigner<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Manage updates -->
-    <string name="updating">Updating ...</string>
-    <string name="please_wait">Even geduld, dit kan tot twee minuten duren</string>
+    <string name="updating">Data ophalen</string>
+    <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
 
     <!-- Search -->
     <string name="search_hint">Zoek evenement</string>
