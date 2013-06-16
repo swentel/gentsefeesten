@@ -19,7 +19,7 @@ public class MenuList extends Activity {
         goHome.setOnClickListener(actionMenu);
 
         TableRow goFavorites = (TableRow) findViewById(R.id.menu_favorites);
-        goFavorites.setId(3);
+        goFavorites.setId(2);
         goFavorites.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);

@@ -21,6 +21,9 @@
     <string name="menu_free">Gratis</string>
     <string name="menu_festival">Festivals</string>
     <string name="menu_locations">Lokaties</string>
+    <string name="menu_practical">Praktisch</string>
+    <string name="menu_parking">Parking</string>
+    <string name="menu_toilet">Publieke toiletten</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_about">Over deze applicatie</string>
 
@@ -37,6 +40,7 @@
     <string name="search_go">Go</string>
 
     <!-- Event detail activity -->
+    <string name="share_pre_message">#GF13</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
 
     <!-- Locations -->

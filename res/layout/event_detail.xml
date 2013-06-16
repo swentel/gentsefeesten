@@ -115,7 +115,6 @@
                 android:id="@+id/favorite"
                 android:layout_alignParentRight="true"
                 android:background="#ffffff"
-                android:src="@drawable/fav_off"
                 android:scaleType="center"
                 android:adjustViewBounds="false"
                 android:layout_gravity="center_vertical"

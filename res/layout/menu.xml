@@ -119,7 +119,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="21dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_categories"
@@ -149,7 +149,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="21dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_free"
@@ -179,7 +179,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="21dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_festival"
@@ -208,10 +208,69 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="20dp"
+                android:layout_marginLeft="21dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_locations"
+                android:gravity="center_vertical"
+                android:layout_gravity="bottom"
+                android:textSize="15sp"/>
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="#005768"
+            android:visibility="visible"/>
+
+        <TableRow
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:paddingTop="10dp"
+            android:paddingBottom="3dp"
+            android:id="@+id/menu_practical"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:src="@drawable/menu_practical"
+                android:contentDescription="@string/menu_practical"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="7dp"
+                android:textColor="#73b5c1"
+                android:text="@string/menu_practical"
+                android:gravity="bottom"
+                android:layout_gravity="bottom"
+                android:textSize="15sp"/>
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="#005768"
+            android:visibility="visible"/>
+
+        <TableRow
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="#003a48"
+            android:paddingTop="10dp"
+            android:id="@+id/menu_parking"
+            android:layout_gravity="bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="21dp"
+                android:textColor="#73b5c1"
+                android:layout_span="2"
+                android:text="@string/menu_parking"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
                 android:textSize="15sp"/>

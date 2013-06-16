@@ -106,6 +106,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
+    // Update favorite status for an event.
+    public void saveFavorite(int favorite, int eventId) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put(KEY_FAVORITE, favorite);
+        db.update(TABLE_EVENTS, values, KEY_ID + "=" + eventId, null);
+        db.close();
+    }
+
     // Get all events.
     public List<Event> getEvents(String query) {
         List<Event> eventList = new ArrayList<Event>();
@@ -145,6 +154,55 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getString(17),
                     cursor.getInt(18),
                     cursor.getInt(19)
+                );
+
+                // Adding event to list.
+                eventList.add(event);
+            }
+            while (cursor.moveToNext());
+        }
+
+        db.close();
+
+        return eventList;
+    }
+
+    // Get favorites.
+    public List<Event> getFavoriteEvents() {
+        List<Event> eventList = new ArrayList<Event>();
+
+        // Query
+        // TODO add sort
+        String selectQuery = "SELECT * FROM " + TABLE_EVENTS + " WHERE favorite = 1";
+        selectQuery += " ORDER BY id ASC limit 30";
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // Loop through all rows and add to list.
+        if (cursor.moveToFirst()) {
+            do {
+                Event event = new Event(
+                        cursor.getInt(0),
+                        cursor.getString(1),
+                        cursor.getInt(2),
+                        cursor.getInt(3),
+                        cursor.getString(4),
+                        cursor.getString(5),
+                        cursor.getString(6),
+                        cursor.getInt(7),
+                        cursor.getString(8),
+                        cursor.getString(9),
+                        cursor.getInt(10),
+                        cursor.getString(11),
+                        cursor.getInt(12),
+                        cursor.getInt(13),
+                        cursor.getString(14),
+                        cursor.getString(15),
+                        cursor.getString(16),
+                        cursor.getString(17),
+                        cursor.getInt(18),
+                        cursor.getInt(19)
                 );
 
                 // Adding event to list.
