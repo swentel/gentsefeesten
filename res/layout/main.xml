@@ -65,16 +65,16 @@
 	    <TextView
 	        xmlns:android="http://schemas.android.com/apk/res/android"
 	        android:layout_width="0dp"
-	        android:layout_height="30dp"
+	        android:layout_height="35dp"
 	        android:layout_gravity="center"
-	        android:layout_marginLeft="20dp"
-	        android:layout_marginRight="20dp"
+	        android:layout_marginLeft="10dp"
+	        android:layout_marginRight="10dp"
 	        android:layout_weight="1"
 	        android:background="#ffffff"
 	        android:gravity="center"
 	        android:text="@string/upcoming"
 	        android:textColor="#00394f"
-	        android:textSize="22dp" >
+	        android:textSize="20dp" >
 	     
 	    </TextView>
 	    
@@ -85,8 +85,8 @@
         android:gravity="center"
         android:background="#cacaca"
         android:layout_marginTop="1dp"
-        android:layout_marginLeft="20dp"
-        android:layout_marginRight="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 

@@ -89,7 +89,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         // Select All Query.
         String selectQuery = "SELECT * FROM " + TABLE_EVENTS + " WHERE date = 1374271200";
         if (query.length() > 0) {
-            selectQuery += " (AND " + KEY_TITLE + " LIKE '%" + query + "%'";
+            selectQuery += " AND (" + KEY_TITLE + " LIKE '%" + query + "%'";
             selectQuery += " OR " + KEY_DESCRIPTION + " LIKE '%" + query + "%') ";
         }
         selectQuery += " ORDER BY id ASC limit 30";
