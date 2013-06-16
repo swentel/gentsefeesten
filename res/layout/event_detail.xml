@@ -17,7 +17,9 @@
                       android:layout_width="fill_parent"
                       android:layout_height="wrap_content"
                       android:weightSum="1.0"
-                      android:orientation="horizontal">
+                      android:orientation="horizontal"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginBottom="10dp">
 
             <TextView
                     xmlns:android="http://schemas.android.com/apk/res/android"
@@ -26,10 +28,10 @@
                     android:layout_weight="1"
                     android:layout_height="wrap_content"
                     android:gravity="left"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:textColor="#fceb00"
-                    android:textSize="27dp"
+                    android:textSize="20dp"
                     android:paddingTop="2dp"
                     android:paddingBottom="2dp">
             </TextView>
@@ -47,15 +49,16 @@
                     xmlns:android="http://schemas.android.com/apk/res/android"
                     android:layout_width="fill_parent"
                     android:id="@+id/event_location"
-                    android:layout_height="50dp"
+                    android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="#ffffff"
                     android:gravity="left"
                     android:textColor="#00394f"
-                    android:textSize="22dp" >
+                    android:textSize="15dp"
+                    android:padding="10dp">
 
             </TextView>
 
@@ -64,36 +67,62 @@
                     android:layout_width="fill_parent"
                     android:id="@+id/event_description"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
                     android:layout_weight="1"
                     android:background="#ffffff"
                     android:gravity="left"
                     android:textColor="#00394f"
-                    android:textSize="16dp"
-                    android:padding="2dp">
+                    android:textSize="15dp"
+                    android:padding="10dp">
 
             </TextView>
 
         </LinearLayout>
 
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="#005768"
+            android:visibility="visible" />
+
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
                   android:layout_width="fill_parent"
-                  android:layout_height="50dp"
-                  android:weightSum="1.0"
+                  android:layout_height="60dp"
+                  android:background="#ffffff"
                   android:orientation="horizontal"
-                  android:background="#007390">
+                  android:layout_marginLeft="10dp"
+                  android:layout_marginRight="10dp">
 
         <ImageButton
-            android:layout_height="fill_parent"
-            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@+id/share"
-            android:background="#007390"
-            android:src="@drawable/share"
-            />
+            android:layout_alignParentRight="true"
+            android:background="#ffffff"
+            android:src="@drawable/share_button"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="70dp"
+            android:scaleType="center"
+            android:layout_gravity="center_vertical"
+            android:layout_marginTop="13dp"/>
 
-     </LinearLayout>
+        <ImageButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/favorite"
+                android:layout_alignParentRight="true"
+                android:background="#ffffff"
+                android:src="@drawable/fav_off"
+                android:scaleType="center"
+                android:adjustViewBounds="false"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="13dp"
+                android:layout_marginRight="20dp"/>
+
+     </RelativeLayout>
 
 
     </LinearLayout>

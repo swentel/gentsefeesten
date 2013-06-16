@@ -27,6 +27,10 @@ public class Menu extends Activity {
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
         manageUpdates.setId(2);
         manageUpdates.setOnClickListener(actionMenu);
+
+        TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
+        goAbout.setId(3);
+        goAbout.setOnClickListener(actionMenu);
     }
 
     /**
@@ -42,6 +46,10 @@ public class Menu extends Activity {
             case 2:
                 Intent manageUpdates = new Intent(getBaseContext(), ManageUpdate.class);
                 startActivity(manageUpdates);
+                break;
+            case 3:
+                Intent about = new Intent(getBaseContext(), About.class);
+                startActivity(about);
                 break;
         }
         }

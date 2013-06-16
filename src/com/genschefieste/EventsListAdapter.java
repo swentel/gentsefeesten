@@ -52,6 +52,7 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             // Hour.
             TextView th = (TextView) convertView.findViewById(R.id.event_hour);
             String hour = event.getStartHour();
+            // @todo set 'Whole day' in case there's no start hour.
             th.setText(hour);
 
             // Title.
@@ -63,8 +64,10 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             ImageView i = (ImageView) convertView.findViewById(R.id.event_favorite);
             if (event.getFavorite() == 1) {
                 i.setImageResource(R.drawable.fav_on);
+                i.setScaleType(ImageView.ScaleType.CENTER);
             } else {
                 i.setImageResource(R.drawable.fav_off);
+                i.setScaleType(ImageView.ScaleType.CENTER);
             }
 
         }

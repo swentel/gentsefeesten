@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            android:scrollbars="none"
+            android:fillViewport="true"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#005371">
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:orientation="vertical">
+
+        <include layout="@layout/header"></include>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:weightSum="1.0"
+                      android:orientation="horizontal"
+                      android:layout_marginTop="10dp"
+                      android:layout_marginBottom="10dp">
+
+            <TextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/about_title"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:textColor="#fceb00"
+                    android:textSize="20sp"
+                    android:text="@string/about_title"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:paddingTop="2dp"
+                    android:paddingBottom="2dp"
+                    android:gravity="left">
+            </TextView>
+
+        </LinearLayout>
+
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                      android:layout_width="fill_parent"
+                      android:layout_height="wrap_content"
+                      android:weightSum="1.0"
+                      android:orientation="vertical"
+                      android:background="#005371">
+
+            <TextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="fill_parent"
+                    android:id="@+id/about_info"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+                    android:background="#ffffff"
+                    android:gravity="left"
+                    android:textColor="#00394f"
+                    android:textSize="15dp"
+                    android:padding="10dp">
+
+            </TextView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</ScrollView>

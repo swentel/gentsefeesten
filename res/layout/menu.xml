@@ -38,7 +38,8 @@
                 android:textColor="#73b5c1"
                 android:text="@string/menu_home"
                 android:gravity="bottom"
-                android:layout_gravity="bottom"/>
+                android:layout_gravity="bottom"
+                android:textSize="15dp"/>
 
         </TableRow>
 
@@ -52,7 +53,7 @@
         <TableRow
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:paddingTop="10dp"
-                android:paddingBottom="3dp"
+                android:paddingBottom="5dp"
                 android:id="@+id/menu_favorites">
 
             <ImageView
@@ -62,11 +63,11 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="10dp"
+                android:layout_marginLeft="7dp"
                 android:textColor="#73b5c1"
                 android:text="@string/menu_favorites"
                 android:layout_gravity="bottom"
-                    />
+                android:textSize="15dp"/>
 
         </TableRow>
 
@@ -80,7 +81,7 @@
         <TableRow
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:paddingTop="10dp"
-                android:paddingBottom="3dp"
+                android:paddingBottom="5dp"
                 >
 
             <ImageView
@@ -90,11 +91,12 @@
             <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="7dp"
                     android:textColor="#73b5c1"
                     android:text="@string/menu_program"
                     android:gravity="center_vertical"
-                    android:layout_gravity="bottom"/>
+                    android:layout_gravity="bottom"
+                    android:textSize="15dp"/>
 
         </TableRow>
 
@@ -109,8 +111,11 @@
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:background="#003a48"
                 android:paddingTop="10dp"
-                android:paddingBottom="3dp"
-                android:id="@+id/theme">
+                android:paddingBottom="5dp"
+                android:id="@+id/theme"
+                android:layout_gravity="bottom"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content">
 
             <TextView
                     android:layout_width="fill_parent"
@@ -118,7 +123,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_marginBottom="4dp"
                     android:textColor="#73b5c1"
-                    android:text="@string/theme"
+                    android:text="@string/menu_theme"
                     android:gravity="center_vertical"
                     android:layout_gravity="bottom"/>
 
@@ -151,17 +156,18 @@
             <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="7dp"
                     android:textColor="#73b5c1"
                     android:text="@string/menu_settings"
                     android:gravity="bottom"
-                    android:layout_gravity="bottom"/>
+                    android:layout_gravity="bottom"
+                    android:textSize="15dp"/>
         </TableRow>
 
         <TableRow
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:paddingTop="10dp"
-                android:paddingBottom="3dp"
+                android:paddingBottom="5dp"
                 android:id="@+id/menu_about">
 
             <ImageView
@@ -171,11 +177,12 @@
             <TextView
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="7dp"
                     android:textColor="#73b5c1"
                     android:text="@string/menu_about"
                     android:gravity="bottom"
-                    android:layout_gravity="bottom"/>
+                    android:layout_gravity="bottom"
+                    android:textSize="15dp"/>
         </TableRow>
     </TableLayout>
 </LinearLayout>

@@ -3,31 +3,32 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar">#GF13</string>
-    <string name="go_to_menu">Naar het menu</string>
-    <string name="go_to_favorites">Uw favorieten</string>
+    <string name="menu_bar_title">#GF13</string>
+    <string name="menu_bar_go_to_menu">Naar het menu</string>
+    <string name="menu_bar_go_to_favorites">Uw favorieten</string>
 
     <!-- Home screen -->
-    <string name="upcoming">KOMENDE ACTIVITEITEN</string>
-    <string name="everywhere">OVERAL</string>
+    <string name="upcoming">Komende activiteiten</string>
 
     <!-- Menu and search screen -->
     <string name="menu_home">Home</string>
     <string name="menu_favorites">Mijn favorieten</string>
     <string name="menu_program">Programma</string>
-    <string name="theme">Thema</string>
+    <string name="menu_theme">Thema</string>
     <string name="menu_settings">Settings</string>
-    <string name="menu_about">Over deze app</string>
+    <string name="menu_about">Over deze applicatie</string>
+
+    <!-- About -->
+    <string name="about_title">Over deze applicatie</string>
+    <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie.<br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@Swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - webdesigner<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Manage updates -->
-    <string name="manage_updates">Data updates</string>
     <string name="updating">Updating ...</string>
-    <string name="please_wait">Even geduld</string>
+    <string name="please_wait">Even geduld, dit kan tot twee minuten duren</string>
 
     <!-- Search -->
     <string name="search_hint">Zoek evenement</string>
     <string name="search_go">Go</string>
-    <string name="searching">Aan het zoeken ...</string>
 
     <!-- Event detail -->
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
