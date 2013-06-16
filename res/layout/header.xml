@@ -1,45 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="45dp"
     android:weightSum="1.0"
     android:orientation="horizontal"
-    android:background="#007390">>
+    android:background="#007390">
 
     <ImageButton
-            android:id="@+id/go_to_menu"
-            android:layout_width="0dp"
-            android:layout_weight=".25"
-            android:layout_height="wrap_content"
-            android:background="@null"
-            android:layout_gravity="center"
-            android:contentDescription="@string/go_to_menu"
-            android:src="@drawable/go_to_menu"
-            android:scaleType="centerInside"/>
+        android:id="@+id/go_to_menu"
+        android:layout_width="0dp"
+        android:layout_weight=".25"
+        android:layout_height="wrap_content"
+        android:background="@null"
+        android:layout_gravity="center"
+        android:contentDescription="@string/go_to_menu"
+        android:src="@drawable/go_to_menu"
+        android:scaleType="centerInside"/>
 
     <TextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="0dp"
-            android:layout_weight=".50"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:textColor="#f9ffff"
-            android:textSize="24dp"
-            android:text="@string/menu_bar">
-
-    </TextView>
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="0dp"
+        android:layout_weight=".50"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:textColor="#f9ffff"
+        android:textSize="24sp"
+        android:text="@string/menu_bar"/>
 
     <ImageButton
-            android:id="@+id/go_to_favorites"
-            android:layout_width="0dp"
-            android:layout_weight=".30"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:background="@null"
-            android:contentDescription="@string/go_to_menu"
-            android:src="@drawable/fav"
-            android:scaleType="centerInside"
-            android:adjustViewBounds="false"/>
+        android:id="@+id/go_to_favorites"
+        android:layout_width="0dp"
+        android:layout_weight=".30"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@null"
+        android:contentDescription="@string/go_to_favorites"
+        android:src="@drawable/go_to_fav"
+        android:scaleType="centerInside"
+        android:adjustViewBounds="false"/>
+
 </LinearLayout>
