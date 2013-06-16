@@ -6,7 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
 
-public class Menu extends Activity {
+public class MenuList extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -36,24 +36,24 @@ public class Menu extends Activity {
      */
     private final View.OnClickListener actionMenu = new View.OnClickListener() {
         public void onClick(View v) {
-            switch (v.getId()) {
-                case 1:
-                    Intent goHome = new Intent(getBaseContext(), Main.class);
-                    startActivity(goHome);
-                    break;
-                case 2:
-                    Intent goFavorites = new Intent(getBaseContext(), Favorites.class);
-                    startActivity(goFavorites);
-                    break;
-                case 3:
-                    Intent manageUpdates = new Intent(getBaseContext(), ManageUpdate.class);
-                    startActivity(manageUpdates);
-                    break;
-                case 4:
-                    Intent about = new Intent(getBaseContext(), About.class);
-                    startActivity(about);
-                    break;
-            }
+        switch (v.getId()) {
+            case 1:
+                Intent goHome = new Intent(getBaseContext(), Main.class);
+                startActivity(goHome);
+                break;
+            case 2:
+                Intent goFavorites = new Intent(getBaseContext(), Favorites.class);
+                startActivity(goFavorites);
+                break;
+            case 3:
+                Intent manageUpdates = new Intent(getBaseContext(), ManageUpdate.class);
+                startActivity(manageUpdates);
+                break;
+            case 4:
+                Intent about = new Intent(getBaseContext(), About.class);
+                startActivity(about);
+                break;
+        }
         }
     };
 

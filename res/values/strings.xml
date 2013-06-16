@@ -4,7 +4,7 @@
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
     <string name="menu_bar_title">#GF13</string>
-    <string name="menu_bar_go_to_menu">Naar het menu</string>
+    <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Uw favorieten</string>
 
     <!-- Home activity -->
