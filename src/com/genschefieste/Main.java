@@ -1,29 +1,22 @@
 package com.genschefieste;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
-import android.widget.ImageButton;
 import android.widget.ListView;
 
 import java.util.List;
 
-public class Main extends Activity {
+public class Main extends baseActivity {
 
     public List<Event> events;
     public int eventId = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.main);
-
-        // Check for the first download. If not redirect to 'Manage data'
-        // screen so the initial download can begin.
-        // TODO
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
@@ -47,24 +40,7 @@ public class Main extends Activity {
         EventsListAdapter adapter = new EventsListAdapter(this, events);
         list.setAdapter(adapter);
 
-        // Add listener on menu button.
-        ImageButton menu = (ImageButton) findViewById(R.id.go_to_menu);
-        menu.setId(1);
-        menu.setOnClickListener(actionMain);
+        super.onCreate(savedInstanceState);
     }
-
-    /**
-     * Button listener.
-     */
-    private final View.OnClickListener actionMain = new View.OnClickListener() {
-        public void onClick(View v) {
-        switch (v.getId()) {
-            case 1:
-                Intent menu = new Intent(getBaseContext(), Menu.class);
-                startActivity(menu);
-                break;
-        }
-        }
-    };
 
 }

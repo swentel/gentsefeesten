@@ -1,20 +1,18 @@
 package com.genschefieste;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
-public class EventDetail extends Activity {
+public class EventDetail extends baseActivity {
 
     private int eventId;
     private Event event;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.event_detail);
 
         // Get event.
@@ -38,6 +36,8 @@ public class EventDetail extends Activity {
         // Add listener on share button.
         ImageButton menu = (ImageButton) findViewById(R.id.share);
         menu.setOnClickListener(actionShare);
+
+        super.onCreate(savedInstanceState);
     }
 
     /**
