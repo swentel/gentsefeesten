@@ -36,7 +36,7 @@ public class SimpleListAdapter extends ArrayAdapter implements OnClickListener {
 
         if ((position%2) == 0) {
             LinearLayout row = (LinearLayout) convertView.findViewById(R.id.single_row);
-            row.setBackgroundColor(Color.parseColor("#f5f5f5"));
+            row.setBackgroundColor(Color.parseColor("#f6f6f6"));
         }
 
         TextView textView = (TextView) convertView.findViewById(R.id.single_row_item);

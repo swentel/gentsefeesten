@@ -53,7 +53,7 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
 
             if ((position%2) == 0) {
                 LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
-                row.setBackgroundColor(Color.parseColor("#f5f5f5"));
+                row.setBackgroundColor(Color.parseColor("#f6f6f6"));
             }
 
             // Hour.
