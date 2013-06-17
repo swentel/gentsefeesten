@@ -29,17 +29,18 @@
 
             <ImageView
                 android:src="@drawable/menu_home"
-                android:contentDescription="@string/menu_home"/>
+                android:contentDescription="@string/menu_home"
+                    />
 
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="9dp"
                 android:textColor="#73b5c1"
                 android:text="@string/menu_home"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -63,11 +64,11 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="9dp"
                 android:textColor="#73b5c1"
                 android:text="@string/menu_favorites"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -90,12 +91,12 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="9dp"
                 android:textColor="#73b5c1"
                 android:text="@string/menu_program"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -119,13 +120,13 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
+                android:layout_marginLeft="23dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_categories"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -149,13 +150,13 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
+                android:layout_marginLeft="23dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_free"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -186,7 +187,7 @@
                 android:text="@string/menu_festival"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
         </TableRow>
 
         <View
@@ -211,13 +212,13 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
+                android:layout_marginLeft="23dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_locations"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -241,12 +242,12 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="9dp"
                 android:textColor="#73b5c1"
                 android:text="@string/menu_practical"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -270,13 +271,13 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
+                android:layout_marginLeft="23dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_parking"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -300,12 +301,12 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="9dp"
                 android:textColor="#73b5c1"
                 android:text="@string/menu_settings"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
@@ -329,12 +330,12 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="7dp"
+                android:layout_marginLeft="9dp"
                 android:textColor="#73b5c1"
                 android:text="@string/menu_about"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="15sp"/>
+                android:textSize="17sp"/>
 
         </TableRow>
 
