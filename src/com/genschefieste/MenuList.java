@@ -27,11 +27,11 @@ public class MenuList extends Activity {
         goCategories.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(3);
+        manageUpdates.setId(4);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(4);
+        goAbout.setId(5);
         goAbout.setOnClickListener(actionMenu);
     }
 
