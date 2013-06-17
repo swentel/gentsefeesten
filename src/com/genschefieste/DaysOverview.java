@@ -33,13 +33,14 @@ public class DaysOverview extends BaseActivity {
                     case 1:
                     case 3:
                     case 4:
+                        // TODO pass date.
                         intent = new Intent(getBaseContext(), TypeOverview.class);
                         intent.putExtra("type", type);
                         break;
-                    /*case 2:
-                        intent = new Intent(getBaseContext(), ResultFacet.class);
+                    case 2:
+                        intent = new Intent(getBaseContext(), EventResultFacetList.class);
                         intent.putExtra("type", type);
-                        break;*/
+                        break;
                 }
 
                 startActivity(intent);

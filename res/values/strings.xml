@@ -19,6 +19,7 @@
     <string name="menu_program">Programma</string>
     <string name="menu_categories">Categorieën</string>
     <string name="menu_free">Gratis</string>
+    <!-- Note: festival not yet implemented -->
     <string name="menu_festival">Festivals</string>
     <string name="menu_locations">Lokaties</string>
     <string name="menu_practical">Praktisch</string>
@@ -42,7 +43,8 @@
     <!-- Program activities -->
     <string name="select_a_day">Kies een dag</string>
     <string name="select_a_category">Kies een categorie</string>
-    <string name="select_a_location">Kies een location</string>
+    <string name="select_a_location">Kies een lokatie</string>
+    <!-- Note: festival not yet implemented -->
     <string name="select_a_festival">Kies een festival</string>
 
     <!-- Event detail activity -->
