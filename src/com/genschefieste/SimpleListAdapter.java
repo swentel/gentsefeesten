@@ -11,16 +11,16 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * Day list adapter.
+ * Simple list adapter.
  */
-public class DayListAdapter extends ArrayAdapter implements OnClickListener {
+public class SimpleListAdapter extends ArrayAdapter implements OnClickListener {
     private final Context context;
-    private final String[] days;
+    private final String[] values;
 
-    public DayListAdapter(Context context, String[] days) {
-        super(context, R.layout.day_list_item, days);
+    public SimpleListAdapter(Context context, String[] values) {
+        super(context, R.layout.list_item, values);
         this.context = context;
-        this.days = days;
+        this.values = values;
     }
 
     public void onClick(View view) {
@@ -31,16 +31,16 @@ public class DayListAdapter extends ArrayAdapter implements OnClickListener {
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.day_list_item, null);
+            convertView = inflater.inflate(R.layout.list_item, null);
         }
 
         if ((position%2) == 0) {
-            LinearLayout row = (LinearLayout) convertView.findViewById(R.id.day_row);
+            LinearLayout row = (LinearLayout) convertView.findViewById(R.id.single_row);
             row.setBackgroundColor(Color.parseColor("#f5f5f5"));
         }
 
-        TextView textView = (TextView) convertView.findViewById(R.id.day);
-        textView.setText(days[position]);
+        TextView textView = (TextView) convertView.findViewById(R.id.single_row_item);
+        textView.setText(values[position]);
 
         return convertView;
     }

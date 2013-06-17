@@ -15,9 +15,9 @@ public class DaysOverview extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.day_list);
 
-        // Get next screen.
+        // Get type.
         Bundle extras = getIntent().getExtras();
-        type = extras.getInt("next_screen");
+        type = extras.getInt("type");
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
@@ -29,6 +29,7 @@ public class DaysOverview extends BaseActivity {
 
                 switch (type) {
                     // Goes to typeOverview for categories, festivals and locations.
+                    // festivals (4) is not implemented yet.
                     case 1:
                     case 3:
                     case 4:
@@ -36,7 +37,7 @@ public class DaysOverview extends BaseActivity {
                         intent.putExtra("type", type);
                         break;
                     /*case 2:
-                        intent = new Intent(getBaseContext(), Result.class);
+                        intent = new Intent(getBaseContext(), ResultFacet.class);
                         intent.putExtra("type", type);
                         break;*/
                 }
@@ -47,7 +48,7 @@ public class DaysOverview extends BaseActivity {
 
         // Fire the list adapter.
         String[] date_string_resources = getResources().getStringArray(R.array.dates_full);
-        DayListAdapter adapter = new DayListAdapter(this, date_string_resources);
+        SimpleListAdapter adapter = new SimpleListAdapter(this, date_string_resources);
         list.setAdapter(adapter);
 
         super.onCreate(savedInstanceState);

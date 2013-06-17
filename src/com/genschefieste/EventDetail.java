@@ -61,6 +61,7 @@ public class EventDetail extends BaseActivity {
         price.setText(price_text);
 
         // Set description.
+        // TODO check html/utf-8 stuff in descriptions
         TextView description = (TextView) findViewById(R.id.event_description);
         description.setText(event.getDescription());
 
@@ -119,6 +120,8 @@ public class EventDetail extends BaseActivity {
             DatabaseHandler db = new DatabaseHandler(getApplicationContext());
             db.saveFavorite(setFavorite, event.getId());
 
+            // Update event in memory as well.
+            event.setFavorite(setFavorite);
         }
     };
 }
