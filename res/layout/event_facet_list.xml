@@ -17,19 +17,36 @@
         android:background="#005371"
         android:layout_marginTop="10dp">
 
-        <TextView
+        <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:id="@+id/day_row"
-            android:textColor="#00394f"
-            android:textSize="20sp" />
+            android:id="@+id/day_change"
+            android:layout_height="wrap_content">
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:id="@+id/day_row"
+                android:textColor="#00394f"
+                android:textSize="20sp" />
+
+            <ImageButton
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:src="@drawable/list"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="11dp"/>
+
+        </RelativeLayout>
 
         <View
             android:layout_width="fill_parent"
@@ -37,19 +54,36 @@
             android:background="#005768"
             android:visibility="visible"/>
 
-        <TextView
+        <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
-            android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:id="@+id/type_row"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:textColor="#00394f"
-            android:textSize="20sp" />
+            android:id="@+id/type_change"
+            android:layout_height="wrap_content">
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:id="@+id/type_row"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:textColor="#00394f"
+                android:textSize="20sp" />
+
+            <ImageButton
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="wrap_content"
+                android:src="@drawable/list"
+                android:layout_height="wrap_content"
+                android:background="@null"
+                android:layout_alignParentRight="true"
+                android:layout_marginRight="20dp"
+                android:layout_marginTop="11dp"/>
+
+        </RelativeLayout>
 
     </LinearLayout>
 

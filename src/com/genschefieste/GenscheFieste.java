@@ -9,10 +9,13 @@ public class GenscheFieste extends Application {
     // Set to true to get debug statements. Filter on 'DebugApp'.
     public static boolean debugMode = true;
 
-    // URI to the services. In theory we could import 2 other services which describe
+    // URI to the event services. In theory we could import 2 other services which describe
     // the locations and categories, however, we have made those available in the resources
     // so they are also easily translatable.
     public static String eventUrl = "";
+
+    // Parking URI.
+    public static String parkingUrl = "http://datatank.gent.be/Mobiliteitsbedrijf/Parkings11.json";
 
     // Number of events. Note that this doesn't have to be the exact number, it's just
     // go give a nicer indiction of the progress dialog.

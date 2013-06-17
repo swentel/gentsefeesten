@@ -36,9 +36,12 @@
     <string name="updating">Data ophalen</string>
     <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
 
-    <!-- Search -->
+    <!-- Search and facet -->
     <string name="search_hint">Zoek evenement</string>
     <string name="search_go">Go</string>
+    <string name="change_day">Verander dag</string>
+    <string name="change_category">Verander categorie</string>
+    <string name="change_location">Verander locatie</string>
 
     <!-- Program activities -->
     <string name="select_a_day">Kies een dag</string>

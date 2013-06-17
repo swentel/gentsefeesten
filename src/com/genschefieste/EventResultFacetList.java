@@ -1,16 +1,20 @@
 package com.genschefieste;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import java.util.List;
 
-public class EventResultFacetList extends BaseActivity {
+public class EventResultFacetList extends BaseActivity implements View.OnClickListener {
 
     public int facetId;
     public int typeIndex;
@@ -22,15 +26,31 @@ public class EventResultFacetList extends BaseActivity {
     public String date_text;
     public String type_text;
 
+    private RelativeLayout dayRow;
+    private RelativeLayout typeRow;
+    private Context mContext;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.event_facet_list);
+
+        mContext = this;
 
         // Get type and date.
         Bundle extras = getIntent().getExtras();
         facetId = extras.getInt("facetId");
         typeIndex = extras.getInt("typeIndex");
         dateIndex = extras.getInt("dateIndex");
+
+        // Day dialog changer.
+        dayRow = (RelativeLayout) findViewById(R.id.day_change);
+        dayRow.setOnClickListener(this);
+
+        // Type dialog changer.
+        if (facetId != 2) {
+            typeRow = (RelativeLayout) findViewById(R.id.type_change);
+            typeRow.setOnClickListener(this);
+        }
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
@@ -101,5 +121,73 @@ public class EventResultFacetList extends BaseActivity {
         list.setAdapter(adapter);
 
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.equals(dayRow)) {
+            showSwitchDayDialog();
+        }
+        if (view.equals(typeRow)) {
+            showSwitchTypeDialog();
+        }
+    }
+
+    /**
+     * Show switch day dialog.
+     */
+    private void showSwitchDayDialog() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setTitle(getString(R.string.change_day));
+
+        final String[] choiceList = getResources().getStringArray(R.array.dates_full);
+        int selected = dateIndex;
+
+        builder.setSingleChoiceItems(choiceList, selected, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int newDateIndex) {
+                dialog.dismiss();
+                intent = new Intent(mContext, EventResultFacetList.class);
+                intent.putExtra("facetId", facetId);
+                intent.putExtra("typeIndex", typeIndex);
+                intent.putExtra("dateIndex", newDateIndex);
+                startActivity(intent);
+            }
+        });
+        AlertDialog changeDay = builder.create();
+        changeDay.show();
+    }
+
+    /**
+     * Show switch type dialog.
+     */
+    private void showSwitchTypeDialog() {
+        String[] choiceList;
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+
+        int selected = typeIndex;
+
+        if (facetId == 1) {
+            builder.setTitle(getString(R.string.change_category));
+            choiceList = getResources().getStringArray(R.array.category_strings);
+        }
+        else {
+            builder.setTitle(getString(R.string.change_location));
+            choiceList = getResources().getStringArray(R.array.location_strings);
+        }
+
+        builder.setSingleChoiceItems(choiceList, selected, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int newTypeIndex) {
+                dialog.dismiss();
+                intent = new Intent(mContext, EventResultFacetList.class);
+                intent.putExtra("facetId", facetId);
+                intent.putExtra("typeIndex", newTypeIndex);
+                intent.putExtra("dateIndex", dateIndex);
+                startActivity(intent);
+            }
+        });
+        AlertDialog changeType = builder.create();
+        changeType.show();
     }
 }
