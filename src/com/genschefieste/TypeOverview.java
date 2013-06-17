@@ -9,7 +9,8 @@ import android.widget.TextView;
 
 public class TypeOverview extends BaseActivity {
 
-    public int type;
+    public int facetId;
+    public int dateIndex;
     public Intent intent;
     public String typeTitle;
     public String[] string_resources;
@@ -20,7 +21,8 @@ public class TypeOverview extends BaseActivity {
 
         // Get type and date.
         Bundle extras = getIntent().getExtras();
-        type = extras.getInt("type");
+        facetId = extras.getInt("facetId");
+        dateIndex = extras.getInt("dateIndex");
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
@@ -29,15 +31,15 @@ public class TypeOverview extends BaseActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 intent = new Intent(getBaseContext(), EventResultFacetList.class);
-                // TODO pass typeId.
-                // TODO pass date.
-                intent.putExtra("type", type);
+                intent.putExtra("facetId", facetId);
+                intent.putExtra("typeIndex", position);
+                intent.putExtra("dateIndex", dateIndex);
                 startActivity(intent);
             }
         });
 
-        // Set type title.
-        switch (type) {
+        // Set facet type title.
+        switch (facetId) {
             case 1:
                 string_resources = getResources().getStringArray(R.array.category_strings);
                 typeTitle = getString(R.string.select_a_category);

@@ -34,6 +34,7 @@ public class SimpleListAdapter extends ArrayAdapter implements OnClickListener {
             convertView = inflater.inflate(R.layout.list_item, null);
         }
 
+        // TODO check why colors don't switch anymore depending position.
         if ((position%2) == 0) {
             LinearLayout row = (LinearLayout) convertView.findViewById(R.id.single_row);
             row.setBackgroundColor(Color.parseColor("#f6f6f6"));

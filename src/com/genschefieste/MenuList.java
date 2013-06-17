@@ -62,19 +62,19 @@ public class MenuList extends Activity {
             case 3:
                 // Goes to days first, then typeOverview passing categories.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
-                goDaysOverview.putExtra("type", 1);
+                goDaysOverview.putExtra("facetId", 1);
                 startActivity(goDaysOverview);
                 break;
             case 4:
                 // Goes to days first, then results.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
-                goDaysOverview.putExtra("type", 2);
+                goDaysOverview.putExtra("facetId", 2);
                 startActivity(goDaysOverview);
                 break;
             case 5:
                 // Goes to days first, then typeOverview passing locations.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
-                goDaysOverview.putExtra("type", 3);
+                goDaysOverview.putExtra("facetId", 3);
                 startActivity(goDaysOverview);
                 break;
             case 6:

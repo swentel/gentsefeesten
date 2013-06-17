@@ -8,7 +8,7 @@ import android.widget.ListView;
 
 public class DaysOverview extends BaseActivity {
 
-    public int type;
+    public int facetId;
     Intent intent;
 
     @Override
@@ -17,7 +17,7 @@ public class DaysOverview extends BaseActivity {
 
         // Get type.
         Bundle extras = getIntent().getExtras();
-        type = extras.getInt("type");
+        facetId = extras.getInt("facetId");
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
@@ -27,19 +27,22 @@ public class DaysOverview extends BaseActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
-                switch (type) {
+                switch (facetId) {
                     // Goes to typeOverview for categories, festivals and locations.
                     // festivals (4) is not implemented yet.
                     case 1:
                     case 3:
                     case 4:
-                        // TODO pass date.
                         intent = new Intent(getBaseContext(), TypeOverview.class);
-                        intent.putExtra("type", type);
+                        intent.putExtra("dateIndex", position);
+                        intent.putExtra("facetId", facetId);
                         break;
                     case 2:
                         intent = new Intent(getBaseContext(), EventResultFacetList.class);
-                        intent.putExtra("type", type);
+                        intent.putExtra("facetId", facetId);
+                        intent.putExtra("dateIndex", position);
+                        // Pass in empty typeIndex.
+                        intent.putExtra("typeIndex", "");
                         break;
                 }
 

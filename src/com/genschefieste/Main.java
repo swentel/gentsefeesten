@@ -21,9 +21,11 @@ public class Main extends BaseActivity {
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
 
-        // Get all events.
+        // Get main events.
         DatabaseHandler db = new DatabaseHandler(this);
-        events = db.getEvents("");
+        String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
+        selectQuery += " ORDER BY random() limit 30";
+        events = db.getEvents(selectQuery);
 
         // Make every item clickable.
         list.setClickable(true);

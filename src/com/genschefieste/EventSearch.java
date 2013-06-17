@@ -35,9 +35,16 @@ public class EventSearch extends Activity {
             // Get the list view.
             ListView list = (ListView) findViewById(R.id.list);
 
-            // Get all events.
+            // Get events.
+            // TODO add sorting
             DatabaseHandler db = new DatabaseHandler(this);
-            events = db.getEvents(query);
+            String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
+            if (query.length() > 0) {
+                selectQuery += " AND (" + DatabaseHandler.KEY_TITLE + " LIKE '%" + query + "%'";
+                selectQuery += " OR " + DatabaseHandler.KEY_DESCRIPTION + " LIKE '%" + query + "%') ";
+            }
+            selectQuery += " ORDER BY random() limit 30";
+            events = db.getEvents(selectQuery);
 
             // Make every item clickable.
             list.setClickable(true);

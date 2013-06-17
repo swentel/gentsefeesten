@@ -18,29 +18,29 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "GenscheFieste";
 
     // Events table name.
-    private static final String TABLE_EVENTS = "events";
+    public static final String TABLE_EVENTS = "events";
 
     // Events table column names.
-    private static final String KEY_ID = "id";
-    private static final String KEY_TITLE = "name";
-    private static final String EXTERNAL_ID = "external_id";
-    private static final String KEY_FREE = "price_free";
-    private static final String KEY_PRICE = "price";
-    private static final String KEY_PRICE_PS = "price_vvk";
-    private static final String KEY_DESCRIPTION = "description";
-    private static final String KEY_DATE = "date";
-    private static final String KEY_DATE_PERIOD = "date_period";
-    private static final String KEY_START_HOUR = "hour_start";
-    private static final String KEY_DATE_SORT = "date_sort";
-    private static final String KEY_CAT_NAME = "cat_name";
-    private static final String KEY_CAT_ID = "cat_id";
-    private static final String KEY_LOC_ID = "loc_id";
-    private static final String KEY_LOC_NAME = "loc_name";
-    private static final String KEY_LAT = "latitude";
-    private static final String KEY_LONG = "longitude";
-    private static final String KEY_DISCOUNT = "discount";
-    private static final String KEY_FESTIVAL = "festival";
-    private static final String KEY_FAVORITE = "favorite";
+    public static final String KEY_ID = "id";
+    public static final String KEY_TITLE = "name";
+    public static final String EXTERNAL_ID = "external_id";
+    public static final String KEY_FREE = "price_free";
+    public static final String KEY_PRICE = "price";
+    public static final String KEY_PRICE_PS = "price_vvk";
+    public static final String KEY_DESCRIPTION = "description";
+    public static final String KEY_DATE = "date";
+    public static final String KEY_DATE_PERIOD = "date_period";
+    public static final String KEY_START_HOUR = "hour_start";
+    public static final String KEY_DATE_SORT = "date_sort";
+    public static final String KEY_CAT_NAME = "cat_name";
+    public static final String KEY_CAT_ID = "cat_id";
+    public static final String KEY_LOC_ID = "loc_id";
+    public static final String KEY_LOC_NAME = "loc_name";
+    public static final String KEY_LAT = "latitude";
+    public static final String KEY_LONG = "longitude";
+    public static final String KEY_DISCOUNT = "discount";
+    public static final String KEY_FESTIVAL = "festival";
+    public static final String KEY_FAVORITE = "favorite";
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -85,6 +85,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ContentValues values = new ContentValues();
         values.put(KEY_TITLE, event.getTitle());
         values.put(EXTERNAL_ID, event.getExternalId());
+        values.put(KEY_FREE, event.getFree());
         values.put(KEY_PRICE, event.getPrice());
         values.put(KEY_PRICE_PS, event.getPricePresale());
         values.put(KEY_DESCRIPTION, event.getDescription());
@@ -115,17 +116,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Get all events.
-    public List<Event> getEvents(String query) {
+    // Get events.
+    public List<Event> getEvents(String selectQuery) {
         List<Event> eventList = new ArrayList<Event>();
-
-        // Select All Query.
-        String selectQuery = "SELECT * FROM " + TABLE_EVENTS;
-        if (query.length() > 0) {
-            selectQuery += " AND (" + KEY_TITLE + " LIKE '%" + query + "%'";
-            selectQuery += " OR " + KEY_DESCRIPTION + " LIKE '%" + query + "%') ";
-        }
-        selectQuery += " ORDER BY random() limit 30";
 
         SQLiteDatabase db = this.getWritableDatabase();
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -154,55 +147,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getString(17),
                     cursor.getInt(18),
                     cursor.getInt(19)
-                );
-
-                // Adding event to list.
-                eventList.add(event);
-            }
-            while (cursor.moveToNext());
-        }
-
-        db.close();
-
-        return eventList;
-    }
-
-    // Get favorites.
-    public List<Event> getFavoriteEvents() {
-        List<Event> eventList = new ArrayList<Event>();
-
-        // Query
-        // TODO add sort
-        String selectQuery = "SELECT * FROM " + TABLE_EVENTS + " WHERE favorite = 1";
-        selectQuery += " ORDER BY id ASC limit 30";
-
-        SQLiteDatabase db = this.getWritableDatabase();
-        Cursor cursor = db.rawQuery(selectQuery, null);
-
-        // Loop through all rows and add to list.
-        if (cursor.moveToFirst()) {
-            do {
-                Event event = new Event(
-                        cursor.getInt(0),
-                        cursor.getString(1),
-                        cursor.getInt(2),
-                        cursor.getInt(3),
-                        cursor.getString(4),
-                        cursor.getString(5),
-                        cursor.getString(6),
-                        cursor.getInt(7),
-                        cursor.getString(8),
-                        cursor.getString(9),
-                        cursor.getInt(10),
-                        cursor.getString(11),
-                        cursor.getInt(12),
-                        cursor.getInt(13),
-                        cursor.getString(14),
-                        cursor.getString(15),
-                        cursor.getString(16),
-                        cursor.getString(17),
-                        cursor.getInt(18),
-                        cursor.getInt(19)
                 );
 
                 // Adding event to list.

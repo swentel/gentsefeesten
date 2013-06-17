@@ -51,6 +51,7 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
         Event event = events.get(position);
         if (event != null) {
 
+            // TODO check why colors don't switch anymore depending position.
             if ((position%2) == 0) {
                 LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
                 row.setBackgroundColor(Color.parseColor("#f6f6f6"));
@@ -59,7 +60,9 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             // Hour.
             TextView th = (TextView) convertView.findViewById(R.id.event_hour);
             String hour = event.getStartHour();
-            // @todo set 'Whole day' in case there's no start hour.
+            if (hour.length() == 0) {
+                hour = context.getString(R.string.event_whole_day);
+            }
             th.setText(hour);
 
             // Title.

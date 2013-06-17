@@ -42,6 +42,7 @@
         <activity android:name=".TypeOverview" />
         <activity android:name=".EventDetail" />
         <activity android:name=".Favorites" />
+        <activity android:name=".EventResultFacetList" />
         <activity android:name=".About" />
         <activity android:name=".ManageUpdate" />
 

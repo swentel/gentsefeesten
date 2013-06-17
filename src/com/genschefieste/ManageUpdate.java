@@ -49,7 +49,9 @@ public class ManageUpdate extends Activity {
         public void onClick(View v) {
         switch (v.getId()) {
             case 1:
-                /*if (!common.appIsOnline()) {
+                /*
+                // TODO check if we are online
+                if (!common.appIsOnline()) {
                     common.isOffline(Main.this);
                     return;
                 }*/
@@ -190,8 +192,7 @@ public class ManageUpdate extends Activity {
 
         @Override
         protected void onPostExecute(String sResponse) {
-            // TODO rename this method.
-            searchPostExecute(getApplicationContext(), dialog);
+            closeDialog( dialog);
         }
     }
 
@@ -215,7 +216,7 @@ public class ManageUpdate extends Activity {
         }
     }
 
-    public static void searchPostExecute(Context context, Dialog dialog) {
+    public static void closeDialog(Dialog dialog) {
         // Close dialog.
         if (dialog.isShowing()) {
             dialog.dismiss();

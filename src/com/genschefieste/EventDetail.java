@@ -33,9 +33,8 @@ public class EventDetail extends BaseActivity {
         location.setText(event.getLocation());
 
         // Set date.
-        // @todo set 'Whole day' in case there's no start hour.
         int date_int = event.getDate();
-        String date_text = GenscheFieste.createDate(date_int, getApplicationContext());
+        String date_text = GenscheFieste.getDateFromTimestamp(date_int, getApplicationContext());
         if (date_text.length() > 0) {
             // Period.
             if (event.getDatePeriod().length() > 0) {
@@ -61,9 +60,8 @@ public class EventDetail extends BaseActivity {
         price.setText(price_text);
 
         // Set description.
-        // TODO check html/utf-8 stuff in descriptions
         TextView description = (TextView) findViewById(R.id.event_description);
-        description.setText(event.getDescription());
+        description.setText(event.getDescription().replace("\r", ""));
 
         // Set favorite image.
         ImageView i = (ImageView) findViewById(R.id.favorite);

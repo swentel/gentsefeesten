@@ -51,6 +51,7 @@
     <string name="date_period">Datum</string>
     <string name="event_price">Prijs</string>
     <string name="event_free">Gratis</string>
+    <string name="event_whole_day">Hele dag</string>
     <string name="event_pre_sale">Voorverkoop</string>
     <string name="share_pre_message">#GF13</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>

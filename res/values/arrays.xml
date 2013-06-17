@@ -30,7 +30,6 @@
     <string-array name="location_strings">
         <item>@string/baudeloo</item>
         <item>@string/beverhout</item>
-        <item>@string/baudeloo</item>
         <item>@string/sint_jacobs</item>
         <item>@string/bisdomplein</item>
         <item>@string/emile_braunplein</item>
