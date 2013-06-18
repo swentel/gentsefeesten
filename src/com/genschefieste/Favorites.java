@@ -22,24 +22,24 @@ public class Favorites extends BaseActivity {
 
         // Get your favorites.
         DatabaseHandler db = new DatabaseHandler(this);
-        String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " WHERE favorite = 1";
+        String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
+        selectQuery += " WHERE favorite = 1 ORDER BY " + DatabaseHandler.KEY_DATE + " ASC, " + DatabaseHandler.KEY_DATE_SORT + " ASC";
         events = db.getEvents(selectQuery);
 
         // Make every item clickable.
         list.setClickable(true);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                eventId = events.get(position).getId();
-                intent.putExtra("eventId", eventId);
-                startActivity(intent);
+            Intent intent = new Intent(getBaseContext(), EventDetail.class);
+            eventId = events.get(position).getId();
+            intent.putExtra("eventId", eventId);
+            startActivity(intent);
             }
         });
 
         // Fire the list adapter.
         FavoritesListAdapter adapter = new FavoritesListAdapter(this, events);
         list.setAdapter(adapter);
-
 
         super.onCreate(savedInstanceState);
     }

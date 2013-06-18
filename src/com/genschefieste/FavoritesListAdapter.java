@@ -1,13 +1,11 @@
 package com.genschefieste;
 
 import android.content.Context;
-import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -18,6 +16,8 @@ import java.util.List;
 public class FavoritesListAdapter extends BaseAdapter implements OnClickListener {
     private final Context context;
     private final List<Event> events;
+    private int currentDate = 0;
+    private int eventDate = 0;
 
     public FavoritesListAdapter(Context context, List<Event> events) {
         this.context = context;
@@ -44,23 +44,25 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
 
         if (convertView == null) {
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.event_list_item, null);
+            convertView = inflater.inflate(R.layout.favorite_list_item, null);
         }
 
         Event event = events.get(position);
 
-        // TODO add additional row with the actual date.
-
         if (event != null) {
 
-            // Change color of row.
-            assert convertView != null;
-            LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
-            if ((position % 2 ) == 0) {
-                row.setBackgroundColor(Color.parseColor("#f6f6f6"));
-            }
-            else {
-                row.setBackgroundColor(Color.parseColor("#ffffff"));
+            // Set date row.
+            // TODO recheck layout (lines).
+            eventDate = event.getDate();
+            if (eventDate != currentDate) {
+                String dayText = GenscheFieste.getDateFromTimestamp(eventDate, context);
+                currentDate = eventDate;
+                assert convertView != null;
+                TextView dayRow = (TextView) convertView.findViewById(R.id.day_title);
+                ViewGroup.LayoutParams params = dayRow.getLayoutParams();
+                dayRow.setText(dayText);
+                params.height = 55;
+                dayRow.setLayoutParams(params);
             }
 
             // Hour.
