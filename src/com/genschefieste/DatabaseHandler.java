@@ -104,6 +104,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         values.put(KEY_FESTIVAL, event.getFestival());
         values.put(KEY_FAVORITE, event.getFavorite());
 
+        assert db != null;
         db.insert(TABLE_EVENTS, null, values);
         db.close();
     }
@@ -113,6 +114,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues values = new ContentValues();
         values.put(KEY_FAVORITE, favorite);
+        assert db != null;
         db.update(TABLE_EVENTS, values, KEY_ID + "=" + eventId, null);
         db.close();
     }
@@ -126,6 +128,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
 
         SQLiteDatabase db = this.getWritableDatabase();
+        assert db != null;
         Cursor cursor = db.rawQuery(selectQuery, null);
 
         // Loop through all rows and add to list.
@@ -169,6 +172,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public Event getEvent(int id) {
         SQLiteDatabase db = this.getReadableDatabase();
 
+        assert db != null;
         Cursor cursor = db.query(TABLE_EVENTS,
                 new String[]{
                         KEY_ID,
@@ -197,6 +201,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.moveToFirst();
         }
 
+        assert cursor != null;
         return new Event(
             cursor.getInt(0),
             cursor.getString(1),

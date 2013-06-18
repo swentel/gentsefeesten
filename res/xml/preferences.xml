@@ -30,4 +30,13 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/updates">
+
+        <Preference android:title="@string/updating"
+                    android:key="get_updates"
+                    android:summary="@string/updating_info"/>
+
+    </PreferenceCategory>
+
 </PreferenceScreen>

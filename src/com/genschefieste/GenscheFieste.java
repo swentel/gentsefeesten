@@ -2,7 +2,6 @@ package com.genschefieste;
 
 import android.app.Application;
 import android.content.Context;
-import android.net.ConnectivityManager;
 
 public class GenscheFieste extends Application {
 
@@ -18,28 +17,14 @@ public class GenscheFieste extends Application {
     public static String parkingUrl = "http://datatank.gent.be/Mobiliteitsbedrijf/Parkings11.json";
 
     // Number of events. Note that this doesn't have to be the exact number, it's just
-    // go give a nicer indiction of the progress dialog.
+    // go give a nicer indication of the progress dialog.
     public static int numberOfEvents = 4045;
-
-    // Connectivity manager.
-    private ConnectivityManager cm;
 
     /**
      * onCreate().
      */
     public void onCreate() {
         super.onCreate();
-        cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-    }
-
-    /**
-     * Helper function to check if network is available.
-     */
-    public boolean netwerkIsAvailable() {
-        if (cm.getActiveNetworkInfo() != null && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-            return true;
-        }
-        return false;
     }
 
     /**

@@ -54,6 +54,7 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
         if (event != null) {
 
             // Change color of row.
+            assert convertView != null;
             LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
             if ((position % 2 ) == 0) {
                 row.setBackgroundColor(Color.parseColor("#f6f6f6"));

@@ -5,9 +5,11 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import java.util.List;
 
@@ -15,9 +17,6 @@ public class Main extends BaseActivity {
 
     private List<Event> events;
     private int eventId = 0;
-    private String prefLocationId;
-    private String prefCategoryId;
-    private boolean prefShowAllDay;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,15 +27,15 @@ public class Main extends BaseActivity {
 
         // Default settings are also set in preferences.xml
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-        prefLocationId = pref.getString("pref_loc", "230");
-        prefCategoryId = pref.getString("pref_cat", "15");
-        prefShowAllDay = pref.getBoolean("pref_all_day", false);
+        String prefLocationId = pref.getString("pref_loc", "230");
+        String prefCategoryId = pref.getString("pref_cat", "15");
+        boolean prefShowAllDay = pref.getBoolean("pref_all_day", false);
 
         // Get main events.
         DatabaseHandler db = new DatabaseHandler(this);
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
         // Location and category.
-        // TODO this has to be multiple.
+        // TODO this has to be multiple and recheck, there's a bug here.
         selectQuery += " WHERE " + DatabaseHandler.KEY_LOC_ID + " = " + prefLocationId;
         selectQuery += " AND " + DatabaseHandler.KEY_CAT_ID + " = " + prefCategoryId;
         // Start hour.
@@ -45,6 +44,15 @@ public class Main extends BaseActivity {
         }
         selectQuery += " ORDER BY "+ DatabaseHandler.KEY_DATE +" ASC, "+ DatabaseHandler.KEY_DATE_SORT +" ASC limit 30";
         events = db.getEvents(selectQuery);
+
+        // Check on size of events.
+        if (events.size() == 0) {
+            TextView noEvents = (TextView) findViewById(R.id.no_events);
+            noEvents.setOnClickListener(goToPreferences);
+            ViewGroup.LayoutParams params = noEvents.getLayoutParams();
+            params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+            noEvents.setLayoutParams(params);
+        }
 
         // Make every item clickable.
         list.setClickable(true);
@@ -63,5 +71,15 @@ public class Main extends BaseActivity {
 
         super.onCreate(savedInstanceState);
     }
+
+    /**
+     * goToPreferences button listener.
+     */
+    private final View.OnClickListener goToPreferences = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent preferences = new Intent(getBaseContext(), Prefs.class);
+            startActivity(preferences);
+        }
+    };
 
 }

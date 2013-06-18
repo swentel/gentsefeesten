@@ -17,6 +17,7 @@ public class DaysOverview extends BaseActivity {
 
         // Get type.
         Bundle extras = getIntent().getExtras();
+        assert extras != null;
         facetId = extras.getInt("facetId");
 
         // Get the list view.

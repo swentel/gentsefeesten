@@ -47,8 +47,7 @@
         <activity android:name=".EventResultFacetList" />
         <activity android:name=".About" />
         <activity android:name=".Prefs" />
-        <activity android:name=".ManageUpdate" />
 
-	</application>
+    </application>
 
 </manifest>

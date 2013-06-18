@@ -21,6 +21,7 @@ public class TypeOverview extends BaseActivity {
 
         // Get type and date.
         Bundle extras = getIntent().getExtras();
+        assert extras != null;
         facetId = extras.getInt("facetId");
         dateIndex = extras.getInt("dateIndex");
 

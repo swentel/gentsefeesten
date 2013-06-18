@@ -9,10 +9,7 @@ import android.widget.TextView;
 
 public class EventDetail extends BaseActivity {
 
-    private int eventId;
     private Event event;
-    private int favorite;
-    private int setFavorite;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -22,7 +19,8 @@ public class EventDetail extends BaseActivity {
 
         // Get event.
         Bundle extras = getIntent().getExtras();
-        eventId = extras.getInt("eventId");
+        assert extras != null;
+        int eventId = extras.getInt("eventId");
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
 
@@ -47,7 +45,7 @@ public class EventDetail extends BaseActivity {
         }
 
         // Set price.
-        String price_text = getString(R.string.event_free);
+        String price_text;
         String price_entry = event.getPrice();
         if (event.getFree() == 1 || price_entry.length() == 0) {
             price_text = getString(R.string.event_free);
@@ -78,8 +76,8 @@ public class EventDetail extends BaseActivity {
         menu.setOnClickListener(actionShare);
 
         // Add listener on favorite button.
-        ImageButton favorite = (ImageButton) findViewById(R.id.favorite);
-        favorite.setOnClickListener(actionFavorite);
+        ImageButton favoriteButton = (ImageButton) findViewById(R.id.favorite);
+        favoriteButton.setOnClickListener(actionFavorite);
 
         super.onCreate(savedInstanceState);
     }
@@ -104,10 +102,11 @@ public class EventDetail extends BaseActivity {
     private final View.OnClickListener actionFavorite = new View.OnClickListener() {
         public void onClick(View v) {
             // Get favorite.
-            favorite = event.getFavorite();
+            int favorite = event.getFavorite();
 
             // Switch image.
             ImageView i = (ImageView) findViewById(R.id.favorite);
+            int setFavorite;
             if (favorite == 0) {
                 setFavorite = 1;
                 i.setImageResource(R.drawable.fav_on);

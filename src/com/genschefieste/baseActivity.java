@@ -12,8 +12,6 @@ public class BaseActivity extends Activity {
 
     Intent intent;
 
-    // TODO global - check memory performance (do we need to add more overrides etc).
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

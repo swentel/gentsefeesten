@@ -6,6 +6,7 @@
     <string name="menu_bar_title">#GF13</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Mijn favorieten</string>
+    <string name="no_events_found_on_home">Geen evenementen gevonden. Ga naar settings om je voorkeuren of om het programma aan te passen.\n\nKlik hier om naar settings te gaan.</string>
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>
@@ -68,7 +69,11 @@
     <string name="data_updates">Database updates</string>
 
     <!-- Manage updates -->
-    <string name="updating">Data ophalen</string>
+    <string name="updates">Database</string>
+    <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.</string>
+    <string name="updating">Programma ophalen</string>
+    <string name="updating_info">Klik hier om het programma binnen te halen of te updaten</string>
+    <string name="updating_done">Het programma is aangepast.</string>
     <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
 
     <!-- Dates -->

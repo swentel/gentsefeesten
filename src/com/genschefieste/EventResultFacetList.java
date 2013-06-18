@@ -41,6 +41,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
 
         // Get type and date.
         Bundle extras = getIntent().getExtras();
+        assert extras != null;
         facetId = extras.getInt("facetId");
         typeIndex = extras.getInt("typeIndex");
         dateIndex = extras.getInt("dateIndex");

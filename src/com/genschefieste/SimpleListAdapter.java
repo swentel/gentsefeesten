@@ -13,7 +13,6 @@ import android.widget.TextView;
 /**
  * Simple list adapter.
  */
-// TODO for some reason lint doesn't like something here, find out what.
 public class SimpleListAdapter extends ArrayAdapter implements OnClickListener {
     private final Context context;
     private final String[] values;
@@ -36,6 +35,7 @@ public class SimpleListAdapter extends ArrayAdapter implements OnClickListener {
         }
 
         // Change color of row.
+        assert convertView != null;
         LinearLayout row = (LinearLayout) convertView.findViewById(R.id.single_row);
         if ((position % 2) == 0) {
             row.setBackgroundColor(Color.parseColor("#f6f6f6"));
