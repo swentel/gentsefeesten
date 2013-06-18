@@ -21,7 +21,7 @@
     <string name="menu_free">Gratis</string>
     <!-- Note: festival not yet implemented -->
     <string name="menu_festival">Festivals</string>
-    <string name="menu_locations">Lokaties</string>
+    <string name="menu_locations">Locaties</string>
     <string name="menu_practical">Praktisch</string>
     <string name="menu_parking">Parking</string>
     <string name="menu_toilet">Publieke toiletten</string>
@@ -38,7 +38,7 @@
     <!-- Program activities -->
     <string name="select_a_day">Kies een dag</string>
     <string name="select_a_category">Kies een categorie</string>
-    <string name="select_a_location">Kies een lokatie</string>
+    <string name="select_a_location">Kies een locatie</string>
     <!-- Note: festival not yet implemented -->
     <string name="select_a_festival">Kies een festival</string>
 
@@ -61,7 +61,7 @@
     <string name="setting_category_title">Categorie</string>
     <string name="setting_location_title">Lokatie</string>
     <string name="setting_category_info">Kies je favoriete categorie</string>
-    <string name="setting_location_info">Kies je favoriete lokatie</string>
+    <string name="setting_location_info">Kies je favoriete locatie</string>
     <string name="show_all_day_events">Hele dag</string>
     <string name="show_all_day_events_info">Toon evenementen die een hele dag duren.</string>
     <string name="data_updates">Database updates</string>
@@ -71,16 +71,16 @@
     <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
 
     <!-- Dates -->
-    <string name="july_20">zaterdag 20 juli</string>
-    <string name="july_21">zondag 21 juli</string>
-    <string name="july_22">maandag 22 juli</string>
-    <string name="july_23">dinsdag 23 juli</string>
-    <string name="july_24">woensdag 24 juli</string>
-    <string name="july_25">donderdag 25 juli</string>
-    <string name="july_26">vrijdag 26 juli</string>
-    <string name="july_27">zaterdag 27 juli</string>
-    <string name="july_28">zondag 28 juli</string>
-    <string name="july_29">maandag 29 juli</string>
+    <string name="july_20">Zaterdag 20 juli</string>
+    <string name="july_21">Zondag 21 juli</string>
+    <string name="july_22">Maandag 22 juli</string>
+    <string name="july_23">Dinsdag 23 juli</string>
+    <string name="july_24">Woensdag 24 juli</string>
+    <string name="july_25">Donderdag 25 juli</string>
+    <string name="july_26">Vrijdag 26 juli</string>
+    <string name="july_27">Zaterdag 27 juli</string>
+    <string name="july_28">Zondag 28 juli</string>
+    <string name="july_29">Maandag 29 juli</string>
     
     <!-- Locations -->
     <string name="baudeloo">Baudelohof</string>
@@ -107,7 +107,7 @@
     <!-- Categories -->
     <string name="bals_dans">Bals / Dans</string>
     <string name="circus">Circus</string>
-    <string name="comedy">Komedy</string>
+    <string name="comedy">Comedy</string>
     <string name="concerts_divers">Concerten divers</string>
     <string name="concerts_jazz">Jazz</string>
     <string name="concerts_classic">Klassieke concerten</string>
