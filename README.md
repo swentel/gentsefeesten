@@ -5,6 +5,8 @@ Android application to look at the programme of the 'Gentse feesten' on an Andro
 
 The iOS version is available at https://github.com/TimLeytens/Gentse-Feesten-2013.
 
+Data available from http://data.gent.be
+
 Features
 --------
 
