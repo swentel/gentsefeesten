@@ -4,8 +4,7 @@
     android:id="@+id/event_row"
     android:layout_height="wrap_content"
 	android:weightSum="1.0"
-    android:orientation="horizontal"
-    android:background="#fff" >
+    android:orientation="horizontal">
 
     <TextView
         android:id="@+id/event_hour"

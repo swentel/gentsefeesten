@@ -78,8 +78,8 @@ public class MenuList extends Activity {
                 startActivity(goDaysOverview);
                 break;
             case 6:
-                Intent manageUpdates = new Intent(getBaseContext(), ManageUpdate.class);
-                startActivity(manageUpdates);
+                Intent goSettings = new Intent(getBaseContext(), Prefs.class);
+                startActivity(goSettings);
                 break;
             case 7:
                 Intent about = new Intent(getBaseContext(), About.class);

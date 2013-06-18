@@ -21,10 +21,8 @@ public class Favorites extends BaseActivity {
         ListView list = (ListView) findViewById(R.id.list);
 
         // Get your favorites.
-        // TODO add sorting
         DatabaseHandler db = new DatabaseHandler(this);
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " WHERE favorite = 1";
-        selectQuery += " ORDER BY id ASC limit 30";
         events = db.getEvents(selectQuery);
 
         // Make every item clickable.

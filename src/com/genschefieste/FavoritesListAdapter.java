@@ -54,10 +54,13 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
 
         if (event != null) {
 
-            // TODO check why colors don't switch anymore depending position.
-            if ((position%2) == 0) {
-                LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
+            // Change color of row.
+            LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
+            if ((position % 2 ) == 0) {
                 row.setBackgroundColor(Color.parseColor("#f6f6f6"));
+            }
+            else {
+                row.setBackgroundColor(Color.parseColor("#ffffff"));
             }
 
             // Hour.

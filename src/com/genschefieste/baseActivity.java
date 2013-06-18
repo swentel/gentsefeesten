@@ -74,6 +74,10 @@ public class BaseActivity extends Activity {
                 intent = new Intent(getBaseContext(), Favorites.class);
                 startActivity(intent);
                 return true;
+            case 3:
+                intent = new Intent(getBaseContext(), Prefs.class);
+                startActivity(intent);
+                return true;
         }
         return false;
     }

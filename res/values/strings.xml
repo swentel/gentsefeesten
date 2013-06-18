@@ -28,14 +28,6 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_about">Over deze applicatie</string>
 
-    <!-- About activity -->
-    <string name="about_title">Over deze applicatie</string>
-    <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie.<br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - webdesigner<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
-
-    <!-- Manage updates -->
-    <string name="updating">Data ophalen</string>
-    <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
-
     <!-- Search and facet -->
     <string name="search_hint">Zoek evenement</string>
     <string name="search_go">Go</string>
@@ -58,6 +50,23 @@
     <string name="event_pre_sale">Voorverkoop</string>
     <string name="share_pre_message">#GF13</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
+
+    <!-- About activity -->
+    <string name="about_title">Over deze applicatie</string>
+    <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie.<br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - webdesigner<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+
+    <!-- Settings screen -->
+    <string name="settings_title">Instellingen</string>
+    <string name="home_page_selection">Evenementen op startscherm</string>
+    <string name="setting_category_info">Kies je favoriete categorie</string>
+    <string name="setting_location_info">Kies je favoriete lokatie</string>
+    <string name="show_all_day_events">Hele dag</string>
+    <string name="show_all_day_events_info">Toon evenementen die een hele dag duren.</string>
+    <string name="data_updates">Database updates</string>
+
+    <!-- Manage updates -->
+    <string name="updating">Data ophalen</string>
+    <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
 
     <!-- Dates -->
     <string name="july_20">zaterdag 20 juli</string>

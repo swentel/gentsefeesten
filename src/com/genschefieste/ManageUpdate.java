@@ -7,7 +7,6 @@ import android.content.Context;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
@@ -34,12 +33,12 @@ public class ManageUpdate extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.manage_update);
+        //setContentView(R.layout.preferences);
 
         // Add listener on check image button.
-        Button button = (Button) findViewById(R.id.check_updates);
-        button.setId(1);
-        button.setOnClickListener(actionUpdate);
+        //Button button = (Button) findViewById(R.id.check_updates);
+        //button.setId(1);
+        //button.setOnClickListener(actionUpdate);
     }
 
     /**
@@ -50,7 +49,7 @@ public class ManageUpdate extends Activity {
         switch (v.getId()) {
             case 1:
                 /*
-                // TODO check if we are online
+                // TODO check if we are online.
                 if (!common.appIsOnline()) {
                     common.isOffline(Main.this);
                     return;
@@ -168,7 +167,6 @@ public class ManageUpdate extends Activity {
                         reader.endObject();
 
                         count++;
-                        // TODO this isn't entirely ok yet, but getting there.
                         int update = (count*100/total);
                         publishProgress(update);
 
