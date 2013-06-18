@@ -29,6 +29,8 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
 
     private RelativeLayout dayRow;
     private RelativeLayout typeRow;
+    private ImageButton dayButton;
+    private ImageButton listButton;
     private Context mContext;
 
     @Override
@@ -46,15 +48,16 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         // Day dialog changer.
         dayRow = (RelativeLayout) findViewById(R.id.day_change);
         dayRow.setOnClickListener(this);
+        dayButton = (ImageButton) findViewById(R.id.day_row_button);
+        dayButton.setOnClickListener(this);
 
         // Type dialog changer.
-        // TODO create constants for facetId.
-        // TODO triggering doesn't go nicely.
         if (facetId != 2) {
             typeRow = (RelativeLayout) findViewById(R.id.type_change);
             typeRow.setOnClickListener(this);
-            ImageButton listButton = (ImageButton) findViewById(R.id.type_row_button);
+            listButton = (ImageButton) findViewById(R.id.type_row_button);
             listButton.setImageResource(R.drawable.list);
+            listButton.setOnClickListener(this);
         }
 
         // Get the list view.
@@ -130,10 +133,10 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
 
     @Override
     public void onClick(View view) {
-        if (view.equals(dayRow)) {
+        if (view.equals(dayRow) || view.equals(dayButton)) {
             showSwitchDayDialog();
         }
-        if (view.equals(typeRow)) {
+        if (view.equals(typeRow) || view.equals(listButton)) {
             showSwitchTypeDialog();
         }
     }
