@@ -60,10 +60,10 @@
     <!-- Settings screen -->
     <string name="settings_title">Instellingen</string>
     <string name="home_page_selection">Evenementen op startscherm</string>
-    <string name="setting_category_title">Categorie</string>
-    <string name="setting_location_title">Locatie</string>
-    <string name="setting_category_info">Kies je favoriete categorie</string>
-    <string name="setting_location_info">Kies je favoriete locatie</string>
+    <string name="setting_category_title">Filter op categorie</string>
+    <string name="setting_location_title">Filter op locatie</string>
+    <string name="setting_category_info">Kies categorie</string>
+    <string name="setting_location_info">Kies locatie</string>
     <string name="show_all_day_events">Hele dag</string>
     <string name="show_all_day_events_info">Toon evenementen die een hele dag duren</string>
     <string name="data_updates">Database updates</string>
