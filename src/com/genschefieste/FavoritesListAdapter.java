@@ -7,7 +7,6 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -75,17 +74,6 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
             TextView tt = (TextView) convertView.findViewById(R.id.event_title);
             String title = event.getTitle();
             tt.setText(title);
-
-            // Favorite.
-            ImageView i = (ImageView) convertView.findViewById(R.id.event_favorite);
-            if (event.getFavorite() == 1) {
-                i.setImageResource(R.drawable.fav_on_small);
-                i.setScaleType(ImageView.ScaleType.CENTER);
-            } else {
-                i.setImageResource(R.drawable.fav_off_small);
-                i.setScaleType(ImageView.ScaleType.CENTER);
-            }
-
         }
 
         return convertView;

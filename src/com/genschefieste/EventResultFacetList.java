@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -47,9 +48,13 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         dayRow.setOnClickListener(this);
 
         // Type dialog changer.
+        // TODO create constants for facetId.
+        // TODO triggering doesn't go nicely.
         if (facetId != 2) {
             typeRow = (RelativeLayout) findViewById(R.id.type_change);
             typeRow.setOnClickListener(this);
+            ImageButton listButton = (ImageButton) findViewById(R.id.type_row_button);
+            listButton.setImageResource(R.drawable.list);
         }
 
         // Get the list view.
@@ -109,10 +114,10 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         list.setClickable(true);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                eventId = events.get(position).getId();
-                intent.putExtra("eventId", eventId);
-                startActivity(intent);
+            Intent intent = new Intent(getBaseContext(), EventDetail.class);
+            eventId = events.get(position).getId();
+            intent.putExtra("eventId", eventId);
+            startActivity(intent);
             }
         });
 
@@ -146,12 +151,12 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         builder.setSingleChoiceItems(choiceList, selected, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int newDateIndex) {
-                dialog.dismiss();
-                intent = new Intent(mContext, EventResultFacetList.class);
-                intent.putExtra("facetId", facetId);
-                intent.putExtra("typeIndex", typeIndex);
-                intent.putExtra("dateIndex", newDateIndex);
-                startActivity(intent);
+            dialog.dismiss();
+            intent = new Intent(mContext, EventResultFacetList.class);
+            intent.putExtra("facetId", facetId);
+            intent.putExtra("typeIndex", typeIndex);
+            intent.putExtra("dateIndex", newDateIndex);
+            startActivity(intent);
             }
         });
         AlertDialog changeDay = builder.create();

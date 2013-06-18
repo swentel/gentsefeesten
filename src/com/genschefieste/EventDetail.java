@@ -18,6 +18,8 @@ public class EventDetail extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.event_detail);
 
+        // TODO add google map
+
         // Get event.
         Bundle extras = getIntent().getExtras();
         eventId = extras.getInt("eventId");

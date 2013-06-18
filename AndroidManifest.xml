@@ -22,6 +22,7 @@
         android:name="com.genschefieste.GenscheFieste">
 
         <activity android:name=".Main" android:label="@string/app_name" >
+            <meta-data android:name="android.app.default_searchable" android:value=".EventSearch" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />

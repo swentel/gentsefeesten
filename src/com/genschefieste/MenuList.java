@@ -36,12 +36,19 @@ public class MenuList extends Activity {
         goLocations.setId(5);
         goLocations.setOnClickListener(actionMenu);
 
+        TableRow goSearch = (TableRow) findViewById(R.id.menu_search);
+        goSearch.setId(6);
+        goSearch.setOnClickListener(actionMenu);
+
+        // TODO add parking
+        // TODO add toilets - we can always go search for toilets ;)
+
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(6);
+        manageUpdates.setId(8);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(7);
+        goAbout.setId(9);
         goAbout.setOnClickListener(actionMenu);
     }
 
@@ -78,10 +85,13 @@ public class MenuList extends Activity {
                 startActivity(goDaysOverview);
                 break;
             case 6:
+                onSearchRequested();
+                break;
+            case 8:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 7:
+            case 9:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;

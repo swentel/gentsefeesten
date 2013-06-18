@@ -1,8 +1,8 @@
 package com.genschefieste;
 
-import android.app.Activity;
 import android.app.SearchManager;
 import android.content.Intent;
+import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -10,16 +10,16 @@ import android.widget.ListView;
 
 import java.util.List;
 
-public class EventSearch extends Activity {
+public class EventSearch extends BaseActivity {
 
     public List<Event> events;
     public int eventId = 0;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.search);
         handleIntent(getIntent());
+        super.onCreate(savedInstanceState);
     }
 
     @Override
@@ -36,14 +36,14 @@ public class EventSearch extends Activity {
             ListView list = (ListView) findViewById(R.id.list);
 
             // Get events.
-            // TODO add sorting
             DatabaseHandler db = new DatabaseHandler(this);
-            String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
-            if (query.length() > 0) {
-                selectQuery += " AND (" + DatabaseHandler.KEY_TITLE + " LIKE '%" + query + "%'";
-                selectQuery += " OR " + DatabaseHandler.KEY_DESCRIPTION + " LIKE '%" + query + "%') ";
-            }
-            selectQuery += " ORDER BY random() limit 30";
+            String escaped_query = DatabaseUtils.sqlEscapeString("%" + query + "%");
+            String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " WHERE ";
+            selectQuery += DatabaseHandler.KEY_TITLE + " LIKE " + escaped_query + " OR ";
+            selectQuery += DatabaseHandler.KEY_LOC_NAME + " LIKE " + escaped_query + " OR ";
+            selectQuery += DatabaseHandler.KEY_CAT_NAME + " LIKE " + escaped_query + " OR ";
+            selectQuery += DatabaseHandler.KEY_DESCRIPTION + " LIKE " + escaped_query + " ";
+            selectQuery += "ORDER BY " + DatabaseHandler.KEY_TITLE + " ASC ";
             events = db.getEvents(selectQuery);
 
             // Make every item clickable.

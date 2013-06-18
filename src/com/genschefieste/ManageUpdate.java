@@ -35,6 +35,7 @@ public class ManageUpdate extends Activity {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.preferences);
 
+        // TODO speed up this immensively.
         // Add listener on check image button.
         //Button button = (Button) findViewById(R.id.check_updates);
         //button.setId(1);

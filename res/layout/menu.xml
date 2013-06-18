@@ -232,6 +232,36 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:paddingTop="10dp"
             android:paddingBottom="3dp"
+            android:id="@+id/menu_search"
+            android:layout_marginLeft="10dp">
+
+            <ImageView
+                android:src="@drawable/menu_search"
+                android:contentDescription="@string/menu_search"/>
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="9dp"
+                android:textColor="#73b5c1"
+                android:text="@string/menu_search"
+                android:gravity="bottom"
+                android:layout_gravity="bottom"
+                android:textSize="17sp"/>
+
+        </TableRow>
+
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="#005768"
+            android:visibility="visible"/>
+
+        <TableRow
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:paddingTop="10dp"
+            android:paddingBottom="3dp"
             android:id="@+id/menu_practical"
             android:layout_marginLeft="10dp">
 

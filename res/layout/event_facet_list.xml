@@ -76,8 +76,8 @@
             <ImageButton
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
-                android:src="@drawable/list"
                 android:layout_height="wrap_content"
+                android:id="@+id/type_row_button"
                 android:background="@null"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="20dp"
