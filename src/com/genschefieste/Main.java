@@ -35,7 +35,7 @@ public class Main extends BaseActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
         // Location and category.
-        // TODO this has to be multiple and recheck, there's a bug here.
+        // TODO this has to be multiple.
         selectQuery += " WHERE " + DatabaseHandler.KEY_LOC_ID + " = " + prefLocationId;
         selectQuery += " AND " + DatabaseHandler.KEY_CAT_ID + " = " + prefCategoryId;
         // Start hour.

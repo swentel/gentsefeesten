@@ -20,6 +20,10 @@ public class GenscheFieste extends Application {
     // go give a nicer indication of the progress dialog.
     public static int numberOfEvents = 4045;
 
+    // ID of the public toilet 'event'.
+    // Note that this is the external id.
+    public static int toiletsId = 2745;
+
     /**
      * onCreate().
      */

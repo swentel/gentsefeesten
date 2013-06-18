@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
 
+import java.util.List;
+
 public class MenuList extends Activity {
 
     Intent goDaysOverview;
@@ -41,14 +43,16 @@ public class MenuList extends Activity {
         goSearch.setOnClickListener(actionMenu);
 
         // TODO add parking
-        // TODO add toilets - we can always go search for toilets ;)
+        TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
+        goToilet.setId(8);
+        goToilet.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(8);
+        manageUpdates.setId(9);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(9);
+        goAbout.setId(10);
         goAbout.setOnClickListener(actionMenu);
     }
 
@@ -88,10 +92,21 @@ public class MenuList extends Activity {
                 onSearchRequested();
                 break;
             case 8:
+                DatabaseHandler db = new DatabaseHandler(MenuList.this);
+                String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " WHERE "+ DatabaseHandler.EXTERNAL_ID +" = " + GenscheFieste.toiletsId;
+                List<Event> events = db.getEvents(selectQuery);
+                if (events.size() > 0) {
+                    Event event = events.get(0);
+                    Intent goToilet = new Intent(getBaseContext(), EventDetail.class);
+                    goToilet.putExtra("eventId", event.getId());
+                    startActivity(goToilet);
+                }
+                break;
+            case 9:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 9:
+            case 10:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;
