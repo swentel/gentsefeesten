@@ -50,10 +50,10 @@ public class EventSearch extends BaseActivity {
             list.setClickable(true);
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                    eventId = events.get(position).getId();
-                    intent.putExtra("eventId", eventId);
-                    startActivity(intent);
+                Intent intent = new Intent(getBaseContext(), EventDetail.class);
+                eventId = events.get(position).getId();
+                intent.putExtra("eventId", eventId);
+                startActivity(intent);
                 }
             });
 

@@ -188,12 +188,12 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         builder.setSingleChoiceItems(choiceList, selected, new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int newTypeIndex) {
-                dialog.dismiss();
-                intent = new Intent(mContext, EventResultFacetList.class);
-                intent.putExtra("facetId", facetId);
-                intent.putExtra("typeIndex", newTypeIndex);
-                intent.putExtra("dateIndex", dateIndex);
-                startActivity(intent);
+            dialog.dismiss();
+            intent = new Intent(mContext, EventResultFacetList.class);
+            intent.putExtra("facetId", facetId);
+            intent.putExtra("typeIndex", newTypeIndex);
+            intent.putExtra("dateIndex", dateIndex);
+            startActivity(intent);
             }
         });
         AlertDialog changeType = builder.create();
