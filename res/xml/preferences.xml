@@ -12,12 +12,12 @@
             android:entryValues="@array/category_ids_strings"
             android:defaultValue="230"
             android:summary="@string/setting_category_info"
-            android:title="@string/select_a_category"/>
+            android:title="@string/setting_category_title"/>
 
         <ListPreference
             android:key="pref_loc"
             android:summary="@string/setting_location_info"
-            android:title="@string/select_a_location"
+            android:title="@string/setting_location_title"
             android:entries="@array/location_strings"
             android:entryValues="@array/location_ids_strings"
             android:defaultValue="15" />

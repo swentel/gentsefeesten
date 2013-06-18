@@ -58,6 +58,8 @@
     <!-- Settings screen -->
     <string name="settings_title">Instellingen</string>
     <string name="home_page_selection">Evenementen op startscherm</string>
+    <string name="setting_category_title">Categorie</string>
+    <string name="setting_location_title">Lokatie</string>
     <string name="setting_category_info">Kies je favoriete categorie</string>
     <string name="setting_location_info">Kies je favoriete lokatie</string>
     <string name="show_all_day_events">Hele dag</string>
