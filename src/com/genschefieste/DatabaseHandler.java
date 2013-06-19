@@ -219,7 +219,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public int getEventCount() {
         SQLiteDatabase db = this.getReadableDatabase();
         Cursor dataCount = db.rawQuery("select * from " + TABLE_EVENTS, null);
-        return dataCount.getCount();
+        int count = dataCount.getCount();
+        db.close();
+        return count;
     }
 
     // Get single event.

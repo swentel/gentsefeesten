@@ -9,6 +9,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -22,7 +23,9 @@ import org.apache.http.HttpResponse;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
+import org.apache.http.util.EntityUtils;
 
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -121,13 +124,16 @@ public class Prefs extends PreferenceActivity {
         protected String doInBackground(Context... params) {
 
             try {
-                Prefs.getJSONFromUrl();
+                getJSONFromUrl();
                 DatabaseHandler db = new DatabaseHandler(getApplicationContext());
 
                 try {
+                    InputStream is = openFileInput("events.json");
                     reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
                 }
-                catch (UnsupportedEncodingException ignored) {}
+                catch (UnsupportedEncodingException e) {
+                    Log.d("Reader exception", "Reader: " + e.getMessage());
+                }
 
                 try {
 
@@ -223,10 +229,13 @@ public class Prefs extends PreferenceActivity {
                     }
                     reader.endArray();
                 }
-                catch (IOException ignored) {
+                catch (IOException e) {
+                    Log.d("IOexception exception 1", e.getMessage());
                 }
             }
-            catch (IOException ignored) {}
+            catch (IOException e) {
+                Log.d("IO exception 2", e.getMessage());
+            }
 
             return sResponse;
         }
@@ -243,14 +252,19 @@ public class Prefs extends PreferenceActivity {
         }
     }
 
-    public static void getJSONFromUrl() throws IOException {
+    public void getJSONFromUrl() throws IOException {
         DefaultHttpClient httpClient = new DefaultHttpClient();
         HttpGet httpGet = new HttpGet(GenscheFieste.eventUrl);
 
         try {
             HttpResponse httpResponse = httpClient.execute(httpGet);
             HttpEntity httpEntity = httpResponse.getEntity();
-            is = httpEntity.getContent();
+            if (httpEntity != null) {
+                String serverResponse = EntityUtils.toString(httpEntity);
+                FileOutputStream outputStream = openFileOutput("events.json", Context.MODE_PRIVATE);
+                outputStream.write(serverResponse.getBytes());
+                outputStream.close();
+            }
         }
         catch (UnsupportedEncodingException e) {
             e.printStackTrace();
@@ -264,6 +278,7 @@ public class Prefs extends PreferenceActivity {
     }
 
     public void closeDialog(Dialog dialog) {
+        getApplicationContext().deleteFile("events.json");
         // Close dialog and go to home so we get a fresh start.
         if (dialog.isShowing()) {
             dialog.dismiss();
