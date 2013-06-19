@@ -1,7 +1,7 @@
 Gentse Feesten
 ==============
 
-Android application to look at the programme of the 'Gentse feesten' on an Android device.
+Android application to look at the program of the 'Gentse feesten' on an Android device.
 
 The iOS version is available at https://github.com/TimLeytens/Gentse-Feesten-2013.
 
@@ -16,7 +16,13 @@ Features
 4. Browse fast 'facet-style'
 5. Free text search
 6. Share functionality
-7. Google maps integration (when online)
+7. Settings for homepage listing
+8. Google maps integration (when online)
+
+Screenshot
+----------
+
+![ScreenShot](http://realize.be/files/Screenshot_2013-06-19-15-35-04.png)
 
 License
 -------
