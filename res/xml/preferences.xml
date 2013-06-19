@@ -4,6 +4,13 @@
     android:title="@string/settings_title">
 
     <PreferenceCategory
+            android:title="@string/settings_title">
+        <Preference android:title="@string/program_title"
+            android:key="get_updates"
+            android:summary=""/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
         android:title="@string/home_page_selection">
 
         <CheckBoxPreference
@@ -37,15 +44,6 @@
             android:title="@string/show_all_day_events"
             android:summary="@string/show_all_day_events_info"
             android:defaultValue="false"/>
-
-    </PreferenceCategory>
-
-    <PreferenceCategory
-        android:title="@string/updates">
-
-        <Preference android:title="@string/updating"
-                    android:key="get_updates"
-                    android:summary=""/>
 
     </PreferenceCategory>
 

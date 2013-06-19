@@ -60,6 +60,7 @@
 
     <!-- Settings screen -->
     <string name="settings_title">Instellingen</string>
+    <string name="program_title">Programma</string>
     <string name="home_page_selection">Evenementen op startscherm</string>
     <string name="setting_category_title">Filter op categorie</string>
     <string name="setting_location_title">Filter op locatie</string>
@@ -67,13 +68,11 @@
     <string name="setting_location_info">Kies locatie</string>
     <string name="show_all_day_events">Hele dag</string>
     <string name="show_all_day_events_info">Toon evenementen die een hele dag duren</string>
-    <string name="data_updates">Database updates</string>
 
     <!-- Manage updates -->
-    <string name="updates">Database</string>
-    <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.</string>
     <string name="updating">Programma ophalen</string>
-    <string name="updating_info">Klik hier om het programma binnen te halen of te updaten. Aantal evenementen: </string>
+    <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.</string>
+    <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
     <string name="updating_done">Het programma is aangepast.</string>
     <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
 
