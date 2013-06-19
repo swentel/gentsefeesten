@@ -92,7 +92,9 @@ public class MenuList extends Activity {
                 break;
             case 8:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
-                String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " WHERE "+ DatabaseHandler.EXTERNAL_ID +" = " + GenscheFieste.toiletsId;
+                String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
+                selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
+                selectQuery += " WHERE "+ DatabaseHandler.EXTERNAL_ID +" = " + GenscheFieste.toiletsId;
                 List<Event> events = db.getEvents(selectQuery);
                 if (events.size() > 0) {
                     Event event = events.get(0);
