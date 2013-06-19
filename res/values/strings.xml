@@ -69,12 +69,34 @@
     <string name="show_all_day_events">Hele dag</string>
     <string name="show_all_day_events_info">Toon evenementen die een hele dag duren</string>
 
-    <!-- Manage updates -->
+    <!-- Manage updates + tour -->
     <string name="updating">Programma ophalen</string>
     <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.</string>
     <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
     <string name="updating_done">Het programma is aangepast.</string>
-    <string name="please_wait">We halen nu het programma binnen zodat je het offline kan bekijken. Even geduld, dit duurt ongeveer vijf minuten.</string>
+
+    <string name="tour_step_features_title">Features</string>
+    <string name="tour_step_intermezzo_title">Gensche Gezegde</string>
+    <string name="tour_step_end_title">We zijn er bijna ...</string>
+
+    <string name="tour_step_1_info">We halen nu meer dan 4000 evenementen op. Even geduld, dit duurt ongeveer vijf minuten.\n\nVolg gerust mee, er volgt nog info!</string>
+    <string name="tour_step_2_info">In totaal zal de opslagruimte ongeveer 2.6MB bedragen. Da\'s nie veel waar!\n\nWe raden je aan om een dag voor de start van de feesten het programma ook nog eens te verversen.</string>
+    <string name="tour_step_3_info">Op het startscherm krijg je de eerstkomende 30 evenementen. Via het instellingen scherm kan je nog een bepaalde categorie en/of locatie kiezen om te verfijnen.</string>
+    <string name="tour_step_4_info">Bovenaan kan je altijd klikken om naar het hoofdmenu te gaan of je favorieten te bekijken. De menu knop op je telefoon toont nog meer opties.</string>
+    <string name="tour_step_5_info">Indien je een zoekknop hebt op je telefoon, kan je daar altijd op klikken om de zoekfunctionaliteit te starten.</string>
+    <string name="tour_step_6_info">Je kan snel door het programma bladeren door via het menu "categorie", "gratis" of "locatie" te klikken.\n\nJe kiest dan eerst een dag en dan nog een subtype, bvb comedy of sint-baafs.</string>
+    <string name="tour_step_7_info">Je kan ook altijd snel wisselen van dag of type door op de balken bovenaan de lijst te klikken.\n\nTijd voor een intermezzo.</string>
+    <string name="tour_step_8_info">Ij é ne serieuze snee in zaine neuze.</string>
+    <string name="tour_step_9_info">Pastop of kgoa eu mé eu moale tege de dampuurte plake daade zeve doage braune ziepe schèt.</string>
+    <string name="tour_step_10_info">Terug serieus nu. Meer info krijg je wanneer je op een evenement klikt. \n\nIndien je online zit verschijnt er onderaan ook een map icoontje dat Google maps zal openen.</string>
+    <string name="tour_step_11_info">Verder kan je op het detail het evenement aanduiden als favoriet door op de grijze ster te drukken.\n\nDit zal dan verschijnen in je favorieten lijst.</string>
+    <string name="tour_step_12_info">Wanneer je op de "share" knop drukt, zal je kunnen kiezen naar welke sociale media je iets wilt delen.\n\nDe boodschap kan je uiteraard altijd nog zelf aanpassen.</string>
+    <string name="tour_step_13_info">k Goa ne kier woar de keuneink uuk te voet goat.</string>
+    <string name="tour_step_14_info">Oast te doenker es moede de flaasj van euwe koodak gebruike woar.</string>
+    <string name="tour_step_15_info">k Woare nen daag te loate tuis en ket keune ekspliekeere zeun.</string>
+    <string name="tour_step_16_info">Verder hebben we ook nog informatie rond de parkings in Gent.\n\nMaar we zouden je toch aanraden om het openbaar vervoer te nemen.</string>
+    <string name="tour_step_17_info">Publieke toiletten zijn er ook. Voorlopig is onze informatie scharig, we werken eraan!\n\nDenk eraan: nie op straat pissen!</string>
+    <string name="tour_step_18_info">Je zal automatisch naar het startscherm gaan wanneer de volle 100% is bereikt.\n\nVeel plezier op de feesten!\nEn nie pleuje!</string>
 
     <!-- Dates -->
     <string name="july_20">Zaterdag 20 juli</string>

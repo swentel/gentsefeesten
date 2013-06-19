@@ -70,7 +70,7 @@ public class Prefs extends PreferenceActivity {
             if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
                 dialog = new customProgressDialog(Prefs.this);
                 dialog.setTitle(R.string.updating);
-                dialog.setMessage(getString(R.string.please_wait));
+                dialog.setMessage(getString(R.string.tour_step_1_info));
                 dialog.setIndeterminate(false);
                 dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                 dialog.show();
@@ -244,6 +244,67 @@ public class Prefs extends PreferenceActivity {
         public void onProgressUpdate(Integer... values){
             super.onProgressUpdate(values);
             dialog.setProgress(values[0]);
+
+            // Set tour, this is wicked cool.
+            switch (values[0]) {
+                case 2:
+                    dialog.setMessage(getString(R.string.tour_step_2_info));
+                    break;
+                case 6:
+                    dialog.setTitle(getString(R.string.tour_step_features_title));
+                    dialog.setMessage(getString(R.string.tour_step_3_info));
+                    break;
+                case 12:
+                    dialog.setMessage(getString(R.string.tour_step_4_info));
+                    break;
+                case 18:
+                    dialog.setMessage(getString(R.string.tour_step_5_info));
+                    break;
+                case 24:
+                    dialog.setMessage(getString(R.string.tour_step_6_info));
+                    break;
+                case 30:
+                    dialog.setMessage(getString(R.string.tour_step_7_info));
+                    break;
+                case 36:
+                    dialog.setTitle(getString(R.string.tour_step_intermezzo_title));
+                    dialog.setMessage(getString(R.string.tour_step_8_info));
+                    break;
+                case 42:
+                    dialog.setMessage(getString(R.string.tour_step_9_info));
+                    break;
+                case 48:
+                    dialog.setTitle(getString(R.string.tour_step_features_title));
+                    dialog.setMessage(getString(R.string.tour_step_10_info));
+                    break;
+                case 54:
+                    dialog.setMessage(getString(R.string.tour_step_11_info));
+                    break;
+                case 60:
+                    dialog.setMessage(getString(R.string.tour_step_12_info));
+                    break;
+                case 66:
+                    dialog.setTitle(getString(R.string.tour_step_intermezzo_title));
+                    dialog.setMessage(getString(R.string.tour_step_13_info));
+                    break;
+                case 72:
+                    dialog.setMessage(getString(R.string.tour_step_14_info));
+                    break;
+                case 78:
+                    dialog.setMessage(getString(R.string.tour_step_15_info));
+                    break;
+                case 84:
+                    dialog.setTitle(getString(R.string.tour_step_features_title));
+                    dialog.setMessage(getString(R.string.tour_step_16_info));
+                    break;
+                case 90:
+                    dialog.setMessage(getString(R.string.tour_step_17_info));
+                    break;
+                case 96:
+                    dialog.setTitle(getString(R.string.tour_step_end_title));
+                    dialog.setMessage(getString(R.string.tour_step_18_info));
+                    break;
+            }
         }
 
         @Override
