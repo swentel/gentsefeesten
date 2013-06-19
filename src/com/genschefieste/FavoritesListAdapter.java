@@ -6,6 +6,7 @@ import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -52,15 +53,15 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
         if (event != null) {
 
             // Set date row.
-            // TODO recheck layout (lines).
             eventDate = event.getDate();
             if (eventDate != currentDate) {
                 String dayText = GenscheFieste.getDateFromTimestamp(eventDate, context);
                 currentDate = eventDate;
                 assert convertView != null;
                 TextView dayRow = (TextView) convertView.findViewById(R.id.day_title);
-                ViewGroup.LayoutParams params = dayRow.getLayoutParams();
                 dayRow.setText(dayText);
+                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)dayRow.getLayoutParams();
+                params.setMargins(0, 0, 0, 1);
                 params.height = 55;
                 dayRow.setLayoutParams(params);
             }

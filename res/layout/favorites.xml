@@ -29,7 +29,8 @@
             android:gravity="center"
             android:text="@string/my_favorites"
             android:textColor="#00394f"
-            android:textSize="20sp" />
+            android:textSize="20sp"
+            android:layout_marginBottom="1dp"/>
 
     </LinearLayout>
 
@@ -37,7 +38,6 @@
         android:id="@+id/list"
         android:gravity="center"
         android:background="#cacaca"
-        android:layout_marginTop="1dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="fill_parent"
