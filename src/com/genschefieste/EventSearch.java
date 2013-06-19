@@ -38,7 +38,8 @@ public class EventSearch extends BaseActivity {
             // Get events.
             DatabaseHandler db = new DatabaseHandler(this);
             String escaped_query = DatabaseUtils.sqlEscapeString("%" + query + "%");
-            String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " WHERE ";
+            String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
+            selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " WHERE ";
             selectQuery += DatabaseHandler.KEY_TITLE + " LIKE " + escaped_query + " OR ";
             selectQuery += DatabaseHandler.KEY_LOC_NAME + " LIKE " + escaped_query + " OR ";
             selectQuery += DatabaseHandler.KEY_CAT_NAME + " LIKE " + escaped_query + " OR ";

@@ -6,7 +6,7 @@ import android.content.Context;
 public class GenscheFieste extends Application {
 
     // Set to true to get debug statements. Filter on 'DebugApp'.
-    public static boolean debugMode = true;
+    public static boolean debugMode = false;
 
     // URI to the event services. In theory we could import 2 other services which describe
     // the locations and categories, however, we have made those available in the resources

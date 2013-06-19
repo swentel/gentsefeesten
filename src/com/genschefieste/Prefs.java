@@ -131,6 +131,7 @@ public class Prefs extends PreferenceActivity {
 
                 try {
 
+                    db.truncateTable();
                     int total = GenscheFieste.numberOfEvents;
                     int count = 0;
 
@@ -217,7 +218,7 @@ public class Prefs extends PreferenceActivity {
                         int update = (count*100/total);
                         publishProgress(update);
 
-                        // TODO update.
+                        // Save to database.
                         db.insertEvent(event);
                     }
                     reader.endArray();

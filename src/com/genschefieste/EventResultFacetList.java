@@ -92,6 +92,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         // Get the events.
         DatabaseHandler db = new DatabaseHandler(this);
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
+        selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
         selectQuery += " WHERE " + DatabaseHandler.KEY_DATE + " = " + timestamp;
         // Categories.
         if (facetId == 1) {

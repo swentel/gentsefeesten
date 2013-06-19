@@ -102,6 +102,7 @@ public class Main extends BaseActivity {
 
         DatabaseHandler db = new DatabaseHandler(this);
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
+        selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
         // This will actually not always be correct since the order date
         // colum contains hours like 2500, but their timestamp is from a day earlier.
         Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT"));

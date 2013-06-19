@@ -42,7 +42,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String KEY_LONG = "longitude";
     public static final String KEY_DISCOUNT = "discount";
     public static final String KEY_FESTIVAL = "festival";
-    public static final String KEY_FAVORITE = "favorite";
+
+    // Favorites table name.
+    public static final String TABLE_FAVORITES = "favorites";
+
+    // Favorites table column names.
+    public static final String FAVORITES_KEY_ID = "fav_external_id";
+
 
     public DatabaseHandler(Context context) {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
@@ -69,10 +75,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 "" + KEY_LAT + " TEXT," +
                 "" + KEY_LONG + " TEXT," +
                 "" + KEY_DISCOUNT + " TEXT," +
-                "" + KEY_FESTIVAL + " INTEGER," +
-                "" + KEY_FAVORITE + " INTEGER" +
+                "" + KEY_FESTIVAL + " INTEGER" +
                 ")";
         db.execSQL(CREATE_EVENTS_TABLE);
+
+        String CREATE_FAVORITES_TABLE = "CREATE TABLE " + TABLE_FAVORITES + "(" +
+                "" + FAVORITES_KEY_ID + " INTEGER" +
+                ")";
+        db.execSQL(CREATE_FAVORITES_TABLE);
     }
 
     @Override
@@ -103,7 +113,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         final int INDEX_KEY_LONG = ih.getColumnIndex(KEY_LONG);
         final int INDEX_KEY_DISCOUNT = ih.getColumnIndex(KEY_DISCOUNT);
         final int INDEX_KEY_FESTIVAL = ih.getColumnIndex(KEY_FESTIVAL);
-        final int INDEX_KEY_FAVORITE = ih.getColumnIndex(KEY_FAVORITE);
 
         ih.prepareForInsert();
 
@@ -125,20 +134,35 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ih.bind(INDEX_KEY_LONG, event.getLongitude());
         ih.bind(INDEX_KEY_DISCOUNT, event.getDiscount());
         ih.bind(INDEX_KEY_FESTIVAL, event.getFestival());
-        ih.bind(INDEX_KEY_FAVORITE, event.getFavorite());
 
         ih.execute();
 
         db.close();
     }
 
-    // Update favorite status for an event.
+    // Set favorite status for an event.
     public void saveFavorite(int favorite, int eventId) {
         SQLiteDatabase db = this.getWritableDatabase();
-        ContentValues values = new ContentValues();
-        values.put(KEY_FAVORITE, favorite);
+
+        // Always delete just to make sure.
         assert db != null;
-        db.update(TABLE_EVENTS, values, KEY_ID + "=" + eventId, null);
+        db.delete(TABLE_FAVORITES, FAVORITES_KEY_ID + " = ?",
+                new String[] { "" + eventId });
+
+        // Insert if favorite is 1.
+        if (favorite == 1) {
+            ContentValues values = new ContentValues();
+            values.put(FAVORITES_KEY_ID, eventId);
+            db.insert(TABLE_FAVORITES, null, values);
+        }
+
+        db.close();
+    }
+
+    // Truncate the table, this only happens for update.
+    public void truncateTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        db.delete(TABLE_EVENTS, null, null);
         db.close();
     }
 
@@ -203,29 +227,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         SQLiteDatabase db = this.getReadableDatabase();
 
         assert db != null;
-        Cursor cursor = db.query(TABLE_EVENTS,
-                new String[]{
-                        KEY_ID,
-                        KEY_TITLE,
-                        EXTERNAL_ID,
-                        KEY_FREE,
-                        KEY_PRICE,
-                        KEY_PRICE_PS,
-                        KEY_DESCRIPTION,
-                        KEY_DATE,
-                        KEY_DATE_PERIOD,
-                        KEY_START_HOUR,
-                        KEY_DATE_SORT,
-                        KEY_CAT_NAME,
-                        KEY_CAT_ID,
-                        KEY_LOC_ID,
-                        KEY_LOC_NAME,
-                        KEY_LAT,
-                        KEY_LONG,
-                        KEY_DISCOUNT,
-                        KEY_FESTIVAL,
-                        KEY_FAVORITE},
-                KEY_ID + "=?", new String[]{String.valueOf(id)}, null, null, null, null);
+        String selectQuery = "SELECT * FROM " + TABLE_EVENTS;
+        selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
+        selectQuery += " WHERE " + KEY_ID + " = " + id;
+        Cursor cursor = db.rawQuery(selectQuery, null);
 
         if (cursor != null) {
             cursor.moveToFirst();

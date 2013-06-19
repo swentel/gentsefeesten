@@ -68,10 +68,10 @@ public class EventDetail extends BaseActivity {
 
         // Set favorite image.
         ImageView i = (ImageView) findViewById(R.id.favorite);
-        if (event.getFavorite() == 1) {
-            i.setImageResource(R.drawable.fav_on);
-        } else {
+        if (event.getFavorite() == 0) {
             i.setImageResource(R.drawable.fav_off);
+        } else {
+            i.setImageResource(R.drawable.fav_on);
         }
 
         // Set Google Map and listener on the image.
@@ -99,9 +99,9 @@ public class EventDetail extends BaseActivity {
      */
     private final View.OnClickListener actionMap = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent goMap = new Intent(getBaseContext(), MapBase.class);
-            goMap.putExtra("eventId", event.getId());
-            startActivity(goMap);
+        Intent goMap = new Intent(getBaseContext(), MapBase.class);
+        goMap.putExtra("eventId", event.getId());
+        startActivity(goMap);
         }
     };
 
@@ -140,7 +140,7 @@ public class EventDetail extends BaseActivity {
 
         // Update in database.
         DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-        db.saveFavorite(setFavorite, event.getId());
+        db.saveFavorite(setFavorite, event.getExternalId());
 
         // Update event in memory as well.
         event.setFavorite(setFavorite);
