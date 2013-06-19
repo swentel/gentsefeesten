@@ -114,7 +114,7 @@ public class EventDetail extends BaseActivity {
         intent.setType("text/plain");
         intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
         intent.putExtra(Intent.EXTRA_SUBJECT, event.getTitle());
-        intent.putExtra(Intent.EXTRA_TEXT, R.string.share_pre_message + " " + event.getTitle());
+        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_pre_message).replace("!replace", event.getTitle()));
         startActivity(Intent.createChooser(intent, "Share"));
         }
     };
