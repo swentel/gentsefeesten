@@ -27,27 +27,26 @@ public class DaysOverview extends BaseActivity {
         list.setClickable(true);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+            switch (facetId) {
+                // Goes to typeOverview for categories, festivals and locations.
+                // festivals (4) is not implemented yet.
+                case 1:
+                case 3:
+                case 4:
+                    intent = new Intent(getBaseContext(), TypeOverview.class);
+                    intent.putExtra("dateIndex", position);
+                    intent.putExtra("facetId", facetId);
+                    break;
+                case 2:
+                    intent = new Intent(getBaseContext(), EventResultFacetList.class);
+                    intent.putExtra("facetId", facetId);
+                    intent.putExtra("dateIndex", position);
+                    // Pass in empty typeIndex.
+                    intent.putExtra("typeIndex", "");
+                    break;
+            }
 
-                switch (facetId) {
-                    // Goes to typeOverview for categories, festivals and locations.
-                    // festivals (4) is not implemented yet.
-                    case 1:
-                    case 3:
-                    case 4:
-                        intent = new Intent(getBaseContext(), TypeOverview.class);
-                        intent.putExtra("dateIndex", position);
-                        intent.putExtra("facetId", facetId);
-                        break;
-                    case 2:
-                        intent = new Intent(getBaseContext(), EventResultFacetList.class);
-                        intent.putExtra("facetId", facetId);
-                        intent.putExtra("dateIndex", position);
-                        // Pass in empty typeIndex.
-                        intent.putExtra("typeIndex", "");
-                        break;
-                }
-
-                startActivity(intent);
+            startActivity(intent);
             }
         });
 

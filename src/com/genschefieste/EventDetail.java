@@ -101,26 +101,26 @@ public class EventDetail extends BaseActivity {
      */
     private final View.OnClickListener actionFavorite = new View.OnClickListener() {
         public void onClick(View v) {
-            // Get favorite.
-            int favorite = event.getFavorite();
+        // Get favorite.
+        int favorite = event.getFavorite();
 
-            // Switch image.
-            ImageView i = (ImageView) findViewById(R.id.favorite);
-            int setFavorite;
-            if (favorite == 0) {
-                setFavorite = 1;
-                i.setImageResource(R.drawable.fav_on);
-            } else {
-                setFavorite = 0;
-                i.setImageResource(R.drawable.fav_off);
-            }
+        // Switch image.
+        ImageView i = (ImageView) findViewById(R.id.favorite);
+        int setFavorite;
+        if (favorite == 0) {
+            setFavorite = 1;
+            i.setImageResource(R.drawable.fav_on);
+        } else {
+            setFavorite = 0;
+            i.setImageResource(R.drawable.fav_off);
+        }
 
-            // Update in database.
-            DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-            db.saveFavorite(setFavorite, event.getId());
+        // Update in database.
+        DatabaseHandler db = new DatabaseHandler(getApplicationContext());
+        db.saveFavorite(setFavorite, event.getId());
 
-            // Update event in memory as well.
-            event.setFavorite(setFavorite);
+        // Update event in memory as well.
+        event.setFavorite(setFavorite);
         }
     };
 }

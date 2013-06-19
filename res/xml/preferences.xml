@@ -45,7 +45,7 @@
 
         <Preference android:title="@string/updating"
                     android:key="get_updates"
-                    android:summary="@string/updating_info"/>
+                    android:summary=""/>
 
     </PreferenceCategory>
 

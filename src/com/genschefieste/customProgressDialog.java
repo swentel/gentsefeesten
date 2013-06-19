@@ -20,11 +20,9 @@ public class customProgressDialog extends ProgressDialog {
         super.onCreate(savedInstanceState);
 
         try {
-            Method method = TextView.class.getMethod("setVisibility",
-                    Integer.TYPE);
+            Method method = TextView.class.getMethod("setVisibility", Integer.TYPE);
 
-            Field[] fields = this.getClass().getSuperclass()
-                    .getDeclaredFields();
+            Field[] fields = this.getClass().getSuperclass().getDeclaredFields();
 
             for (Field field : fields) {
                 if (field.getName().equalsIgnoreCase("mProgressNumber")) {

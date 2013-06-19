@@ -47,24 +47,31 @@ public class Prefs extends PreferenceActivity {
 
         Preference button = findPreference("get_updates");
         assert button != null;
+
+        // Set summary.
+        String summary = getString(R.string.updating_info);
+        DatabaseHandler db = new DatabaseHandler(this);
+        int total = db.getEventCount();
+        summary += " " + total;
+        button.setSummary(summary);
+
+        // Add listener.
         button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference arg0) {
+            // Make sure we are online.
+            if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+                dialog = new customProgressDialog(Prefs.this);
+                dialog.setTitle(R.string.updating);
+                dialog.setMessage(getString(R.string.please_wait));
+                dialog.setIndeterminate(false);
+                dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                dialog.show();
+                new updateTask().execute();
+            } else {
+                Toast.makeText(getApplicationContext(), getString(R.string.update_offline), Toast.LENGTH_LONG).show();
+            }
 
-                // Make sure we are online.
-                if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-                    dialog = new customProgressDialog(Prefs.this);
-                    dialog.setTitle(R.string.updating);
-                    dialog.setMessage(getString(R.string.please_wait));
-                    dialog.setIndeterminate(false);
-                    dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                    dialog.show();
-                    new updateTask().execute();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), getString(R.string.update_offline), Toast.LENGTH_LONG).show();
-                }
-
-                return true;
+            return true;
             }
         });
     }
@@ -106,7 +113,6 @@ public class Prefs extends PreferenceActivity {
      */
     class updateTask extends AsyncTask<Context, Integer, String> {
 
-        // TODO speed up this immensively.
         protected String doInBackground(Context... params) {
 
             try {
@@ -206,7 +212,7 @@ public class Prefs extends PreferenceActivity {
                         int update = (count*100/total);
                         publishProgress(update);
 
-                        // TODO update .. ;)
+                        // TODO update.
                         db.insertEvent(event);
                     }
                     reader.endArray();

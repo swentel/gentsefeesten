@@ -3,6 +3,7 @@ package com.genschefieste;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
+import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 import android.util.Log;
@@ -83,29 +84,51 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public void insertEvent(Event event) {
         SQLiteDatabase db = this.getWritableDatabase();
 
-        ContentValues values = new ContentValues();
-        values.put(KEY_TITLE, event.getTitle());
-        values.put(EXTERNAL_ID, event.getExternalId());
-        values.put(KEY_FREE, event.getFree());
-        values.put(KEY_PRICE, event.getPrice());
-        values.put(KEY_PRICE_PS, event.getPricePresale());
-        values.put(KEY_DESCRIPTION, event.getDescription());
-        values.put(KEY_DATE, event.getDate());
-        values.put(KEY_DATE_PERIOD, event.getDatePeriod());
-        values.put(KEY_START_HOUR, event.getStartHour());
-        values.put(KEY_DATE_SORT, event.getDateSort());
-        values.put(KEY_CAT_NAME, event.getCategory());
-        values.put(KEY_CAT_ID, event.getCategoryId());
-        values.put(KEY_LOC_ID, event.getLocationId());
-        values.put(KEY_LOC_NAME, event.getLocation());
-        values.put(KEY_LAT, event.getLatitude());
-        values.put(KEY_LONG, event.getLongitude());
-        values.put(KEY_DISCOUNT, event.getDiscount());
-        values.put(KEY_FESTIVAL, event.getFestival());
-        values.put(KEY_FAVORITE, event.getFavorite());
+        DatabaseUtils.InsertHelper ih = new DatabaseUtils.InsertHelper(db, "events");
+        final int INDEX_KEY_TITLE = ih.getColumnIndex(KEY_TITLE);
+        final int INDEX_EXTERNAL_ID = ih.getColumnIndex(EXTERNAL_ID);
+        final int INDEX_KEY_FREE = ih.getColumnIndex(KEY_FREE);
+        final int INDEX_KEY_PRICE = ih.getColumnIndex(KEY_PRICE);
+        final int INDEX_KEY_PRICE_PS = ih.getColumnIndex(KEY_PRICE_PS);
+        final int INDEX_KEY_DESCRIPTION = ih.getColumnIndex(KEY_DESCRIPTION);
+        final int INDEX_KEY_DATE = ih.getColumnIndex(KEY_DATE);
+        final int INDEX_KEY_DATE_PERIOD = ih.getColumnIndex(KEY_DATE_PERIOD);
+        final int INDEX_KEY_START_HOUR = ih.getColumnIndex(KEY_START_HOUR);
+        final int INDEX_KEY_DATE_SORT = ih.getColumnIndex(KEY_DATE_SORT);
+        final int INDEX_KEY_CAT_NAME = ih.getColumnIndex(KEY_CAT_NAME);
+        final int INDEX_KEY_CAT_ID = ih.getColumnIndex(KEY_CAT_ID);
+        final int INDEX_KEY_LOC_ID = ih.getColumnIndex(KEY_LOC_ID);
+        final int INDEX_KEY_LOC_NAME = ih.getColumnIndex(KEY_LOC_NAME);
+        final int INDEX_KEY_LAT = ih.getColumnIndex(KEY_LAT);
+        final int INDEX_KEY_LONG = ih.getColumnIndex(KEY_LONG);
+        final int INDEX_KEY_DISCOUNT = ih.getColumnIndex(KEY_DISCOUNT);
+        final int INDEX_KEY_FESTIVAL = ih.getColumnIndex(KEY_FESTIVAL);
+        final int INDEX_KEY_FAVORITE = ih.getColumnIndex(KEY_FAVORITE);
 
-        assert db != null;
-        db.insert(TABLE_EVENTS, null, values);
+        ih.prepareForInsert();
+
+        ih.bind(INDEX_KEY_TITLE, event.getTitle());
+        ih.bind(INDEX_EXTERNAL_ID, event.getExternalId());
+        ih.bind(INDEX_KEY_FREE, event.getFree());
+        ih.bind(INDEX_KEY_PRICE, event.getPrice());
+        ih.bind(INDEX_KEY_PRICE_PS, event.getPricePresale());
+        ih.bind(INDEX_KEY_DESCRIPTION, event.getDescription());
+        ih.bind(INDEX_KEY_DATE, event.getDate());
+        ih.bind(INDEX_KEY_DATE_PERIOD, event.getDatePeriod());
+        ih.bind(INDEX_KEY_START_HOUR, event.getStartHour());
+        ih.bind(INDEX_KEY_DATE_SORT, event.getDateSort());
+        ih.bind(INDEX_KEY_CAT_NAME, event.getCategory());
+        ih.bind(INDEX_KEY_CAT_ID, event.getCategoryId());
+        ih.bind(INDEX_KEY_LOC_ID, event.getLocationId());
+        ih.bind(INDEX_KEY_LOC_NAME, event.getLocation());
+        ih.bind(INDEX_KEY_LAT, event.getLatitude());
+        ih.bind(INDEX_KEY_LONG, event.getLongitude());
+        ih.bind(INDEX_KEY_DISCOUNT, event.getDiscount());
+        ih.bind(INDEX_KEY_FESTIVAL, event.getFestival());
+        ih.bind(INDEX_KEY_FAVORITE, event.getFavorite());
+
+        ih.execute();
+
         db.close();
     }
 
@@ -166,6 +189,13 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
 
         return eventList;
+    }
+
+    // Get number of events.
+    public int getEventCount() {
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor dataCount = db.rawQuery("select * from " + TABLE_EVENTS, null);
+        return dataCount.getCount();
     }
 
     // Get single event.
