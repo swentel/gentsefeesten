@@ -27,6 +27,9 @@ public class Main extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.main);
 
+        // Hide home button.
+        showHomebutton = false;
+
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
 

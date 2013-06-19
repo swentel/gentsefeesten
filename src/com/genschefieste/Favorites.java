@@ -17,6 +17,9 @@ public class Favorites extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.favorites);
 
+        // Disable favorites button.
+        disableFavoritesButton = true;
+
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
 

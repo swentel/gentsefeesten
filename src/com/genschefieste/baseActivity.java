@@ -10,6 +10,8 @@ import android.widget.ImageButton;
 
 public class BaseActivity extends Activity {
 
+    public boolean showHomebutton = true;
+    public boolean disableFavoritesButton = false;
     Intent intent;
 
     @Override
@@ -22,9 +24,11 @@ public class BaseActivity extends Activity {
         go_to_menu.setOnClickListener(topBar);
 
         // Add listener on favorites button.
-        ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
-        go_to_favorites.setId(2);
-        go_to_favorites.setOnClickListener(topBar);
+        if (!disableFavoritesButton) {
+            ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
+            go_to_favorites.setId(2);
+            go_to_favorites.setOnClickListener(topBar);
+        }
     }
 
     /**
@@ -50,10 +54,13 @@ public class BaseActivity extends Activity {
      */
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
-        menu.add(Menu.NONE, 0, 0, getString(R.string.menu_home)).setIcon(R.drawable.menu_home);
+        if (showHomebutton) {
+            menu.add(Menu.NONE, 0, 0, getString(R.string.menu_home)).setIcon(R.drawable.menu_home);
+        }
         menu.add(Menu.NONE, 1, 0, getString(R.string.menu_bar_go_to_menu)).setIcon(R.drawable.menu_menu);
         menu.add(Menu.NONE, 2, 0, getString(R.string.menu_bar_go_to_favorites)).setIcon(R.drawable.menu_favorites);
-        menu.add(Menu.NONE, 3, 0, getString(R.string.menu_settings)).setIcon(R.drawable.menu_settings);
+        menu.add(Menu.NONE, 3, 0, getString(R.string.menu_search)).setIcon(R.drawable.menu_search);
+        menu.add(Menu.NONE, 4, 0, getString(R.string.menu_settings)).setIcon(R.drawable.menu_settings);
         return true;
     }
 
@@ -75,6 +82,9 @@ public class BaseActivity extends Activity {
                 startActivity(intent);
                 return true;
             case 3:
+                onSearchRequested();
+                return true;
+            case 4:
                 intent = new Intent(getBaseContext(), Prefs.class);
                 startActivity(intent);
                 return true;
