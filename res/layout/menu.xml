@@ -167,7 +167,7 @@
             android:background="#005768"
             android:visibility="visible"/>
 
-        <!-- Festivals is not yet implemented as we don't have the data yet
+        <!-- Festivals is not implemented as we don't have the data yet
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="#003a48"
@@ -288,6 +288,7 @@
             android:background="#005768"
             android:visibility="visible"/>
 
+        <!-- Parkings is not implemented - question is if we really want to.
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="#003a48"
@@ -317,6 +318,7 @@
             android:layout_height="0.2dp"
             android:background="#005768"
             android:visibility="visible"/>
+        -->
 
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"

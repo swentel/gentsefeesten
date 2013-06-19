@@ -42,7 +42,6 @@ public class MenuList extends Activity {
         goSearch.setId(6);
         goSearch.setOnClickListener(actionMenu);
 
-        // TODO add parking
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
         goToilet.setId(8);
         goToilet.setOnClickListener(actionMenu);

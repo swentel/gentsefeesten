@@ -1,6 +1,8 @@
 package com.genschefieste;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -11,11 +13,12 @@ public class EventDetail extends BaseActivity {
 
     private Event event;
 
+    // Connectivity manager.
+    private ConnectivityManager cm;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.event_detail);
-
-        // TODO add google map
 
         // Get event.
         Bundle extras = getIntent().getExtras();
@@ -71,6 +74,15 @@ public class EventDetail extends BaseActivity {
             i.setImageResource(R.drawable.fav_off);
         }
 
+        // Set Google Map and listener on the image.
+        cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+            ImageView map = (ImageView) findViewById(R.id.map);
+            map.setImageResource(R.drawable.map);
+            // Add listener on map button.
+            map.setOnClickListener(actionMap);
+        }
+
         // Add listener on share button.
         ImageButton menu = (ImageButton) findViewById(R.id.share);
         menu.setOnClickListener(actionShare);
@@ -81,6 +93,17 @@ public class EventDetail extends BaseActivity {
 
         super.onCreate(savedInstanceState);
     }
+
+    /**
+     * Map listener.
+     */
+    private final View.OnClickListener actionMap = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent goMap = new Intent(getBaseContext(), MapBase.class);
+            goMap.putExtra("eventId", event.getId());
+            startActivity(goMap);
+        }
+    };
 
     /**
      * Share listener.

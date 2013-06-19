@@ -11,6 +11,7 @@ import android.preference.Preference;
 import android.preference.PreferenceActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.WindowManager;
 import android.widget.Toast;
 
 import com.google.gson.stream.JsonReader;
@@ -39,6 +40,10 @@ public class Prefs extends PreferenceActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        // Keep screen alive here for the updates.
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+
         super.onCreate(savedInstanceState);
         addPreferencesFromResource(R.xml.preferences);
 
