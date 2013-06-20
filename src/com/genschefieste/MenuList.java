@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
+import android.widget.Toast;
 
 import java.util.List;
 
@@ -30,16 +31,20 @@ public class MenuList extends Activity {
         goCategories.setId(3);
         goCategories.setOnClickListener(actionMenu);
 
-        TableRow goFree = (TableRow) findViewById(R.id.menu_free);
-        goFree.setId(4);
-        goFree.setOnClickListener(actionMenu);
+        TableRow goFestival = (TableRow) findViewById(R.id.menu_festival);
+        goFestival.setId(4);
+        goFestival.setOnClickListener(actionMenu);
 
         TableRow goLocations = (TableRow) findViewById(R.id.menu_locations);
         goLocations.setId(5);
         goLocations.setOnClickListener(actionMenu);
 
+        TableRow goFree = (TableRow) findViewById(R.id.menu_free);
+        goFree.setId(6);
+        goFree.setOnClickListener(actionMenu);
+
         TableRow goSearch = (TableRow) findViewById(R.id.menu_search);
-        goSearch.setId(6);
+        goSearch.setId(7);
         goSearch.setOnClickListener(actionMenu);
 
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
@@ -70,24 +75,27 @@ public class MenuList extends Activity {
                 startActivity(goFavorites);
                 break;
             case 3:
-                // Goes to days first, then typeOverview passing categories.
+                // Goes to days, then typeOverview passing categories.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
                 goDaysOverview.putExtra("facetId", 1);
                 startActivity(goDaysOverview);
                 break;
             case 4:
-                // Goes to days first, then results.
-                goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
-                goDaysOverview.putExtra("facetId", 2);
-                startActivity(goDaysOverview);
+                Toast.makeText(MenuList.this, "Coming soon", Toast.LENGTH_LONG).show();
                 break;
             case 5:
-                // Goes to days first, then typeOverview passing locations.
+                // Goes to days, then typeOverview passing locations.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
                 goDaysOverview.putExtra("facetId", 3);
                 startActivity(goDaysOverview);
                 break;
             case 6:
+                // Goes to days, then the list all free events.
+                goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
+                goDaysOverview.putExtra("facetId", 2);
+                startActivity(goDaysOverview);
+                break;
+            case 7:
                 onSearchRequested();
                 break;
             case 8:

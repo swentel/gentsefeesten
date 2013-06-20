@@ -52,7 +52,8 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         dayButton = (ImageButton) findViewById(R.id.day_row_button);
         dayButton.setOnClickListener(this);
 
-        // Type dialog changer.
+        // Type dialog changer. Only set onlistener and the image
+        // for categories and locations.
         if (facetId != 2) {
             typeRow = (RelativeLayout) findViewById(R.id.type_change);
             typeRow.setOnClickListener(this);

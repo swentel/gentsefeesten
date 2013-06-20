@@ -141,37 +141,6 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="#003a48"
             android:paddingTop="10dp"
-            android:id="@+id/menu_free"
-            android:layout_gravity="bottom"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingLeft="20dp">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
-                android:layout_span="2"
-                android:text="@string/menu_free"
-                android:gravity="center_vertical"
-                android:layout_gravity="bottom"
-                android:textSize="17sp"/>
-
-        </TableRow>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="#005768"
-            android:visibility="visible"/>
-
-        <!-- Festivals is not implemented as we don't have the data yet
-        <TableRow
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:background="#003a48"
-            android:paddingTop="10dp"
             android:id="@+id/menu_festival"
             android:layout_gravity="bottom"
             android:layout_width="fill_parent"
@@ -182,7 +151,7 @@
             <TextView
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="21dp"
+                android:layout_marginLeft="23dp"
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_festival"
@@ -196,8 +165,6 @@
             android:layout_height="0.2dp"
             android:background="#005768"
             android:visibility="visible"/>
-
-         -->
 
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -217,6 +184,36 @@
                 android:textColor="#73b5c1"
                 android:layout_span="2"
                 android:text="@string/menu_locations"
+                android:gravity="center_vertical"
+                android:layout_gravity="bottom"
+                android:textSize="17sp"/>
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="#005768"
+            android:visibility="visible"/>
+
+        <TableRow
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="#003a48"
+            android:paddingTop="10dp"
+            android:id="@+id/menu_free"
+            android:layout_gravity="bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textColor="#73b5c1"
+                android:layout_span="2"
+                android:text="@string/menu_free"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
                 android:textSize="17sp"/>
