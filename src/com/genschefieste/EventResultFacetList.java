@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
@@ -114,6 +115,15 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         }
 
         events = db.getEvents(selectQuery);
+
+        // Check on size of events. In case there are no events, show the messages
+        // row to inform people how to start a new search.
+        if (events.size() == 0) {
+            TextView noEvents = (TextView) findViewById(R.id.no_events);
+            ViewGroup.LayoutParams params = noEvents.getLayoutParams();
+            params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
+            noEvents.setLayoutParams(params);
+        }
 
         // Make every item clickable.
         list.setClickable(true);

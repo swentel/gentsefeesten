@@ -10,6 +10,7 @@
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>
+    <string name="no_favorites">Je hebt nog geen favorieten. Op de details van de evenementen kan je op de grijze ster drukken om ze in deze lijst toe te voegen.</string>
 
     <!-- Favorites activity -->
     <string name="my_favorites">Mijn favorieten</string>
@@ -36,6 +37,8 @@
     <string name="change_day">Verander dag</string>
     <string name="change_category">Verander categorie</string>
     <string name="change_location">Verander locatie</string>
+    <string name="no_search_results">Geen resultaten gevonden, klik hier om een nieuwe zoekactie te starten.</string>
+    <string name="no_search_results_facet">Geen resultaten gevonden, je kan klikken hierboven om te veranderen van dag of type.</string>
 
     <!-- Program activities -->
     <string name="select_a_day">Kies een dag</string>
@@ -79,7 +82,6 @@
     <string name="tour_step_features_title">Features</string>
     <string name="tour_step_intermezzo_title">Gensche gezegde</string>
     <string name="tour_step_end_title">We zijn er bijna ...</string>
-
     <string name="tour_step_1_info">We slaan nu meer dan 4000 evenementen op. Even geduld, dit duurt ongeveer vijf minuten.\n\nVolg gerust mee, er volgt nog info!</string>
     <string name="tour_step_2_info">In totaal zal de opslagruimte ongeveer 2.6MB bedragen. Da\'s nie veel waar!\n\nWe raden je aan om een dag voor de start van de feesten het programma ook nog eens te verversen.</string>
     <string name="tour_step_3_info">Op het startscherm krijg je de eerstkomende 30 evenementen. Via het instellingen scherm kan je nog een bepaalde categorie en/of locatie kiezen om te verfijnen.</string>

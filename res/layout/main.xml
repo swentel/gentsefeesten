@@ -46,11 +46,10 @@
             android:id="@+id/no_events"
             android:text="@string/no_events_found_on_home"
             android:textColor="#00394f"
-            android:textSize="12sp"
+            android:textSize="15sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
-            android:paddingBottom="10dp"
-            android:autoText="false"/>
+            android:paddingBottom="10dp"/>
 
 	</LinearLayout>	
 	
