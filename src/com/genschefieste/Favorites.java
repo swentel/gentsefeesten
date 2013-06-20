@@ -3,7 +3,6 @@ package com.genschefieste;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -32,13 +31,11 @@ public class Favorites extends BaseActivity {
         selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE + " ASC, " + DatabaseHandler.KEY_DATE_SORT + " ASC";
         events = db.getEvents(selectQuery);
 
-        // Check on size of events. In case there are no events, show the messages
-        // row to inform the people how to add favorites.
+        // Check on size of events. In case there are no events, show the emtpy
+        // view to inform the people how to add favorites.
         if (events.size() == 0) {
+            list.setEmptyView(findViewById(R.id.empty));
             TextView noEvents = (TextView) findViewById(R.id.no_events);
-            ViewGroup.LayoutParams params = noEvents.getLayoutParams();
-            params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-            noEvents.setLayoutParams(params);
         }
 
         // Make every item clickable.

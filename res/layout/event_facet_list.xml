@@ -51,7 +51,7 @@
 
         <View
             android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
+            android:layout_height="1dp"
             android:background="#005768"
             android:visibility="visible"/>
 
@@ -97,5 +97,19 @@
         android:layout_marginRight="10dp"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
+
+    <TextView
+        android:background="#ffffff"
+        android:textColor="#00394f"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:id="@+id/empty"
+        android:textSize="15sp"
+        android:text="@string/no_search_results_facet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+    </TextView>
 
 </LinearLayout>

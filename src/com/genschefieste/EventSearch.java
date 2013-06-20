@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
@@ -49,13 +48,12 @@ public class EventSearch extends BaseActivity {
             selectQuery += "ORDER BY " + DatabaseHandler.KEY_TITLE + " ASC ";
             events = db.getEvents(selectQuery);
 
-            // Check on size of events. In case there are no events, show the messages
-            // row on which people can click to start a new search.
+            // Check on size of events. In case there are no events, add
+            // a listener on the empty list text and remove the list.
+            // Also add a listener so one can easily restart a search.
             if (events.size() == 0) {
-                TextView noEvents = (TextView) findViewById(R.id.no_events);
-                ViewGroup.LayoutParams params = noEvents.getLayoutParams();
-                params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
-                noEvents.setLayoutParams(params);
+                list.setEmptyView(findViewById(R.id.empty));
+                TextView noEvents = (TextView) findViewById(R.id.empty);
                 noEvents.setOnClickListener(openSearch);
             }
 
