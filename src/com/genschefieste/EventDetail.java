@@ -3,6 +3,7 @@ package com.genschefieste;
 import android.content.Context;
 import android.content.Intent;
 import android.net.ConnectivityManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageButton;
@@ -91,6 +92,10 @@ public class EventDetail extends BaseActivity {
         ImageButton favoriteButton = (ImageButton) findViewById(R.id.favorite);
         favoriteButton.setOnClickListener(actionFavorite);
 
+        // Add listener on online button.
+        TextView goOnlineButton = (TextView) findViewById(R.id.info_online);
+        goOnlineButton.setOnClickListener(actionOnline);
+
         super.onCreate(savedInstanceState);
     }
 
@@ -102,6 +107,16 @@ public class EventDetail extends BaseActivity {
         Intent goMap = new Intent(getBaseContext(), MapBase.class);
         goMap.putExtra("eventId", event.getId());
         startActivity(goMap);
+        }
+    };
+
+    /**
+     * Go online listener.
+     */
+    private final View.OnClickListener actionOnline = new View.OnClickListener() {
+        public void onClick(View v) {
+            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://gentsefeesten.be/event/" + event.getExternalId()));
+            startActivity(browserIntent);
         }
     };
 

@@ -56,6 +56,7 @@
     <string name="share_pre_message">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #gf13</string>
     <string name="view_on_map">Bekijk op map</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
+    <string name="info_online">Meer info online</string>
 
     <!-- About activity -->
     <string name="about_title">Over deze applicatie</string>
@@ -74,10 +75,10 @@
 
     <!-- Manage updates + tour -->
     <string name="service_offline">Onze service met het programma is even offline, gelieve ons te verontschuldigen.</string>
-    <string name="updating">Programma ophalen</string>
+    <string name="updating">Programma bijwerken</string>
     <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.</string>
     <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
-    <string name="updating_done">Het programma is aangepast.</string>
+    <string name="updating_done">Het programma is bijgewerkt.</string>
 
     <string name="tour_step_features_title">Features</string>
     <string name="tour_step_intermezzo_title">Gensche gezegde</string>

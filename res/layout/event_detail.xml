@@ -5,7 +5,7 @@
     android:fillViewport="true"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#005371">
+    android:background="#005471">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -248,6 +248,23 @@
                 android:layout_marginRight="20dp"/>
 
          </RelativeLayout>
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/info_online"
+            android:text="@string/info_online"
+            android:layout_width="fill_parent"
+            android:layout_gravity="center"
+            android:background="#ef4f3f"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
 
     </LinearLayout>
 
