@@ -70,16 +70,17 @@
     <string name="show_all_day_events_info">Toon evenementen die een hele dag duren</string>
 
     <!-- Manage updates + tour -->
+    <string name="service_offline">Onze service met het programma is even offline, gelieve ons te verontschuldigen.</string>
     <string name="updating">Programma ophalen</string>
     <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.</string>
     <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
     <string name="updating_done">Het programma is aangepast.</string>
 
     <string name="tour_step_features_title">Features</string>
-    <string name="tour_step_intermezzo_title">Gensche Gezegde</string>
+    <string name="tour_step_intermezzo_title">Gensche gezegde</string>
     <string name="tour_step_end_title">We zijn er bijna ...</string>
 
-    <string name="tour_step_1_info">We halen nu meer dan 4000 evenementen op. Even geduld, dit duurt ongeveer vijf minuten.\n\nVolg gerust mee, er volgt nog info!</string>
+    <string name="tour_step_1_info">We slaan nu meer dan 4000 evenementen op. Even geduld, dit duurt ongeveer vijf minuten.\n\nVolg gerust mee, er volgt nog info!</string>
     <string name="tour_step_2_info">In totaal zal de opslagruimte ongeveer 2.6MB bedragen. Da\'s nie veel waar!\n\nWe raden je aan om een dag voor de start van de feesten het programma ook nog eens te verversen.</string>
     <string name="tour_step_3_info">Op het startscherm krijg je de eerstkomende 30 evenementen. Via het instellingen scherm kan je nog een bepaalde categorie en/of locatie kiezen om te verfijnen.</string>
     <string name="tour_step_4_info">Bovenaan kan je altijd klikken om naar het hoofdmenu te gaan of je favorieten te bekijken. De menu knop op je telefoon toont nog meer opties.</string>

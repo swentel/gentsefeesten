@@ -9,7 +9,6 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -18,13 +17,14 @@ import android.widget.Toast;
 import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonToken;
 
-import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
+import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.util.EntityUtils;
 
+import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
@@ -34,7 +34,8 @@ import java.io.UnsupportedEncodingException;
 public class Prefs extends PreferenceActivity {
 
     ProgressDialog dialog;
-    public static InputStream is = null;
+    public static int siteStatus = 200;
+    public static InputStream jsonfile = null;
     public static JsonReader reader = null;
     public static String sResponse = "";
 
@@ -66,20 +67,22 @@ public class Prefs extends PreferenceActivity {
         // Add listener.
         button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference arg0) {
-            // Make sure we are online.
-            if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-                dialog = new customProgressDialog(Prefs.this);
-                dialog.setTitle(R.string.updating);
-                dialog.setMessage(getString(R.string.tour_step_1_info));
-                dialog.setIndeterminate(false);
-                dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                dialog.show();
-                new updateTask().execute();
-            } else {
-                Toast.makeText(getApplicationContext(), getString(R.string.update_offline), Toast.LENGTH_LONG).show();
-            }
+                // Make sure we are connected to the internet.
+                if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
 
-            return true;
+                    dialog = new customProgressDialog(Prefs.this);
+                    dialog.setTitle(R.string.updating);
+                    dialog.setMessage(getString(R.string.tour_step_1_info));
+                    dialog.setIndeterminate(false);
+                    dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+                    dialog.show();
+                    new updateTask().execute();
+                }
+                else {
+                    Toast.makeText(getApplicationContext(), getString(R.string.update_offline), Toast.LENGTH_LONG).show();
+                }
+
+                return true;
             }
         });
     }
@@ -116,6 +119,42 @@ public class Prefs extends PreferenceActivity {
         return false;
     }
 
+    public int downloadProgram() throws IOException {
+        siteStatus = 0;
+
+        try {
+            HttpClient httpClient = new DefaultHttpClient();
+            HttpGet request = new HttpGet(GenscheFieste.eventUrl);
+            HttpResponse response = httpClient.execute(request);
+
+            int status = response.getStatusLine().getStatusCode();
+            siteStatus = status;
+            if (status == HttpStatus.SC_OK) {
+                // Read in the data.
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                response.getEntity().writeTo(outputStream);
+
+                // Write data to local file.
+                FileOutputStream fos = openFileOutput("events.json", Context.MODE_PRIVATE);
+                fos.write(outputStream.toByteArray());
+                fos.flush();
+                fos.close();
+            }
+
+        }
+        catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+        }
+        catch (ClientProtocolException e) {
+            e.printStackTrace();
+        }
+        catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        return siteStatus;
+    }
+
     /**
      * Update task.
      */
@@ -124,120 +163,125 @@ public class Prefs extends PreferenceActivity {
         protected String doInBackground(Context... params) {
 
             try {
-                getJSONFromUrl();
-                DatabaseHandler db = new DatabaseHandler(getApplicationContext());
 
                 try {
-                    InputStream is = openFileInput("events.json");
-                    reader = new JsonReader(new InputStreamReader(is, "UTF-8"));
+                    siteStatus = downloadProgram();
                 }
-                catch (UnsupportedEncodingException e) {
-                    Log.d("Reader exception", "Reader: " + e.getMessage());
-                }
+                catch (IOException ignored) {}
 
-                try {
+                if (siteStatus == 200) {
 
-                    db.truncateTable();
-                    int total = GenscheFieste.numberOfEvents;
-                    int count = 0;
+                    DatabaseHandler db = new DatabaseHandler(getApplicationContext());
 
-                    reader.beginArray();
-                    while (reader.hasNext()) {
-                        Event event = new Event();
-
-                        reader.beginObject();
-
-                        while (reader.hasNext()) {
-                            String name = reader.nextName();
-
-                            // Ignore null values.
-                            if (reader.peek() == JsonToken.NULL) {
-                                reader.skipValue();
-                            }
-                            else if (name.equals("title")) {
-                                event.setTitle(reader.nextString());
-                            }
-                            else if (name.equals("id")) {
-                                event.setExternalId(reader.nextInt());
-                            }
-                            else if (name.equals("gratis")) {
-                                event.setFree(reader.nextInt());
-                            }
-                            else if (name.equals("prijs")) {
-                                event.setPrice(reader.nextString());
-                            }
-                            else if (name.equals("prijs_vvk")) {
-                                event.setPricePresale(reader.nextString());
-                            }
-                            else if (name.equals("omsch")) {
-                                event.setDescription(reader.nextString());
-                            }
-                            else if (name.equals("datum")) {
-                                // Add 2 hours so the timestamp is actually stored
-                                // on the next day, since our timestamps are
-                                // on GMT and we don't want to bother start
-                                // converting this at runtime.
-                                event.setDate(reader.nextInt() + 7200);
-                            }
-                            else if (name.equals("periode")) {
-                                event.setDatePeriod(reader.nextString());
-                            }
-                            else if (name.equals("start")) {
-                                event.setStartHour(reader.nextString());
-                            }
-                            else if (name.equals("sort")) {
-                                event.setDateSort(reader.nextInt());
-                            }
-                            else if (name.equals("cat")) {
-                                event.setCategory(reader.nextString());
-                            }
-                            else if (name.equals("cat_id")) {
-                                event.setCategoryId(reader.nextInt());
-                            }
-                            else if (name.equals("loc_id")) {
-                                event.setLocationId(reader.nextInt());
-                            }
-                            else if (name.equals("loc")) {
-                                event.setLocation(reader.nextString());
-                            }
-                            else if (name.equals("lat")) {
-                                event.setLatitude(reader.nextString());
-                            }
-                            else if (name.equals("lon")) {
-                                event.setLongitude(reader.nextString());
-                            }
-                            else if (name.equals("korting")) {
-                                event.setDiscount(reader.nextString());
-                            }
-                            else if (name.equals("festival")) {
-                                event.setFestival(reader.nextInt());
-                            }
-                            else {
-                                // Skip fields we don't want to parse
-                                reader.skipValue();
-                            }
-                        }
-
-                        reader.endObject();
-
-                        count++;
-                        int update = (count*100/total);
-                        publishProgress(update);
-
-                        // Save to database.
-                        db.insertEvent(event);
+                    try {
+                        jsonfile = openFileInput("events.json");
+                        reader = new JsonReader(new InputStreamReader(jsonfile, "UTF-8"));
                     }
-                    reader.endArray();
-                }
-                catch (IOException e) {
-                    Log.d("IOexception exception 1", e.getMessage());
-                }
-            }
-            catch (IOException e) {
-                Log.d("IO exception 2", e.getMessage());
-            }
+                    catch (UnsupportedEncodingException ignored) {}
 
-            return sResponse;
+                    try {
+
+                        db.truncateTable();
+                        int total = GenscheFieste.numberOfEvents;
+                        int count = 0;
+
+                        reader.beginArray();
+                        while (reader.hasNext()) {
+                            Event event = new Event();
+
+                            reader.beginObject();
+
+                            while (reader.hasNext()) {
+                                String name = reader.nextName();
+
+                                // Ignore null values.
+                                if (reader.peek() == JsonToken.NULL) {
+                                    reader.skipValue();
+                                }
+                                else if (name.equals("title")) {
+                                    event.setTitle(reader.nextString());
+                                }
+                                else if (name.equals("id")) {
+                                    event.setExternalId(reader.nextInt());
+                                }
+                                else if (name.equals("gratis")) {
+                                    event.setFree(reader.nextInt());
+                                }
+                                else if (name.equals("prijs")) {
+                                    event.setPrice(reader.nextString());
+                                }
+                                else if (name.equals("prijs_vvk")) {
+                                    event.setPricePresale(reader.nextString());
+                                }
+                                else if (name.equals("omsch")) {
+                                    event.setDescription(reader.nextString());
+                                }
+                                else if (name.equals("datum")) {
+                                    // Add 2 hours so the timestamp is actually stored
+                                    // on the next day, since our timestamps are
+                                    // on GMT and we don't want to bother start
+                                    // converting this at runtime.
+                                    event.setDate(reader.nextInt() + 7200);
+                                }
+                                else if (name.equals("periode")) {
+                                    event.setDatePeriod(reader.nextString());
+                                }
+                                else if (name.equals("start")) {
+                                    event.setStartHour(reader.nextString());
+                                }
+                                else if (name.equals("sort")) {
+                                    event.setDateSort(reader.nextInt());
+                                }
+                                else if (name.equals("cat")) {
+                                    event.setCategory(reader.nextString());
+                                }
+                                else if (name.equals("cat_id")) {
+                                    event.setCategoryId(reader.nextInt());
+                                }
+                                else if (name.equals("loc_id")) {
+                                    event.setLocationId(reader.nextInt());
+                                }
+                                else if (name.equals("loc")) {
+                                    event.setLocation(reader.nextString());
+                                }
+                                else if (name.equals("lat")) {
+                                    event.setLatitude(reader.nextString());
+                                }
+                                else if (name.equals("lon")) {
+                                    event.setLongitude(reader.nextString());
+                                }
+                                else if (name.equals("korting")) {
+                                    event.setDiscount(reader.nextString());
+                                }
+                                else if (name.equals("festival")) {
+                                    event.setFestival(reader.nextInt());
+                                }
+                                else {
+                                    // Skip fields we don't want to parse
+                                    reader.skipValue();
+                                }
+                            }
+
+                            reader.endObject();
+
+                            count++;
+                            int update = (count*100/total);
+                            publishProgress(update);
+
+                            // Save to database.
+                            db.insertEvent(event);
+                        }
+                        reader.endArray();
+                    }
+                    catch (IOException ignored) {}
+                }
+                else {
+                    return "servicedown";
+                }
+            }
+            catch (IOException ignored) {}
+
+            return "alldone";
         }
 
         @Override
@@ -309,43 +353,46 @@ public class Prefs extends PreferenceActivity {
 
         @Override
         protected void onPostExecute(String sResponse) {
-            closeDialog(dialog);
-        }
-    }
-
-    public void getJSONFromUrl() throws IOException {
-        DefaultHttpClient httpClient = new DefaultHttpClient();
-        HttpGet httpGet = new HttpGet(GenscheFieste.eventUrl);
-
-        try {
-            HttpResponse httpResponse = httpClient.execute(httpGet);
-            HttpEntity httpEntity = httpResponse.getEntity();
-            if (httpEntity != null) {
-                String serverResponse = EntityUtils.toString(httpEntity);
-                FileOutputStream outputStream = openFileOutput("events.json", Context.MODE_PRIVATE);
-                outputStream.write(serverResponse.getBytes());
-                outputStream.close();
+            if (sResponse == "servicedown") {
+                serviceDown(dialog);
+            }
+            else {
+                closeParseDialog(dialog);
             }
         }
-        catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        catch (ClientProtocolException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
     }
 
-    public void closeDialog(Dialog dialog) {
-        getApplicationContext().deleteFile("events.json");
-        // Close dialog and go to home so we get a fresh start.
+    /**
+     * Close the dialog and inform re: the service which is down.
+     */
+    public void serviceDown(Dialog dialog) {
+        // Close dialog.
         if (dialog.isShowing()) {
             dialog.dismiss();
-            Toast.makeText(Prefs.this, getString(R.string.updating_done), Toast.LENGTH_LONG).show();
-            Intent goHome = new Intent(getBaseContext(), Main.class);
-            startActivity(goHome);
         }
+
+        // Friendly message.
+        Toast.makeText(Prefs.this, getString(R.string.service_offline), Toast.LENGTH_LONG).show();
+    }
+
+    /**
+     * Close the dialog and remove the file.
+     */
+    public void closeParseDialog(Dialog dialog) {
+
+        // Remove the file.
+        getApplicationContext().deleteFile("events.json");
+
+        // Close dialog
+        if (dialog.isShowing()) {
+            dialog.dismiss();
+        }
+
+        // Friendly message.
+        Toast.makeText(Prefs.this, getString(R.string.updating_done), Toast.LENGTH_LONG).show();
+
+        // Redirect to home.
+        Intent goHome = new Intent(getBaseContext(), Main.class);
+        startActivity(goHome);
     }
 }
