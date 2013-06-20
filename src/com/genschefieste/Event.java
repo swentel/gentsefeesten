@@ -16,6 +16,7 @@ public class Event {
     int dateSort = 0;
     String category = "";
     int categoryId = 0;
+    String url = "";
     int locationId = 0;
     String location = "";
     String latitude = "";
@@ -30,7 +31,7 @@ public class Event {
     }
 
     // Full constructor.
-    public Event(int id, String title, int externalId, int free, String price, String pricePresale, String description, int date, String datePeriod, String startHour, int dateSort, String category, int categoryId, int locationId, String location, String latitude, String longitude, String discount, int festival, int favorite) {
+    public Event(int id, String title, int externalId, int free, String price, String pricePresale, String description, int date, String datePeriod, String startHour, int dateSort, String category, int categoryId, String url, int locationId, String location, String latitude, String longitude, String discount, int festival, int favorite) {
         this.id = id;
         this.title = title;
         this.externalId = externalId;
@@ -44,6 +45,7 @@ public class Event {
         this.dateSort = dateSort;
         this.category = category;
         this.categoryId = categoryId;
+        this.url = url;
         this.locationId = locationId;
         this.location = location;
         this.latitude = latitude;
@@ -151,6 +153,14 @@ public class Event {
 
     public void setCategoryId(int categoryId) {
         this.categoryId = categoryId;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 
     public int getLocationId() {

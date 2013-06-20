@@ -36,6 +36,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String KEY_DATE_SORT = "date_sort";
     public static final String KEY_CAT_NAME = "cat_name";
     public static final String KEY_CAT_ID = "cat_id";
+    public static final String KEY_URL = "url";
     public static final String KEY_LOC_ID = "loc_id";
     public static final String KEY_LOC_NAME = "loc_name";
     public static final String KEY_LAT = "latitude";
@@ -70,6 +71,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 "" + KEY_DATE_SORT + " INTEGER," +
                 "" + KEY_CAT_NAME + " TEXT," +
                 "" + KEY_CAT_ID + " INTEGER," +
+                "" + KEY_URL + " TEXT," +
                 "" + KEY_LOC_ID + " INTEGER," +
                 "" + KEY_LOC_NAME + " TEXT," +
                 "" + KEY_LAT + " TEXT," +
@@ -107,6 +109,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         final int INDEX_KEY_DATE_SORT = ih.getColumnIndex(KEY_DATE_SORT);
         final int INDEX_KEY_CAT_NAME = ih.getColumnIndex(KEY_CAT_NAME);
         final int INDEX_KEY_CAT_ID = ih.getColumnIndex(KEY_CAT_ID);
+        final int INDEX_KEY_URL = ih.getColumnIndex(KEY_URL);
         final int INDEX_KEY_LOC_ID = ih.getColumnIndex(KEY_LOC_ID);
         final int INDEX_KEY_LOC_NAME = ih.getColumnIndex(KEY_LOC_NAME);
         final int INDEX_KEY_LAT = ih.getColumnIndex(KEY_LAT);
@@ -128,6 +131,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         ih.bind(INDEX_KEY_DATE_SORT, event.getDateSort());
         ih.bind(INDEX_KEY_CAT_NAME, event.getCategory());
         ih.bind(INDEX_KEY_CAT_ID, event.getCategoryId());
+        ih.bind(INDEX_KEY_URL, event.getUrl());
         ih.bind(INDEX_KEY_LOC_ID, event.getLocationId());
         ih.bind(INDEX_KEY_LOC_NAME, event.getLocation());
         ih.bind(INDEX_KEY_LAT, event.getLatitude());
@@ -195,13 +199,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getInt(10),
                     cursor.getString(11),
                     cursor.getInt(12),
-                    cursor.getInt(13),
-                    cursor.getString(14),
+                    cursor.getString(13),
+                    cursor.getInt(14),
                     cursor.getString(15),
                     cursor.getString(16),
                     cursor.getString(17),
-                    cursor.getInt(18),
-                    cursor.getInt(19)
+                    cursor.getString(18),
+                    cursor.getInt(19),
+                    cursor.getInt(20)
                 );
 
                 // Adding event to list.
@@ -253,13 +258,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.getInt(10),
             cursor.getString(11),
             cursor.getInt(12),
-            cursor.getInt(13),
-            cursor.getString(14),
+            cursor.getString(13),
+            cursor.getInt(14),
             cursor.getString(15),
             cursor.getString(16),
             cursor.getString(17),
-            cursor.getInt(18),
-            cursor.getInt(19)
+            cursor.getString(18),
+            cursor.getInt(19),
+            cursor.getInt(20)
         );
     }
 }

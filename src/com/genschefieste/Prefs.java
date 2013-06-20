@@ -238,6 +238,9 @@ public class Prefs extends PreferenceActivity {
                                 else if (name.equals("cat_id")) {
                                     event.setCategoryId(reader.nextInt());
                                 }
+                                else if (name.equals("url")) {
+                                    event.setUrl(reader.nextString());
+                                }
                                 else if (name.equals("loc_id")) {
                                     event.setLocationId(reader.nextInt());
                                 }

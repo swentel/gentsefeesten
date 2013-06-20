@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -64,8 +65,12 @@ public class EventDetail extends BaseActivity {
         price.setText(price_text);
 
         // Set description.
+        String descriptionText = event.getDescription().replace("\r", "");
         TextView description = (TextView) findViewById(R.id.event_description);
-        description.setText(event.getDescription().replace("\r", ""));
+        if (event.getUrl() != "") {
+            descriptionText += "\n\n" + Html.fromHtml(event.getUrl());
+        }
+        description.setText(descriptionText);
 
         // Set favorite image.
         ImageView i = (ImageView) findViewById(R.id.favorite);
@@ -115,8 +120,12 @@ public class EventDetail extends BaseActivity {
      */
     private final View.OnClickListener actionOnline = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent browserIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("http://gentsefeesten.be/event/" + event.getExternalId()));
-            startActivity(browserIntent);
+        Uri url = Uri.parse("http://gentsefeesten.be/event/" + event.getExternalId());
+        if (event.getUrl() != "") {
+            url = Uri.parse(event.getUrl());
+        }
+        Intent browserIntent = new Intent(Intent.ACTION_VIEW, url);
+        startActivity(browserIntent);
         }
     };
 
