@@ -31,11 +31,11 @@ public class TypeOverview extends BaseActivity {
         list.setClickable(true);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                intent = new Intent(getBaseContext(), EventResultFacetList.class);
-                intent.putExtra("facetId", facetId);
-                intent.putExtra("typeIndex", position);
-                intent.putExtra("dateIndex", dateIndex);
-                startActivity(intent);
+            intent = new Intent(getBaseContext(), EventResultFacetList.class);
+            intent.putExtra("facetId", facetId);
+            intent.putExtra("typeIndex", position);
+            intent.putExtra("dateIndex", dateIndex);
+            startActivity(intent);
             }
         });
 

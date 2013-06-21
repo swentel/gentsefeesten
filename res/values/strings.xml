@@ -93,6 +93,12 @@
     <string name="july_27">Zaterdag 27 juli</string>
     <string name="july_28">Zondag 28 juli</string>
     <string name="july_29">Maandag 29 juli</string>
+    
+    <!-- festivals -->
+    <string name="gent_jazz">Gent Jazz festival</string>
+    <string name="ten_days">10 Days Off</string>
+    <string name="puppet">Puppetbuskersfestival</string>
+    <string name="streettheater">Straattheaterfestival</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dans</string>

@@ -39,9 +39,10 @@ public class MenuList extends Activity {
         goLocations.setId(4);
         goLocations.setOnClickListener(actionMenu);
 
+        /*
         TableRow goFestival = (TableRow) findViewById(R.id.menu_festival);
         goFestival.setId(5);
-        goFestival.setOnClickListener(actionMenu);
+        goFestival.setOnClickListener(actionMenu);*/
 
         TableRow goFree = (TableRow) findViewById(R.id.menu_free);
         goFree.setId(6);
@@ -51,6 +52,7 @@ public class MenuList extends Activity {
         goSearch.setId(7);
         goSearch.setOnClickListener(actionMenu);
 
+        /* Not yet implemented
         TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
         goParking.setId(8);
         goParking.setOnClickListener(actionMenu);
@@ -58,6 +60,7 @@ public class MenuList extends Activity {
         TableRow goTransport = (TableRow) findViewById(R.id.menu_transport);
         goTransport.setId(9);
         goTransport.setOnClickListener(actionMenu);
+        */
 
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
         goToilet.setId(10);
@@ -99,7 +102,8 @@ public class MenuList extends Activity {
                 startActivity(goDaysOverview);
                 break;
             case 5:
-                Toast.makeText(MenuList.this, "Festivals coming soon", Toast.LENGTH_LONG).show();
+                Intent goFestivals = new Intent(getBaseContext(), Festivals.class);
+                startActivity(goFestivals);
                 break;
             case 6:
                 // Goes to days, then the list all free events.
