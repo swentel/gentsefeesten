@@ -6,7 +6,6 @@ import android.database.Cursor;
 import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
-import android.util.Log;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -173,10 +172,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Get events.
     public List<Event> getEvents(String selectQuery) {
         List<Event> eventList = new ArrayList<Event>();
-
-        if (GenscheFieste.debugMode) {
-            Log.d("DebugApp", "Query: " + selectQuery);
-        }
 
         SQLiteDatabase db = this.getWritableDatabase();
         assert db != null;

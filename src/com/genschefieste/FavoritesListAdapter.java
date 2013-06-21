@@ -55,7 +55,7 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
             // Set date row.
             eventDate = event.getDate();
             if (eventDate != currentDate) {
-                String dayText = GenscheFieste.getDateFromTimestamp(eventDate, context);
+                String dayText = BaseActivity.getDateFromTimestamp(eventDate, context);
                 currentDate = eventDate;
                 assert convertView != null;
                 TextView dayRow = (TextView) convertView.findViewById(R.id.day_title);

@@ -39,7 +39,7 @@ public class EventDetail extends BaseActivity {
 
         // Set date.
         int date_int = event.getDate();
-        String date_text = GenscheFieste.getDateFromTimestamp(date_int, getApplicationContext());
+        String date_text = getDateFromTimestamp(date_int, getApplicationContext());
         if (date_text.length() > 0) {
             // Period.
             if (event.getDatePeriod().length() > 0) {

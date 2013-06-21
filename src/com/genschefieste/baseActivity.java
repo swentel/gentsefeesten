@@ -1,6 +1,7 @@
 package com.genschefieste;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
@@ -10,6 +11,10 @@ import android.widget.ImageButton;
 
 public class BaseActivity extends Activity {
 
+    // Set to true to get debug statements. Filter on 'DebugApp'.
+    public static boolean debugMode = false;
+
+    // Variables for this activity.
     public boolean showHomebutton = true;
     public boolean disableFavoritesButton = false;
     Intent intent;
@@ -90,6 +95,99 @@ public class BaseActivity extends Activity {
                 return true;
         }
         return false;
+    }
+
+    /**
+     * Returns the text string for a date based on a timestamp.
+     */
+    public static String getDateFromTimestamp(int timestamp, Context context) {
+
+        String date_text = "";
+        int index = -1;
+        int[] date_int_resources = context.getResources().getIntArray(R.array.dates_int);
+        String[] date_string_resources = context.getResources().getStringArray(R.array.dates_full);
+
+        for (int i = 0; i < date_int_resources.length; i++) {
+            if (date_int_resources[i] == timestamp) {
+                index = i;
+            }
+        }
+
+        if (index != -1) {
+            date_text = date_string_resources[index];
+        }
+
+        return date_text;
+    }
+
+    /**
+     * Returns the text string for a date based on a timestamp.
+     */
+    public static String getCategoryFromId(int id, Context context) {
+
+        String category_text = "";
+        int index = -1;
+        int[] category_int_resources = context.getResources().getIntArray(R.array.category_ids);
+        String[] category_string_resources = context.getResources().getStringArray(R.array.category_strings);
+
+        for (int i = 0; i < category_int_resources.length; i++) {
+            if (category_int_resources[i] == id) {
+                index = i;
+            }
+        }
+
+        if (index != -1) {
+            category_text = category_string_resources[index];
+        }
+
+        return category_text;
+    }
+
+    /**
+     * Returns the text string for a location based on an id.
+     */
+    public static String getLocationFromId(int id, Context context) {
+
+        String location_text = "";
+        int index = -1;
+        int[] location_int_resources = context.getResources().getIntArray(R.array.location_ids);
+        String[] location_string_resources = context.getResources().getStringArray(R.array.location_strings);
+
+        for (int i = 0; i < location_int_resources.length; i++) {
+            if (location_int_resources[i] == id) {
+                index = i;
+            }
+        }
+
+        if (index != -1) {
+            location_text = location_string_resources[index];
+        }
+
+        return location_text;
+    }
+
+    /**
+     * Returns the timestamp of a date based on index.
+     */
+    public static int getTimestampFromIndex(int dateIndex, Context context) {
+        int[] date_int_resources = context.getResources().getIntArray(R.array.dates_int);
+        return date_int_resources[dateIndex];
+    }
+
+    /**
+     * Returns the id of a category based on index.
+     */
+    public static int getCategoryIdFromIndex(int index, Context context) {
+        int[] category_int_resources = context.getResources().getIntArray(R.array.category_ids);
+        return category_int_resources[index];
+    }
+
+    /**
+     * Returns the id of a location based on index.
+     */
+    public static int getLocationIdFromIndex(int index, Context context) {
+        int[] location_int_resources = context.getResources().getIntArray(R.array.location_ids);
+        return location_int_resources[index];
     }
 
 }

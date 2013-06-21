@@ -39,6 +39,15 @@ public class Prefs extends PreferenceActivity {
     public static JsonReader reader = null;
     public static String sResponse = "";
 
+    // Number of events. Note that this doesn't have to be the exact number, it's just
+    // go give a nicer indication of the progress dialog.
+    public static int numberOfEvents = 4050;
+
+    // URI to the event services. In theory we could import 2 other services which describe
+    // the locations and categories, however, we have made those available in the resources
+    // so they are also easily translatable.
+    public static String eventUrl = "";
+
     // Connectivity manager.
     private ConnectivityManager cm;
 
@@ -124,7 +133,7 @@ public class Prefs extends PreferenceActivity {
 
         try {
             HttpClient httpClient = new DefaultHttpClient();
-            HttpGet request = new HttpGet(GenscheFieste.eventUrl);
+            HttpGet request = new HttpGet(eventUrl);
             HttpResponse response = httpClient.execute(request);
 
             int status = response.getStatusLine().getStatusCode();
@@ -182,7 +191,7 @@ public class Prefs extends PreferenceActivity {
                     try {
 
                         db.truncateTable();
-                        int total = GenscheFieste.numberOfEvents;
+                        int total = numberOfEvents;
                         int count = 0;
 
                         reader.beginArray();

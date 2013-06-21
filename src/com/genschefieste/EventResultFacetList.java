@@ -66,8 +66,8 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         ListView list = (ListView) findViewById(R.id.list);
 
         // Set day row text.
-        timestamp = GenscheFieste.getTimestampFromIndex(dateIndex, this);
-        date_text = GenscheFieste.getDateFromTimestamp(timestamp, this);
+        timestamp = getTimestampFromIndex(dateIndex, this);
+        date_text = getDateFromTimestamp(timestamp, this);
         TextView day_row = (TextView) findViewById(R.id.day_row);
         day_row.setText(date_text);
 
@@ -78,13 +78,13 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         else {
             // Categories
             if (facetId == 1) {
-                typeId = GenscheFieste.getCategoryIdFromIndex(typeIndex, this);
-                type_text = GenscheFieste.getCategoryFromId(typeId, this);
+                typeId = getCategoryIdFromIndex(typeIndex, this);
+                type_text = getCategoryFromId(typeId, this);
             }
             // Locations.
             else if (facetId == 3) {
-                typeId = GenscheFieste.getLocationIdFromIndex(typeIndex, this);
-                type_text = GenscheFieste.getLocationFromId(typeId, this);
+                typeId = getLocationIdFromIndex(typeIndex, this);
+                type_text = getLocationFromId(typeId, this);
             }
         }
         TextView type_row = (TextView) findViewById(R.id.type_row);
@@ -110,7 +110,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE_SORT + " ASC, " + DatabaseHandler.KEY_TITLE + " ASC";
 
         // Debugging.
-        if (GenscheFieste.debugMode) {
+        if (debugMode) {
             Log.d("DebugApp", "TypeIndex" + typeIndex + " typeId " + typeId + " - Q = " + selectQuery);
         }
 

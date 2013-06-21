@@ -13,6 +13,10 @@ public class MenuList extends Activity {
 
     Intent goDaysOverview;
 
+    // ID of the public toilet 'event'.
+    // Note that this is the external id.
+    public static int toiletsId = 2745;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -102,7 +106,7 @@ public class MenuList extends Activity {
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
-                selectQuery += " WHERE "+ DatabaseHandler.EXTERNAL_ID +" = " + GenscheFieste.toiletsId;
+                selectQuery += " WHERE "+ DatabaseHandler.EXTERNAL_ID +" = " + toiletsId;
                 List<Event> events = db.getEvents(selectQuery);
                 if (events.size() > 0) {
                     Event event = events.get(0);
