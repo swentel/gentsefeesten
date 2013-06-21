@@ -12,8 +12,8 @@
         android:orientation="vertical"
         android:layout_width="fill_parent"
         android:background="#004252"
-        android:layout_height="wrap_content">
-
+        android:layout_height="wrap_content"
+        android:baselineAligned="false">
 
         <View
             android:layout_width="fill_parent"
@@ -23,6 +23,7 @@
 
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
             android:paddingTop="10dp"
             android:paddingBottom="5dp"
             android:id="@+id/menu_home"
@@ -41,7 +42,8 @@
                 android:text="@string/menu_home"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="17sp"
+                    />
 
         </TableRow>
 
@@ -285,7 +287,6 @@
             android:background="#005768"
             android:visibility="visible"/>
 
-        <!-- Parkings is not implemented - question is if we really want to.
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="#003a48"
@@ -315,7 +316,36 @@
             android:layout_height="0.2dp"
             android:background="#005768"
             android:visibility="visible"/>
-        -->
+
+        <TableRow
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="#003a48"
+            android:paddingTop="10dp"
+            android:id="@+id/menu_transport"
+            android:layout_gravity="bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textColor="#73b5c1"
+                android:layout_span="2"
+                android:text="@string/menu_transport"
+                android:gravity="center_vertical"
+                android:layout_gravity="bottom"
+                android:textSize="17sp"/>
+
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="#005768"
+            android:visibility="visible"/>
 
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -337,7 +367,8 @@
                 android:text="@string/menu_toilet"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="17sp"
+                    />
 
         </TableRow>
 
@@ -398,6 +429,13 @@
                 android:textSize="17sp"/>
 
         </TableRow>
+
+        <View
+            android:paddingBottom="10dp"
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="#005768"
+            android:visibility="visible"/>
 
     </TableLayout>
 

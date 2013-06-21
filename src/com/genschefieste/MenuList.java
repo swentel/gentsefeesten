@@ -35,13 +35,13 @@ public class MenuList extends Activity {
         goCategories.setId(3);
         goCategories.setOnClickListener(actionMenu);
 
-        TableRow goFestival = (TableRow) findViewById(R.id.menu_festival);
-        goFestival.setId(4);
-        goFestival.setOnClickListener(actionMenu);
-
         TableRow goLocations = (TableRow) findViewById(R.id.menu_locations);
-        goLocations.setId(5);
+        goLocations.setId(4);
         goLocations.setOnClickListener(actionMenu);
+
+        TableRow goFestival = (TableRow) findViewById(R.id.menu_festival);
+        goFestival.setId(5);
+        goFestival.setOnClickListener(actionMenu);
 
         TableRow goFree = (TableRow) findViewById(R.id.menu_free);
         goFree.setId(6);
@@ -51,16 +51,24 @@ public class MenuList extends Activity {
         goSearch.setId(7);
         goSearch.setOnClickListener(actionMenu);
 
+        TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
+        goParking.setId(8);
+        goParking.setOnClickListener(actionMenu);
+
+        TableRow goTransport = (TableRow) findViewById(R.id.menu_transport);
+        goTransport.setId(9);
+        goTransport.setOnClickListener(actionMenu);
+
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
-        goToilet.setId(8);
+        goToilet.setId(10);
         goToilet.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(9);
+        manageUpdates.setId(11);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(10);
+        goAbout.setId(12);
         goAbout.setOnClickListener(actionMenu);
     }
 
@@ -85,13 +93,13 @@ public class MenuList extends Activity {
                 startActivity(goDaysOverview);
                 break;
             case 4:
-                Toast.makeText(MenuList.this, "Coming soon", Toast.LENGTH_LONG).show();
-                break;
-            case 5:
                 // Goes to days, then typeOverview passing locations.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
                 goDaysOverview.putExtra("facetId", 3);
                 startActivity(goDaysOverview);
+                break;
+            case 5:
+                Toast.makeText(MenuList.this, "Festivals coming soon", Toast.LENGTH_LONG).show();
                 break;
             case 6:
                 // Goes to days, then the list all free events.
@@ -103,6 +111,12 @@ public class MenuList extends Activity {
                 onSearchRequested();
                 break;
             case 8:
+                Toast.makeText(MenuList.this, "Parking coming soon", Toast.LENGTH_LONG).show();
+                break;
+            case 9:
+                Toast.makeText(MenuList.this, "Public transport coming soon", Toast.LENGTH_LONG).show();
+                break;
+            case 10:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
@@ -115,11 +129,11 @@ public class MenuList extends Activity {
                     startActivity(goToilet);
                 }
                 break;
-            case 9:
+            case 11:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 10:
+            case 12:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;
