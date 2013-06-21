@@ -255,7 +255,7 @@
             android:text="@string/info_online"
             android:layout_width="fill_parent"
             android:layout_gravity="center"
-            android:background="#ef4f3f"
+            android:background="#ed4e40"
             android:padding="10dp"
             android:layout_height="wrap_content"
             android:gravity="center"
@@ -264,7 +264,7 @@
             android:textColor="#ffffff"
             android:textSize="20sp"
             android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
+            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
