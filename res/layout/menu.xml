@@ -251,7 +251,6 @@
 
         </TableRow>
 
-
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
@@ -287,6 +286,7 @@
             android:background="#005768"
             android:visibility="visible"/>
 
+        <!-- Parkings and public transport not yet implemented
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="#003a48"
@@ -340,6 +340,7 @@
                 android:textSize="17sp"/>
 
         </TableRow>
+        -->
 
         <View
             android:layout_width="fill_parent"
