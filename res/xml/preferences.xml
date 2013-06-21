@@ -39,6 +39,14 @@
             android:dependency="filter_loc"
             android:defaultValue="230" />
 
+        <ListPreference
+            android:key="pref_front_limit"
+            android:title="@string/setting_front_limit"
+            android:summary="@string/setting_front_limit_info"
+            android:entries="@array/front_limit_numbers"
+            android:entryValues="@array/front_limit_numbers"
+            android:defaultValue="40" />
+
         <CheckBoxPreference
             android:key="pref_all_day"
             android:title="@string/show_all_day_events"

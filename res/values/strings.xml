@@ -66,6 +66,8 @@
     <string name="settings_title">Instellingen</string>
     <string name="program_title">Programma</string>
     <string name="home_page_selection">Evenementen op startscherm</string>
+    <string name="setting_front_limit">Aantal</string>
+    <string name="setting_front_limit_info">Kies het aantal dat in de lijst wordt getoond op het startscherm</string>
     <string name="setting_category_title">Filter op categorie</string>
     <string name="setting_location_title">Filter op locatie</string>
     <string name="setting_category_info">Kies categorie</string>
@@ -85,7 +87,7 @@
     <string name="tour_step_end_title">We zijn er bijna ...</string>
     <string name="tour_step_1_info">We slaan nu meer dan 4000 evenementen op. Even geduld, dit duurt ongeveer vijf minuten.\n\nVolg gerust mee, er volgt nog info!</string>
     <string name="tour_step_2_info">In totaal zal de opslagruimte ongeveer 2.6MB bedragen. Da\'s nie veel waar!\n\nWe raden je aan om een dag voor de start van de feesten het programma ook nog eens te verversen.</string>
-    <string name="tour_step_3_info">Op het startscherm krijg je de eerstkomende 30 evenementen. Via het instellingen scherm kan je nog een bepaalde categorie en/of locatie kiezen om te verfijnen.</string>
+    <string name="tour_step_3_info">Op het startscherm krijg je de eerstkomende evenementen. Via het instellingen scherm kan je een bepaalde categorie en/of locatie kiezen om te verfijnen.</string>
     <string name="tour_step_4_info">Bovenaan kan je altijd klikken om naar het hoofdmenu te gaan of je favorieten te bekijken. De menu knop op je telefoon toont nog meer opties.</string>
     <string name="tour_step_5_info">Indien je een zoekknop hebt op je telefoon, kan je daar altijd op klikken om de zoekfunctionaliteit te starten.</string>
     <string name="tour_step_6_info">Je kan snel door het programma bladeren door via het menu "categorie", "gratis" of "locatie" te klikken.\n\nJe kiest dan eerst een dag en dan nog een subtype, bvb comedy of sint-baafs.</string>

@@ -81,6 +81,7 @@ public class Main extends BaseActivity {
 
         // Get settings for main query.
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+        String limit = pref.getString("pref_front_limit", "40");
         boolean filterOnLocation = pref.getBoolean("filter_loc", false);
         String prefLocationId = pref.getString("pref_loc", "230");
         boolean filterOnCategory = pref.getBoolean("filter_cat", false);
@@ -129,7 +130,7 @@ public class Main extends BaseActivity {
             String statement = builder.toString();
             selectQuery += statement;
         }
-        selectQuery += " ORDER BY "+ DatabaseHandler.KEY_DATE +" ASC, "+ DatabaseHandler.KEY_DATE_SORT +" ASC limit 30";
+        selectQuery += " ORDER BY "+ DatabaseHandler.KEY_DATE +" ASC, "+ DatabaseHandler.KEY_DATE_SORT +" ASC limit " + limit;
         events = db.getEvents(selectQuery);
 
         return events;
