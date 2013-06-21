@@ -121,7 +121,7 @@ public class EventDetail extends BaseActivity {
     private final View.OnClickListener actionOnline = new View.OnClickListener() {
         public void onClick(View v) {
         Uri url = Uri.parse("http://gentsefeesten.be/event/" + event.getExternalId());
-        if (event.getUrl() != "") {
+        if (event.getUrl().length() > 0) {
             url = Uri.parse(event.getUrl());
         }
         Intent browserIntent = new Intent(Intent.ACTION_VIEW, url);
