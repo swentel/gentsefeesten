@@ -3,13 +3,17 @@ package com.genschefieste;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.location.Location;
+import android.location.LocationListener;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends Activity implements LocationListener {
 
     // Set to true to get debug statements. Filter on 'DebugApp'.
     public static boolean debugMode = false;
@@ -19,9 +23,21 @@ public class BaseActivity extends Activity {
     public boolean disableFavoritesButton = false;
     Intent intent;
 
+    // Location variables.
+    public static double longitude = -1;
+    public static double latitude = -1;
+
+    // Location manager.
+    public static LocationManager locationManager;
+    public static boolean geoListening = false;
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        // Start location listening.
+        geoListening = true;
+        startLocationListening();
 
         // Add listener on menu button.
         ImageButton go_to_menu = (ImageButton) findViewById(R.id.menu_bar_go_to_menu);
@@ -34,6 +50,70 @@ public class BaseActivity extends Activity {
             go_to_favorites.setId(2);
             go_to_favorites.setOnClickListener(topBar);
         }
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        geoListening = true;
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        locationManager.removeUpdates(this);
+    }
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        locationManager.removeUpdates(this);
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        geoListening = true;
+        startLocationListening();
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        locationManager.removeUpdates(this);
+    }
+
+    @Override
+    public void onLocationChanged(Location location) {
+        longitude = location.getLongitude();
+        latitude = location.getLatitude();
+        if (geoListening) {
+            Toast.makeText(this, "Location: " + latitude + " : " + longitude, Toast.LENGTH_LONG).show();
+            locationManager.removeUpdates(this);
+        }
+        geoListening = false;
+    }
+
+    @Override
+    public void onStatusChanged(String s, int i, Bundle bundle) {
+    }
+
+    @Override
+    public void onProviderEnabled(String s) {
+    }
+
+    @Override
+    public void onProviderDisabled(String s) {
+    }
+
+
+    /**
+     * Start location listening
+     */
+    public void startLocationListening() {
+        geoListening = true;
+        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
     }
 
     /**

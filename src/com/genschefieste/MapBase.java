@@ -1,10 +1,15 @@
 package com.genschefieste;
 
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.graphics.Canvas;
 import android.graphics.Point;
+import android.net.Uri;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -20,12 +25,18 @@ public class MapBase extends MapActivity {
     MapView mapView;
     MapController mc;
     GeoPoint p;
+    public String latitude;
+    public String longitude;
 
     public void onCreate(Bundle savedInstanceState) {
 
         // Get event.
         Bundle extras = getIntent().getExtras();
         int eventId = extras.getInt("eventId");
+        Float latitude = extras.getFloat("latitude");
+        Float longitude = extras.getFloat("longitude");
+        Toast.makeText(MapBase.this, "lat: " + latitude + ", long: " + longitude, Toast.LENGTH_LONG).show();
+
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
 
@@ -52,7 +63,22 @@ public class MapBase extends MapActivity {
         listOfOverlays.add(mapOverlay);
 
         mapView.invalidate();
+
+        // Add listener on map button.
+        TextView goOglemap = (TextView) findViewById(R.id.map);
+        goOglemap.setOnClickListener(actionDirections);
     }
+
+    /**
+     * OnClickListener on "Directions" button.
+     */
+    private final View.OnClickListener actionDirections = new View.OnClickListener() {
+        public void onClick(View v) {
+            String mapUrl = "http://maps.google.com/maps?saddr=" + latitude + "," + longitude + "&daddr=" + event.getLatitude() + "," + event.getLongitude();
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(mapUrl));
+            startActivity(intent);
+        }
+    };
 
     @Override
     public void onResume() {

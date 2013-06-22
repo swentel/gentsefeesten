@@ -211,19 +211,6 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/map"
-                android:layout_alignParentRight="true"
-                android:background="#ffffff"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="170dp"
-                android:scaleType="center"
-                android:layout_gravity="center_vertical"
-                android:layout_marginTop="13dp"/>
-
-            <ImageButton
-                android:layout_height="wrap_content"
-                android:layout_width="wrap_content"
-                xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/share"
                 android:layout_alignParentRight="true"
                 android:background="#ffffff"
@@ -248,6 +235,23 @@
                 android:layout_marginRight="20dp"/>
 
          </RelativeLayout>
+
+        <TextView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:id="@+id/map"
+            android:text="@string/info_map"
+            android:layout_width="fill_parent"
+            android:layout_gravity="center"
+            android:background="#ed4e40"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#ffffff"
+            android:textSize="20sp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"/>
 
         <TextView
             xmlns:android="http://schemas.android.com/apk/res/android"

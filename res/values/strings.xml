@@ -57,6 +57,8 @@
     <string name="view_on_map">Bekijk op map</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
     <string name="info_online">Meer info online</string>
+    <string name="info_map">Bekijk op map</string>
+    <string name="info_directions">Routebeschrijving</string>
 
     <!-- About activity -->
     <string name="about_title">Over deze applicatie</string>

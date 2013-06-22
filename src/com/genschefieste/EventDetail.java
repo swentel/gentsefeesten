@@ -80,13 +80,20 @@ public class EventDetail extends BaseActivity {
             i.setImageResource(R.drawable.fav_on);
         }
 
-        // Set Google Map and listener on the image.
+        // Set listener on 'go online' and 'google map'.
+        TextView goOnlineButton = (TextView) findViewById(R.id.info_online);
+        TextView goOglemap = (TextView) findViewById(R.id.map);
         cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-            ImageView map = (ImageView) findViewById(R.id.map);
-            map.setImageResource(R.drawable.map);
+            // Add listener on online button.
+            goOnlineButton.setOnClickListener(actionOnline);
             // Add listener on map button.
-            map.setOnClickListener(actionMap);
+            goOglemap.setOnClickListener(actionMap);
+        }
+        else {
+            // Make invisible.
+            goOglemap.setVisibility(TextView.GONE);
+            goOnlineButton.setVisibility(TextView.GONE);
         }
 
         // Add listener on share button.
@@ -96,10 +103,6 @@ public class EventDetail extends BaseActivity {
         // Add listener on favorite button.
         ImageButton favoriteButton = (ImageButton) findViewById(R.id.favorite);
         favoriteButton.setOnClickListener(actionFavorite);
-
-        // Add listener on online button.
-        TextView goOnlineButton = (TextView) findViewById(R.id.info_online);
-        goOnlineButton.setOnClickListener(actionOnline);
 
         super.onCreate(savedInstanceState);
     }
@@ -111,6 +114,8 @@ public class EventDetail extends BaseActivity {
         public void onClick(View v) {
         Intent goMap = new Intent(getBaseContext(), MapBase.class);
         goMap.putExtra("eventId", event.getId());
+        goMap.putExtra("latitude", latitude);
+        goMap.putExtra("longitude", longitude);
         startActivity(goMap);
         }
     };
