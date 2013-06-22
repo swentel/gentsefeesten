@@ -14,8 +14,8 @@ import android.widget.TextView;
 
 public class EventDetail extends BaseActivity {
 
+    // Event and shared preference.
     private Event event;
-
     SharedPreferences pref = null;
 
     // Connectivity manager.
