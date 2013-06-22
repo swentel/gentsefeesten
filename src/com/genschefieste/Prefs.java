@@ -4,6 +4,8 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.database.SQLException;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -14,9 +16,6 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import com.google.gson.stream.JsonReader;
-import com.google.gson.stream.JsonToken;
-
 import org.apache.http.HttpResponse;
 import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
@@ -24,6 +23,7 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 
+import java.io.BufferedReader;
 import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -35,18 +35,20 @@ public class Prefs extends PreferenceActivity {
 
     ProgressDialog dialog;
     public static int siteStatus = 200;
-    public static InputStream jsonfile = null;
-    public static JsonReader reader = null;
-    public static String sResponse = "";
+    public static InputStream dataFile = null;
 
-    // Number of events. Note that this doesn't have to be the exact number, it's just
-    // go give a nicer indication of the progress dialog.
-    public static int numberOfEvents = 4050;
+    // Number of lines to read, this is just approximate, might change in the future,
+    // but this allows us to create a progress bar.
+    public int numberOfEvents = 810;
 
     // URI to the event services. In theory we could import 2 other services which describe
     // the locations and categories, however, we have made those available in the resources
-    // so they are also easily translatable.
+    // so they are also easily translatable. Note that for the Android version we just
+    // have a file with the values part of a query which allows us to import in around 30 seconds.
     public static String eventUrl = "";
+
+    // The name of the data file.
+    public static String fileName = "events.data";
 
     // Connectivity manager.
     private ConnectivityManager cm;
@@ -81,7 +83,7 @@ public class Prefs extends PreferenceActivity {
 
                     dialog = new customProgressDialog(Prefs.this);
                     dialog.setTitle(R.string.updating);
-                    dialog.setMessage(getString(R.string.updating));
+                    dialog.setMessage(getString(R.string.updating_message));
                     dialog.setIndeterminate(false);
                     dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
                     dialog.show();
@@ -144,7 +146,7 @@ public class Prefs extends PreferenceActivity {
                 response.getEntity().writeTo(outputStream);
 
                 // Write data to local file.
-                FileOutputStream fos = openFileOutput("events.json", Context.MODE_PRIVATE);
+                FileOutputStream fos = openFileOutput(fileName, Context.MODE_PRIVATE);
                 fos.write(outputStream.toByteArray());
                 fos.flush();
                 fos.close();
@@ -180,112 +182,70 @@ public class Prefs extends PreferenceActivity {
 
                 if (siteStatus == 200) {
 
-                    DatabaseHandler db = new DatabaseHandler(getApplicationContext());
-
-                    try {
-                        jsonfile = openFileInput("events.json");
-                        reader = new JsonReader(new InputStreamReader(jsonfile, "UTF-8"));
-                    }
-                    catch (UnsupportedEncodingException ignored) {}
+                    dataFile = openFileInput(fileName);
+                    InputStreamReader inputreader = new InputStreamReader(dataFile, "UTF-8");
+                    BufferedReader buffreader = new BufferedReader(inputreader);
 
                     try {
 
-                        db.truncateTable();
-                        int total = numberOfEvents;
                         int count = 0;
+                        String line;
 
-                        reader.beginArray();
-                        while (reader.hasNext()) {
-                            Event event = new Event();
+                        DatabaseHandler handler = new DatabaseHandler(getApplicationContext());
+                        handler.truncateTable();
+                        SQLiteDatabase db = handler.getWritableDatabase();
 
-                            reader.beginObject();
+                        String query = "INSERT INTO " + handler.TABLE_EVENTS + "(" +
+                                "" + handler.KEY_TITLE + "," +
+                                "" + handler.EXTERNAL_ID + "," +
+                                "" + handler.KEY_FREE + "," +
+                                "" + handler.KEY_PRICE + "," +
+                                "" + handler.KEY_PRICE_PS + "," +
+                                "" + handler.KEY_DESCRIPTION + "," +
+                                "" + handler.KEY_DATE + "," +
+                                "" + handler.KEY_DATE_PERIOD + "," +
+                                "" + handler.KEY_START_HOUR + "," +
+                                "" + handler.KEY_DATE_SORT + "," +
+                                "" + handler.KEY_CAT_NAME + "," +
+                                "" + handler.KEY_CAT_ID + "," +
+                                "" + handler.KEY_URL + "," +
+                                "" + handler.KEY_LOC_ID + "," +
+                                "" + handler.KEY_LOC_NAME + "," +
+                                "" + handler.KEY_LAT + "," +
+                                "" + handler.KEY_LONG + "," +
+                                "" + handler.KEY_DISCOUNT + "," +
+                                "" + handler.KEY_FESTIVAL + "" +
+                                ") VALUES ";
 
-                            while (reader.hasNext()) {
-                                String name = reader.nextName();
+                            do {
+                                line = buffreader.readLine();
 
-                                // Ignore null values.
-                                if (reader.peek() == JsonToken.NULL) {
-                                    reader.skipValue();
-                                }
-                                else if (name.equals("title")) {
-                                    event.setTitle(reader.nextString());
-                                }
-                                else if (name.equals("id")) {
-                                    event.setExternalId(reader.nextInt());
-                                }
-                                else if (name.equals("gratis")) {
-                                    event.setFree(reader.nextInt());
-                                }
-                                else if (name.equals("prijs")) {
-                                    event.setPrice(reader.nextString());
-                                }
-                                else if (name.equals("prijs_vvk")) {
-                                    event.setPricePresale(reader.nextString());
-                                }
-                                else if (name.equals("omsch")) {
-                                    event.setDescription(reader.nextString());
-                                }
-                                else if (name.equals("datum")) {
-                                    // Add 2 hours so the timestamp is actually stored
-                                    // on the next day, since our timestamps are
-                                    // on GMT and we don't want to bother start
-                                    // converting this at runtime.
-                                    event.setDate(reader.nextInt() + 7200);
-                                }
-                                else if (name.equals("periode")) {
-                                    event.setDatePeriod(reader.nextString());
-                                }
-                                else if (name.equals("start")) {
-                                    event.setStartHour(reader.nextString());
-                                }
-                                else if (name.equals("sort")) {
-                                    event.setDateSort(reader.nextInt());
-                                }
-                                else if (name.equals("cat")) {
-                                    event.setCategory(reader.nextString());
-                                }
-                                else if (name.equals("cat_id")) {
-                                    event.setCategoryId(reader.nextInt());
-                                }
-                                else if (name.equals("url")) {
-                                    event.setUrl(reader.nextString());
-                                }
-                                else if (name.equals("loc_id")) {
-                                    event.setLocationId(reader.nextInt());
-                                }
-                                else if (name.equals("loc")) {
-                                    event.setLocation(reader.nextString());
-                                }
-                                else if (name.equals("lat")) {
-                                    event.setLatitude(reader.nextString());
-                                }
-                                else if (name.equals("lon")) {
-                                    event.setLongitude(reader.nextString());
-                                }
-                                else if (name.equals("korting")) {
-                                    event.setDiscount(reader.nextString());
-                                }
-                                else if (name.equals("festival")) {
-                                    event.setFestival(reader.nextInt());
-                                }
-                                else {
-                                    // Skip fields we don't want to parse
-                                    reader.skipValue();
-                                }
-                            }
+                                // Split on ::SPLIT::
+                                line = line.replace("|NEWLINE|", "\n");
+                                String [] values = line.split(":SPLIT:");
 
-                            reader.endObject();
+                                try {
+                                    db.beginTransaction();
+                                    for ( int i = 0; i <= values.length - 1; i++) {
+                                        String insertQuery = query + values[i] + ";";
+                                        db.execSQL(insertQuery);
+                                    }
+                                    db.setTransactionSuccessful();
+                                }
+                                catch (SQLException e) {} finally {
+                                    db.endTransaction();
+                                }
 
-                            count++;
-                            int update = (count*100/total);
-                            publishProgress(update);
+                                // Notify dialog.
+                                count++;
+                                int update = (count*100/numberOfEvents);
+                                publishProgress(update);
 
-                            // Save to database.
-                            db.insertEvent(event);
-                        }
-                        reader.endArray();
+                            } while (line != null);
+
+                        } catch (IOException ignored) {
                     }
-                    catch (IOException ignored) {}
+                    catch (Exception ignored) {}
                 }
                 else {
                     return "servicedown";
@@ -332,7 +292,7 @@ public class Prefs extends PreferenceActivity {
     public void closeParseDialog(Dialog dialog) {
 
         // Remove the file.
-        getApplicationContext().deleteFile("events.json");
+        getApplicationContext().deleteFile(fileName);
 
         // Close dialog
         if (dialog.isShowing()) {

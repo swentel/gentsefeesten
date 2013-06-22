@@ -66,7 +66,7 @@
 
     <!-- Settings screen -->
     <string name="settings_title">Instellingen</string>
-    <string name="program_title">Programma</string>
+    <string name="program_title">Programma bijwerken</string>
     <string name="home_page_selection">Evenementen op startscherm</string>
     <string name="setting_front_limit">Aantal</string>
     <string name="setting_front_limit_info">Kies het aantal dat in de lijst wordt getoond op het startscherm</string>
@@ -79,6 +79,7 @@
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>
+    <string name="updating_message">We halen nu meer dan 4000 evenementen op. Dit duurt ongeveer 1 minuut, even geduld.</string>
     <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.</string>
     <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
     <string name="service_offline">Onze service met het programma is even offline, gelieve ons te verontschuldigen.</string>

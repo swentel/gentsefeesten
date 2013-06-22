@@ -64,7 +64,7 @@ public class EventDetail extends BaseActivity {
         price.setText(price_text);
 
         // Set description.
-        String descriptionText = event.getDescription().replace("\r", "");
+        String descriptionText = event.getDescription();
         TextView description = (TextView) findViewById(R.id.event_description);
         if (event.getUrl().length() > 0) {
             descriptionText += "\n\n" + event.getUrl();

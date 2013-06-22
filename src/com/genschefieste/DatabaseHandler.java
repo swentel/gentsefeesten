@@ -3,7 +3,6 @@ package com.genschefieste;
 import android.content.ContentValues;
 import android.content.Context;
 import android.database.Cursor;
-import android.database.DatabaseUtils;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
@@ -89,58 +88,6 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
         // No upgrades.
-    }
-
-    // Insert or update event.
-    public void insertEvent(Event event) {
-        SQLiteDatabase db = this.getWritableDatabase();
-
-        DatabaseUtils.InsertHelper ih = new DatabaseUtils.InsertHelper(db, "events");
-        final int INDEX_KEY_TITLE = ih.getColumnIndex(KEY_TITLE);
-        final int INDEX_EXTERNAL_ID = ih.getColumnIndex(EXTERNAL_ID);
-        final int INDEX_KEY_FREE = ih.getColumnIndex(KEY_FREE);
-        final int INDEX_KEY_PRICE = ih.getColumnIndex(KEY_PRICE);
-        final int INDEX_KEY_PRICE_PS = ih.getColumnIndex(KEY_PRICE_PS);
-        final int INDEX_KEY_DESCRIPTION = ih.getColumnIndex(KEY_DESCRIPTION);
-        final int INDEX_KEY_DATE = ih.getColumnIndex(KEY_DATE);
-        final int INDEX_KEY_DATE_PERIOD = ih.getColumnIndex(KEY_DATE_PERIOD);
-        final int INDEX_KEY_START_HOUR = ih.getColumnIndex(KEY_START_HOUR);
-        final int INDEX_KEY_DATE_SORT = ih.getColumnIndex(KEY_DATE_SORT);
-        final int INDEX_KEY_CAT_NAME = ih.getColumnIndex(KEY_CAT_NAME);
-        final int INDEX_KEY_CAT_ID = ih.getColumnIndex(KEY_CAT_ID);
-        final int INDEX_KEY_URL = ih.getColumnIndex(KEY_URL);
-        final int INDEX_KEY_LOC_ID = ih.getColumnIndex(KEY_LOC_ID);
-        final int INDEX_KEY_LOC_NAME = ih.getColumnIndex(KEY_LOC_NAME);
-        final int INDEX_KEY_LAT = ih.getColumnIndex(KEY_LAT);
-        final int INDEX_KEY_LONG = ih.getColumnIndex(KEY_LONG);
-        final int INDEX_KEY_DISCOUNT = ih.getColumnIndex(KEY_DISCOUNT);
-        final int INDEX_KEY_FESTIVAL = ih.getColumnIndex(KEY_FESTIVAL);
-
-        ih.prepareForInsert();
-
-        ih.bind(INDEX_KEY_TITLE, event.getTitle());
-        ih.bind(INDEX_EXTERNAL_ID, event.getExternalId());
-        ih.bind(INDEX_KEY_FREE, event.getFree());
-        ih.bind(INDEX_KEY_PRICE, event.getPrice());
-        ih.bind(INDEX_KEY_PRICE_PS, event.getPricePresale());
-        ih.bind(INDEX_KEY_DESCRIPTION, event.getDescription());
-        ih.bind(INDEX_KEY_DATE, event.getDate());
-        ih.bind(INDEX_KEY_DATE_PERIOD, event.getDatePeriod());
-        ih.bind(INDEX_KEY_START_HOUR, event.getStartHour());
-        ih.bind(INDEX_KEY_DATE_SORT, event.getDateSort());
-        ih.bind(INDEX_KEY_CAT_NAME, event.getCategory());
-        ih.bind(INDEX_KEY_CAT_ID, event.getCategoryId());
-        ih.bind(INDEX_KEY_URL, event.getUrl());
-        ih.bind(INDEX_KEY_LOC_ID, event.getLocationId());
-        ih.bind(INDEX_KEY_LOC_NAME, event.getLocation());
-        ih.bind(INDEX_KEY_LAT, event.getLatitude());
-        ih.bind(INDEX_KEY_LONG, event.getLongitude());
-        ih.bind(INDEX_KEY_DISCOUNT, event.getDiscount());
-        ih.bind(INDEX_KEY_FESTIVAL, event.getFestival());
-
-        ih.execute();
-
-        db.close();
     }
 
     // Set favorite status for an event.
