@@ -1,36 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="fill_parent"
-    android:layout_height="fill_parent"
-    android:orientation="vertical"
-    android:background="#005371">
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical"
+        android:background="#005371">
 
     <include layout="@layout/header" />
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_width="fill_parent"
-        android:layout_height="45dp"
-        android:weightSum="1.0"
-        android:orientation="vertical"
-        android:background="#005371"
-        android:layout_marginTop="10dp">
-
-        <TextView
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:layout_gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_weight="1"
-            android:background="#ffffff"
-            android:gravity="center"
-            android:text="@string/my_favorites"
-            android:textColor="#00394f"
-            android:textSize="20sp"
-            android:layout_marginBottom="1dp"/>
+            android:weightSum="1.0"
+            android:orientation="vertical"
+            android:background="#005371"
+            android:layout_marginTop="10dp">
+
+        <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:layout_gravity="center"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:layout_weight="1"
+                android:background="#ffffff"
+                android:gravity="center"
+                android:text="@string/menu_around_me"
+                android:textColor="#00394f"
+                android:textSize="20sp"
+                android:layout_marginBottom="1dp"/>
 
     </LinearLayout>
 
@@ -51,9 +51,9 @@
         android:padding="10dp"
         android:id="@+id/empty"
         android:textSize="15sp"
-        android:text="@string/no_favorites"
+        android:text="@string/no_events_around_me"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content">
-    </TextView>
+</TextView>
 
 </LinearLayout>

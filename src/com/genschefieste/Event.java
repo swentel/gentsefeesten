@@ -1,6 +1,6 @@
 package com.genschefieste;
 
-public class Event {
+public class Event  {
 
     // Private variables.
     int id;

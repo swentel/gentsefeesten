@@ -1,6 +1,8 @@
 package com.genschefieste;
 
+import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TableRow;
@@ -15,6 +17,9 @@ public class MenuList extends BaseActivity {
     // ID of the public toilet 'event'.
     // Note that this is the external id.
     public static int toiletsId = 2745;
+
+    // Connectivity manager.
+    private ConnectivityManager cm;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -45,34 +50,39 @@ public class MenuList extends BaseActivity {
         goFestival.setId(5);
         goFestival.setOnClickListener(actionMenu);*/
 
+        TableRow goAroundMe = (TableRow) findViewById(R.id.menu_around_me);
+        goAroundMe.setId(6);
+        goAroundMe.setOnClickListener(actionMenu);
+
         TableRow goFree = (TableRow) findViewById(R.id.menu_free);
-        goFree.setId(6);
+        goFree.setId(7);
         goFree.setOnClickListener(actionMenu);
 
+
         TableRow goSearch = (TableRow) findViewById(R.id.menu_search);
-        goSearch.setId(7);
+        goSearch.setId(8);
         goSearch.setOnClickListener(actionMenu);
 
         /* Not yet implemented
         TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
-        goParking.setId(8);
+        goParking.setId(9);
         goParking.setOnClickListener(actionMenu);
 
         TableRow goTransport = (TableRow) findViewById(R.id.menu_transport);
-        goTransport.setId(9);
+        goTransport.setId(10);
         goTransport.setOnClickListener(actionMenu);
         */
 
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
-        goToilet.setId(10);
+        goToilet.setId(11);
         goToilet.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(11);
+        manageUpdates.setId(12);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(12);
+        goAbout.setId(13);
         goAbout.setOnClickListener(actionMenu);
 
         super.onCreate(savedInstanceState);
@@ -109,21 +119,31 @@ public class MenuList extends BaseActivity {
                 startActivity(goFestivals);
                 break;
             case 6:
+                cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+                    Intent GoAroundMe = new Intent(getBaseContext(), AroundMe.class);
+                    startActivity(GoAroundMe);
+                }
+                else {
+                    Toast.makeText(MenuList.this, getString(R.string.menu_around_me_not_connected), Toast.LENGTH_LONG).show();
+                }
+                break;
+            case 7:
                 // Goes to days, then the list all free events.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
                 goDaysOverview.putExtra("facetId", 2);
                 startActivity(goDaysOverview);
                 break;
-            case 7:
+            case 8:
                 onSearchRequested();
                 break;
-            case 8:
+            case 9:
                 Toast.makeText(MenuList.this, "Parking coming soon", Toast.LENGTH_LONG).show();
                 break;
-            case 9:
+            case 10:
                 Toast.makeText(MenuList.this, "Public transport coming soon", Toast.LENGTH_LONG).show();
                 break;
-            case 10:
+            case 11:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
@@ -136,11 +156,11 @@ public class MenuList extends BaseActivity {
                     startActivity(goToilet);
                 }
                 break;
-            case 11:
+            case 12:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 12:
+            case 13:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;

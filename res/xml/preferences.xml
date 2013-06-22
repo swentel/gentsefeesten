@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
 <PreferenceScreen
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    android:title="@string/settings_title">
+    xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-            android:title="@string/settings_title">
+            android:title="@string/program_cateogry">
         <Preference android:title="@string/program_title"
             android:key="get_updates"
             android:summary=""/>
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/home_page_selection">
+        android:title="@string/homepage_category">
 
         <CheckBoxPreference
             android:key="filter_cat"

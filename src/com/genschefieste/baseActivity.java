@@ -14,9 +14,6 @@ import android.widget.ImageButton;
 
 public class BaseActivity extends Activity implements LocationListener {
 
-    // Set to true to get debug statements. Filter on 'DebugApp'.
-    public static boolean debugMode = false;
-
     // Variables for this activity.
     public boolean showHomebutton = true;
     public boolean disableFavoritesButton = false;

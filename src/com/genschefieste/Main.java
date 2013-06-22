@@ -71,8 +71,6 @@ public class Main extends BaseActivity {
     protected void onResume() {
         super.onResume();
         if (pref.getBoolean("firstrun", true)) {
-            // Do first run stuff here then set 'firstrun' as false
-            // using the following line to edit/commit prefs
             pref.edit().putBoolean("firstrun", false).commit();
             // Go to prefs activity and start download.
             Intent intent = new Intent(getBaseContext(), Prefs.class);

@@ -5,6 +5,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
+import android.graphics.PointF;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -160,6 +161,79 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
 
         return eventList;
+    }
+
+    // Get events.
+    public List<Event> getEventsAroundMe(String selectQuery, PointF center, double radius) {
+        List<Event> eventList = new ArrayList<Event>();
+
+        SQLiteDatabase db = this.getWritableDatabase();
+        assert db != null;
+        Cursor cursor = db.rawQuery(selectQuery, null);
+
+        // Loop through all rows and add to list.
+        if (cursor.moveToFirst()) {
+            do {
+                Event event = new Event(
+                    cursor.getInt(0),
+                    cursor.getString(1),
+                    cursor.getInt(2),
+                    cursor.getInt(3),
+                    cursor.getString(4),
+                    cursor.getString(5),
+                    cursor.getString(6),
+                    cursor.getInt(7),
+                    cursor.getString(8),
+                    cursor.getString(9),
+                    cursor.getInt(10),
+                    cursor.getString(11),
+                    cursor.getInt(12),
+                    cursor.getString(13),
+                    cursor.getInt(14),
+                    cursor.getString(15),
+                    cursor.getString(16),
+                    cursor.getString(17),
+                    cursor.getString(18),
+                    cursor.getInt(19),
+                    cursor.getInt(20)
+                );
+
+                // Adding event to list in case it's in our circle.
+                float x = Float.parseFloat(event.getLatitude());
+                float y = Float.parseFloat(event.getLongitude());
+                PointF pointForCheck = new PointF(x, y);
+
+                double distance = getDistanceBetweenTwoPoints(pointForCheck, center);
+                if (distance <= radius) {
+                    // Put the distance in the location property.
+                    event.setLocation(String.valueOf(distance));
+                    eventList.add(event);
+                }
+            }
+            while (cursor.moveToNext());
+        }
+
+        db.close();
+
+        return eventList;
+    }
+
+    /**
+     * Get distance between two points.
+     */
+    public static double getDistanceBetweenTwoPoints(PointF p1, PointF p2) {
+        double R = 6371000; // m
+        double dLat = Math.toRadians(p2.x - p1.x);
+        double dLon = Math.toRadians(p2.y - p1.y);
+        double lat1 = Math.toRadians(p1.x);
+        double lat2 = Math.toRadians(p2.x);
+
+        double a = Math.sin(dLat / 2) * Math.sin(dLat / 2) + Math.sin(dLon / 2)
+                * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
+        double c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
+        double d = R * c;
+
+        return d;
     }
 
     // Get number of events.

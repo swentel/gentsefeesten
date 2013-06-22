@@ -5,7 +5,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
@@ -108,11 +107,6 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
             selectQuery += " AND " + DatabaseHandler.KEY_LOC_ID + " = " + typeId;
         }
         selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE_SORT + " ASC, " + DatabaseHandler.KEY_TITLE + " ASC";
-
-        // Debugging.
-        if (debugMode) {
-            Log.d("DebugApp", "TypeIndex" + typeIndex + " typeId " + typeId + " - Q = " + selectQuery);
-        }
 
         events = db.getEvents(selectQuery);
 

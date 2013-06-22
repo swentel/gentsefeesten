@@ -30,6 +30,12 @@
     <string name="menu_toilet">Publieke toiletten</string>
     <string name="menu_settings">Settings</string>
     <string name="menu_about">Over deze applicatie</string>
+    <string name="menu_around_me">In de buurt</string>
+    <string name="menu_around_me_not_connected">Om te weten wat er in je buurt is moet je verbonden zijn met 3G of WiFi.</string>
+
+    <!-- Around me -->
+    <string name="no_events_around_me">Geen activiteiten in de buurt gevonden.\n\nEr kunnen drie redenen zijn waarom er geen evenementen worden gevonden:\n\n1. Je zit niet in Gent en we zoeken maar binnen een straal van 5 kilometer.\n\n2. We hebben je locatie misschien toch nog niet exact kunnen bepalen, probeer gerust opnieuw door hier te klikken.\n\n3. Deze functie komt pas goed op gang vanaf de eerste dag van de gentse feesten.</string>
+    <string name="around_me_refresh">Scherm is herladen</string>
 
     <!-- Search and facet -->
     <string name="search_hint">Zoek evenement</string>
@@ -66,9 +72,9 @@
     <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. Data beschikbaar via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
-    <string name="settings_title">Instellingen</string>
+    <string name="program_cateogry">Programma</string>
     <string name="program_title">Programma bijwerken</string>
-    <string name="home_page_selection">Evenementen op startscherm</string>
+    <string name="homepage_category">Evenementen op startscherm</string>
     <string name="setting_front_limit">Aantal</string>
     <string name="setting_front_limit_info">Kies het aantal dat in de lijst wordt getoond op het startscherm</string>
     <string name="setting_category_title">Filter op categorie</string>
