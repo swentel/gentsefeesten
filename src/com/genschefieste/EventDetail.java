@@ -55,7 +55,7 @@ public class EventDetail extends BaseActivity {
             price_text = getString(R.string.event_free);
         }
         else {
-            price_text = "€" + event.getPrice();
+            price_text = event.getPrice();
             if (event.getPricePresale().length() != 0) {
                 price_text += "\n" + getString(R.string.event_pre_sale) + ": € " + event.getPricePresale();
             }
