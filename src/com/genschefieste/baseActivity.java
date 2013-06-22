@@ -65,15 +65,7 @@ public class BaseActivity extends Activity implements LocationListener {
     @Override
     protected void onStop() {
         super.onStop();
-        latitude = -1;
-        longitude = -1;
         geoListening = false;
-        locationManager.removeUpdates(this);
-    }
-
-    @Override
-    protected void onPause() {
-        super.onPause();
         locationManager.removeUpdates(this);
     }
 

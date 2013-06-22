@@ -9,7 +9,6 @@ import android.net.Uri;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.google.android.maps.GeoPoint;
 import com.google.android.maps.MapActivity;
@@ -25,23 +24,22 @@ public class MapBase extends MapActivity {
     MapView mapView;
     MapController mc;
     GeoPoint p;
-    public String latitude;
-    public String longitude;
+    public Double latitude;
+    public Double longitude;
 
     public void onCreate(Bundle savedInstanceState) {
+
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.map);
 
         // Get event.
         Bundle extras = getIntent().getExtras();
         int eventId = extras.getInt("eventId");
-        Float latitude = extras.getFloat("latitude");
-        Float longitude = extras.getFloat("longitude");
-        Toast.makeText(MapBase.this, "lat: " + latitude + ", long: " + longitude, Toast.LENGTH_LONG).show();
+        latitude = extras.getDouble("latitude");
+        longitude = extras.getDouble("longitude");
 
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
-
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.map);
 
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);
@@ -64,9 +62,18 @@ public class MapBase extends MapActivity {
 
         mapView.invalidate();
 
-        // Add listener on map button.
-        TextView goOglemap = (TextView) findViewById(R.id.map);
-        goOglemap.setOnClickListener(actionDirections);
+        // Add listener on directions button.
+        TextView Directions = (TextView) findViewById(R.id.directions);
+        if (latitude != -1 && longitude != -1) {
+            Directions.setOnClickListener(actionDirections);
+        }
+        else {
+            Directions.setVisibility(TextView.GONE);
+        }
+
+        // Listener on back button.
+        TextView BackToEvent = (TextView) findViewById(R.id.back_to_detail);
+        BackToEvent.setOnClickListener(backToEvent);
     }
 
     /**
@@ -74,11 +81,21 @@ public class MapBase extends MapActivity {
      */
     private final View.OnClickListener actionDirections = new View.OnClickListener() {
         public void onClick(View v) {
-            String mapUrl = "http://maps.google.com/maps?saddr=" + latitude + "," + longitude + "&daddr=" + event.getLatitude() + "," + event.getLongitude();
-            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(mapUrl));
-            startActivity(intent);
+        String mapUrl = "http://maps.google.com/maps?saddr=" + latitude + "," + longitude + "&daddr=" + event.getLatitude() + "," + event.getLongitude();
+        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(mapUrl));
+        startActivity(intent);
         }
     };
+
+    /**
+     * OnClickListener on "Back button" button.
+     */
+    private final View.OnClickListener backToEvent = new View.OnClickListener() {
+        public void onClick(View v) {
+            finish();
+        }
+    };
+
 
     @Override
     public void onResume() {

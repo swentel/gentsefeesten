@@ -59,6 +59,7 @@
     <string name="info_online">Meer info online</string>
     <string name="info_map">Bekijk op map</string>
     <string name="info_directions">Routebeschrijving</string>
+    <string name="back_to_event">Terug naar evenement</string>
 
     <!-- About activity -->
     <string name="about_title">Over deze applicatie</string>
