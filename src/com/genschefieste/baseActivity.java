@@ -125,11 +125,11 @@ public class BaseActivity extends Activity implements LocationListener {
     private final View.OnClickListener topBar = new View.OnClickListener() {
         public void onClick(View v) {
         switch (v.getId()) {
-            case 30:
+            case 1:
                 Intent menu = new Intent(getBaseContext(), MenuList.class);
                 startActivity(menu);
                 break;
-            case 40:
+            case 2:
                 Intent favorites = new Intent(getBaseContext(), Favorites.class);
                 startActivity(favorites);
                 break;
