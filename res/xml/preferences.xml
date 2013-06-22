@@ -48,4 +48,12 @@
 
     </PreferenceCategory>
 
+    <PreferenceCategory
+        android:title="@string/share_settings">
+        <EditTextPreference android:title="@string/share_message_title"
+            android:key="share_message"
+            android:defaultValue="@string/share_default"
+            android:summary="@string/share_message_info"/>
+    </PreferenceCategory>
+
 </PreferenceScreen>

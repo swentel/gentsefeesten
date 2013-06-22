@@ -81,6 +81,10 @@
     <string name="setting_location_title">Filter op locatie</string>
     <string name="setting_category_info">Kies categorie</string>
     <string name="setting_location_info">Kies locatie</string>
+    <string name="share_settings">Share</string>
+    <string name="share_message_title">Boodschap</string>
+    <string name="share_message_info">Default boodschap voor de share (bvb op Twitter). Gebruik "!replace" om de titel van het evenement automatisch erin plaatsen.</string>
+    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #gf13</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>

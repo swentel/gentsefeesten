@@ -2,9 +2,11 @@ package com.genschefieste;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -13,6 +15,8 @@ import android.widget.TextView;
 public class EventDetail extends BaseActivity {
 
     private Event event;
+
+    SharedPreferences pref = null;
 
     // Connectivity manager.
     private ConnectivityManager cm;
@@ -138,12 +142,15 @@ public class EventDetail extends BaseActivity {
      */
     private final View.OnClickListener actionShare = new View.OnClickListener() {
         public void onClick(View v) {
-        Intent intent = new Intent(Intent.ACTION_SEND);
-        intent.setType("text/plain");
-        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
-        intent.putExtra(Intent.EXTRA_SUBJECT, event.getTitle());
-        intent.putExtra(Intent.EXTRA_TEXT, getString(R.string.share_pre_message).replace("!replace", event.getTitle()));
-        startActivity(Intent.createChooser(intent, "Share"));
+            pref = PreferenceManager.getDefaultSharedPreferences(EventDetail.this);
+            String share_message = pref.getString("share_message", "");
+
+            Intent intent = new Intent(Intent.ACTION_SEND);
+            intent.setType("text/plain");
+            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);
+            intent.putExtra(Intent.EXTRA_SUBJECT, event.getTitle());
+            intent.putExtra(Intent.EXTRA_TEXT, share_message.replace("!replace", event.getTitle()));
+            startActivity(Intent.createChooser(intent, "Share"));
         }
     };
 
