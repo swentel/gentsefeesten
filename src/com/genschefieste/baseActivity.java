@@ -11,7 +11,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 public class BaseActivity extends Activity implements LocationListener {
 
@@ -37,8 +36,10 @@ public class BaseActivity extends Activity implements LocationListener {
         super.onCreate(savedInstanceState);
 
         // Start location listening.
-        geoListening = true;
-        startLocationListening();
+        if (latitude == -1 && longitude == -1) {
+            geoListening = true;
+            startLocationListening();
+        }
 
         if (addTopbarListeners) {
             // Add listener on menu button.
@@ -64,6 +65,9 @@ public class BaseActivity extends Activity implements LocationListener {
     @Override
     protected void onStop() {
         super.onStop();
+        latitude = -1;
+        longitude = -1;
+        geoListening = false;
         locationManager.removeUpdates(this);
     }
 
@@ -76,8 +80,10 @@ public class BaseActivity extends Activity implements LocationListener {
     @Override
     protected void onResume() {
         super.onResume();
-        geoListening = true;
-        startLocationListening();
+        if (latitude == -1 && longitude == -1) {
+            geoListening = true;
+            startLocationListening();
+        }
     }
 
     @Override
@@ -91,10 +97,9 @@ public class BaseActivity extends Activity implements LocationListener {
         longitude = location.getLongitude();
         latitude = location.getLatitude();
         if (geoListening) {
-            Toast.makeText(this, "Location: " + latitude + " : " + longitude, Toast.LENGTH_LONG).show();
             locationManager.removeUpdates(this);
+            geoListening = false;
         }
-        geoListening = false;
     }
 
     @Override
@@ -108,7 +113,6 @@ public class BaseActivity extends Activity implements LocationListener {
     @Override
     public void onProviderDisabled(String s) {
     }
-
 
     /**
      * Start location listening
