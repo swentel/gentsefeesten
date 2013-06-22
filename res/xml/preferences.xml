@@ -47,12 +47,6 @@
             android:entryValues="@array/front_limit_numbers"
             android:defaultValue="40" />
 
-        <CheckBoxPreference
-            android:key="pref_all_day"
-            android:title="@string/show_all_day_events"
-            android:summary="@string/show_all_day_events_info"
-            android:defaultValue="false"/>
-
     </PreferenceCategory>
 
 </PreferenceScreen>

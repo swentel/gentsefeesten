@@ -86,7 +86,6 @@ public class Main extends BaseActivity {
         String prefLocationId = pref.getString("pref_loc", "230");
         boolean filterOnCategory = pref.getBoolean("filter_cat", false);
         String prefCategoryId = pref.getString("pref_cat", "15");
-        boolean prefShowAllDay = pref.getBoolean("pref_all_day", false);
 
         // Create query.
         List<String> whereClauses = new ArrayList<String>();
@@ -98,10 +97,6 @@ public class Main extends BaseActivity {
             if (filterOnCategory) {
                 whereClauses.add(DatabaseHandler.KEY_CAT_ID + " = " + prefCategoryId);
             }
-        }
-        // Start hour.
-        if (!prefShowAllDay) {
-            whereClauses.add(DatabaseHandler.KEY_START_HOUR + " != ''");
         }
 
         DatabaseHandler db = new DatabaseHandler(this);
@@ -118,9 +113,10 @@ public class Main extends BaseActivity {
 
         SimpleDateFormat currentTime = new SimpleDateFormat("hhmm");
         String now = currentTime.format(new Date());
-        selectQuery += " WHERE "+ DatabaseHandler.KEY_DATE +" >= " + unixTimeStamp + " AND " + DatabaseHandler.KEY_DATE_SORT + " >= " + now + " AND ";
+        whereClauses.add(DatabaseHandler.KEY_DATE +" >= " + unixTimeStamp + " AND " + DatabaseHandler.KEY_DATE_SORT + " >= " + now);
 
         if (whereClauses.size() > 0) {
+            selectQuery += " WHERE ";
             StringBuilder builder = new StringBuilder();
             builder.append(whereClauses.remove(0));
             for( String s : whereClauses) {
@@ -130,6 +126,7 @@ public class Main extends BaseActivity {
             String statement = builder.toString();
             selectQuery += statement;
         }
+
         selectQuery += " ORDER BY "+ DatabaseHandler.KEY_DATE +" ASC, "+ DatabaseHandler.KEY_DATE_SORT +" ASC limit " + limit;
         events = db.getEvents(selectQuery);
 
