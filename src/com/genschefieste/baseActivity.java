@@ -21,6 +21,7 @@ public class BaseActivity extends Activity implements LocationListener {
     // Variables for this activity.
     public boolean showHomebutton = true;
     public boolean disableFavoritesButton = false;
+    public boolean addTopbarListeners = true;
     Intent intent;
 
     // Location variables.
@@ -39,16 +40,18 @@ public class BaseActivity extends Activity implements LocationListener {
         geoListening = true;
         startLocationListening();
 
-        // Add listener on menu button.
-        ImageButton go_to_menu = (ImageButton) findViewById(R.id.menu_bar_go_to_menu);
-        go_to_menu.setId(1);
-        go_to_menu.setOnClickListener(topBar);
+        if (addTopbarListeners) {
+            // Add listener on menu button.
+            ImageButton go_to_menu = (ImageButton) findViewById(R.id.menu_bar_go_to_menu);
+            go_to_menu.setId(1);
+            go_to_menu.setOnClickListener(topBar);
 
-        // Add listener on favorites button.
-        if (!disableFavoritesButton) {
-            ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
-            go_to_favorites.setId(2);
-            go_to_favorites.setOnClickListener(topBar);
+            // Add listener on favorites button.
+            if (!disableFavoritesButton) {
+                ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
+                go_to_favorites.setId(2);
+                go_to_favorites.setOnClickListener(topBar);
+            }
         }
     }
 
@@ -122,11 +125,11 @@ public class BaseActivity extends Activity implements LocationListener {
     private final View.OnClickListener topBar = new View.OnClickListener() {
         public void onClick(View v) {
         switch (v.getId()) {
-            case 1:
+            case 30:
                 Intent menu = new Intent(getBaseContext(), MenuList.class);
                 startActivity(menu);
                 break;
-            case 2:
+            case 40:
                 Intent favorites = new Intent(getBaseContext(), Favorites.class);
                 startActivity(favorites);
                 break;

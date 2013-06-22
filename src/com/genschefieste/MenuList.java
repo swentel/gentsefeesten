@@ -18,8 +18,10 @@ public class MenuList extends BaseActivity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
+
+        // Do not add topbar listeners.
+        addTopbarListeners = false;
 
         // Add listeners on rows.
         TableRow goHome = (TableRow) findViewById(R.id.menu_home);
@@ -72,6 +74,8 @@ public class MenuList extends BaseActivity {
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
         goAbout.setId(12);
         goAbout.setOnClickListener(actionMenu);
+
+        super.onCreate(savedInstanceState);
     }
 
     /**

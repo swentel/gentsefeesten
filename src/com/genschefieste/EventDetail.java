@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.Html;
 import android.view.View;
 import android.widget.ImageButton;
 import android.widget.ImageView;
@@ -67,8 +66,8 @@ public class EventDetail extends BaseActivity {
         // Set description.
         String descriptionText = event.getDescription().replace("\r", "");
         TextView description = (TextView) findViewById(R.id.event_description);
-        if (event.getUrl() != "") {
-            descriptionText += "\n\n" + Html.fromHtml(event.getUrl());
+        if (event.getUrl().length() > 0) {
+            descriptionText += "\n\n" + event.getUrl();
         }
         description.setText(descriptionText);
 

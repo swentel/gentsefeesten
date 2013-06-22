@@ -32,7 +32,6 @@
             </intent-filter>
         </activity>
 
-
         <activity android:name=".EventSearch" android:launchMode="singleTop">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
