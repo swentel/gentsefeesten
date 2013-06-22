@@ -33,6 +33,10 @@ import java.io.UnsupportedEncodingException;
 
 public class Prefs extends PreferenceActivity {
 
+    // First run.
+    public boolean firstrun = false;
+
+    // Download variables.
     ProgressDialog dialog;
     public static int siteStatus = 200;
     public static InputStream dataFile = null;
@@ -78,24 +82,19 @@ public class Prefs extends PreferenceActivity {
         // Add listener.
         button.setOnPreferenceClickListener(new Preference.OnPreferenceClickListener() {
             public boolean onPreferenceClick(Preference arg0) {
-                // Make sure we are connected to the internet.
-                if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-
-                    dialog = new customProgressDialog(Prefs.this);
-                    dialog.setTitle(R.string.updating);
-                    dialog.setMessage(getString(R.string.updating_message));
-                    dialog.setIndeterminate(false);
-                    dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
-                    dialog.show();
-                    new updateTask().execute();
-                }
-                else {
-                    Toast.makeText(getApplicationContext(), getString(R.string.update_offline), Toast.LENGTH_LONG).show();
-                }
-
+                updateProgram();
                 return true;
             }
         });
+
+        // Check for initial run.
+        Bundle extras = getIntent().getExtras();
+        if (extras != null) {
+            firstrun = extras.getBoolean("firstrun");
+            if (firstrun) {
+                updateProgram();
+            }
+        }
     }
 
     /**
@@ -130,6 +129,29 @@ public class Prefs extends PreferenceActivity {
         return false;
     }
 
+    /**
+     * Updates program.
+     */
+    public void updateProgram() {
+        // Make sure we are connected to the internet.
+        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+            dialog = new customProgressDialog(Prefs.this);
+            dialog.setTitle(R.string.updating);
+            dialog.setMessage(getString(R.string.updating_message));
+            dialog.setIndeterminate(false);
+            dialog.setProgressStyle(ProgressDialog.STYLE_HORIZONTAL);
+            dialog.setCancelable(false);
+            dialog.show();
+            new updateTask().execute();
+        }
+        else {
+            Toast.makeText(getApplicationContext(), getString(R.string.update_offline), Toast.LENGTH_LONG).show();
+        }
+    }
+
+    /**
+     * Download the program from the internet and save it locally.
+     */
     public int downloadProgram() throws IOException {
         siteStatus = 0;
 
