@@ -78,9 +78,9 @@ public class AroundMe extends BaseActivity {
         // Start the query.
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
 
-        // We take one hour less, so we can include events
+        // We take one half an hour less, so we can include events
         // which are happening right now as well.
-        long unixTime = (System.currentTimeMillis() / 1000L) + 3600;
+        long unixTime = (System.currentTimeMillis() / 1000L) + 5400;
         selectQuery += "WHERE " + DatabaseHandler.KEY_DATE_SORT + " >= " + unixTime;
 
         // Calculate the points.
