@@ -290,6 +290,7 @@
             android:background="#005768"
             android:visibility="visible"/>
 
+        <!-- Parkings and public transport not yet implemented
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:paddingTop="10dp"
@@ -319,7 +320,6 @@
             android:background="#005768"
             android:visibility="visible"/>
 
-        <!-- Parkings and public transport not yet implemented
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="#003a48"
