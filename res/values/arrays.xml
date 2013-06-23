@@ -9,6 +9,11 @@
         <item>100</item>
     </string-array>
 
+    <string-array name="sort_by">
+        <item>@string/sort_by_hour</item>
+        <item>@string/sort_by_distance</item>
+    </string-array>
+
     <string-array name="dates_full">
         <item>@string/july_20</item>
         <item>@string/july_21</item>

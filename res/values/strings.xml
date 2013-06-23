@@ -36,6 +36,9 @@
     <!-- Around me -->
     <string name="no_events_around_me">Geen activiteiten in de buurt gevonden.\n\nEr kunnen drie redenen zijn waarom er geen evenementen worden gevonden:\n\n1. Je zit niet in Gent en we zoeken maar binnen een straal van 5 kilometer.\n\n2. We hebben je locatie misschien toch nog niet exact kunnen bepalen, probeer gerust opnieuw door hier te klikken.\n\n3. Deze functie komt pas goed op gang vanaf de eerste dag van de gentse feesten.</string>
     <string name="around_me_refresh">Scherm is herladen</string>
+    <string name="change_sort">Sorteer op</string>
+    <string name="sort_by_hour">Tijdstip</string>
+    <string name="sort_by_distance">Afstand</string>
 
     <!-- Search and facet -->
     <string name="search_hint">Zoek evenement</string>

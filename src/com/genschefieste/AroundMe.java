@@ -1,11 +1,17 @@
 package com.genschefieste;
 
+import android.app.AlertDialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.PointF;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -13,13 +19,20 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
 
-public class AroundMe extends BaseActivity {
+public class AroundMe extends BaseActivity implements View.OnClickListener {
 
     public List<Event> events;
     public int eventId = 0;
+    SharedPreferences pref = null;
+    private RelativeLayout sortRow;
+    private Context mContext;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+
+        mContext = this;
+        pref = PreferenceManager.getDefaultSharedPreferences(this);
+
         setContentView(R.layout.around_me);
 
         // Get the list view.
@@ -51,7 +64,43 @@ public class AroundMe extends BaseActivity {
         AroundMeListAdapter adapter = new AroundMeListAdapter(this, events);
         list.setAdapter(adapter);
 
+        // Listener on sorting.
+        sortRow = (RelativeLayout) findViewById(R.id.sort_change);
+        sortRow.setOnClickListener(this);
+
         super.onCreate(savedInstanceState);
+    }
+
+    @Override
+    public void onClick(View view) {
+        if (view.equals(sortRow)) {
+            showChangeOrder();
+        }
+    }
+
+    /**
+     * Change order.
+     */
+    public void showChangeOrder() {
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setTitle(getString(R.string.change_sort));
+
+        final String[] choiceList = getResources().getStringArray(R.array.sort_by);
+        int sortBy = pref.getInt("around_me_sort", 1);
+
+        builder.setSingleChoiceItems(choiceList, sortBy, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int sortBy) {
+                // Safe setting.
+                pref.edit().putInt("around_me_sort", sortBy).commit();
+                // Dismiss and reload.
+                dialog.dismiss();
+                intent = new Intent(mContext, AroundMe.class);
+                startActivity(intent);
+            }
+        });
+        AlertDialog changeSort = builder.create();
+        changeSort.show();
     }
 
     /**
@@ -100,21 +149,28 @@ public class AroundMe extends BaseActivity {
             + DatabaseHandler.KEY_LONG + " < " + String.valueOf(p2.y) + " AND "
             + DatabaseHandler.KEY_LONG + " > " + String.valueOf(p4.y) + ")";
 
-        // Sort by date sort.
+        // Sort by.
         selectQuery += " order by " + DatabaseHandler.KEY_DATE_SORT + " ASC";
 
         // Add limit
-        selectQuery += " LIMIT 50";
+        selectQuery += " LIMIT 100";
         events = db.getEventsAroundMe(selectQuery, center, radius);
 
-        // Now order them by distance.
-        Collections.sort(events, new DistanceDateComparator());
+        // Now order them by distance or hour.
+        int sortBy = pref.getInt("around_me_sort", 1);
 
+        if (sortBy == 1) {
+            Collections.sort(events, new DistanceDateComparator());
+        }
+        else {
+            Collections.sort(events, new dateDistanceComparator());
+
+        }
         return events;
     }
 
     /**
-     * Sort on date, then distance.
+     * Sort on distance, then date.
      */
     public class DistanceDateComparator implements Comparator<Event> {
         public int compare(Event e1, Event e2) {
@@ -125,6 +181,27 @@ public class AroundMe extends BaseActivity {
             Float distance1 = Float.valueOf(e1.getLocation());
             Float distance2 = Float.valueOf(e2.getLocation());
             return distance1.compareTo(distance2);
+        }
+    }
+
+    /**
+     * Sort on distance, then date.
+     */
+    public class dateDistanceComparator implements Comparator<Event> {
+        public int compare(Event e1, Event e2) {
+
+            Float distance1 = Float.valueOf(e1.getLocation());
+            Float distance2 = Float.valueOf(e2.getLocation());
+            int result = distance1.compareTo(distance2);
+            if (result != 0) {
+                return 1;
+            }
+
+            if (e1.getDateSort() < e2.getDateSort()) {
+                return 1;
+            }
+
+            return 0;
         }
     }
 
@@ -164,8 +241,6 @@ public class AroundMe extends BaseActivity {
         lat = Math.toDegrees(lat);
         lon = Math.toDegrees(lon);
 
-        PointF newPoint = new PointF((float) lat, (float) lon);
-
-        return newPoint;
+        return new PointF((float) lat, (float) lon);
     }
 }

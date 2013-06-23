@@ -8,31 +8,40 @@
 
     <include layout="@layout/header" />
 
-    <LinearLayout
+    <RelativeLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:weightSum="1.0"
-            android:orientation="vertical"
+            android:id="@+id/sort_change"
             android:background="#005371"
             android:layout_marginTop="10dp">
 
         <TextView
-                xmlns:android="http://schemas.android.com/apk/res/android"
-                android:layout_width="fill_parent"
-                android:layout_height="45dp"
-                android:layout_gravity="center"
-                android:layout_marginLeft="10dp"
-                android:layout_marginRight="10dp"
-                android:layout_weight="1"
-                android:background="#ffffff"
-                android:gravity="center"
-                android:text="@string/menu_around_me"
-                android:textColor="#00394f"
-                android:textSize="20sp"
-                android:layout_marginBottom="1dp"/>
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:layout_gravity="center"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="#ffffff"
+            android:gravity="center"
+            android:text="@string/menu_around_me"
+            android:textColor="#00394f"
+            android:textSize="20sp"
+            android:layout_marginBottom="1dp"/>
 
-    </LinearLayout>
+        <ImageButton
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:layout_width="wrap_content"
+            android:src="@drawable/list"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:id="@+id/day_row_button"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="10dp"/>
+
+    </RelativeLayout>
 
     <ListView
         android:id="@+id/list"
