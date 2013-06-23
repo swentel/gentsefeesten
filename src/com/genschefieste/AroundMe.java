@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
@@ -25,6 +26,7 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
     public int eventId = 0;
     SharedPreferences pref = null;
     private RelativeLayout sortRow;
+    private ImageButton sortButton;
     private Context mContext;
 
     @Override
@@ -67,13 +69,15 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
         // Listener on sorting.
         sortRow = (RelativeLayout) findViewById(R.id.sort_change);
         sortRow.setOnClickListener(this);
+        sortButton = (ImageButton) findViewById(R.id.sort_change_button);
+        sortButton.setOnClickListener(this);
 
         super.onCreate(savedInstanceState);
     }
 
     @Override
     public void onClick(View view) {
-        if (view.equals(sortRow)) {
+        if (view.equals(sortRow) || view.equals(sortButton)) {
             showChangeOrder();
         }
     }

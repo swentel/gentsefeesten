@@ -36,7 +36,7 @@
             android:src="@drawable/list"
             android:layout_height="wrap_content"
             android:background="@null"
-            android:id="@+id/day_row_button"
+            android:id="@+id/sort_change_button"
             android:layout_alignParentRight="true"
             android:layout_marginRight="20dp"
             android:layout_marginTop="10dp"/>
