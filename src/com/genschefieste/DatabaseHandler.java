@@ -162,7 +162,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getString(17),
                     cursor.getString(18),
                     cursor.getInt(19),
-                    cursor.getInt(20)
+                    cursor.getInt(21)
                 );
 
                 if (addDayRow) {
@@ -219,7 +219,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getString(17),
                     cursor.getString(18),
                     cursor.getInt(19),
-                    cursor.getInt(20)
+                    cursor.getInt(21)
                 );
 
                 // Adding event to list in case it's in our circle.
@@ -303,7 +303,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.getString(17),
             cursor.getString(18),
             cursor.getInt(19),
-            cursor.getInt(20)
+            cursor.getInt(21)
         );
     }
 }
