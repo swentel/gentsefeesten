@@ -16,6 +16,7 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Comparator;
 import java.util.List;
@@ -31,6 +32,7 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
+        events = new ArrayList<Event>();
 
         mContext = this;
         pref = PreferenceManager.getDefaultSharedPreferences(this);
@@ -41,7 +43,9 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
         ListView list = (ListView) findViewById(R.id.list);
 
         // Get the events.
-        events = getEventsAroundMe();
+        if (latitude != -1 && longitude != -1) {
+            events = getEventsAroundMe();
+        }
 
         // Check on size of events. In case there are no events, show the empty
         // view to inform the people what might have gone wrong.
