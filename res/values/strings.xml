@@ -85,6 +85,8 @@
     <string name="share_message_title">Boodschap</string>
     <string name="share_message_info">Default boodschap voor de share (bvb op Twitter). Gebruik "!replace" om de titel van het evenement automatisch erin plaatsen.</string>
     <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #gf13</string>
+    <string name="setting_front_ongoing">Al bezig</string>
+    <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>

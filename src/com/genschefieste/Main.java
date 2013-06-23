@@ -96,6 +96,7 @@ public class Main extends BaseActivity {
         String prefLocationId = pref.getString("pref_loc", "230");
         boolean filterOnCategory = pref.getBoolean("filter_cat", false);
         String prefCategoryId = pref.getString("pref_cat", "15");
+        boolean ongoing = pref.getBoolean("pref_front_ongoing", false);
 
         // Create query.
         List<String> whereClauses = new ArrayList<String>();
@@ -114,7 +115,8 @@ public class Main extends BaseActivity {
         selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
 
         // Current time.
-        long unixTime = (System.currentTimeMillis() / 1000L) + 7200;
+        int addTime = ongoing ? 5400 : 7200;
+        long unixTime = (System.currentTimeMillis() / 1000L) + addTime;
         whereClauses.add(DatabaseHandler.KEY_DATE_SORT + " > " + unixTime);
 
         if (whereClauses.size() > 0) {
