@@ -42,6 +42,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String KEY_LONG = "longitude";
     public static final String KEY_DISCOUNT = "discount";
     public static final String KEY_FESTIVAL = "festival";
+    public static final String KEY_ORG = "organisatie";
 
     // Favorites table name.
     public static final String TABLE_FAVORITES = "favorites";
@@ -76,7 +77,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                 "" + KEY_LAT + " TEXT," +
                 "" + KEY_LONG + " TEXT," +
                 "" + KEY_DISCOUNT + " TEXT," +
-                "" + KEY_FESTIVAL + " INTEGER" +
+                "" + KEY_FESTIVAL + " INTEGER," +
+                "" + KEY_ORG + " TEXT" +
                 ")";
         db.execSQL(CREATE_EVENTS_TABLE);
 
