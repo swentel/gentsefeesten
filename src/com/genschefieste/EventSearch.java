@@ -46,6 +46,11 @@ public class EventSearch extends BaseActivity {
             selectQuery += DatabaseHandler.KEY_CAT_NAME + " LIKE " + escaped_query + " OR ";
             selectQuery += DatabaseHandler.KEY_DESCRIPTION + " LIKE " + escaped_query + " ";
             selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE + " ASC, " + DatabaseHandler.KEY_DATE_SORT + " ASC";
+            // In case the search word is only two or less characters, limit it, so we don't
+            // freeze the thread. It's also kind of useless anyway.
+            if (query.length() <= 2) {
+                selectQuery += " limit 100";
+            }
             events = db.getEvents(selectQuery);
 
             // Check on size of events. In case there are no events, add
