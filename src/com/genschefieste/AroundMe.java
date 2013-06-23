@@ -9,13 +9,9 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.text.SimpleDateFormat;
-import java.util.Calendar;
 import java.util.Collections;
 import java.util.Comparator;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 public class AroundMe extends BaseActivity {
 
@@ -82,19 +78,10 @@ public class AroundMe extends BaseActivity {
         // Start the query.
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS + " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
 
-        // This will actually not always be correct since the order date
-        // colum contains hours like 2500, but their timestamp is from a day earlier.
-        // We also calculate the sort on the hour, so we get the ongoing events as well.
-        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-        c.set(Calendar.HOUR_OF_DAY, 0);
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
-        c.set(Calendar.MILLISECOND, 0);
-        long unixTimeStamp = c.getTimeInMillis() / 1000;
-
-        SimpleDateFormat currentTime = new SimpleDateFormat("hh");
-        String now = currentTime.format(new Date()) + "00";
-        selectQuery += "WHERE " + DatabaseHandler.KEY_DATE +" = " + unixTimeStamp + " AND " + DatabaseHandler.KEY_DATE_SORT + " >= " + now;
+        // We take one hour less, so we can include events
+        // which are happening right now as well.
+        long unixTime = (System.currentTimeMillis() / 1000L) + 3600;
+        selectQuery += "WHERE " + DatabaseHandler.KEY_DATE_SORT + " >= " + unixTime;
 
         // Calculate the points.
         int radius = 5000;
@@ -132,10 +119,8 @@ public class AroundMe extends BaseActivity {
     public class DistanceDateComparator implements Comparator<Event> {
         public int compare(Event e1, Event e2) {
 
-            String sort = Integer.toString(e1.getDateSort());
-            int result = sort.compareTo(Integer.toString(e2.getDateSort()));
-            if (result != 0) {
-                return result;
+            if (e1.getDateSort() < e2.getDateSort()) {
+                return 1;
             }
             Float distance1 = Float.valueOf(e1.getLocation());
             Float distance2 = Float.valueOf(e2.getLocation());

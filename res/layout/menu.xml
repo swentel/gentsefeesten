@@ -373,7 +373,6 @@
                 android:textSize="17sp"/>
 
         </TableRow>
-        -->
 
         <View
             android:layout_width="fill_parent"
@@ -405,6 +404,7 @@
                     />
 
         </TableRow>
+        -->
 
         <View
             android:layout_width="fill_parent"

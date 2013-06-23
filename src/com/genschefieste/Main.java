@@ -11,12 +11,8 @@ import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
-import java.util.Date;
 import java.util.List;
-import java.util.TimeZone;
 
 public class Main extends BaseActivity {
 
@@ -116,18 +112,10 @@ public class Main extends BaseActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
         selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
-        // This will actually not always be correct since the order date
-        // colum contains hours like 2500, but their timestamp is from a day earlier.
-        Calendar c = Calendar.getInstance(TimeZone.getTimeZone("GMT"));
-        c.set(Calendar.HOUR_OF_DAY, 0);
-        c.set(Calendar.MINUTE, 0);
-        c.set(Calendar.SECOND, 0);
-        c.set(Calendar.MILLISECOND, 0);
-        long unixTimeStamp = c.getTimeInMillis() / 1000;
 
-        SimpleDateFormat currentTime = new SimpleDateFormat("hhmm");
-        String now = currentTime.format(new Date());
-        whereClauses.add(DatabaseHandler.KEY_DATE +" >= " + unixTimeStamp + " AND " + DatabaseHandler.KEY_DATE_SORT + " >= " + now);
+        // Current time.
+        long unixTime = (System.currentTimeMillis() / 1000L) + 7200;
+        whereClauses.add(DatabaseHandler.KEY_DATE_SORT + " > " + unixTime);
 
         if (whereClauses.size() > 0) {
             selectQuery += " WHERE ";
@@ -141,7 +129,7 @@ public class Main extends BaseActivity {
             selectQuery += statement;
         }
 
-        selectQuery += " ORDER BY "+ DatabaseHandler.KEY_DATE +" ASC, "+ DatabaseHandler.KEY_DATE_SORT +" ASC limit " + limit;
+        selectQuery += " ORDER BY "+ DatabaseHandler.KEY_DATE_SORT +" ASC limit " + limit;
         events = db.getEvents(selectQuery);
 
         return events;

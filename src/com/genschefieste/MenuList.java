@@ -63,7 +63,7 @@ public class MenuList extends BaseActivity {
         goSearch.setId(8);
         goSearch.setOnClickListener(actionMenu);
 
-        /* Not yet implemented
+        /* Not yet implemented or needs to be revised.
         TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
         goParking.setId(9);
         goParking.setOnClickListener(actionMenu);
@@ -71,11 +71,11 @@ public class MenuList extends BaseActivity {
         TableRow goTransport = (TableRow) findViewById(R.id.menu_transport);
         goTransport.setId(10);
         goTransport.setOnClickListener(actionMenu);
-        */
 
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
         goToilet.setId(11);
         goToilet.setOnClickListener(actionMenu);
+        */
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
         manageUpdates.setId(12);

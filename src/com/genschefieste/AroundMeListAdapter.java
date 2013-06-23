@@ -60,6 +60,16 @@ public class AroundMeListAdapter extends BaseAdapter implements OnClickListener 
                 row.setBackgroundColor(Color.parseColor("#ffffff"));
             }
 
+            // Distance.
+            TextView td = (TextView) convertView.findViewById(R.id.distance);
+            float distance = Float.valueOf(event.getLocation()).floatValue();
+            td.setText((Math.round(distance * 100) / 100) + "m");
+
+            // Title.
+            TextView tt = (TextView) convertView.findViewById(R.id.event_title);
+            String title = event.getTitle();
+            tt.setText(title);
+
             // Hour.
             TextView th = (TextView) convertView.findViewById(R.id.event_hour);
             String hour = event.getStartHour();
@@ -68,15 +78,6 @@ public class AroundMeListAdapter extends BaseAdapter implements OnClickListener 
             }
             th.setText(hour);
 
-            // Title.
-            TextView tt = (TextView) convertView.findViewById(R.id.event_title);
-            String title = event.getTitle();
-            tt.setText(title);
-
-            // Distance.
-            TextView td = (TextView) convertView.findViewById(R.id.distance);
-            float distance = Float.valueOf(event.getLocation()).floatValue();
-            td.setText((Math.round(distance * 100) / 100) + "m");
         }
 
         return convertView;
