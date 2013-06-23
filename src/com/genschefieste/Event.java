@@ -30,6 +30,14 @@ public class Event  {
 
     }
 
+    // Day constructor.
+    public Event(int id, int externalId, int date, String title) {
+        this.id = id;
+        this.externalId = externalId;
+        this.date = date;
+        this.title = title;
+    }
+
     // Full constructor.
     public Event(int id, String title, int externalId, int free, String price, String pricePresale, String description, int date, String datePeriod, String startHour, int dateSort, String category, int categoryId, String url, int locationId, String location, String latitude, String longitude, String discount, int festival, int favorite) {
         this.id = id;

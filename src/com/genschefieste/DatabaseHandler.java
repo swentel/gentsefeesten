@@ -119,10 +119,21 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         db.close();
     }
 
-    // Get events.
-    public List<Event> getEvents(String selectQuery) {
+    /**
+     * Get events
+     *
+     * @param selectQuery
+     *   The query
+     * @param addDayRow
+     *   Whether to add a day row or not.
+     *
+     * @return <List>Event
+     *   A list of events.
+     */
+    public List<Event> getEvents(String selectQuery, boolean addDayRow) {
         List<Event> eventList = new ArrayList<Event>();
 
+        int currentDate = 0;
         SQLiteDatabase db = this.getWritableDatabase();
         assert db != null;
         Cursor cursor = db.rawQuery(selectQuery, null);
@@ -154,7 +165,18 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getInt(20)
                 );
 
-                // Adding event to list.
+                if (addDayRow) {
+                    int eventDate = event.getDate();
+                    if (eventDate != currentDate) {
+                        currentDate = eventDate;
+                        // Add additional row item so we can render day rows.
+                        // Set the externalId to zero for that.
+                        Event dayEvent = new Event(event.getId(), 0, event.getDate(),  "Dayrow");
+                        eventList.add(dayEvent);
+                    }
+                }
+
+                // Add event to list.
                 eventList.add(event);
             }
             while (cursor.moveToNext());

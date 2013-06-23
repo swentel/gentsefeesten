@@ -51,7 +51,7 @@ public class EventSearch extends BaseActivity {
             if (query.length() <= 2) {
                 selectQuery += " limit 100";
             }
-            events = db.getEvents(selectQuery);
+            events = db.getEvents(selectQuery, true);
 
             // Check on size of events. In case there are no events, add
             // a listener on the empty list text and remove the list.
@@ -66,10 +66,14 @@ public class EventSearch extends BaseActivity {
             list.setClickable(true);
             list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
                 public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                eventId = events.get(position).getId();
-                intent.putExtra("eventId", eventId);
-                startActivity(intent);
+                    // Only start the intent if the event external id is not zero, this means
+                    // we have clicked a day row.
+                    if (events.get(position).getExternalId() != 0) {
+                        Intent intent = new Intent(getBaseContext(), EventDetail.class);
+                        eventId = events.get(position).getId();
+                        intent.putExtra("eventId", eventId);
+                        startActivity(intent);
+                    }
                 }
             });
 

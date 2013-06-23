@@ -1,0 +1,19 @@
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="40dp"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:background="#f6f6f6"
+        android:id="@+id/day_title"
+        android:gravity="center"
+        android:textColor="#00394f"
+        android:textSize="20sp" />
+
+</LinearLayout>

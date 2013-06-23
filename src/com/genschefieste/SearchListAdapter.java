@@ -7,7 +7,6 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
-import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -20,9 +19,14 @@ public class SearchListAdapter extends BaseAdapter implements OnClickListener {
     private final List<Event> events;
     private int currentDate = 0;
 
+    private static final int DAY = 0;
+    private static final int EVENT = 1;
+    private LayoutInflater mInflater;
+
     public SearchListAdapter(Context context, List<Event> events) {
         this.context = context;
         this.events = events;
+        this.mInflater = (LayoutInflater)context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
     }
 
     public int getCount() {
@@ -41,52 +45,71 @@ public class SearchListAdapter extends BaseAdapter implements OnClickListener {
 
     }
 
+    @Override
+    public int getViewTypeCount() {
+        return 2;
+    }
+    @Override
+    public int getItemViewType(int position) {
+        return events.get(position).getExternalId() == 0 ? DAY : EVENT;
+    }
+
+    public static class ViewHolder {
+        public TextView day;
+        public TextView hour;
+        public TextView title;
+        public ImageView image;
+    }
+
     public View getView(int position, View convertView, ViewGroup parent) {
+        ViewHolder holder;
+        int type = getItemViewType(position);
 
         if (convertView == null) {
-            LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.search_list_item, null);
+            holder = new ViewHolder();
+            switch (type) {
+                case DAY:
+                    convertView = mInflater.inflate(R.layout.day_item, null);
+                    holder.day = (TextView)convertView.findViewById(R.id.day_title);
+                    break;
+                case EVENT:
+                    convertView = mInflater.inflate(R.layout.search_list_item, null);
+                    holder.hour = (TextView)convertView.findViewById(R.id.event_hour);
+                    holder.title = (TextView)convertView.findViewById(R.id.event_title);
+                    holder.image = (ImageView)convertView.findViewById(R.id.event_favorite);
+                    break;
+            }
+            convertView.setTag(holder);
+        }
+        else {
+            holder = (ViewHolder)convertView.getTag();
         }
 
         Event event = events.get(position);
 
         if (event != null) {
-
-            // Set date row.
-            int eventDate = event.getDate();
-            if (eventDate != currentDate) {
-                String dayText = BaseActivity.getDateFromTimestamp(eventDate, context);
-                currentDate = eventDate;
-                assert convertView != null;
-                TextView dayRow = (TextView) convertView.findViewById(R.id.day_title);
-                dayRow.setText(dayText);
-                LinearLayout.LayoutParams params = (LinearLayout.LayoutParams)dayRow.getLayoutParams();
-                params.setMargins(0, 0, 0, 1);
-                params.height = 55;
-                dayRow.setLayoutParams(params);
+            if (event.getExternalId() == 0) {
+                String dayText = BaseActivity.getDateFromTimestamp(event.getDate(), context);
+                holder.day.setText(dayText);
             }
+            else {
+                // Hour.
+                String hour = event.getStartHour();
+                if (hour.length() == 0) {
+                    hour = context.getString(R.string.event_whole_day);
+                }
+                holder.hour.setText(hour);
 
-            // Hour.
-            TextView th = (TextView) convertView.findViewById(R.id.event_hour);
-            String hour = event.getStartHour();
-            if (hour.length() == 0) {
-                hour = context.getString(R.string.event_whole_day);
-            }
-            th.setText(hour);
+                // Title.
+                String title = event.getTitle();
+                holder.title.setText(title);
 
-            // Title.
-            TextView tt = (TextView) convertView.findViewById(R.id.event_title);
-            String title = event.getTitle();
-            tt.setText(title);
-
-            // Favorite.
-            ImageView i = (ImageView) convertView.findViewById(R.id.event_favorite);
-            if (event.getFavorite() == 0) {
-                i.setImageResource(R.drawable.fav_off_small);
-                i.setScaleType(ImageView.ScaleType.CENTER);
-            } else {
-                i.setImageResource(R.drawable.fav_on_small);
-                i.setScaleType(ImageView.ScaleType.CENTER);
+                // Favorite.
+                if (event.getFavorite() == 0) {
+                    holder.image.setImageResource(R.drawable.fav_off_small);
+                } else {
+                    holder.image.setImageResource(R.drawable.fav_on_small);
+                }
             }
         }
 

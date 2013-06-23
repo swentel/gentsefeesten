@@ -132,7 +132,7 @@ public class Main extends BaseActivity {
         }
 
         selectQuery += " ORDER BY "+ DatabaseHandler.KEY_DATE_SORT +" ASC, " + DatabaseHandler.KEY_TITLE + " ASC limit " + limit;
-        events = db.getEvents(selectQuery);
+        events = db.getEvents(selectQuery, false);
 
         return events;
     }

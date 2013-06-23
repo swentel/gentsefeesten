@@ -8,8 +8,6 @@ import android.view.View;
 import android.widget.TableRow;
 import android.widget.Toast;
 
-import java.util.List;
-
 public class MenuList extends BaseActivity {
 
     Intent goDaysOverview;
@@ -143,19 +141,19 @@ public class MenuList extends BaseActivity {
             case 10:
                 Toast.makeText(MenuList.this, "Public transport coming soon", Toast.LENGTH_LONG).show();
                 break;
-            case 11:
+            /*case 11:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
                 selectQuery += " WHERE "+ DatabaseHandler.EXTERNAL_ID +" = " + toiletsId;
-                List<Event> events = db.getEvents(selectQuery);
+                List<Event> events = db.getEvents(selectQuery, false);
                 if (events.size() > 0) {
                     Event event = events.get(0);
                     Intent goToilet = new Intent(getBaseContext(), EventDetail.class);
                     goToilet.putExtra("eventId", event.getId());
                     startActivity(goToilet);
                 }
-                break;
+                break;*/
             case 12:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);

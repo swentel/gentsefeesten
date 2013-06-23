@@ -94,7 +94,7 @@
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>
-    <string name="updating_message">We halen nu meer dan 4000 evenementen op. Dit duurt ongeveer 1 minuut, even geduld.\n\nHierna wordt het startscherm geladen.</string>
+    <string name="updating_message">We halen nu meer dan 4000 evenementen op. Dit duurt ongeveer 1 minuut, even geduld.\n\nIndien je minder evenementen hebt of helemaal niks, keer terug naar settings en probeer opnieuw.\n\nHierna wordt het startscherm geladen.</string>
     <string name="update_offline">Je moet geconnecteerd zijn met 3G of WiFi om het programma te kunnen ophalen.\n\nGelieve opnieuwe te proberen wanneer je verbonden bent met het internet.</string>
     <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
     <string name="service_offline">Onze service met het programma is even offline, gelieve ons te verontschuldigen.</string>

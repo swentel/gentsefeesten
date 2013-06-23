@@ -108,7 +108,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         }
         selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE_SORT + " ASC, " + DatabaseHandler.KEY_TITLE + " ASC";
 
-        events = db.getEvents(selectQuery);
+        events = db.getEvents(selectQuery, false);
 
         // Check on size of events. In case there are no events, show the messages
         // view to inform people how to start a new search.
