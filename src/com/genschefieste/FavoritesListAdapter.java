@@ -18,7 +18,6 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
     private final Context context;
     private final List<Event> events;
     private int currentDate = 0;
-    private int eventDate = 0;
 
     public FavoritesListAdapter(Context context, List<Event> events) {
         this.context = context;
@@ -53,7 +52,7 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
         if (event != null) {
 
             // Set date row.
-            eventDate = event.getDate();
+            int eventDate = event.getDate();
             if (eventDate != currentDate) {
                 String dayText = BaseActivity.getDateFromTimestamp(eventDate, context);
                 currentDate = eventDate;

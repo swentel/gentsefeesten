@@ -18,9 +18,6 @@ public class MenuList extends BaseActivity {
     // Note that this is the external id.
     public static int toiletsId = 2745;
 
-    // Connectivity manager.
-    private ConnectivityManager cm;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.menu);
@@ -119,7 +116,7 @@ public class MenuList extends BaseActivity {
                 startActivity(goFestivals);
                 break;
             case 6:
-                cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
                 if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
                     Intent GoAroundMe = new Intent(getBaseContext(), AroundMe.class);
                     startActivity(GoAroundMe);

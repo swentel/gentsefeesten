@@ -104,7 +104,7 @@ public class AroundMe extends BaseActivity {
         selectQuery += " order by " + DatabaseHandler.KEY_DATE_SORT + " ASC";
 
         // Add limit
-        selectQuery += " LIMIT 100";
+        selectQuery += " LIMIT 50";
         events = db.getEventsAroundMe(selectQuery, center, radius);
 
         // Now order them by distance.

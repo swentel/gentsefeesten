@@ -18,9 +18,6 @@ public class EventDetail extends BaseActivity {
     private Event event;
     SharedPreferences pref = null;
 
-    // Connectivity manager.
-    private ConnectivityManager cm;
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.event_detail);
@@ -86,7 +83,7 @@ public class EventDetail extends BaseActivity {
         // Set listener on 'go online' and 'google map'.
         TextView goOnlineButton = (TextView) findViewById(R.id.info_online);
         TextView goOglemap = (TextView) findViewById(R.id.map);
-        cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             // Add listener on online button.
             goOnlineButton.setOnClickListener(actionOnline);
