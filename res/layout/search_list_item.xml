@@ -1,0 +1,59 @@
+<LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="0"
+        android:layout_gravity="center"
+        android:background="#f6f6f6"
+        android:id="@+id/day_title"
+        android:gravity="center"
+        android:textColor="#00394f"
+        android:textSize="20sp" />
+
+    <LinearLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:id="@+id/event_row"
+        android:background="#ffffff"
+        android:layout_height="wrap_content"
+        android:weightSum="1.0"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/event_hour"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".15"
+            android:paddingBottom="5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_marginTop="10dp"
+            android:textColor="#f14f44" />
+
+        <TextView
+            android:id="@+id/event_title"
+            android:layout_width="0dp"
+            android:layout_weight=".75"
+            android:paddingBottom="10dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:textColor="#323232" />
+
+        <ImageView
+            android:id="@+id/event_favorite"
+            android:layout_width="0dp"
+            android:layout_weight=".10"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="12dp"
+            android:contentDescription="@string/add_or_remove_from_favorite"
+            android:scaleType="centerInside"/>
+
+    </LinearLayout>
+
+</LinearLayout>

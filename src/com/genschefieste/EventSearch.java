@@ -45,7 +45,7 @@ public class EventSearch extends BaseActivity {
             selectQuery += DatabaseHandler.KEY_LOC_NAME + " LIKE " + escaped_query + " OR ";
             selectQuery += DatabaseHandler.KEY_CAT_NAME + " LIKE " + escaped_query + " OR ";
             selectQuery += DatabaseHandler.KEY_DESCRIPTION + " LIKE " + escaped_query + " ";
-            selectQuery += "ORDER BY " + DatabaseHandler.KEY_TITLE + " ASC ";
+            selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE + " ASC, " + DatabaseHandler.KEY_DATE_SORT + " ASC";
             events = db.getEvents(selectQuery);
 
             // Check on size of events. In case there are no events, add
@@ -69,7 +69,7 @@ public class EventSearch extends BaseActivity {
             });
 
             // Fire the list adapter.
-            EventsListAdapter adapter = new EventsListAdapter(this, events);
+            SearchListAdapter adapter = new SearchListAdapter(this, events);
             list.setAdapter(adapter);
         }
     }

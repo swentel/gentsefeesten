@@ -118,8 +118,11 @@ public class MenuList extends BaseActivity {
             case 6:
                 ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
                 if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-                    Intent GoAroundMe = new Intent(getBaseContext(), AroundMe.class);
-                    startActivity(GoAroundMe);
+                    // We go to a different intermediate screen first, because the
+                    // default is just to slow in reaction. We should probably solve this
+                    // with an asynctask, but let's get this done first before store release.
+                    Intent GoAroundMePre = new Intent(getBaseContext(), AroundMePre.class);
+                    startActivity(GoAroundMePre);
                 }
                 else {
                     Toast.makeText(MenuList.this, getString(R.string.menu_around_me_not_connected), Toast.LENGTH_LONG).show();

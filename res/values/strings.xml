@@ -39,6 +39,7 @@
     <string name="change_sort">Sorteer op</string>
     <string name="sort_by_hour">Tijdstip</string>
     <string name="sort_by_distance">Afstand</string>
+    <string name="around_me_search">We zijn evenementen in je buurt aan het zoeken, even geduld.\n\nWe zoeken in een straal van 5 kilometer rondom je. Je kan sorteren op afstand of uur.\n\n</string>
 
     <!-- Search and facet -->
     <string name="search_hint">Zoek evenement</string>

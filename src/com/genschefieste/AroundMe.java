@@ -95,8 +95,9 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
                 pref.edit().putInt("around_me_sort", sortBy).commit();
                 // Dismiss and reload.
                 dialog.dismiss();
-                intent = new Intent(mContext, AroundMe.class);
-                startActivity(intent);
+                // Go to to intermediate screen first.
+                Intent GoAroundMePre = new Intent(getBaseContext(), AroundMePre.class);
+                startActivity(GoAroundMePre);
             }
         });
         AlertDialog changeSort = builder.create();
@@ -109,8 +110,9 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
     private final View.OnClickListener refreshActivity = new View.OnClickListener() {
         public void onClick(View v) {
             Toast.makeText(AroundMe.this, getString(R.string.around_me_refresh), Toast.LENGTH_LONG).show();
-            finish();
-            startActivity(getIntent());
+            // Go to to intermediate screen first.
+            Intent GoAroundMePre = new Intent(getBaseContext(), AroundMePre.class);
+            startActivity(GoAroundMePre);
         }
     };
 
