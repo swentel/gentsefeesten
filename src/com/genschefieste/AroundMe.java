@@ -119,18 +119,12 @@ public class AroundMe extends BaseActivity {
     public class DistanceDateComparator implements Comparator<Event> {
         public int compare(Event e1, Event e2) {
 
-            Float distance1 = Float.valueOf(e1.getLocation());
-            Float distance2 = Float.valueOf(e2.getLocation());
-            int result = distance1.compareTo(distance2);
-            if (result != 0) {
-                return 1;
-            }
-
             if (e1.getDateSort() < e2.getDateSort()) {
                 return 1;
             }
-
-            return 0;
+            Float distance1 = Float.valueOf(e1.getLocation());
+            Float distance2 = Float.valueOf(e2.getLocation());
+            return distance1.compareTo(distance2);
         }
     }
 
