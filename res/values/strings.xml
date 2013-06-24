@@ -10,10 +10,10 @@
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>
-    <string name="no_favorites">Je hebt nog geen favorieten. Op de details van de evenementen kan je op de grijze ster drukken om ze in deze lijst toe te voegen.</string>
 
     <!-- Favorites activity -->
     <string name="my_favorites">Mijn favorieten</string>
+    <string name="no_favorites">Je hebt nog geen favorieten. Op de details van de evenementen kan je op de grijze ster drukken om ze in deze lijst toe te voegen.</string>
 
     <!-- Menu activity -->
     <string name="menu_home">Home</string>
