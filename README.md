@@ -10,7 +10,7 @@ Data available from http://data.gent.be
 Features
 --------
 
-1. Build with speed in mind
+1. Built with speed in mind
 2. Works offline
 3. List of favorites
 4. Browse fast 'facet-style'
