@@ -68,7 +68,7 @@ public class EventDetail extends BaseActivity {
         String descriptionText = "";
         TextView description = (TextView) findViewById(R.id.event_description);
         if (event.getDescription().length() > 0) {
-            descriptionText += event.getDescription();
+            descriptionText += event.getDescription() + "\n";
         }
         if (event.getUrl().length() > 0) {
             descriptionText += "\n" + event.getUrl();
