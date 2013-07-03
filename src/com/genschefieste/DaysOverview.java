@@ -8,8 +8,9 @@ import android.widget.ListView;
 
 public class DaysOverview extends BaseActivity {
 
-    public int facetId;
     Intent intent;
+    public int facetId;
+    public int typeIndex;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class DaysOverview extends BaseActivity {
         Bundle extras = getIntent().getExtras();
         assert extras != null;
         facetId = extras.getInt("facetId");
+        typeIndex = extras.getInt("typeIndex");
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
@@ -33,16 +35,16 @@ public class DaysOverview extends BaseActivity {
                 case 1:
                 case 3:
                 case 4:
-                    intent = new Intent(getBaseContext(), TypeOverview.class);
+                    intent = new Intent(getBaseContext(), EventResultFacetList.class);
                     intent.putExtra("dateIndex", position);
                     intent.putExtra("facetId", facetId);
+                    intent.putExtra("typeIndex", typeIndex);
                     break;
                 case 2:
                     intent = new Intent(getBaseContext(), EventResultFacetList.class);
-                    intent.putExtra("facetId", facetId);
                     intent.putExtra("dateIndex", position);
-                    // Pass in empty typeIndex.
-                    intent.putExtra("typeIndex", "");
+                    intent.putExtra("facetId", facetId);
+                    intent.putExtra("typeIndex", typeIndex);
                     break;
             }
 
