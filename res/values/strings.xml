@@ -7,6 +7,7 @@
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Mijn favorieten</string>
     <string name="no_events_found_on_home">Geen evenementen gevonden. Ga naar settings om je voorkeuren of om het programma aan te passen.\n\nKlik hier om naar settings te gaan.</string>
+    <string name="no_events_after_july_29">De Gentse feesten zijn voorbij, tot volgend jaar!\n\nEn dan starten ze op de vrijdag.</string>
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>
@@ -88,7 +89,7 @@
     <string name="setting_location_info">Kies locatie</string>
     <string name="share_settings">Share</string>
     <string name="share_message_title">Sociale media</string>
-    <string name="share_message_info">De standaard tekst die wordt ingevuld voor bvb Twitter. Gebruik "!replace" om de titel van het evenement automatisch erin plaatsen.</string>
+    <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin plaatsen.</string>
     <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #gf13</string>
     <string name="setting_front_ongoing">Al bezig</string>
     <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
