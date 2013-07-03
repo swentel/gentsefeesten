@@ -10,7 +10,6 @@ import android.widget.TextView;
 public class TypeOverview extends BaseActivity {
 
     public int facetId;
-    public int dateIndex;
     public Intent intent;
     public String typeTitle;
     public String[] string_resources;
@@ -23,7 +22,6 @@ public class TypeOverview extends BaseActivity {
         Bundle extras = getIntent().getExtras();
         assert extras != null;
         facetId = extras.getInt("facetId");
-        dateIndex = extras.getInt("dateIndex");
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
@@ -31,10 +29,9 @@ public class TypeOverview extends BaseActivity {
         list.setClickable(true);
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            intent = new Intent(getBaseContext(), EventResultFacetList.class);
+            intent = new Intent(getBaseContext(), DaysOverview.class);
             intent.putExtra("facetId", facetId);
             intent.putExtra("typeIndex", position);
-            intent.putExtra("dateIndex", dateIndex);
             startActivity(intent);
             }
         });

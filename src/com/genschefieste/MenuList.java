@@ -10,6 +10,7 @@ import android.widget.Toast;
 
 public class MenuList extends BaseActivity {
 
+    Intent goTypeOverview;
     Intent goDaysOverview;
 
     // ID of the public toilet 'event'.
@@ -98,16 +99,16 @@ public class MenuList extends BaseActivity {
                 startActivity(goFavorites);
                 break;
             case 3:
-                // Goes to days, then typeOverview passing categories.
-                goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
-                goDaysOverview.putExtra("facetId", 1);
-                startActivity(goDaysOverview);
+                // Goes to typeOverview, then days passing categories.
+                goTypeOverview = new Intent(getBaseContext(), TypeOverview.class);
+                goTypeOverview.putExtra("facetId", 1);
+                startActivity(goTypeOverview);
                 break;
             case 4:
-                // Goes to days, then typeOverview passing locations.
-                goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
-                goDaysOverview.putExtra("facetId", 3);
-                startActivity(goDaysOverview);
+                // Goes to typeOverview, then days passing locations.
+                goTypeOverview = new Intent(getBaseContext(), TypeOverview.class);
+                goTypeOverview.putExtra("facetId", 3);
+                startActivity(goTypeOverview);
                 break;
             case 5:
                 Intent goFestivals = new Intent(getBaseContext(), Festivals.class);
@@ -130,6 +131,7 @@ public class MenuList extends BaseActivity {
                 // Goes to days, then the list all free events.
                 goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
                 goDaysOverview.putExtra("facetId", 2);
+                goDaysOverview.putExtra("typeIndex", "");
                 startActivity(goDaysOverview);
                 break;
             case 8:
