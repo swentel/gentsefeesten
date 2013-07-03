@@ -84,8 +84,8 @@ public class EventDetail extends BaseActivity {
         }
 
         // Set listener on 'go online' and 'google map'.
-        TextView goOnlineButton = (TextView) findViewById(R.id.info_online);
-        TextView goOglemap = (TextView) findViewById(R.id.map);
+        ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
+        ImageButton goOglemap = (ImageButton) findViewById(R.id.map);
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             // Add listener on online button.
