@@ -59,6 +59,7 @@
 
     <!-- Event detail activity -->
     <string name="date_period">Datum</string>
+    <string name="category">Categorie</string>
     <string name="event_price">Prijs</string>
     <string name="event_free">Gratis</string>
     <string name="event_whole_day">Hele dag</string>

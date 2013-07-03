@@ -64,6 +64,10 @@ public class EventDetail extends BaseActivity {
         TextView price = (TextView) findViewById(R.id.event_price);
         price.setText(price_text);
 
+        // Category.
+        TextView category = (TextView) findViewById(R.id.event_category);
+        category.setText(event.getCategory());
+
         // Set description and URL.
         String descriptionText = "";
         TextView description = (TextView) findViewById(R.id.event_description);
