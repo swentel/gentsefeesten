@@ -85,7 +85,7 @@
 
                 <TextView
                     xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
@@ -105,7 +105,7 @@
                     android:id="@+id/event_date"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="80dp"
                     android:background="#ffffff"
                     android:gravity="left"
                     android:textColor="#00394f"
@@ -133,7 +133,7 @@
 
                 <TextView
                     xmlns:android="http://schemas.android.com/apk/res/android"
-                    android:layout_width="80dp"
+                    android:layout_width="100dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginRight="10dp"
@@ -153,8 +153,56 @@
                     android:id="@+id/event_price"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:layout_marginLeft="60dp"
+                    android:layout_marginLeft="80dp"
                     android:layout_marginRight="10dp"
+                    android:gravity="left"
+                    android:textColor="#00394f"
+                    android:textSize="15sp"
+                    android:padding="10dp"/>
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:background="#e0e0e0"
+                android:visibility="visible"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
+
+            <RelativeLayout
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="#ffffff"
+                android:orientation="horizontal"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp">
+
+                <TextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="100dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:background="#ffffff"
+                    android:text="@string/category"
+                    android:textColor="#cf2c1c"
+                    android:textSize="15sp"
+                    android:layout_alignParentLeft="true"
+                    android:paddingTop="10dp"
+                    android:paddingRight="10dp"
+                    android:paddingBottom="10dp"
+                    android:paddingLeft="5dp"/>
+
+                <TextView
+                    xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:layout_width="wrap_content"
+                    android:id="@+id/event_category"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginLeft="80dp"
+                    android:background="#ffffff"
                     android:gravity="left"
                     android:textColor="#00394f"
                     android:textSize="15sp"
