@@ -211,12 +211,13 @@
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 xmlns:android="http://schemas.android.com/apk/res/android"
-                android:id="@+id/share"
+                android:id="@+id/map"
+                android:contentDescription="@string/view_on_map"
                 android:layout_alignParentRight="true"
                 android:background="#ffffff"
-                android:src="@drawable/share_button"
+                android:src="@drawable/map"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="70dp"
+                android:layout_marginRight="192dp"
                 android:scaleType="center"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="13dp"/>
@@ -224,6 +225,37 @@
             <ImageButton
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
+                android:contentDescription="@string/info_online"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/external_link"
+                android:layout_alignParentRight="true"
+                android:background="#ffffff"
+                android:src="@drawable/external_link"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="145dp"
+                android:scaleType="center"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="13dp"/>
+
+            <ImageButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:contentDescription="@string/share_message_title"
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/share"
+                android:layout_alignParentRight="true"
+                android:background="#ffffff"
+                android:src="@drawable/share_button"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="50dp"
+                android:scaleType="center"
+                android:layout_gravity="center_vertical"
+                android:layout_marginTop="13dp"/>
+
+            <ImageButton
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:contentDescription="@string/add_or_remove_from_favorite"
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:id="@+id/favorite"
                 android:layout_alignParentRight="true"
@@ -231,44 +263,10 @@
                 android:scaleType="center"
                 android:adjustViewBounds="false"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="13dp"
-                android:layout_marginRight="20dp"/>
+                android:layout_marginTop="14dp"
+                android:layout_marginRight="10dp"/>
 
          </RelativeLayout>
-
-        <TextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/map"
-            android:text="@string/info_map"
-            android:layout_width="fill_parent"
-            android:layout_gravity="center"
-            android:background="#ed4e40"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="5dp"/>
-
-        <TextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/info_online"
-            android:text="@string/info_online"
-            android:layout_width="fill_parent"
-            android:layout_gravity="center"
-            android:background="#ed4e40"
-            android:padding="10dp"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:textColor="#ffffff"
-            android:textSize="20sp"
-            android:layout_marginTop="5dp"
-            android:layout_marginBottom="10dp"/>
 
     </LinearLayout>
 
