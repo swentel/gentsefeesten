@@ -53,7 +53,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
 
         // Type dialog changer. Only set onlistener and the image
         // for categories and locations.
-        if (facetId != 2) {
+        if (facetId != 2 && facetId != 4) {
             typeRow = (RelativeLayout) findViewById(R.id.type_change);
             typeRow.setOnClickListener(this);
             listButton = (ImageButton) findViewById(R.id.type_row_button);
@@ -73,6 +73,9 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         // Set facet type row text.
         if (facetId == 2) {
             type_text = getString(R.string.event_free);
+        }
+        else if (facetId == 4) {
+            type_text = getString(R.string.event_festival);
         }
         else {
             // Categories
@@ -105,6 +108,10 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         // Locations.
         else if (facetId == 3) {
             selectQuery += " AND " + DatabaseHandler.KEY_LOC_ID + " = " + typeId;
+        }
+        // Festivals.
+        else if (facetId == 4) {
+            selectQuery += " AND " + DatabaseHandler.KEY_FESTIVAL + " = 1";
         }
         selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE_SORT + " ASC, " + DatabaseHandler.KEY_TITLE + " ASC";
 

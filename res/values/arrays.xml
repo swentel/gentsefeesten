@@ -40,20 +40,6 @@
         <item>1375056000</item>
     </integer-array>
 
-    <string-array name="festival_strings">
-        <item>@string/gent_jazz</item>
-        <item>@string/ten_days</item>
-        <item>@string/puppet</item>
-        <item>@string/streettheater</item>
-    </string-array>
-
-    <string-array name="festival_ids">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-    </string-array>
-
     <string-array name="location_strings">
         <item>@string/baudeloo</item>
         <item>@string/beverhout</item>

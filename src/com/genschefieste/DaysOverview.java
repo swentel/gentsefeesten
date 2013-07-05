@@ -31,7 +31,6 @@ public class DaysOverview extends BaseActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
             switch (facetId) {
                 // Goes to typeOverview for categories, festivals and locations.
-                // festivals (4) is not implemented yet.
                 case 1:
                 case 3:
                 case 4:
