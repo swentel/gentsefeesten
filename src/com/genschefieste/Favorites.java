@@ -1,9 +1,6 @@
 package com.genschefieste;
 
-import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 
 import java.util.List;
@@ -33,21 +30,6 @@ public class Favorites extends BaseActivity {
         if (events.size() == 0) {
             list.setEmptyView(findViewById(R.id.empty));
         }
-
-        // Make every item clickable.
-        list.setClickable(true);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                // Only start the intent if the event external id is not zero, this means
-                // we have clicked a day row.
-                if (events.get(position).getExternalId() != 0) {
-                    Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                    eventId = events.get(position).getId();
-                    intent.putExtra("eventId", eventId);
-                    startActivity(intent);
-                }
-            }
-        });
 
         // Fire the list adapter.
         FavoritesListAdapter adapter = new FavoritesListAdapter(this, events);

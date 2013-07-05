@@ -1,11 +1,15 @@
 package com.genschefieste;
 
 import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import java.util.List;
@@ -57,11 +61,15 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
         public TextView day;
         public TextView title;
         public TextView hour;
+        public LinearLayout row;
+        public int eventId;
     }
 
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder;
         int type = getItemViewType(position);
+
+        Event event = events.get(position);
 
         if (convertView == null) {
             holder = new ViewHolder();
@@ -74,6 +82,8 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
                     convertView = mInflater.inflate(R.layout.favorite_list_item, null);
                     holder.title = (TextView)convertView.findViewById(R.id.event_title);
                     holder.hour = (TextView)convertView.findViewById(R.id.event_hour);
+                    holder.row = (LinearLayout) convertView.findViewById(R.id.event_row);
+                    holder.eventId = event.getId();
                     break;
             }
             convertView.setTag(holder);
@@ -81,8 +91,6 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
         else {
             holder = (ViewHolder)convertView.getTag();
         }
-
-        Event event = events.get(position);
 
         if (event != null) {
 
@@ -100,9 +108,41 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
                 // Title.
                 String title = event.getTitle();
                 holder.title.setText(title);
+
+                holder.eventId = event.getId();
+                convertView.setOnTouchListener(eventTouch);
             }
         }
 
         return convertView;
     }
+
+    View.OnTouchListener eventTouch = new View.OnTouchListener() {
+        @Override
+        public boolean onTouch(View v, MotionEvent motionEvent) {
+            ViewHolder holder = (ViewHolder)v.getTag();
+            switch(motionEvent.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    holder.hour.setTextColor(Color.parseColor("#ffffff"));
+                    holder.title.setTextColor(Color.parseColor("#ffffff"));
+                    holder.row.setBackgroundColor(Color.parseColor("#ef4f3f"));
+                    break;
+                case MotionEvent.ACTION_CANCEL:
+                    holder.hour.setTextColor(Color.parseColor("#ef4f3f"));
+                    holder.title.setTextColor(Color.parseColor("#323232"));
+                    holder.row.setBackgroundColor(Color.parseColor("#ffffff"));
+                    break;
+                case MotionEvent.ACTION_UP:
+                    holder.hour.setTextColor(Color.parseColor("#ef4f3f"));
+                    holder.title.setTextColor(Color.parseColor("#323232"));
+                    holder.row.setBackgroundColor(Color.parseColor("#ffffff"));
+                    int eventId = holder.eventId;
+                    Intent intent = new Intent(context, EventDetail.class);
+                    intent.putExtra("eventId", eventId);
+                    context.startActivity(intent);
+                    break;
+            }
+            return true;
+        }
+    };
 }

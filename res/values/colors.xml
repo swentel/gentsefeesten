@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="white">#ffffff</color>
+    <color name="red">#ef4f3f</color>
     <color name="light_menu">#004252</color>
     <color name="dark_menu">#003a48</color>
 </resources>
