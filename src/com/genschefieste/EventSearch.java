@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.database.DatabaseUtils;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -61,21 +60,6 @@ public class EventSearch extends BaseActivity {
                 TextView noEvents = (TextView) findViewById(R.id.empty);
                 noEvents.setOnClickListener(openSearch);
             }
-
-            // Make every item clickable.
-            list.setClickable(true);
-            list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-                public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                    // Only start the intent if the event external id is not zero, this means
-                    // we have clicked a day row.
-                    if (events.get(position).getExternalId() != 0) {
-                        Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                        eventId = events.get(position).getId();
-                        intent.putExtra("eventId", eventId);
-                        startActivity(intent);
-                    }
-                }
-            });
 
             // Fire the list adapter.
             SearchListAdapter adapter = new SearchListAdapter(this, events);
