@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.TableRow;
 import android.widget.Toast;
 
+import java.util.List;
+
 public class MenuList extends BaseActivity {
 
     Intent goTypeOverview;
@@ -65,11 +67,11 @@ public class MenuList extends BaseActivity {
         TableRow goTransport = (TableRow) findViewById(R.id.menu_transport);
         goTransport.setId(10);
         goTransport.setOnClickListener(actionMenu);
+        */
 
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
         goToilet.setId(11);
         goToilet.setOnClickListener(actionMenu);
-        */
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
         manageUpdates.setId(12);
@@ -144,7 +146,7 @@ public class MenuList extends BaseActivity {
             case 10:
                 Toast.makeText(MenuList.this, "Public transport coming soon", Toast.LENGTH_LONG).show();
                 break;
-            /*case 11:
+            case 11:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
@@ -156,7 +158,7 @@ public class MenuList extends BaseActivity {
                     goToilet.putExtra("eventId", event.getId());
                     startActivity(goToilet);
                 }
-                break;*/
+                break;
             case 12:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
