@@ -9,7 +9,6 @@ import android.graphics.PointF;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -54,17 +53,6 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
             TextView noEvents = (TextView) findViewById(R.id.empty);
             noEvents.setOnClickListener(refreshActivity);
         }
-
-        // Make every item clickable.
-        list.setClickable(true);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(getBaseContext(), EventDetail.class);
-                eventId = events.get(position).getId();
-                intent.putExtra("eventId", eventId);
-                startActivity(intent);
-            }
-        });
 
         // Fire the list adapter.
         AroundMeListAdapter adapter = new AroundMeListAdapter(this, events);
@@ -174,8 +162,8 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
         }
         else {
             Collections.sort(events, new dateDistanceComparator());
-
         }
+
         return events;
     }
 
@@ -188,6 +176,9 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
             if (e1.getDateSort() < e2.getDateSort()) {
                 return 1;
             }
+            else if (e1.getDateSort() == e2.getDateSort()) {
+                return 0;
+            }
             Float distance1 = Float.valueOf(e1.getLocation());
             Float distance2 = Float.valueOf(e2.getLocation());
             return distance1.compareTo(distance2);
@@ -195,7 +186,7 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
     }
 
     /**
-     * Sort on distance, then date.
+     * Sort on date, then distance.
      */
     public class dateDistanceComparator implements Comparator<Event> {
         public int compare(Event e1, Event e2) {

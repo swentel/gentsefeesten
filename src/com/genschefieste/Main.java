@@ -6,8 +6,6 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.AdapterView;
-import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -52,17 +50,6 @@ public class Main extends BaseActivity {
                 noEvents.setText(getString(R.string.no_events_found_on_home));
             }
         }
-
-        // Make every item clickable.
-        list.setClickable(true);
-        list.setOnItemClickListener(new OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(getBaseContext(), EventDetail.class);
-            eventId = events.get(position).getId();
-            intent.putExtra("eventId", eventId);
-            startActivity(intent);
-            }
-        });
 
         // Fire the list adapter.
         EventsListAdapter adapter = new EventsListAdapter(this, events);

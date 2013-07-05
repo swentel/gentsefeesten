@@ -16,7 +16,6 @@ public class BaseActivity extends Activity implements LocationListener {
 
     // Variables for this activity.
     public boolean showHomebutton = true;
-    public boolean disableFavoritesButton = false;
     public boolean addTopbarListeners = true;
     Intent intent;
 
@@ -45,11 +44,9 @@ public class BaseActivity extends Activity implements LocationListener {
             go_to_menu.setOnClickListener(topBar);
 
             // Add listener on favorites button.
-            if (!disableFavoritesButton) {
-                ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
-                go_to_favorites.setId(2);
-                go_to_favorites.setOnClickListener(topBar);
-            }
+            ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
+            go_to_favorites.setId(2);
+            go_to_favorites.setOnClickListener(topBar);
         }
     }
 

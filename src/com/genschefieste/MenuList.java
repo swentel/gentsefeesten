@@ -41,19 +41,17 @@ public class MenuList extends BaseActivity {
         goLocations.setId(4);
         goLocations.setOnClickListener(actionMenu);
 
-        /*
         TableRow goFestival = (TableRow) findViewById(R.id.menu_festival);
         goFestival.setId(5);
-        goFestival.setOnClickListener(actionMenu);*/
-
-        TableRow goAroundMe = (TableRow) findViewById(R.id.menu_around_me);
-        goAroundMe.setId(6);
-        goAroundMe.setOnClickListener(actionMenu);
+        goFestival.setOnClickListener(actionMenu);
 
         TableRow goFree = (TableRow) findViewById(R.id.menu_free);
-        goFree.setId(7);
+        goFree.setId(6);
         goFree.setOnClickListener(actionMenu);
 
+        TableRow goAroundMe = (TableRow) findViewById(R.id.menu_around_me);
+        goAroundMe.setId(7);
+        goAroundMe.setOnClickListener(actionMenu);
 
         TableRow goSearch = (TableRow) findViewById(R.id.menu_search);
         goSearch.setId(8);
@@ -111,10 +109,20 @@ public class MenuList extends BaseActivity {
                 startActivity(goTypeOverview);
                 break;
             case 5:
-                Intent goFestivals = new Intent(getBaseContext(), Festivals.class);
-                startActivity(goFestivals);
+                // Goes to days, then the list all festival events.
+                goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
+                goDaysOverview.putExtra("facetId", 4);
+                goDaysOverview.putExtra("typeIndex", "");
+                startActivity(goDaysOverview);
                 break;
             case 6:
+                // Goes to days, then the list all free events.
+                goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
+                goDaysOverview.putExtra("facetId", 2);
+                goDaysOverview.putExtra("typeIndex", "");
+                startActivity(goDaysOverview);
+                break;
+            case 7:
                 ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
                 if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
                     // We go to a different intermediate screen first, because the
@@ -126,13 +134,6 @@ public class MenuList extends BaseActivity {
                 else {
                     Toast.makeText(MenuList.this, getString(R.string.menu_around_me_not_connected), Toast.LENGTH_LONG).show();
                 }
-                break;
-            case 7:
-                // Goes to days, then the list all free events.
-                goDaysOverview = new Intent(getBaseContext(), DaysOverview.class);
-                goDaysOverview.putExtra("facetId", 2);
-                goDaysOverview.putExtra("typeIndex", "");
-                startActivity(goDaysOverview);
                 break;
             case 8:
                 onSearchRequested();

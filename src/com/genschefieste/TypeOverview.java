@@ -2,8 +2,6 @@ package com.genschefieste;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.TextView;
 
@@ -18,23 +16,13 @@ public class TypeOverview extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.type_list);
 
-        // Get type and date.
+        // Get facet id.
         Bundle extras = getIntent().getExtras();
         assert extras != null;
         facetId = extras.getInt("facetId");
 
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
-        // Make every item clickable.
-        list.setClickable(true);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            intent = new Intent(getBaseContext(), DaysOverview.class);
-            intent.putExtra("facetId", facetId);
-            intent.putExtra("typeIndex", position);
-            startActivity(intent);
-            }
-        });
 
         // Set facet type title.
         switch (facetId) {
@@ -51,7 +39,7 @@ public class TypeOverview extends BaseActivity {
         textView.setText(typeTitle);
 
         // Fire the list adapter.
-        SimpleListAdapter adapter = new SimpleListAdapter(this, string_resources);
+        TypeListAdapter adapter = new TypeListAdapter(this, string_resources, facetId);
         list.setAdapter(adapter);
 
         super.onCreate(savedInstanceState);
