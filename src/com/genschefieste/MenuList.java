@@ -69,16 +69,20 @@ public class MenuList extends BaseActivity {
         goTransport.setOnClickListener(actionMenu);
         */
 
+        TableRow goBicyle = (TableRow) findViewById(R.id.menu_bicycle);
+        goBicyle.setId(11);
+        goBicyle.setOnClickListener(actionMenu);
+
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
-        goToilet.setId(11);
+        goToilet.setId(12);
         goToilet.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(12);
+        manageUpdates.setId(13);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(13);
+        goAbout.setId(14);
         goAbout.setOnClickListener(actionMenu);
 
         super.onCreate(savedInstanceState);
@@ -147,6 +151,10 @@ public class MenuList extends BaseActivity {
                 Toast.makeText(MenuList.this, "Public transport coming soon", Toast.LENGTH_LONG).show();
                 break;
             case 11:
+                Intent goBicycle = new Intent(getBaseContext(), Bicycle.class);
+                startActivity(goBicycle);
+                break;
+            case 12:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
@@ -159,11 +167,11 @@ public class MenuList extends BaseActivity {
                     startActivity(goToilet);
                 }
                 break;
-            case 12:
+            case 13:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 13:
+            case 14:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;

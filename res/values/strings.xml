@@ -25,6 +25,7 @@
     <string name="menu_festival">Festivals</string>
     <string name="menu_locations">Locaties</string>
     <string name="menu_transport">Openbaar vervoer</string>
+    <string name="menu_bicycle">Fietsstallingen</string>
     <string name="menu_search">Zoeken</string>
     <string name="menu_practical">Praktisch</string>
     <string name="menu_parking">Parkings</string>
@@ -41,6 +42,9 @@
     <string name="sort_by_hour">Tijdstip</string>
     <string name="sort_by_distance">Afstand</string>
     <string name="around_me_search">We zijn evenementen in je buurt aan het zoeken, even geduld.\n\nWe zoeken in een straal van 5 kilometer rondom je. Je kan sorteren op afstand of uur.\n\n</string>
+
+    <!-- Bicycle info -->
+    <string name="bicycle_info"><![CDATA[<em>Bewaakte fietsparkings</em><br /><br />Om uw fiets helemaal veilig achter te laten, kunt u één van de twee gratis bewaakte fietsenparkings aan de Baudelokaai of Korenmarkt gebruiken. Die zijn 24/24 uur open. Baudelokaai is bewaakt van 14 uur ’s middags tot 6 uur ’s morgens, onder de Sint-Michielsbrug is er 24/24u bewaking.<br />Op deze twee plaatsen kan u een voetluchtpomp ontlenen bij de bewakers voor het oppompen van platte banden. Opgelet: de fietsparking E. Braunplein zal gesloten zijn.<br /><br /><em>Onbewaakte fietsstallingen</em><br /><br />Extra stallingen vindt u op de volgende locaties: Sint-Jacobsnieuwstraat,, Hoogpoort, Limburgstraat, Maaseikstraat, Sint-Niklaasstraat, Steendam, Kouter, Vlaanderenstraat, Baudelokaai, Justitiepaleis (parking Koophandelsplein), Sint-Baafssite, Drabstraat, Rode Torenkaai, Laurentbrug, Sint-Jorisbrug en Minnemeersbrug<br /><br />Verder kunt u ook fietsen huren bij Max Mobiel.<br /><br />Info: MAX MOBIEL - 09 242 80 46 -&nbsp;<a href="mailto:max-mobiel@gent.be">max-mobiel@gent.be</a> - <a href="http://www.max-mobiel.be">www.max-mobiel.be</a><br /><br />]]></string>
 
     <!-- Search and facet -->
     <string name="search_hint">Zoek evenement</string>
