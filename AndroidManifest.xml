@@ -49,6 +49,7 @@
         <activity android:name=".About" />
         <activity android:name=".AroundMe" />
         <activity android:name=".AroundMePre" />
+        <activity android:name=".Bicycle" />
         <activity android:name=".Prefs" android:screenOrientation="portrait" />
 
     </application>
