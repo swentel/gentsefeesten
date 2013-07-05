@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -122,17 +121,6 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         if (events.size() == 0) {
             list.setEmptyView(findViewById(R.id.empty));
         }
-
-        // Make every item clickable.
-        list.setClickable(true);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(getBaseContext(), EventDetail.class);
-            eventId = events.get(position).getId();
-            intent.putExtra("eventId", eventId);
-            startActivity(intent);
-            }
-        });
 
         // Fire the list adapter.
         EventsListAdapter adapter = new EventsListAdapter(this, events);
