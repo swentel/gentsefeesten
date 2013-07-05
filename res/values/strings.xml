@@ -48,6 +48,7 @@
     <string name="change_day">Verander dag</string>
     <string name="change_category">Verander categorie</string>
     <string name="change_location">Verander locatie</string>
+    <string name="change_type">Verander type</string>
     <string name="no_search_results">Geen resultaten gevonden, klik hier om een nieuwe zoekactie te starten.</string>
     <string name="no_search_results_facet">Geen resultaten gevonden, je kan klikken hierboven om te veranderen van dag of type.</string>
 

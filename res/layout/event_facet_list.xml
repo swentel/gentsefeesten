@@ -21,7 +21,10 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="45dp"
-            android:id="@+id/day_change">
+            android:background="@drawable/list_bar_states"
+            android:id="@+id/day_change"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <TextView
                 xmlns:android="http://schemas.android.com/apk/res/android"
@@ -30,7 +33,6 @@
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
-                android:background="#ffffff"
                 android:gravity="center"
                 android:id="@+id/day_row"
                 android:textColor="#00394f"
@@ -39,12 +41,13 @@
             <ImageButton
                 xmlns:android="http://schemas.android.com/apk/res/android"
                 android:layout_width="wrap_content"
+                android:contentDescription="@string/change_day"
                 android:src="@drawable/list"
                 android:layout_height="wrap_content"
                 android:background="@null"
                 android:id="@+id/day_row_button"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"/>
 
         </RelativeLayout>
@@ -59,7 +62,10 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:id="@+id/type_change"
-            android:layout_height="wrap_content">
+            android:background="@drawable/list_bar_states"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp">
 
             <TextView
                 xmlns:android="http://schemas.android.com/apk/res/android"
@@ -69,19 +75,19 @@
                 android:layout_marginLeft="10dp"
                 android:layout_marginRight="10dp"
                 android:id="@+id/type_row"
-                android:background="#ffffff"
                 android:gravity="center"
                 android:textColor="#00394f"
                 android:textSize="20sp" />
 
             <ImageButton
                 xmlns:android="http://schemas.android.com/apk/res/android"
+                android:contentDescription="@string/change_type"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/type_row_button"
                 android:background="@null"
                 android:layout_alignParentRight="true"
-                android:layout_marginRight="20dp"
+                android:layout_marginRight="10dp"
                 android:layout_marginTop="10dp"/>
 
         </RelativeLayout>
