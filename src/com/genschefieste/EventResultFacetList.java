@@ -6,7 +6,6 @@ import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -53,7 +52,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
 
         // Type dialog changer. Only set onlistener and the image
         // for categories and locations.
-        if (facetId != 2) {
+        if (facetId != 2 && facetId != 4) {
             typeRow = (RelativeLayout) findViewById(R.id.type_change);
             typeRow.setOnClickListener(this);
             listButton = (ImageButton) findViewById(R.id.type_row_button);
@@ -73,6 +72,9 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         // Set facet type row text.
         if (facetId == 2) {
             type_text = getString(R.string.event_free);
+        }
+        else if (facetId == 4) {
+            type_text = getString(R.string.event_festival);
         }
         else {
             // Categories
@@ -106,6 +108,10 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         else if (facetId == 3) {
             selectQuery += " AND " + DatabaseHandler.KEY_LOC_ID + " = " + typeId;
         }
+        // Festivals.
+        else if (facetId == 4) {
+            selectQuery += " AND " + DatabaseHandler.KEY_FESTIVAL + " = 1";
+        }
         selectQuery += " ORDER BY " + DatabaseHandler.KEY_DATE_SORT + " ASC, " + DatabaseHandler.KEY_TITLE + " ASC";
 
         events = db.getEvents(selectQuery, false);
@@ -115,17 +121,6 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         if (events.size() == 0) {
             list.setEmptyView(findViewById(R.id.empty));
         }
-
-        // Make every item clickable.
-        list.setClickable(true);
-        list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-            Intent intent = new Intent(getBaseContext(), EventDetail.class);
-            eventId = events.get(position).getId();
-            intent.putExtra("eventId", eventId);
-            startActivity(intent);
-            }
-        });
 
         // Fire the list adapter.
         EventsListAdapter adapter = new EventsListAdapter(this, events);

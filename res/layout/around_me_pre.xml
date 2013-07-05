@@ -39,17 +39,6 @@
         android:orientation="horizontal"
         android:background="#ffffff">
 
-        <ImageView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:src="@drawable/menu_search"
-            android:background="@null"
-
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="27dp"
-            android:layout_width="35dp"
-            android:layout_height="35dp"
-            android:scaleType="fitCenter"/>
-
         <TextView
             android:id="@+id/searching_around"
             android:text="@string/around_me_search"

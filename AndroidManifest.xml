@@ -45,7 +45,6 @@
         <activity android:name=".EventDetail" />
         <activity android:name=".MapBase"/>
         <activity android:name=".Favorites" />
-        <activity android:name=".Festivals" />
         <activity android:name=".EventResultFacetList" />
         <activity android:name=".About" />
         <activity android:name=".AroundMe" />
