@@ -290,7 +290,6 @@
             android:background="#005768"
             android:visibility="visible"/>
 
-        <!-- Parkings and public transport not yet implemented
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:paddingTop="10dp"
@@ -314,6 +313,7 @@
 
         </TableRow>
 
+        <!-- Parkings and public transport not yet implemented
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
@@ -373,6 +373,7 @@
                 android:textSize="17sp"/>
 
         </TableRow>
+        -->
 
         <View
             android:layout_width="fill_parent"
@@ -382,7 +383,7 @@
 
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
-            android:background="#003a48"
+            android:background="@drawable/menu_row_dark"
             android:paddingTop="10dp"
             android:id="@+id/menu_toilets"
             android:layout_gravity="bottom"
@@ -404,7 +405,6 @@
                     />
 
         </TableRow>
-        -->
 
         <View
             android:layout_width="fill_parent"
