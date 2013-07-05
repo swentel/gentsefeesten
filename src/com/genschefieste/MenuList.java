@@ -59,30 +59,20 @@ public class MenuList extends BaseActivity {
         goSearch.setId(8);
         goSearch.setOnClickListener(actionMenu);
 
-        /* Not yet implemented or needs to be revised.
-        TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
-        goParking.setId(9);
-        goParking.setOnClickListener(actionMenu);
-
-        TableRow goTransport = (TableRow) findViewById(R.id.menu_transport);
-        goTransport.setId(10);
-        goTransport.setOnClickListener(actionMenu);
-        */
-
         TableRow goBicyle = (TableRow) findViewById(R.id.menu_bicycle);
-        goBicyle.setId(11);
+        goBicyle.setId(9);
         goBicyle.setOnClickListener(actionMenu);
 
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
-        goToilet.setId(12);
+        goToilet.setId(10);
         goToilet.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(13);
+        manageUpdates.setId(11);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(14);
+        goAbout.setId(12);
         goAbout.setOnClickListener(actionMenu);
 
         super.onCreate(savedInstanceState);
@@ -145,16 +135,10 @@ public class MenuList extends BaseActivity {
                 onSearchRequested();
                 break;
             case 9:
-                Toast.makeText(MenuList.this, "Parking coming soon", Toast.LENGTH_LONG).show();
-                break;
-            case 10:
-                Toast.makeText(MenuList.this, "Public transport coming soon", Toast.LENGTH_LONG).show();
-                break;
-            case 11:
                 Intent goBicycle = new Intent(getBaseContext(), Bicycle.class);
                 startActivity(goBicycle);
                 break;
-            case 12:
+            case 10:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
@@ -167,11 +151,11 @@ public class MenuList extends BaseActivity {
                     startActivity(goToilet);
                 }
                 break;
-            case 13:
+            case 11:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 14:
+            case 12:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;
