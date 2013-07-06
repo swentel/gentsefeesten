@@ -25,6 +25,7 @@
     <string name="menu_festival">Festivals</string>
     <string name="menu_locations">Locaties</string>
     <string name="menu_bicycle">Fietsstallingen</string>
+    <string name="menu_atm">Geldautomaten</string>
     <string name="menu_search">Zoeken</string>
     <string name="menu_practical">Praktisch</string>
     <string name="menu_toilet">Publieke toiletten</string>
@@ -104,6 +105,12 @@
     <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
     <string name="service_offline">Onze service met het programma is even offline, gelieve ons te verontschuldigen.</string>
     <string name="updating_done">Het programma voor de Gentse Feesten is bijgewerkt.</string>
+
+    <!-- ATM -->
+    <string name="back_to_atm_list">Lijst</string>
+    <string name="no_atms">Geen automaten gevonden</string>
+    <string name="atm_map">Kaart</string>
+    <string name="close_bubble">Sluiten</string>
 
     <!-- Dates -->
     <string name="july_20">Zaterdag 20 juli</string>
