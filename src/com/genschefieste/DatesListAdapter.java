@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * Simple list adapter.
+ * Dates list adapter.
  */
 public class DatesListAdapter extends ArrayAdapter implements OnClickListener {
     private final Context context;

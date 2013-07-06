@@ -50,6 +50,8 @@
         <activity android:name=".AroundMe" />
         <activity android:name=".AroundMePre" />
         <activity android:name=".Bicycle" />
+        <activity android:name=".AtmList" />
+        <activity android:name=".AtmMap" />
         <activity android:name=".Prefs" android:screenOrientation="portrait" />
 
     </application>

@@ -170,4 +170,28 @@
         <item>25</item>
     </string-array>
 
+    <!-- List of ATM's from the enter of Gent. This way we don't have to call the
+         atm or google json service all the time and we can show the list while offline -->
+    <string-array name="atms">
+        <item>Belfius bank;Vlaanderenstraat 25;51.050941;3.729384</item>
+        <item>Belfius bank;Zonnestraat 23;51.050431;3.7218</item>
+        <item>BNP Paribas Fortis;Belfortstraat 41;51.055822;3.727413</item>
+        <item>BNP Paribas Bijloke;Bijlokehof 41;51.046039;3.713962</item>
+        <item>BNP Paribas Fortis;Graaf van Vlaanderenplein 13;51.047692;3.732283</item>
+        <item>BNP Paribas centrum;Zonnestraat 2;51.050397;3.722415</item>
+        <item>bpost Gent;Franklin Rooseveltlaan 2;51.047527;3.729862</item>
+        <item>Europabank NV;Groentenmarkt 4;51.055633;3.722208</item>
+        <item>ING Gent-Belfort;Belfortstraat 18;51.055436;3.727026</item>
+        <item>ING Gent Kouter;Kouter 173;51.050411;3.724283</item>
+        <item>ING Gent Martelaarslaan;Martelaarslaan 540;51.049342;3.707099</item>
+        <item>ING Gent Opgeëistenlaan;Opgeëistenlaan 400;51.062733;3.715709</item>
+        <item>ING Gent-Zuid;Graaf van Vlaanderenplein 7;51.047321;3.732339</item>
+        <item>KBC Gent;Graaf van Vlaanderenplein 32;51.046772;3.73284</item>
+        <item>KBC Bank;Kouter 175;51.05064;3.724921</item>
+        <item>KBC Bank;Martelaarslaan 134;51.046537;3.712766</item>
+        <item>KBC Bank;Steendam 8;51.056731;3.728656</item>
+        <item>VDK;Sint-Michielsplein 16;51.054161;3.719509</item>
+        <item>VDK;Sint-Michielsplein 16;51.054161;3.719509</item>
+    </string-array>
+
 </resources>

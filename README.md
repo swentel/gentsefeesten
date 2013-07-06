@@ -19,7 +19,8 @@ Features
 7. Settings for homepage listing
 8. Google maps integration (when online)
 9. Geolocation integration
-10. Android 2.1 and up
+10. ATM locations
+11. Android 2.1 and up
 
 Screenshot
 ----------
