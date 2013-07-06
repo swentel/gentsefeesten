@@ -50,8 +50,6 @@ public class AtmMap extends MapActivity {
         Bundle extras = getIntent().getExtras();
         latitude = extras.getDouble("latitude");
         longitude = extras.getDouble("longitude");
-        //latitude = 51.058228;
-        //longitude = 3.735352;
 
         atms = new ArrayList<Atm>();
         String[] atmList = this.getResources().getStringArray(R.array.atms);
