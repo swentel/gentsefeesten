@@ -158,27 +158,21 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
         int sortBy = pref.getInt("around_me_sort", 1);
 
         if (sortBy == 1) {
-            Collections.sort(events, new DistanceDateComparator());
+            Collections.sort(events, new DistanceComparator());
         }
         else {
-            Collections.sort(events, new dateDistanceComparator());
+            Collections.sort(events, new DateComparator());
         }
 
         return events;
     }
 
     /**
-     * Sort on distance, then date.
+     * Sort on distance.
      */
-    public class DistanceDateComparator implements Comparator<Event> {
+    public class DistanceComparator implements Comparator<Event> {
         public int compare(Event e1, Event e2) {
 
-            if (e1.getDateSort() < e2.getDateSort()) {
-                return 1;
-            }
-            else if (e1.getDateSort() == e2.getDateSort()) {
-                return 0;
-            }
             Float distance1 = Float.valueOf(e1.getLocation());
             Float distance2 = Float.valueOf(e2.getLocation());
             return distance1.compareTo(distance2);
@@ -186,17 +180,10 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
     }
 
     /**
-     * Sort on date, then distance.
+     * Sort on date.
      */
-    public class dateDistanceComparator implements Comparator<Event> {
+    public class DateComparator implements Comparator<Event> {
         public int compare(Event e1, Event e2) {
-
-            Float distance1 = Float.valueOf(e1.getLocation());
-            Float distance2 = Float.valueOf(e2.getLocation());
-            int result = distance1.compareTo(distance2);
-            if (result != 0) {
-                return 1;
-            }
 
             if (e1.getDateSort() < e2.getDateSort()) {
                 return 1;
