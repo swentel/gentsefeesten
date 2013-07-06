@@ -16,7 +16,7 @@ import android.widget.TextView;
 import java.util.List;
 
 /**
- * Favorite list adapter.
+ * Search list adapter.
  */
 public class SearchListAdapter extends BaseAdapter implements OnClickListener {
     private final Context context;

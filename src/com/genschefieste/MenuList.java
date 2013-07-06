@@ -63,16 +63,20 @@ public class MenuList extends BaseActivity {
         goBicyle.setId(9);
         goBicyle.setOnClickListener(actionMenu);
 
+        TableRow goAtm = (TableRow) findViewById(R.id.menu_atm);
+        goAtm.setId(10);
+        goAtm.setOnClickListener(actionMenu);
+
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
-        goToilet.setId(10);
+        goToilet.setId(11);
         goToilet.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(11);
+        manageUpdates.setId(12);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(12);
+        goAbout.setId(13);
         goAbout.setOnClickListener(actionMenu);
 
         super.onCreate(savedInstanceState);
@@ -139,6 +143,10 @@ public class MenuList extends BaseActivity {
                 startActivity(goBicycle);
                 break;
             case 10:
+                Intent goAtm = new Intent(getBaseContext(), AtmList.class);
+                startActivity(goAtm);
+                break;
+            case 11:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
@@ -151,11 +159,11 @@ public class MenuList extends BaseActivity {
                     startActivity(goToilet);
                 }
                 break;
-            case 11:
+            case 12:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 12:
+            case 13:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;

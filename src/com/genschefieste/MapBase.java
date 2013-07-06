@@ -81,9 +81,9 @@ public class MapBase extends MapActivity {
      */
     private final View.OnClickListener actionDirections = new View.OnClickListener() {
         public void onClick(View v) {
-        String mapUrl = "http://maps.google.com/maps?saddr=" + latitude + "," + longitude + "&daddr=" + event.getLatitude() + "," + event.getLongitude();
-        Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(mapUrl));
-        startActivity(intent);
+            String mapUrl = "http://maps.google.com/maps?saddr=" + latitude + "," + longitude + "&daddr=" + event.getLatitude() + "," + event.getLongitude();
+            Intent intent = new Intent(android.content.Intent.ACTION_VIEW, Uri.parse(mapUrl));
+            startActivity(intent);
         }
     };
 

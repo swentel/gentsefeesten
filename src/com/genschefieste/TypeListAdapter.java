@@ -13,7 +13,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
- * Simple list adapter.
+ * Type list adapter.
  */
 public class TypeListAdapter extends ArrayAdapter implements OnClickListener {
     private final Context context;
@@ -43,7 +43,6 @@ public class TypeListAdapter extends ArrayAdapter implements OnClickListener {
         final LinearLayout row = (LinearLayout) convertView.findViewById(R.id.single_row);
         String backColor = ((position % 2) == 0) ? "#f6f6f6" : "#ffffff";
         row.setBackgroundColor(Color.parseColor(backColor));
-        // #005371
 
         final TextView textView = (TextView) convertView.findViewById(R.id.single_row_item);
         textView.setText(values[position]);
