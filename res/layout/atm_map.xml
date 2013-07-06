@@ -10,7 +10,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:clickable="true"
-        android:apiKey="06QiLD0fmbOB4NUPRpDAjWcnOopUu7eQqdc6wEA"/>
+        android:apiKey="06QiLD0fmbOCmstnPQgWuwCrqi3xwt0i3a-_gdw"/>
 
     <TextView
         xmlns:android="http://schemas.android.com/apk/res/android"
