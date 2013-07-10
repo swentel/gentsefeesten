@@ -15,7 +15,7 @@ import android.widget.TextView;
 /**
  * Dates list adapter.
  */
-public class DatesListAdapter extends ArrayAdapter implements OnClickListener {
+public class DatesListAdapter extends ArrayAdapter<String> implements OnClickListener {
     private final Context context;
     private final String[] values;
     private final int facetId;
