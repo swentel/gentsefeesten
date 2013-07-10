@@ -15,7 +15,6 @@ import java.util.List;
 public class Main extends BaseActivity {
 
     private List<Event> events;
-    private int eventId = 0;
     SharedPreferences pref = null;
 
     @Override
