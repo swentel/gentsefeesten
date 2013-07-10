@@ -21,7 +21,7 @@ import java.util.List;
 public class SearchListAdapter extends BaseAdapter implements OnClickListener {
     private final Context context;
     private final List<Event> events;
-    private int currentDate = 0;
+    //unused private int currentDate = 0;
 
     private static final int DAY = 0;
     private static final int EVENT = 1;
