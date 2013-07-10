@@ -15,7 +15,7 @@ import java.util.List;
 /**
  * ATM list adapter.
  */
-public class AtmListAdapter extends ArrayAdapter implements OnClickListener {
+public class AtmListAdapter extends ArrayAdapter<Atm> implements OnClickListener {
     private final Context context;
     private final List<Atm> atms;
 
