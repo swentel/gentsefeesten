@@ -49,7 +49,7 @@ public class Prefs extends PreferenceActivity {
     // the locations and categories, however, we have made those available in the resources
     // so they are also easily translatable. Note that for the Android version we just
     // have a file with the values part of a query which allows us to import in around 30 seconds.
-    public static String eventUrl = "";
+    public static String eventUrl = "???";
 
     // The name of the data file.
     public static String fileName = "events.data";
