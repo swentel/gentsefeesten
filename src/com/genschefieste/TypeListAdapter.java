@@ -15,7 +15,7 @@ import android.widget.TextView;
 /**
  * Type list adapter.
  */
-public class TypeListAdapter extends ArrayAdapter implements OnClickListener {
+public class TypeListAdapter extends ArrayAdapter<String> implements OnClickListener {
     private final Context context;
     private final String[] values;
     private final int facetId;
