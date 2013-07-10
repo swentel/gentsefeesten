@@ -217,7 +217,8 @@ public class Prefs extends PreferenceActivity {
                         handler.truncateTable();
                         SQLiteDatabase db = handler.getWritableDatabase();
 
-                        String query = "INSERT INTO " + handler.TABLE_EVENTS + "(" +
+                        @SuppressWarnings("static-access")
+						String query = "INSERT INTO " + DatabaseHandler.TABLE_EVENTS + "(" +
                                 "" + handler.KEY_TITLE + "," +
                                 "" + handler.EXTERNAL_ID + "," +
                                 "" + handler.KEY_FREE + "," +
