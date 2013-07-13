@@ -43,7 +43,7 @@ public class Prefs extends PreferenceActivity {
 
     // Number of lines to read, this is just approximate, might change in the future,
     // but this allows us to create a progress bar.
-    public int numberOfEvents = 810;
+    public int numberOfEvents = 820;
 
     // URI to the event services. In theory we could import 2 other services which describe
     // the locations and categories, however, we have made those available in the resources
