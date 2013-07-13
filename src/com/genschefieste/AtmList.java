@@ -22,11 +22,8 @@ public class AtmList extends BaseActivity {
 
         // Set listener on map button.
         RelativeLayout goToMapRow = (RelativeLayout) findViewById(R.id.map_button);
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-            // Add listener on goToMap button.
-            goToMapRow.setOnClickListener(goToMap);
-        }
+        // Add listener on goToMap button.
+        goToMapRow.setOnClickListener(goToMap);
 
         atms = new ArrayList<Atm>();
         String[] atmList = this.getResources().getStringArray(R.array.atms);
