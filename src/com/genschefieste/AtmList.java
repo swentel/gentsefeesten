@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,11 +26,6 @@ public class AtmList extends BaseActivity {
         if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             // Add listener on goToMap button.
             goToMapRow.setOnClickListener(goToMap);
-        }
-        else {
-            View sep = findViewById(R.id.sep);
-            sep.setVisibility(View.GONE);
-            goToMapRow.setVisibility(RelativeLayout.GONE);
         }
 
         atms = new ArrayList<Atm>();
@@ -57,10 +53,16 @@ public class AtmList extends BaseActivity {
      */
     private final View.OnClickListener goToMap = new View.OnClickListener() {
         public void onClick(View v) {
-            Intent goMap = new Intent(getBaseContext(), AtmMap.class);
-            goMap.putExtra("latitude", latitude);
-            goMap.putExtra("longitude", longitude);
-            startActivity(goMap);
+            ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+            if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+                Intent goMap = new Intent(getBaseContext(), AtmMap.class);
+                goMap.putExtra("latitude", latitude);
+                goMap.putExtra("longitude", longitude);
+                startActivity(goMap);
+            }
+            else {
+                Toast.makeText(AtmList.this, getString(R.string.atm_offline), Toast.LENGTH_LONG).show();
+            }
         }
     };
 
