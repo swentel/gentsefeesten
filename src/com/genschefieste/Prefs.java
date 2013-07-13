@@ -16,20 +16,16 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import org.apache.http.HttpResponse;
-import org.apache.http.HttpStatus;
 import org.apache.http.client.ClientProtocolException;
-import org.apache.http.client.HttpClient;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.impl.client.DefaultHttpClient;
 
 import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.UnsupportedEncodingException;
+import java.net.HttpURLConnection;
+import java.net.URL;
 
 public class Prefs extends PreferenceActivity {
 
@@ -153,37 +149,33 @@ public class Prefs extends PreferenceActivity {
      * Download the program from the internet and save it locally.
      */
     public int downloadProgram() throws IOException {
-        siteStatus = 0;
+        siteStatus = -1;
 
         try {
-            HttpClient httpClient = new DefaultHttpClient();
-            HttpGet request = new HttpGet(eventUrl);
-            HttpResponse response = httpClient.execute(request);
 
-            int status = response.getStatusLine().getStatusCode();
-            siteStatus = status;
-            if (status == HttpStatus.SC_OK) {
-                // Read in the data.
-                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
-                response.getEntity().writeTo(outputStream);
+            URL downloadFileUrl = new URL(eventUrl);
+            HttpURLConnection httpConnection = (HttpURLConnection) downloadFileUrl.openConnection();
+            siteStatus = httpConnection.getResponseCode();
+            if (siteStatus == 200) {
+                InputStream inputStream = httpConnection.getInputStream();
+
+                byte[] buffer = new byte[1024];
+                int bufferLength = 0;
 
                 // Write data to local file.
                 FileOutputStream fos = openFileOutput(fileName, Context.MODE_PRIVATE);
-                fos.write(outputStream.toByteArray());
+                while ((bufferLength = inputStream.read(buffer)) > 0 ) {
+                    fos.write(buffer, 0, bufferLength);
+                }
                 fos.flush();
                 fos.close();
             }
 
+            httpConnection.disconnect();
         }
-        catch (UnsupportedEncodingException e) {
-            e.printStackTrace();
-        }
-        catch (ClientProtocolException e) {
-            e.printStackTrace();
-        }
-        catch (IOException e) {
-            e.printStackTrace();
-        }
+        catch (UnsupportedEncodingException ignored) {}
+        catch (ClientProtocolException ignored) {}
+        catch (IOException ignored) {}
 
         return siteStatus;
     }
