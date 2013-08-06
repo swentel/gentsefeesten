@@ -5,6 +5,7 @@ Android application to look at the program of the 'Gentse feesten' on an Android
 
 The iOS version is available at https://github.com/TimLeytens/Gentse-Feesten-2013  
 The Firefox OS version is available at https://github.com/jyve/GF-FxOS
+The Windows version is available at https://github.com/Depechie/GF13
 
 Data available from http://data.gent.be
 
