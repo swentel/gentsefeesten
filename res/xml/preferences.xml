@@ -47,10 +47,10 @@
             android:defaultValue="40" />
 
         <CheckBoxPreference
-                android:key="pref_front_ongoing"
-                android:title="@string/setting_front_ongoing"
-                android:summary="@string/setting_front_ongoing_info"
-                android:defaultValue="false" />
+            android:key="pref_front_ongoing"
+            android:title="@string/setting_front_ongoing"
+            android:summary="@string/setting_front_ongoing_info"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 
@@ -60,6 +60,17 @@
             android:key="share_message"
             android:defaultValue="@string/share_default"
             android:summary="@string/share_message_info"/>
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/setting_ga">
+
+        <CheckBoxPreference
+            android:key="send_ga"
+            android:title="@string/setting_ga_title"
+            android:summary="@string/setting_ga_summary"
+            android:defaultValue="true" />
+
     </PreferenceCategory>
 
 </PreferenceScreen>

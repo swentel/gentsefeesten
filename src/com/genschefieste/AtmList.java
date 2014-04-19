@@ -20,6 +20,8 @@ public class AtmList extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.atm_list);
 
+        BaseActivity.sendGaView("Atm list", getApplicationContext());
+
         // Set listener on map button.
         RelativeLayout goToMapRow = (RelativeLayout) findViewById(R.id.map_button);
         // Add listener on goToMap button.

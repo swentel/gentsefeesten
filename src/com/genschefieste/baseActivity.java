@@ -3,14 +3,23 @@ package com.genschefieste;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+
+import com.google.analytics.tracking.android.Fields;
+import com.google.analytics.tracking.android.GAServiceManager;
+import com.google.analytics.tracking.android.GoogleAnalytics;
+import com.google.analytics.tracking.android.Logger;
+import com.google.analytics.tracking.android.MapBuilder;
+import com.google.analytics.tracking.android.Tracker;
 
 public class BaseActivity extends Activity implements LocationListener {
 
@@ -26,6 +35,14 @@ public class BaseActivity extends Activity implements LocationListener {
     // Location manager.
     public static LocationManager locationManager;
     public static boolean geoListening = false;
+
+    // Google analytics.
+    private static GoogleAnalytics mGa;
+    private static Tracker mTracker;
+    private static final String GA_PROPERTY_ID = "UA-1986666-3";
+    private static final int GA_DISPATCH_PERIOD = 30;
+    private static final Logger.LogLevel GA_LOG_VERBOSITY = Logger.LogLevel.INFO;
+
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -48,6 +65,8 @@ public class BaseActivity extends Activity implements LocationListener {
             go_to_favorites.setId(2);
             go_to_favorites.setOnClickListener(topBar);
         }
+
+        initializeGa();
     }
 
     @Override
@@ -263,4 +282,36 @@ public class BaseActivity extends Activity implements LocationListener {
         return location_int_resources[index];
     }
 
+    /**
+     * Initialize Google Analytics tracker.
+     */
+    private void initializeGa() {
+        mGa = GoogleAnalytics.getInstance(this);
+        mTracker = mGa.getTracker(GA_PROPERTY_ID);
+
+        // Set dispatch period.
+        GAServiceManager.getInstance().setLocalDispatchPeriod(GA_DISPATCH_PERIOD);
+
+        // Set Logger verbosity.
+        mGa.getLogger().setLogLevel(GA_LOG_VERBOSITY);
+    }
+
+    /*
+    * Returns the Google Analytics tracker.
+    */
+    public static Tracker getGaTracker() {
+        return mTracker;
+    }
+
+    /**
+     * Send a screen view.
+     */
+    public static void sendGaView(String action, Context context) {
+        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
+        Boolean sendGa = pref.getBoolean("send_ga", true);
+        if (sendGa) {
+            BaseActivity.getGaTracker().set(Fields.SCREEN_NAME, action);
+            BaseActivity.getGaTracker().send(MapBuilder.createAppView().build());
+        }
+    }
 }

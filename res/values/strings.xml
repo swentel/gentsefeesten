@@ -97,10 +97,13 @@
     <string name="setting_location_info">Kies locatie</string>
     <string name="share_settings">Share</string>
     <string name="share_message_title">Sociale media</string>
-    <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin plaatsen.</string>
+    <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin te plaatsen.</string>
     <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF14</string>
     <string name="setting_front_ongoing">Al bezig</string>
     <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
+    <string name="setting_ga">Google Analytics</string>
+    <string name="setting_ga_title">Statistieken</string>
+    <string name="setting_ga_summary">Vink uit om geen statistieken te verzenden naar Google.</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>

@@ -43,7 +43,7 @@
         <TextView
             android:id="@+id/searching_around"
             android:text="@string/around_me_search"
-            android:background="#ffffff"
+            android:background="@color/main_text_background"
             android:textColor="@color/global_textcolor"
             android:textSize="15sp"
             android:layout_width="fill_parent"

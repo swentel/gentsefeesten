@@ -115,8 +115,10 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     // Truncate the table, this only happens for update.
     public void truncateTable() {
         SQLiteDatabase db = this.getWritableDatabase();
-        db.delete(TABLE_EVENTS, null, null);
-        db.close();
+        if (db != null) {
+            db.delete(TABLE_EVENTS, null, null);
+            db.close();
+        }
     }
 
     /**
@@ -260,10 +262,14 @@ public class DatabaseHandler extends SQLiteOpenHelper {
 
     // Get number of events.
     public int getEventCount() {
+        int count = 0;
         SQLiteDatabase db = this.getReadableDatabase();
-        Cursor dataCount = db.rawQuery("select * from " + TABLE_EVENTS, null);
-        int count = dataCount.getCount();
-        db.close();
+        Cursor dataCount;
+        if (db != null) {
+            dataCount = db.rawQuery("select * from " + TABLE_EVENTS, null);
+            count = dataCount.getCount();
+            db.close();
+        }
         return count;
     }
 
@@ -282,7 +288,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
 
         assert cursor != null;
-        return new Event(
+        Event event = new Event(
             cursor.getInt(0),
             cursor.getString(1),
             cursor.getInt(2),
@@ -305,5 +311,9 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.getInt(19),
             cursor.getInt(21)
         );
+
+        db.close();
+
+        return event;
     }
 }

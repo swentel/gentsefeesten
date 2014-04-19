@@ -16,6 +16,8 @@ public class About extends BaseActivity {
         t.setMovementMethod(LinkMovementMethod.getInstance());
         t.setText(Html.fromHtml(text));
 
+        BaseActivity.sendGaView("About", getApplicationContext());
+
         super.onCreate(savedInstanceState);
     }
 }

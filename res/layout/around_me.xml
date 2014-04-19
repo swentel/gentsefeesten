@@ -54,7 +54,7 @@
         android:layout_height="fill_parent" />
 
     <TextView
-        android:background="#ffffff"
+        android:background="@color/main_text_background"
         android:textColor="@color/global_textcolor"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

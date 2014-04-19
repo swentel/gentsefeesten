@@ -11,6 +11,8 @@ public class GentInfo extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.gent_info);
 
+        BaseActivity.sendGaView("Gent info", getApplicationContext());
+
         String text = (String)getResources().getText(R.string.gent_info);
         TextView t = (TextView) findViewById(R.id.gent_info);
         t.setMovementMethod(LinkMovementMethod.getInstance());

@@ -29,6 +29,8 @@ public class EventDetail extends BaseActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
 
+        BaseActivity.sendGaView("Event: " + event.getTitle(), getApplicationContext());
+
         // Set title.
         TextView title = (TextView) findViewById(R.id.event_title);
         title.setText(event.getTitle());
@@ -79,13 +81,15 @@ public class EventDetail extends BaseActivity {
         }
         description.setText(descriptionText);
 
-        // Set favorite image.
+        // Set favorite image and onclickListener.
         ImageView i = (ImageView) findViewById(R.id.favorite);
         if (event.getFavorite() == 0) {
             i.setImageResource(R.drawable.fav_off);
         } else {
             i.setImageResource(R.drawable.fav_on);
         }
+        i.setOnClickListener(actionFavorite);
+
 
         // Set listener on 'go online' and 'google map'.
         ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
@@ -106,10 +110,6 @@ public class EventDetail extends BaseActivity {
         // Add listener on share button.
         ImageButton menu = (ImageButton) findViewById(R.id.share);
         menu.setOnClickListener(actionShare);
-
-        // Add listener on favorite button.
-        ImageButton favoriteButton = (ImageButton) findViewById(R.id.favorite);
-        favoriteButton.setOnClickListener(actionFavorite);
 
         super.onCreate(savedInstanceState);
     }
