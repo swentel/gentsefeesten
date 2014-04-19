@@ -25,6 +25,8 @@
     <string name="menu_free">Gratis</string>
     <string name="menu_festival">Festivals</string>
     <string name="menu_locations">Locaties</string>
+    <string name="menu_parking">Parking</string>
+    <string name="menu_parking_offline">Om de parking informatie te bekijken moet je verbonden zijn met 3G of WiFi.</string>
     <string name="menu_bicycle">Fietsstallingen</string>
     <string name="menu_gent_info">Gent info</string>
     <string name="menu_atm">Geldautomaten</string>

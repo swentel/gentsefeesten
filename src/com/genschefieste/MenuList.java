@@ -15,6 +15,8 @@ public class MenuList extends BaseActivity {
     Intent goTypeOverview;
     Intent goDaysOverview;
 
+    ConnectivityManager cm;
+
     // ID of the public toilet 'event'.
     // Note that this is the external id.
     public static int toiletsId = 2745;
@@ -63,24 +65,28 @@ public class MenuList extends BaseActivity {
         goBicyle.setId(9);
         goBicyle.setOnClickListener(actionMenu);
 
+        TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
+        goParking.setId(10);
+        goParking.setOnClickListener(actionMenu);
+
         TableRow goGentInfo = (TableRow) findViewById(R.id.menu_gent_info);
-        goGentInfo.setId(10);
+        goGentInfo.setId(11);
         goGentInfo.setOnClickListener(actionMenu);
 
         TableRow goAtm = (TableRow) findViewById(R.id.menu_atm);
-        goAtm.setId(11);
+        goAtm.setId(12);
         goAtm.setOnClickListener(actionMenu);
 
         TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
-        goToilet.setId(12);
+        goToilet.setId(13);
         goToilet.setOnClickListener(actionMenu);
 
         TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
-        manageUpdates.setId(13);
+        manageUpdates.setId(14);
         manageUpdates.setOnClickListener(actionMenu);
 
         TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
-        goAbout.setId(14);
+        goAbout.setId(15);
         goAbout.setOnClickListener(actionMenu);
 
         super.onCreate(savedInstanceState);
@@ -127,7 +133,7 @@ public class MenuList extends BaseActivity {
                 startActivity(goDaysOverview);
                 break;
             case 7:
-                ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
                 if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
                     // We go to a different intermediate screen first, because the
                     // default is just to slow in reaction. We should probably solve this
@@ -147,14 +153,25 @@ public class MenuList extends BaseActivity {
                 startActivity(goBicycle);
                 break;
             case 10:
+                cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+                if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+                    Intent goParking = new Intent(getBaseContext(), Parking.class);
+                    startActivity(goParking);
+                }
+                else {
+                    Toast.makeText(MenuList.this, getString(R.string.menu_parking_offline), Toast.LENGTH_LONG).show();
+                }
+
+                break;
+            case 11:
                 Intent goTouristInfo = new Intent(getBaseContext(), GentInfo.class);
                 startActivity(goTouristInfo);
                 break;
-            case 11:
+            case 12:
                 Intent goAtm = new Intent(getBaseContext(), AtmList.class);
                 startActivity(goAtm);
                 break;
-            case 12:
+            case 13:
                 DatabaseHandler db = new DatabaseHandler(MenuList.this);
                 String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
                 selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
@@ -167,11 +184,11 @@ public class MenuList extends BaseActivity {
                     startActivity(goToilet);
                 }
                 break;
-            case 13:
+            case 14:
                 Intent goSettings = new Intent(getBaseContext(), Prefs.class);
                 startActivity(goSettings);
                 break;
-            case 14:
+            case 15:
                 Intent about = new Intent(getBaseContext(), About.class);
                 startActivity(about);
                 break;

@@ -49,6 +49,7 @@
         <activity android:name=".EventResultFacetList" />
         <activity android:name=".About" />
         <activity android:name=".AroundMe" />
+        <activity android:name=".Parking" />
         <activity android:name=".Bicycle" />
         <activity android:name=".GentInfo" />
         <activity android:name=".AtmList" />
