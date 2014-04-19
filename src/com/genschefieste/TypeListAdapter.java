@@ -59,11 +59,11 @@ public class TypeListAdapter extends ArrayAdapter<String> implements OnClickList
                         break;
                     case MotionEvent.ACTION_CANCEL:
                         row.setBackgroundColor(Color.parseColor(backColor));
-                        textView.setTextColor(Color.parseColor("#005371"));
+                        textView.setTextColor(context.getResources().getColor(R.color.global_background));
                         break;
                     case MotionEvent.ACTION_UP:
                         row.setBackgroundColor(Color.parseColor(backColor));
-                        textView.setTextColor(Color.parseColor("#005371"));
+                        textView.setTextColor(context.getResources().getColor(R.color.global_background));
                         Intent intent = new Intent(context, DaysOverview.class);
                         intent.putExtra("facetId", facetId);
                         intent.putExtra("typeIndex", position);

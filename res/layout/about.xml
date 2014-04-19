@@ -5,7 +5,7 @@
     android:fillViewport="true"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#005371">
+    android:background="@color/global_background">
 
     <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
@@ -46,7 +46,7 @@
             android:layout_height="wrap_content"
             android:weightSum="1.0"
             android:orientation="vertical"
-            android:background="#005371">
+            android:background="@color/global_background">
 
             <TextView
                 xmlns:android="http://schemas.android.com/apk/res/android"
@@ -59,7 +59,7 @@
                 android:layout_weight="1"
                 android:background="#ffffff"
                 android:gravity="left"
-                android:textColor="#00394f"
+                android:textColor="@color/global_textcolor"
                 android:textSize="15sp"
                 android:padding="10dp" />
 

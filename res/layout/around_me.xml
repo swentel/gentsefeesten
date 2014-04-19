@@ -4,7 +4,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:orientation="vertical"
-        android:background="#005371">
+        android:background="@color/global_background">
 
     <include layout="@layout/header" />
 
@@ -13,7 +13,7 @@
             android:layout_width="fill_parent"
             android:layout_height="45dp"
             android:id="@+id/sort_change"
-            android:background="#005371"
+            android:background="@color/global_background"
             android:layout_marginTop="10dp">
 
         <TextView
@@ -23,14 +23,15 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="#ffffff"
+            android:background="@color/big_title_background"
             android:gravity="center"
             android:text="@string/menu_around_me"
-            android:textColor="#00394f"
+            android:textColor="@color/global_textcolor"
             android:textSize="20sp"
             android:layout_marginBottom="1dp"/>
 
         <ImageButton
+            android:contentDescription="@string/menu_switch"
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="wrap_content"
             android:src="@drawable/list"
@@ -46,7 +47,7 @@
     <ListView
         android:id="@+id/list"
         android:gravity="center"
-        android:background="#cacaca"
+        android:background="@color/list_background"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:layout_width="fill_parent"
@@ -54,7 +55,7 @@
 
     <TextView
         android:background="#ffffff"
-        android:textColor="#00394f"
+        android:textColor="@color/global_textcolor"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:padding="10dp"

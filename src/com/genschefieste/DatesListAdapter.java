@@ -61,11 +61,11 @@ public class DatesListAdapter extends ArrayAdapter<String> implements OnClickLis
                         break;
                     case MotionEvent.ACTION_CANCEL:
                         row.setBackgroundColor(Color.parseColor(backColor));
-                        textView.setTextColor(Color.parseColor("#005371"));
+                        textView.setTextColor(context.getResources().getColor(R.color.global_background));
                         break;
                     case MotionEvent.ACTION_UP:
                         row.setBackgroundColor(Color.parseColor(backColor));
-                        textView.setTextColor(Color.parseColor("#005371"));
+                        textView.setTextColor(context.getResources().getColor(R.color.global_background));
                         Intent intent = new Intent(context, EventResultFacetList.class);
                         intent.putExtra("dateIndex", position);
                         intent.putExtra("facetId", facetId);

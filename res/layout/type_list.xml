@@ -4,7 +4,7 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical"
-    android:background="#005371">
+    android:background="@color/global_background">
 
     <include layout="@layout/header" />
 
@@ -14,7 +14,7 @@
         android:layout_height="45dp"
         android:weightSum="1.0"
         android:orientation="horizontal"
-        android:background="#005371"
+        android:background="@color/global_background"
         android:layout_marginTop="10dp">
 
         <TextView
@@ -28,7 +28,7 @@
             android:background="#ffffff"
             android:id="@+id/type_title"
             android:gravity="center"
-            android:textColor="#00394f"
+            android:textColor="@color/global_textcolor"
             android:textSize="20sp" />
 
     </LinearLayout>
@@ -36,7 +36,7 @@
     <ListView
         android:id="@+id/list"
         android:gravity="center"
-        android:background="#cacaca"
+        android:background="@color/list_background"
         android:layout_marginTop="1dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

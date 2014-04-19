@@ -8,6 +8,7 @@
     <string name="menu_bar_go_to_favorites">Mijn favorieten</string>
     <string name="no_events_found_on_home">Geen evenementen gevonden. Ga naar settings om je voorkeuren of om het programma aan te passen.\n\nKlik hier om naar settings te gaan.</string>
     <string name="no_events_after_july_29">De Gentse feesten zijn voorbij, tot volgend jaar!\n\nEn dan starten ze alweer op de vrijdag.</string>
+    <string name="menu_switch">Verander</string>
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>

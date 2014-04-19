@@ -4,11 +4,12 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:orientation="vertical" 
-    android:background="#005371">
+    android:background="@color/global_background">
 
     <include layout="@layout/header" />
 
     <ImageView
+        android:contentDescription="@string/app_name"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/stunt"
@@ -20,7 +21,7 @@
 	    android:layout_height="wrap_content"
 		android:weightSum="1.0"
 	    android:orientation="vertical"
-	    android:background="#005371">
+	    android:background="@color/global_background">
 	
 	    <TextView
 	        xmlns:android="http://schemas.android.com/apk/res/android"
@@ -29,10 +30,10 @@
 	        android:layout_gravity="center"
 	        android:layout_marginLeft="10dp"
 	        android:layout_marginRight="10dp"
-	        android:background="#ffffff"
+	        android:background="@color/big_title_background"
 	        android:gravity="center"
 	        android:text="@string/upcoming"
-	        android:textColor="#00394f"
+	        android:textColor="@color/global_textcolor"
 	        android:textSize="20sp" />
 
         <TextView
@@ -42,9 +43,9 @@
             android:layout_gravity="left"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="#ffffff"
+            android:background="@color/big_title_background"
             android:id="@+id/no_events"
-            android:textColor="#00394f"
+            android:textColor="@color/global_textcolor"
             android:textSize="15sp"
             android:paddingLeft="10dp"
             android:paddingRight="10dp"
@@ -55,7 +56,7 @@
     <ListView
         android:id="@+id/list"
         android:gravity="center"
-        android:background="#cacaca"
+        android:background="@color/list_background"
         android:layout_marginTop="1dp"
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"

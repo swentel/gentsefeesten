@@ -13,7 +13,7 @@
         android:background="#f6f6f6"
         android:id="@+id/day_title"
         android:gravity="center"
-        android:textColor="#00394f"
+        android:textColor="@color/global_textcolor"
         android:textSize="20sp" />
 
 </LinearLayout>

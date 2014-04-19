@@ -4,7 +4,7 @@
     android:scrollbars="none"
     android:fillViewport="true"
     android:layout_width="fill_parent"
-    android:background="#005371"
+    android:background="@color/global_background"
     android:layout_height="fill_parent">
 
     <LinearLayout
@@ -22,10 +22,10 @@
             android:layout_gravity="center"
             android:layout_marginLeft="10dp"
             android:layout_marginRight="10dp"
-            android:background="#ffffff"
+            android:background="@color/big_title_background"
             android:gravity="center"
             android:text="@string/menu_bicycle"
-            android:textColor="#00394f"
+            android:textColor="@color/global_textcolor"
             android:textSize="20sp"
             android:layout_marginTop="10dp"/>
 
@@ -43,7 +43,7 @@
             <TextView
                 android:id="@+id/bicycle_info"
                 android:background="#ffffff"
-                android:textColor="#00394f"
+                android:textColor="@color/global_textcolor"
                 android:textSize="15sp"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
