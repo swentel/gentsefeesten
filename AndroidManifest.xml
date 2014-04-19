@@ -53,7 +53,7 @@
         <activity android:name=".GentInfo" />
         <activity android:name=".AtmList" />
         <activity android:name=".AtmMap" />
-        <activity android:name=".Prefs" android:screenOrientation="portrait" />
+        <activity android:noHistory="true" android:name=".Prefs" android:screenOrientation="portrait" />
 
     </application>
 

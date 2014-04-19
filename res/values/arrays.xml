@@ -15,6 +15,8 @@
     </string-array>
 
     <string-array name="dates_full">
+        <item>@string/july_18</item>
+        <item>@string/july_19</item>
         <item>@string/july_20</item>
         <item>@string/july_21</item>
         <item>@string/july_22</item>
@@ -23,21 +25,19 @@
         <item>@string/july_25</item>
         <item>@string/july_26</item>
         <item>@string/july_27</item>
-        <item>@string/july_28</item>
-        <item>@string/july_29</item>
     </string-array>
 
     <integer-array name="dates_int">
-        <item>1374278400</item>
-        <item>1374364800</item>
-        <item>1374451200</item>
-        <item>1374537600</item>
-        <item>1374624000</item>
-        <item>1374710400</item>
-        <item>1374796800</item>
-        <item>1374883200</item>
-        <item>1374969600</item>
-        <item>1375056000</item>
+        <item>1405641600</item>
+        <item>1405728000</item>
+        <item>1405814400</item>
+        <item>1405900800</item>
+        <item>1405987200</item>
+        <item>1406073600</item>
+        <item>1406160000</item>
+        <item>1406246400</item>
+        <item>1406332800</item>
+        <item>1406419200</item>
     </integer-array>
 
     <string-array name="location_strings">

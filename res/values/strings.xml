@@ -3,11 +3,11 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF13</string>
+    <string name="menu_bar_title">#GF14</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Mijn favorieten</string>
     <string name="no_events_found_on_home">Geen evenementen gevonden. Ga naar settings om je voorkeuren of om het programma aan te passen.\n\nKlik hier om naar settings te gaan.</string>
-    <string name="no_events_after_july_29">De Gentse feesten zijn voorbij, tot volgend jaar!\n\nEn dan starten ze op de vrijdag.</string>
+    <string name="no_events_after_july_29">De Gentse feesten zijn voorbij, tot volgend jaar!\n\nEn dan starten ze alweer op de vrijdag.</string>
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>
@@ -73,7 +73,6 @@
     <string name="event_festival">Festivals</string>
     <string name="event_whole_day">Hele dag</string>
     <string name="event_pre_sale">Voorverkoop</string>
-    <string name="share_pre_message">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #gf13</string>
     <string name="view_on_map">Bekijk op kaart</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
     <string name="info_online">Meer info online</string>
@@ -83,7 +82,7 @@
 
     <!-- About activity -->
     <string name="about_title">Over deze applicatie</string>
-    <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2013. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. Data beschikbaar via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+    <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2014. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. Data beschikbaar via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_cateogry">Programma</string>
@@ -98,7 +97,7 @@
     <string name="share_settings">Share</string>
     <string name="share_message_title">Sociale media</string>
     <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin plaatsen.</string>
-    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #gf13</string>
+    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF14</string>
     <string name="setting_front_ongoing">Al bezig</string>
     <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
 
@@ -118,16 +117,16 @@
     <string name="atm_offline">Je moet verbonden zijn met 3G of WiFi om de kaart te kunnen bekijken</string>
 
     <!-- Dates -->
-    <string name="july_20">Zaterdag 20 juli</string>
-    <string name="july_21">Zondag 21 juli</string>
-    <string name="july_22">Maandag 22 juli</string>
-    <string name="july_23">Dinsdag 23 juli</string>
-    <string name="july_24">Woensdag 24 juli</string>
-    <string name="july_25">Donderdag 25 juli</string>
-    <string name="july_26">Vrijdag 26 juli</string>
-    <string name="july_27">Zaterdag 27 juli</string>
-    <string name="july_28">Zondag 28 juli</string>
-    <string name="july_29">Maandag 29 juli</string>
+    <string name="july_18">Vrijdag 18 juli</string>
+    <string name="july_19">Zaterdag 21 juli</string>
+    <string name="july_20">Zondag 22 juli</string>
+    <string name="july_21">Maandag 23 juli</string>
+    <string name="july_22">Dinsdag 24 juli</string>
+    <string name="july_23">Woensdag 25 juli</string>
+    <string name="july_24">Donderdag 26 juli</string>
+    <string name="july_25">Vrijdag 27 juli</string>
+    <string name="july_26">Zaterdag 28 juli</string>
+    <string name="july_27">Zondag 29 juli</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dans</string>
