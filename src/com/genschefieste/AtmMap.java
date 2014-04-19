@@ -47,8 +47,6 @@ public class AtmMap extends MapActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.atm_map);
 
-        BaseActivity.sendGaView("Atm map", getApplicationContext());
-
         Bundle extras = getIntent().getExtras();
         latitude = extras.getDouble("latitude");
         longitude = extras.getDouble("longitude");

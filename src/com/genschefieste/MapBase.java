@@ -42,8 +42,6 @@ public class MapBase extends MapActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
 
-        BaseActivity.sendGaView("Map: " + event.getTitle(), getApplicationContext());
-
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);
 

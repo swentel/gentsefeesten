@@ -54,6 +54,7 @@ public class AtmList extends BaseActivity {
         public void onClick(View v) {
             ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+                BaseActivity.sendGaView("Atm map", getApplicationContext());
                 Intent goMap = new Intent(getBaseContext(), AtmMap.class);
                 goMap.putExtra("latitude", latitude);
                 goMap.putExtra("longitude", longitude);

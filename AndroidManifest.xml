@@ -2,6 +2,7 @@
 <manifest
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.genschefieste"
+    android:installLocation="auto"
     android:versionCode="5"
     android:versionName="5">
 	<supports-screens
@@ -48,11 +49,11 @@
         <activity android:name=".EventResultFacetList" />
         <activity android:name=".About" />
         <activity android:name=".AroundMe" />
-        <activity android:noHistory="true" android:name=".AroundMePre" />
         <activity android:name=".Bicycle" />
         <activity android:name=".GentInfo" />
         <activity android:name=".AtmList" />
         <activity android:name=".AtmMap" />
+        <activity android:noHistory="true" android:name=".AroundMePre" />
         <activity android:noHistory="true" android:name=".Prefs" android:screenOrientation="portrait" />
 
     </application>

@@ -119,6 +119,7 @@ public class EventDetail extends BaseActivity {
      */
     private final View.OnClickListener actionMap = new View.OnClickListener() {
         public void onClick(View v) {
+        BaseActivity.sendGaView("Map: " + event.getTitle(), getApplicationContext());
         Intent goMap = new Intent(getBaseContext(), MapBase.class);
         goMap.putExtra("eventId", event.getId());
         goMap.putExtra("latitude", latitude);
