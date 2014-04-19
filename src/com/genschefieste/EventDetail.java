@@ -149,6 +149,7 @@ public class EventDetail extends BaseActivity {
             pref = PreferenceManager.getDefaultSharedPreferences(EventDetail.this);
             String share_message = pref.getString("share_message", "");
 
+            BaseActivity.sendGaView("Share: " + event.getTitle(), getApplicationContext());
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

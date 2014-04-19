@@ -34,12 +34,15 @@ public class MapBase extends MapActivity {
 
         // Get event.
         Bundle extras = getIntent().getExtras();
+        assert extras != null;
         int eventId = extras.getInt("eventId");
         latitude = extras.getDouble("latitude");
         longitude = extras.getDouble("longitude");
 
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
+
+        BaseActivity.sendGaView("Map: " + event.getTitle(), getApplicationContext());
 
         mapView = (MapView) findViewById(R.id.mapview);
         mapView.setBuiltInZoomControls(true);

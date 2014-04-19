@@ -26,6 +26,8 @@ public class Main extends BaseActivity {
         // Hide home button.
         showHomebutton = false;
 
+        BaseActivity.sendGaView("Home", getApplicationContext());
+
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
 

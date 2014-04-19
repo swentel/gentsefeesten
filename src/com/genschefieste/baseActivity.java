@@ -14,11 +14,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
 
-import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.GAServiceManager;
 import com.google.analytics.tracking.android.GoogleAnalytics;
 import com.google.analytics.tracking.android.Logger;
-import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
 
 public class BaseActivity extends Activity implements LocationListener {
@@ -310,8 +308,8 @@ public class BaseActivity extends Activity implements LocationListener {
         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
         Boolean sendGa = pref.getBoolean("send_ga", true);
         if (sendGa) {
-            BaseActivity.getGaTracker().set(Fields.SCREEN_NAME, action);
-            BaseActivity.getGaTracker().send(MapBuilder.createAppView().build());
+            //BaseActivity.getGaTracker().set(Fields.SCREEN_NAME, action);
+            //BaseActivity.getGaTracker().send(MapBuilder.createAppView().build());
         }
     }
 }
