@@ -3,7 +3,7 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
 
     <PreferenceCategory
-            android:title="@string/program_cateogry">
+            android:title="@string/program_category">
         <Preference android:title="@string/program_title"
             android:key="get_updates"
             android:summary=""/>
@@ -55,7 +55,7 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/share_settings">
+        android:title="@string/share_category">
         <EditTextPreference android:title="@string/share_message_title"
             android:key="share_message"
             android:defaultValue="@string/share_default"
@@ -63,13 +63,24 @@
     </PreferenceCategory>
 
     <PreferenceCategory
-        android:title="@string/setting_ga">
+        android:title="@string/ga_category">
 
         <CheckBoxPreference
             android:key="send_ga"
             android:title="@string/setting_ga_title"
             android:summary="@string/setting_ga_summary"
             android:defaultValue="true" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory
+        android:title="@string/language_category">
+
+        <CheckBoxPreference
+            android:key="lang_gensch"
+            android:title="@string/setting_language_gensch"
+            android:summary="@string/setting_language_gensch_summary"
+            android:defaultValue="false" />
 
     </PreferenceCategory>
 

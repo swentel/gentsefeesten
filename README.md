@@ -22,7 +22,10 @@ Features
 8. Google maps integration (when online)
 9. Geolocation integration
 10. ATM locations
-11. Android 2.1 and up
+11. Add events to agenda
+12. Parking info
+13. Home widget
+14. Android 2.2 and up
 
 Screenshot
 ----------

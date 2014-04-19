@@ -36,6 +36,7 @@
     <string name="menu_settings">Settings</string>
     <string name="menu_about">Over deze applicatie</string>
     <string name="menu_around_me">In de buurt</string>
+    <string name="menu_language">Taal</string>
     <string name="menu_around_me_not_connected">Om te weten wat er in je buurt is moet je verbonden zijn met 3G of WiFi.</string>
 
     <!-- Around me -->
@@ -79,6 +80,7 @@
     <string name="view_on_map">Bekijk op kaart</string>
     <string name="add_or_remove_from_favorite">Voeg toe of verwijder van favorieten</string>
     <string name="info_online">Meer info online</string>
+    <string name="add_to_agenda">Voeg toe aan agenda</string>
     <string name="info_map">Bekijk op map</string>
     <string name="info_directions">Routebeschrijving</string>
     <string name="back_to_event">Terug naar evenement</string>
@@ -88,7 +90,7 @@
     <string name="about_info"><![CDATA[Open source mobiele applicatie voor de Gentse Feesten 2014. Wij zijn niet verantwoordelijk voor de correctheid van de aangeboden informatie. Data beschikbaar via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/TimLeytens">@TimLeytens</a> - iOS & Drupal developer<br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Broncode</b><br /><br />iOS: <a href="http://github.com/TimLeytens/GF13">GitHub</a><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
-    <string name="program_cateogry">Programma</string>
+    <string name="program_category">Programma</string>
     <string name="program_title">Programma bijwerken</string>
     <string name="homepage_category">Evenementen op startscherm</string>
     <string name="setting_front_limit">Aantal</string>
@@ -97,15 +99,18 @@
     <string name="setting_location_title">Filter op locatie</string>
     <string name="setting_category_info">Kies categorie</string>
     <string name="setting_location_info">Kies locatie</string>
-    <string name="share_settings">Share</string>
+    <string name="share_category">Share</string>
     <string name="share_message_title">Sociale media</string>
     <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin te plaatsen.</string>
     <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF14</string>
     <string name="setting_front_ongoing">Al bezig</string>
     <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
-    <string name="setting_ga">Google Analytics</string>
+    <string name="ga_category">Google Analytics</string>
     <string name="setting_ga_title">Statistieken</string>
     <string name="setting_ga_summary">Vink uit om geen statistieken te verzenden naar Google.</string>
+    <string name="language_category">Taal</string>
+    <string name="setting_language_gensch">Zet taal in Gents</string>
+    <string name="setting_language_gensch_summary">De app interface zal helemaal in het Gentse dialect weergegeven worden.</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>
