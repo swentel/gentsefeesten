@@ -73,15 +73,4 @@
 
     </PreferenceCategory>
 
-    <PreferenceCategory
-        android:title="@string/language_category">
-
-        <CheckBoxPreference
-            android:key="lang_gensch"
-            android:title="@string/setting_language_gensch"
-            android:summary="@string/setting_language_gensch_summary"
-            android:defaultValue="false" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>
