@@ -15,51 +15,40 @@
         android:src="@drawable/stunt"
         android:id="@+id/imageView"/>
 
-    <LinearLayout
+    <TextView
         xmlns:android="http://schemas.android.com/apk/res/android"
-	    android:layout_width="fill_parent"
-	    android:layout_height="wrap_content"
-		android:weightSum="1.0"
-	    android:orientation="vertical"
-	    android:background="@color/global_background">
-	
-	    <TextView
-	        xmlns:android="http://schemas.android.com/apk/res/android"
-	        android:layout_width="fill_parent"
-	        android:layout_height="40dp"
-	        android:layout_gravity="center"
-	        android:layout_marginLeft="10dp"
-	        android:layout_marginRight="10dp"
-	        android:background="@color/big_title_background"
-	        android:gravity="center"
-	        android:text="@string/upcoming"
-	        android:textColor="@color/global_textcolor"
-	        android:textSize="20sp" />
+        android:layout_width="fill_parent"
+        android:layout_height="@dimen/big_title_height"
+        android:layout_marginLeft="@dimen/global_margin_horizontal"
+        android:layout_marginRight="@dimen/global_margin_horizontal"
+        android:background="@color/big_title_background"
+        android:gravity="center"
+        android:text="@string/upcoming"
+        android:textColor="@color/global_textcolor"
+        android:textSize="@dimen/big_title_text_size" />
 
-        <TextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:layout_width="fill_parent"
-            android:layout_height="0dp"
-            android:layout_gravity="left"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:background="@color/big_title_background"
-            android:id="@+id/no_events"
-            android:textColor="@color/global_textcolor"
-            android:textSize="15sp"
-            android:paddingLeft="10dp"
-            android:paddingRight="10dp"
-            android:paddingBottom="10dp"/>
+    <TextView
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_gravity="left"
+        android:layout_marginLeft="@dimen/global_margin_horizontal"
+        android:layout_marginRight="@dimen/global_margin_horizontal"
+        android:background="@color/big_title_background"
+        android:id="@+id/no_events"
+        android:textColor="@color/global_textcolor"
+        android:textSize="@dimen/main_text_size"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingBottom="10dp"/>
 
-	</LinearLayout>	
-	
     <ListView
         android:id="@+id/list"
         android:gravity="center"
         android:background="@color/list_background"
         android:layout_marginTop="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="@dimen/global_margin_horizontal"
+        android:layout_marginRight="@dimen/global_margin_horizontal"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 

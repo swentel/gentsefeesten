@@ -15,44 +15,32 @@
         android:src="@drawable/stunt"
         android:id="@+id/imageView"/>
 
-
     <TextView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_height="40dp"
+        android:layout_height="@dimen/big_title_height"
         android:layout_gravity="center"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
+        android:layout_marginLeft="@dimen/global_margin_horizontal"
+        android:layout_marginRight="@dimen/global_margin_horizontal"
         android:background="@color/big_title_background"
         android:gravity="center"
         android:text="@string/menu_around_me"
         android:textColor="@color/global_textcolor"
-        android:textSize="20sp" />
+        android:textSize="@dimen/big_title_text_size" />
 
-    <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <TextView
+        android:id="@+id/searching_around"
+        android:text="@string/around_me_search"
+        android:layout_marginTop="1dp"
+        android:layout_marginLeft="@dimen/global_margin_horizontal"
+        android:layout_marginRight="@dimen/global_margin_horizontal"
+        android:background="@color/main_text_background"
+        android:textColor="@color/global_textcolor"
+        android:textSize="@dimen/main_text_size"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
-        android:weightSum="1.0"
-        android:layout_marginTop="1dp"
-        android:layout_marginLeft="10dp"
-        android:layout_marginRight="10dp"
-        android:orientation="horizontal"
-        android:background="#ffffff">
-
-        <TextView
-            android:id="@+id/searching_around"
-            android:text="@string/around_me_search"
-            android:background="@color/main_text_background"
-            android:textColor="@color/global_textcolor"
-            android:textSize="15sp"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="10dp"
-            android:paddingTop="30dp"
-            android:paddingRight="5dp"
-            android:layout_marginLeft="5dp"/>
-
-    </LinearLayout>
+        android:paddingLeft="10dp"
+        android:paddingTop="30dp"
+        android:paddingRight="5dp"/>
 
 </LinearLayout>
