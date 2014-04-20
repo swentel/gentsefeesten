@@ -110,6 +110,11 @@
     <string name="language_category">Taal</string>
     <string name="setting_language_gensch">Zet taal in Gents</string>
     <string name="setting_language_gensch_summary">De app interface zal helemaal in het Gentse dialect weergegeven worden.</string>
+    <string name="notification_category">Notificaties</string>
+    <string name="setting_notification">Zet notificaties aan</string>
+    <string name="setting_notification_summary">Elk event in je favorieten zal een notificatie triggeren</string>
+    <string name="setting_notification_buzz">Tril bij notificatie</string>
+    <string name="setting_notification_time">Hoeveel minuten op voorhand moet de notificatie gebeuren ?</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>
