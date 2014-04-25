@@ -6,7 +6,7 @@ import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
@@ -23,7 +23,7 @@ public class AtmList extends BaseActivity {
         BaseActivity.sendGaView("Atm list", getApplicationContext());
 
         // Set listener on map button.
-        RelativeLayout goToMapRow = (RelativeLayout) findViewById(R.id.map_button);
+        TextView goToMapRow = (TextView) findViewById(R.id.go_to_atm_map);
         // Add listener on goToMap button.
         goToMapRow.setOnClickListener(goToMap);
 

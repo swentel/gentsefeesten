@@ -1,0 +1,182 @@
+<resources>
+
+    <!-- Global strings -->
+    <string name="app_name">"Genti Fesztivál"</string>
+    <string name="menu_bar_title">"# GF14"</string>
+    <string name="menu_bar_go_to_menu">"Menü"</string>
+    <string name="menu_bar_go_to_favorites">"Kedvenceim"</string>
+    <string name="no_events_found_on_home">"Nem található esemény. Változtass a beállításokon vagy frissítsd a programot. \n\nKattints ide a Beállításokhoz."</string>
+    <string name="no_events_after_july_29">"A Genti Fesztivál véget ért, találkozunk jövõre!"</string>
+    <string name="menu_switch">"Változtat"</string>
+
+    <!-- Home activity -->
+    <string name="upcoming">"Közelgõ események"</string>
+
+    <!-- Favorites activity -->
+    <string name="my_favorites">"Kedvenceim"</string>
+    <string name="no_favorites">"Nincsenek még kedvencek. Ehhez a listához bármelyik esemény oldalán a csillagra való kattintással adhatsz hozzá új kedvencet."</string>
+
+    <!-- Menu activity -->
+    <string name="menu_home">"Fõoldal"</string>
+    <string name="menu_favorites">"Kedvenceim"</string>
+    <string name="menu_program">"Program"</string>
+    <string name="menu_categories">"Kategóriák"</string>
+    <string name="menu_free">"Ingyenes"</string>
+    <string name="menu_festival">"Események"</string>
+    <string name="menu_locations">"Helyszínek"</string>
+    <string name="menu_parking">"Parkolás"</string>
+    <string name="menu_parking_offline">"Kapcsolódj a 3G-hez vagy egy WiFi hálózathoz, hogy elérd a parkolási információkat."</string>
+    <string name="menu_bicycle">"Kerékpár tárolók"</string>
+    <string name="menu_gent_info">"Információk Gentrõl"</string>
+    <string name="menu_atm">"Bankautomaták"</string>
+    <string name="menu_search">"Keresés"</string>
+    <string name="menu_practical">"Hasznos információk"</string>
+    <string name="menu_toilet">"Nyilvános WC-k"</string>
+    <string name="menu_settings">"Beállítások"</string>
+    <string name="menu_about">"Az alkalmazásról"</string>
+    <string name="menu_around_me">"A közelben"</string>
+    <string name="menu_language">"Nyelv"</string>
+    <string name="menu_around_me_not_connected">"Kapcsolódj a 3G-hez vagy egy WiFi hálózathoz, hogy megnézhesd, mi van a közelben."</string>
+
+    <!-- Around me -->
+    <string name="no_events_around_me">"Nem található esemény a közelben.\n\nHárom lehetséges oka van, hogy miért nincs találat: \n\n1. Nem Gentben tartózkodsz, és az alkalmazás csak öt kilométeres körzetben keres.\n\ n2. Még nem sikerült pontosan megállapítani a tartózkodási helyedet.\n\ n3. Ez a funkció csak akkor mûködik, amikor az események már elkezdõdtek."</string>
+    <string name="around_me_refresh">"A képernyõ újratöltõdött"</string>
+    <string name="change_sort">"Rendezés"</string>
+    <string name="sort_by_hour">"Idõ"</string>
+    <string name="sort_by_distance">"Távolság"</string>
+    <string name="around_me_search">"Keresés a közeli események között, kérjük, várj. \n\nAz alkalmazás 5 kilométeres körzetben keres. Ezután szûrhetsz majd távolságra és idõre.\n\n"</string>
+
+    <!-- Bicycle info -->
+    <string name="bicycle_info">"&lt;! [CDATA [&lt;em&gt; Õrzött kerékpár tárolók &lt;/ em&gt; &lt;br /&gt; &lt;br /&gt; A kerékpárok biztonságban otthagyhatók a Baudelokaainál vagy a Corn Marktnál lévõ két, egész nap nyitva tartó kerékpár tároló egyikében.  A Baudelokaainál találhatót délután 2 órától másnap reggel 6 óráig õrzik, a Szent Mihály-híd alattit napi 24 órában. &lt;br /&gt;  Mindkét helyen biciklipumpát is kérhetsz a lapos kerekek felfújásához. Figyelem: az E. Braun térnél nincs lehetõség kerékpár tárolására. &lt;br /&gt; &lt;br /&gt; &lt;em&gt; Nem õrzött kerékpár tárolók &lt;/ em&gt; &lt;br /&gt; &lt;br /&gt; További kerékpár tárolók az alábbi helyszíneken találhatóak: St. Jacobsnieuwstraat, High Gate, Limburgstraat, Maaseik Straat, St Nicholas Straat, Steendam, Coulter, Vlaanderenstraat, Baudelokaai, Igazságügyi Palota (tároló a Commerce térnél), St. Bavo Site, Drabstraat, Red Tower sétány, Laurent híd, St. George's híd és Minnemeers híd &lt;br /&gt; &lt;br /&gt; Kerékpárt kölcsönözni a Max Mobile-nál lehet &lt;br /&gt; &lt;br /&gt; Info: MAX MOBILE - 09 242 80 46 - &lt;a href=\"mailto:max-mobiel@gent.be\"&gt; max-mobiel@gent.be &lt;. / a&gt; - &lt;a href=\"http://www.max-mobiel.be\"&gt; www.max-mobiel.be &lt;/ a&gt; &lt;br /&gt; &lt;br /&gt;"</string>
+
+    <!-- Gent info -->
+    <string name="gent_info">"&lt;! [CDATA[&lt;em&gt;09 210 10 10&lt;/ em&gt; &lt;br /&gt; &lt;br /&gt;Információkkal és válaszokkal rendelkezésre állnak a Genti Fesztivál minden napján reggel 8 órától este 7 óráig. &lt;br /&gt;"</string>
+
+    <!-- Search and facet -->
+    <string name="search_hint">"Esemény keresése"</string>
+    <string name="search_results">"Találatok"</string>
+    <string name="change_day">"Másik nap"</string>
+    <string name="change_category">"Másik kategória"</string>
+    <string name="change_location">"Másik helyszín"</string>
+    <string name="change_type">"Másik típus"</string>
+    <string name="no_search_results">"Nincs találat, kattints ide az új kereséshez."</string>
+    <string name="no_search_results_facet">"Nincs találat, fent tudod megváltoztatni a dátumot vagy a típust."</string>
+
+    <!-- Program activities -->
+    <string name="select_a_day">"Válassz napot"</string>
+    <string name="select_a_category">"Válassz kategóriát"</string>
+    <string name="select_a_location">"Válassz helyszínt"</string>
+    <string name="select_a_festival">"Válassz fesztivált"</string>
+
+    <!-- Event detail activity -->
+    <string name="date_period">"Dátum"</string>
+    <string name="category">"Kategória"</string>
+    <string name="event_price">"Ár"</string>
+    <string name="event_free">"Ingyenes"</string>
+    <string name="event_festival">"Fesztiválok"</string>
+    <string name="event_whole_day">"Egész nap"</string>
+    <string name="event_pre_sale">"Elõvétel"</string>
+    <string name="view_on_map">"Térkép"</string>
+    <string name="add_or_remove_from_favorite">"Kedvencekhez adás vagy eltávolítás"</string>
+    <string name="info_online">"Több információ online"</string>
+    <string name="info_map">"Térkép"</string>
+    <string name="info_directions">"Útiterv"</string>
+    <string name="back_to_event">"Vissza az eseményhez"</string>
+    <!-- About activity -->
+    <string name="about_title">"Az alkalmazásról"</string>
+    <string name="about_info">"&lt;! [CDATA [Nyílt forráskódú mobilalkalmazás a 2014-es Genti Fesztiválhoz. Nem vállalunk felelõsséget az alkalmazásban található információkért. Az adatok elérhetõek: &lt;a href=\"http://data.gent.be/\"&gt; http://data.gent.be/ &lt;/ a&gt; &lt;br /&gt; &lt;br /&gt; &lt;b&gt; Alkotók: &lt;/ b&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href=\"https://twitter.com/TimLeytens\"&gt; @ TimLeytens &lt;/ a&gt; - iOS &amp; Drupal fejlesztõ &lt;br /&gt; &lt;a href = \"https://twitter. com / swentel \"&gt; @ swentel &lt;/ a&gt; - Android &amp; Drupal fejlesztõ &lt;br /&gt; &lt;a href=\"https://twitter.com/leenvs\"&gt; @ LeenVS &lt;/ a&gt; - Grafikus &lt;br /&gt; &lt; br /&gt; &lt;b&gt; Forrás: &lt;/ b&gt; &lt;br /&gt; &lt;br /&gt; iOS &lt;a href=\"http://github.com/TimLeytens/GF13\"&gt; GitHub &lt;/ a&gt; &lt;br /&gt; Android: &lt;a href=\"https://github.com/swentel/gentsefeesten\"&gt; GitHub &lt;/ a&gt;"</string>
+
+    <!-- Settings screen -->
+    <string name="program_category">"Program"</string>
+    <string name="program_title">"Program frissítése"</string>
+    <string name="homepage_category">"Események a kezdõképernyõn"</string>
+    <string name="setting_front_limit">"Mennyiség"</string>
+    <string name="setting_front_limit_info">"Válaszd ki a számot a listából, ami majd megjelenik a kezdõképernyõn."</string>
+    <string name="setting_category_title">"Szûrés kategóriára"</string>
+    <string name="setting_location_title">"Szûrés helyszínre"</string>
+    <string name="setting_category_info">"Válassz kategóriát"</string>
+    <string name="setting_location_info">"Válassz helyszínt"</string>
+    <string name="share_category">"Megosztás"</string>
+    <string name="share_message_title">"Közösségi média"</string>
+    <string name="share_message_info">"Alapértelmezett üzenet a közösségi oldalakhoz. \"!replace\" ki lesz cserélve az esemény címével."</string>
+    <string name="share_default">"A Genti Fesztiválon vagyok, éppen ezen a programon: !replace. Nagyon tuti! #GF14"</string>
+    <string name="setting_front_ongoing">"Már elkezdõdött"</string>
+    <string name="setting_front_ongoing_info">"Mutassa a már elkezdõdött eseményeket is"</string>
+    <string name="ga_category">"Google Analytics"</string>
+    <string name="setting_ga_title">"Statisztikák"</string>
+    <string name="setting_ga_summary">"Pipáld be, hogy adatokat küldhessünk a Google-nek."</string>
+    <string name="language_category">"Nyelv"</string>
+    <string name="setting_language_gensch">"Állítsd a nyelvet genti dialektusra"</string>
+    <string name="setting_language_gensch_summary">"Az alkalmazás felülete genti dialektusban jelenik majd meg."</string>
+    <string name="notification_category">"Értesítések"</string>
+    <string name="setting_notification">"Értesítések bekapcsolása"</string>
+    <string name="setting_notification_summary">"Minden Kedvencek között lévõ eseményrõl értesítés érkezik."</string>
+    <string name="setting_notification_buzz">"Rezgés értesítésre"</string>
+    <string name="setting_notification_time">"Hány perccel korábban szeretnél értesítést kapni?"</string>
+
+    <!-- Manage updates + tour -->
+    <string name="updating">"Program frissítése"</string>
+    <string name="updating_message">"Több, mint 4000 esemény letöltése. Ez eltarthat 1 percig is, kérjük, várj. \n\nHa kevesebb eseményt találsz, vagy egyet sem, lépj vissza a Beállításokhoz és próbáld újra. \n\nA kezdõképernyõ újratöltõdik, ha a frissítés befejezõdött."</string>
+    <string name="update_offline">"Kapcsolódj a 3G-hez vagy egy WiFi hálózathoz, hogy elérd a programot. \n\n Az internethez való kapcsolódás után próbáld újra."</string>
+    <string name="updating_info">A legutolsó verzióért kattints ide. Események száma: "</string>
+    <string name="service_offline">"A program-szolgáltatás jelenleg nem elérhetõ, elnézésedet kérjük."</string>
+    <string name="updating_done">"A program frissült."</string>
+    <!-- ATM -->
+    <string name="back_to_atm_list">"Lista"</string>
+    <string name="no_atms">"Nincs találat."</string>
+    <string name="atm_map">"Térkép"</string>
+    <string name="close_bubble">"Bezár"</string>
+    <string name="atm_offline">"Kapcsolódj a 3G-hez vagy egy WiFi hálózathoz, hogy megnézhesd a térképet."</string>
+
+    <!-- Dates -->
+    <string name="july_18">"Július 18, péntek"</string>
+    <string name="july_19">"Július 19, szombat"</string>
+    <string name="july_20">"Július 20, vasárnap"</string>
+    <string name="july_21">"Július 21, hétfõ"</string>
+    <string name="july_22">"Július 22, kedd"</string>
+    <string name="july_23">"Július 23, szerda"</string>
+    <string name="july_24">"Július 24, csütörtök"</string>
+    <string name="july_25">"Július 25, péntek"</string>
+    <string name="july_26">"Július 26, szombat"</string>
+    <string name="july_27">"Július 27, vasárnap"</string>
+
+    <!-- Categories -->
+    <string name="bals_dans">"Bálok / Tánc"</string>
+    <string name="circus">"Cirkusz"</string>
+    <string name="comedy">"Vígjáték"</string>
+    <string name="concerts_divers">"Vegyes koncertek"</string>
+    <string name="concerts_jazz">"Jazz"</string>
+    <string name="concerts_classic">"Koncertek"</string>
+    <string name="concerts_rock_pop">"Rock, pop, techno, blues, folk"</string>
+    <string name="children">"Gyerekek"</string>
+    <string name="market">"Piac"</string>
+    <string name="sports">"Sport és szabadidõ"</string>
+    <string name="exhibition">"Kiállítások"</string>
+    <string name="theatre">"Színház"</string>
+    <string name="varia">"Vegyes"</string>
+    <string name="poetry">"Költészet"</string>
+    <string name="fireworks">"Tûzijáték"</string>
+    <string name="walks">"Séták"</string>
+    <!-- Locations -->
+    <string name="baudeloo">"Baudelohof"</string>
+    <string name="beverhout">"Beverhoutplein"</string>
+    <string name="sint_jacobs">"Sint-Jacobs"</string>
+    <string name="bisdomplein">"Bisdomplein"</string>
+    <string name="emile_braunplein">"Emile Braunplein"</string>
+    <string name="francois_laurent">"Francois Laurentplein"</string>
+    <string name="gravensteen">"Gravensteen"</string>
+    <string name="groentemarkt">"Groentemarkt"</string>
+    <string name="maria_hendrik">"Koningin Maria Hendrikaplein"</string>
+    <string name="korenlei">"Korenlei - Graslei"</string>
+    <string name="korenmarkt">"Korenmarkt"</string>
+    <string name="kouter">"Kouter"</string>
+    <string name="portus_ganda">"Portus Ganda, Voorhoutkaai"</string>
+    <string name="sint_bavo">"Sint-Bavo Humaniora - Reep 4"</string>
+    <string name="sint_baafs">"St-Baafsplein"</string>
+    <string name="sint_veerle">"St-Veerleplein"</string>
+    <string name="vlasmarkt">"Vlasmarkt"</string>
+    <string name="vrijdagmarkt">"Vrijdagmarkt"</string>
+    <string name="watersportbaan">"Watersportbaan"</string>
+    <string name="woodrow_wilson">"Woodrow Wilson Square"</string>
+
+</resources>
