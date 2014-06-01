@@ -4,7 +4,7 @@
     android:scrollbars="none"
     android:fillViewport="true"
     android:layout_width="fill_parent"
-    android:background="#004252"
+    android:background="@color/global_background"
     android:layout_height="fill_parent">
 
     <TableLayout
@@ -17,7 +17,7 @@
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -38,11 +38,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:text="@string/menu_home"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"
+                android:textSize="@dimen/menu_text_size"
                     />
 
         </TableRow>
@@ -50,7 +50,7 @@
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -69,17 +69,17 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:text="@string/menu_favorites"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -97,18 +97,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:text="@string/menu_program"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -126,19 +126,19 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_categories"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -156,19 +156,19 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_locations"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -186,18 +186,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_festival"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -215,19 +215,19 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_free"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -245,19 +245,19 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_around_me"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -276,18 +276,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:text="@string/menu_search"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -305,18 +305,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:text="@string/menu_practical"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -334,18 +334,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_bicycle"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -363,18 +363,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_parking"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -392,18 +392,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_gent_info"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
             <TableRow xmlns:android="http://schemas.android.com/apk/res/android"
@@ -420,18 +420,18 @@
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginLeft="23dp"
-                    android:textColor="#73b5c1"
+                    android:textColor="@color/menu_row_text_color"
                     android:layout_span="2"
                     android:text="@string/menu_atm"
                     android:gravity="center_vertical"
                     android:layout_gravity="bottom"
-                    android:textSize="17sp"/>
+                    android:textSize="@dimen/menu_text_size"/>
             </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -449,18 +449,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="23dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_toilet"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -479,18 +479,18 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:text="@string/menu_settings"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
         <View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
         <TableRow
@@ -509,11 +509,11 @@
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginLeft="9dp"
-                android:textColor="#73b5c1"
+                android:textColor="@color/menu_row_text_color"
                 android:text="@string/menu_about"
                 android:gravity="bottom"
                 android:layout_gravity="bottom"
-                android:textSize="17sp"/>
+                android:textSize="@dimen/menu_text_size"/>
 
         </TableRow>
 
@@ -521,7 +521,7 @@
             android:paddingBottom="10dp"
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
-            android:background="#005768"
+            android:background="@color/separator_color"
             android:visibility="visible"/>
 
     </TableLayout>

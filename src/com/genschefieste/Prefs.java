@@ -4,6 +4,7 @@ import android.app.Dialog;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.ConnectivityManager;
@@ -11,6 +12,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.Preference;
 import android.preference.PreferenceActivity;
+import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.WindowManager;
@@ -210,6 +212,14 @@ public class Prefs extends PreferenceActivity {
                         handler.truncateTable();
                         SQLiteDatabase db = handler.getWritableDatabase();
 
+                        // Remove favorites on update.
+                        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(Prefs.this);
+                        if (pref.getInt("version", 0) != BaseActivity.version) {
+                            handler.truncateFavoritesTable();
+                            pref.edit().putInt("version", BaseActivity.version).commit();
+                        }
+
+                        // TODO check SQL insert errors
                         @SuppressWarnings("static-access")
 						String query = "INSERT INTO " + handler.TABLE_EVENTS + "(" +
                                 "" + handler.KEY_TITLE + "," +
@@ -258,6 +268,8 @@ public class Prefs extends PreferenceActivity {
                                 publishProgress(update);
 
                             } while (line != null);
+
+                            db.close();
 
                         } catch (IOException ignored) {
                     }

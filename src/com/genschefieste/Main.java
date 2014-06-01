@@ -43,8 +43,8 @@ public class Main extends BaseActivity {
             ViewGroup.LayoutParams params = noEvents.getLayoutParams();
             params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             noEvents.setLayoutParams(params);
-            if (unixTime > 1375142400) {
-                noEvents.setText(getString(R.string.no_events_after_july_29));
+            if (unixTime > 1406548800) {
+                noEvents.setText(getString(R.string.no_events_after_end_date));
             }
             else {
                 noEvents.setOnClickListener(goToPreferences);
@@ -62,13 +62,25 @@ public class Main extends BaseActivity {
     @Override
     protected void onResume() {
         super.onResume();
+
+        // First run ever.
         if (pref.getBoolean("firstrun", true)) {
             pref.edit().putBoolean("firstrun", false).commit();
+            pref.edit().putInt("version", BaseActivity.version).commit();
             // Go to prefs activity and start download.
             Intent intent = new Intent(getBaseContext(), Prefs.class);
             intent.putExtra("firstrun", true);
             startActivity(intent);
         }
+
+        // New year, so update program again.
+        if (pref.getInt("version", 0) != BaseActivity.version) {
+            // Go to prefs activity and start download.
+            Intent intent = new Intent(getBaseContext(), Prefs.class);
+            intent.putExtra("firstrun", true);
+            startActivity(intent);
+        }
+
     }
 
     /**

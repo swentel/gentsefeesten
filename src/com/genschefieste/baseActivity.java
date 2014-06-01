@@ -26,6 +26,10 @@ public class BaseActivity extends Activity implements LocationListener {
     public boolean addTopbarListeners = true;
     Intent intent;
 
+    // Version. This is stored in shared preferences so we can trigger an updated
+    // and remove favorites.
+    public static int version = 1;
+
     // Location variables.
     public static double longitude = -1;
     public static double latitude = -1;

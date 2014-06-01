@@ -121,6 +121,15 @@ public class DatabaseHandler extends SQLiteOpenHelper {
         }
     }
 
+    // Truncate the favorites table.
+    public void truncateFavoritesTable() {
+        SQLiteDatabase db = this.getWritableDatabase();
+        if (db != null) {
+            db.delete(TABLE_FAVORITES, null, null);
+            db.close();
+        }
+    }
+
     /**
      * Get events
      *

@@ -6,7 +6,7 @@
     <string name="menu_bar_go_to_menu">"Menü"</string>
     <string name="menu_bar_go_to_favorites">"Kedvenceim"</string>
     <string name="no_events_found_on_home">"Nem található esemény. Változtass a beállításokon vagy frissítsd a programot. \n\nKattints ide a Beállításokhoz."</string>
-    <string name="no_events_after_july_29">"A Genti Fesztivál véget ért, találkozunk jövõre!"</string>
+    <string name="no_events_after_end_date">"A Genti Fesztivál véget ért, találkozunk jövõre!"</string>
     <string name="menu_switch">"Változtat"</string>
 
     <!-- Home activity -->

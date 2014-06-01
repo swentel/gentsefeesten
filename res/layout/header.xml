@@ -5,7 +5,7 @@
     android:layout_height="45dp"
     android:weightSum="1.0"
     android:orientation="horizontal"
-    android:background="#007390">
+    android:background="@color/menu_bar_background">
 
     <ImageButton
         android:id="@+id/menu_bar_go_to_menu"
@@ -13,6 +13,7 @@
         android:layout_weight=".15"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:paddingLeft="@dimen/menu_bar_left_padding"
         android:layout_gravity="center"
         android:contentDescription="@string/menu_bar_go_to_menu"
         android:src="@drawable/menu_button_states"
@@ -25,8 +26,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
-        android:textColor="#f9ffff"
-        android:textSize="24sp"
+        android:textColor="@color/menu_bar_text_color"
+        android:textSize="@dimen/menu_bar_title_size"
         android:text="@string/menu_bar_title"/>
 
     <ImageButton
