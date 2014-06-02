@@ -4,10 +4,11 @@
     <color name="global_textcolor">#333333</color>
     <color name="menu_bar_background">#261d65</color>
     <color name="menu_bar_text_color">#cda300</color>
+    <color name="gold">#cda300</color>
     <color name="big_title_background">#ffffff</color>
     <color name="main_text_background">#ffffff</color>
     <color name="detail_button_background">#ffffff</color>
-    <color name="list_background">#cacaca</color>
+    <color name="list_background">#f8f7f1</color>
     <color name="white">#ffffff</color>
     <color name="red">#ef4f3f</color>
     <color name="event_detail">#cda300</color>

@@ -45,7 +45,6 @@ public class BaseActivity extends Activity implements LocationListener {
     private static final int GA_DISPATCH_PERIOD = 30;
     private static final Logger.LogLevel GA_LOG_VERBOSITY = Logger.LogLevel.INFO;
 
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
