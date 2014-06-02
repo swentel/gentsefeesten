@@ -27,7 +27,7 @@
             android:paddingBottom="5dp"
             android:background="@drawable/menu_row_light"
             android:id="@+id/menu_home"
-            android:layout_marginLeft="10dp">
+            android:paddingLeft="10dp">
 
             <ImageView
                 android:src="@drawable/menu_home"
@@ -292,10 +292,11 @@
 
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="@drawable/menu_row_light"
             android:paddingTop="10dp"
             android:paddingBottom="3dp"
             android:id="@+id/menu_practical"
-            android:layout_marginLeft="10dp">
+            android:paddingLeft="10dp">
 
             <ImageView
                 android:src="@drawable/menu_practical"

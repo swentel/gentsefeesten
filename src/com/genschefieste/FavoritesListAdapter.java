@@ -123,18 +123,18 @@ public class FavoritesListAdapter extends BaseAdapter implements OnClickListener
             ViewHolder holder = (ViewHolder)v.getTag();
             switch(motionEvent.getAction()) {
                 case MotionEvent.ACTION_DOWN:
-                    holder.hour.setTextColor(Color.parseColor("#ffffff"));
-                    holder.title.setTextColor(Color.parseColor("#ffffff"));
-                    holder.row.setBackgroundColor(Color.parseColor("#ef4f3f"));
+                    holder.hour.setTextColor(Color.parseColor("#333333"));
+                    holder.title.setTextColor(Color.parseColor("#333333"));
+                    holder.row.setBackgroundColor(Color.parseColor("#cda300"));
                     break;
                 case MotionEvent.ACTION_CANCEL:
-                    holder.hour.setTextColor(Color.parseColor("#ef4f3f"));
-                    holder.title.setTextColor(Color.parseColor("#323232"));
+                    holder.hour.setTextColor(Color.parseColor("#cda300"));
+                    holder.title.setTextColor(Color.parseColor("#333333"));
                     holder.row.setBackgroundColor(Color.parseColor("#ffffff"));
                     break;
                 case MotionEvent.ACTION_UP:
-                    holder.hour.setTextColor(Color.parseColor("#ef4f3f"));
-                    holder.title.setTextColor(Color.parseColor("#323232"));
+                    holder.hour.setTextColor(Color.parseColor("#cda300"));
+                    holder.title.setTextColor(Color.parseColor("#333333"));
                     holder.row.setBackgroundColor(Color.parseColor("#ffffff"));
                     int eventId = holder.eventId;
                     Intent intent = new Intent(context, EventDetail.class);

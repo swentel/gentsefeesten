@@ -5,6 +5,7 @@
     <color name="menu_bar_background">#261d65</color>
     <color name="menu_bar_text_color">#cda300</color>
     <color name="gold">#cda300</color>
+    <color name="light_gold">#f8f7f1</color>
     <color name="big_title_background">#ffffff</color>
     <color name="main_text_background">#ffffff</color>
     <color name="detail_button_background">#ffffff</color>
@@ -12,8 +13,8 @@
     <color name="white">#ffffff</color>
     <color name="red">#ef4f3f</color>
     <color name="event_detail">#cda300</color>
-    <color name="menu_row_text_color">#73b5c1</color>
-    <color name="light_menu">#31297e</color>
-    <color name="dark_menu">#261d65</color>
-    <color name="separator_color">#cda300</color>
+    <color name="menu_row_text_color">#333333</color>
+    <color name="light_menu">#cda300</color>
+    <color name="dark_menu">#f8f7f1</color>
+    <color name="separator_color">#f8f7f1</color>
 </resources>

@@ -16,28 +16,6 @@
 
         <include layout="@layout/header" />
 
-        <TextView
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/event_title"
-            android:textStyle="italic"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/global_margin_vertical"
-            android:layout_marginLeft="@dimen/global_margin_horizontal"
-            android:layout_marginRight="@dimen/global_margin_vertical"
-            android:textColor="@color/event_detail"
-            android:background="@color/white"
-            android:textSize="@dimen/event_title_text_size"
-            android:padding="@dimen/event_title_padding" />
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="@color/gold"
-            android:visibility="visible"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
-
         <LinearLayout
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
@@ -47,6 +25,27 @@
             android:background="@color/main_text_background"
             android:layout_marginLeft="@dimen/global_margin_horizontal"
             android:layout_marginRight="@dimen/global_margin_horizontal">
+
+            <TextView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/event_title"
+                android:textStyle="italic"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:layout_marginBottom="5dp"
+                android:textColor="@color/event_detail"
+                android:background="@color/white"
+                android:textSize="@dimen/event_title_text_size"
+                android:padding="@dimen/event_title_padding" />
+
+            <View
+                android:layout_width="fill_parent"
+                android:layout_height="0.2dp"
+                android:background="@color/gold"
+                android:visibility="visible"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"/>
 
             <TextView
                 xmlns:android="http://schemas.android.com/apk/res/android"

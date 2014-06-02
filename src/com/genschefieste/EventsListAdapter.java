@@ -55,7 +55,7 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
 
             // Change color of row.
             assert convertView != null;
-            String color = ((position % 2) == 0) ? "#f6f6f6" :  "#ffffff";
+            String color = ((position % 2) == 0) ? "#f8f7f1" :  "#ffffff";
             final LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
             row.setBackgroundColor(Color.parseColor(color));
 
@@ -87,22 +87,22 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             row.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View view, MotionEvent motionEvent) {
-                    String backColor = ((position % 2) == 0) ? "#f6f6f6" :  "#ffffff";
+                    String backColor = ((position % 2) == 0) ? "#f8f7f1" :  "#ffffff";
                     switch(motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN:
-                            row.setBackgroundColor(Color.parseColor("#ef4f3f"));
-                            th.setTextColor(Color.parseColor("#ffffff"));
-                            tt.setTextColor(Color.parseColor("#ffffff"));
+                            row.setBackgroundColor(Color.parseColor("#cda300"));
+                            th.setTextColor(Color.parseColor("#333333"));
+                            tt.setTextColor(Color.parseColor("#333333"));
                             break;
                         case MotionEvent.ACTION_CANCEL:
                             row.setBackgroundColor(Color.parseColor(backColor));
-                            th.setTextColor(Color.parseColor("#ef4f3f"));
-                            tt.setTextColor(Color.parseColor("#323232"));
+                            th.setTextColor(Color.parseColor("#cda300"));
+                            tt.setTextColor(Color.parseColor("#333333"));
                             break;
                         case MotionEvent.ACTION_UP:
                             row.setBackgroundColor(Color.parseColor(backColor));
-                            th.setTextColor(Color.parseColor("#ef4f3f"));
-                            tt.setTextColor(Color.parseColor("#323232"));
+                            th.setTextColor(Color.parseColor("#cda300"));
+                            tt.setTextColor(Color.parseColor("#333333"));
                             Intent intent = new Intent(context, EventDetail.class);
                             intent.putExtra("eventId", event.getId());
                             context.startActivity(intent);
