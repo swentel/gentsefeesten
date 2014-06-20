@@ -83,22 +83,22 @@ public class AroundMeListAdapter extends BaseAdapter implements OnClickListener 
                     String backColor = ((position % 2) == 0) ? "#f6f6f6" :  "#ffffff";
                     switch(motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN:
-                            row.setBackgroundColor(Color.parseColor("#ef4f3f"));
-                            th.setTextColor(Color.parseColor("#ffffff"));
-                            td.setTextColor(Color.parseColor("#ffffff"));
-                            tt.setTextColor(Color.parseColor("#ffffff"));
+                            row.setBackgroundColor(Color.parseColor("#cda300"));
+                            th.setTextColor(Color.parseColor("#333333"));
+                            td.setTextColor(Color.parseColor("#333333"));
+                            tt.setTextColor(Color.parseColor("#333333"));
                             break;
                         case MotionEvent.ACTION_CANCEL:
                             row.setBackgroundColor(Color.parseColor(backColor));
-                            th.setTextColor(Color.parseColor("#f14f44"));
-                            td.setTextColor(Color.parseColor("#323232"));
-                            tt.setTextColor(Color.parseColor("#323232"));
+                            th.setTextColor(Color.parseColor("#cda300"));
+                            td.setTextColor(Color.parseColor("#333333"));
+                            tt.setTextColor(Color.parseColor("#333333"));
                             break;
                         case MotionEvent.ACTION_UP:
                             row.setBackgroundColor(Color.parseColor(backColor));
-                            th.setTextColor(Color.parseColor("#f14f44"));
-                            td.setTextColor(Color.parseColor("#323232"));
-                            tt.setTextColor(Color.parseColor("#323232"));
+                            th.setTextColor(Color.parseColor("#cda300"));
+                            td.setTextColor(Color.parseColor("#333333"));
+                            tt.setTextColor(Color.parseColor("#333333"));
                             Intent intent = new Intent(context, EventDetail.class);
                             intent.putExtra("eventId", event.getId());
                             context.startActivity(intent);
