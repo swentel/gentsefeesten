@@ -197,8 +197,8 @@ public class BaseActivity extends Activity implements LocationListener {
 
         String date_text = "";
         int index = -1;
-        int[] date_int_resources = context.getResources().getIntArray(R.array.dates_int);
-        String[] date_string_resources = context.getResources().getStringArray(R.array.dates_full);
+        int[] date_int_resources = context.getResources().getIntArray(R.array.dates_int_all);
+        String[] date_string_resources = context.getResources().getStringArray(R.array.dates_full_all);
 
         for (int i = 0; i < date_int_resources.length; i++) {
             if (date_int_resources[i] == timestamp) {

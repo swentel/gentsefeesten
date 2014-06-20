@@ -27,11 +27,17 @@ $statements = "";
 
 $number = 0;
 $lines = array();
+$unique_dates = array();
 foreach ($decode->GentseFeestenEvents as $key => $event) {
 
   //print_r($event);
   //echo "\n --------------------------------------------------- \n";
   //continue;
+
+  // The data contains too much info
+  if ($event->datum < 1404943200 || $event->datum > 1406584800) {
+    continue;
+  }
 
   // Omschrijving.
   $new = str_replace("\r", "", trim($event->omschrijving));
@@ -39,13 +45,26 @@ foreach ($decode->GentseFeestenEvents as $key => $event) {
   $event->omsch = $new;
 
   // Locatie.
-  $loc = str_replace("\r", "", $event->locatie);
+  $loc = $event->locatie;
+  if (!empty($event->straat)) {
+    $loc .= "\n" . trim($event->straat);
+    if (!empty($event->huisnummer)) {
+      $loc .= " " . $event->huisnummer;
+    }
+  }
+  $loc = str_replace("\r", "", $loc);
   $loc = str_replace("\n", "|NEWLINE|", $loc);
   $event->locatie = $loc;
 
   // Prijs
   if (!empty($event->prijs)) {
     $event->prijs = "€ " . $event->prijs;
+  }
+
+  // Keep an array of unique dates.
+  $udate = $event->datum;
+  if (!isset($unique_dates[$udate])) {
+    $unique_dates[$udate] = date('d m Y', $udate);
   }
 
   $query = "('" . my_mysql_escape_string($event->titel) . "',";
@@ -55,7 +74,11 @@ foreach ($decode->GentseFeestenEvents as $key => $event) {
   $query .= "'" . my_mysql_escape_string($event->prijs_vvk) . "',";
   $query .= "'" . my_mysql_escape_string($event->omsch) . "',";
   $query .= "'" . ($event->datum + 7200) . "',";
-  $query .= "'" . $event->startuur . " - " . $event->einduur . "',";
+  $hour_string = "";
+  if (!empty($event->startuur)) {
+    $hour_string = $event->startuur . " - " . $event->einduur;
+  }
+  $query .= "'" . $hour_string . "',";
   $query .= "'" . my_mysql_escape_string($event->startuur) . "',";
 
   // Date sort is broken in so many ways. We thus take the timestamp
@@ -91,6 +114,10 @@ foreach ($decode->GentseFeestenEvents as $key => $event) {
   $query .= "'" . $event->festival . "'";
   $query .= ")";
 
+  if ($event->festival) {
+    print $event->titel . "\n";
+  }
+
   $lines[] = $query;
   $number++;
   if ($number == 5) {
@@ -108,6 +135,8 @@ function my_mysql_escape_string($string) {
   return str_replace("'", "''", $string);
 }
 
+krsort($unique_dates);
+print_r($unique_dates);
 
 // Write to file.
 file_put_contents('events-2014.data', $statements);

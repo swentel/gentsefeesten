@@ -131,6 +131,14 @@
     <string name="atm_offline">Musi być podłączony do sieci 3G lub Wi-Fi, aby wyświetlić mapę</string>
 
     <!-- Dates -->
+    <string name="july_10">Thursday, 10 lipca</string>
+    <string name="july_11">Piątek, 11 lipca</string>
+    <string name="july_12">Sobota, 12 lipca</string>
+    <string name="july_13">Niedziela, 13 lipca</string>
+    <string name="july_14">Poniedziałek, 14 lipca</string>
+    <string name="july_15">Wtorek, 15 lipca</string>
+    <string name="july_16">Środa, 16 lipca</string>
+    <string name="july_17">Czwartek, 17 lipca</string>
     <string name="july_18">Piątek, 18 lipca</string>
     <string name="july_19">Sobota, 19 lipca</string>
     <string name="july_20">Niedziela, 20 lipca</string>

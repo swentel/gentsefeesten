@@ -132,6 +132,14 @@
     <string name="atm_offline">Je moet verbonden zijn met 3G of WiFi om de kaart te kunnen bekijken</string>
 
     <!-- Dates -->
+    <string name="july_10">Donderdag 10 juli</string>
+    <string name="july_11">Vrijdag 11 juli</string>
+    <string name="july_12">Zaterdag 12 juli</string>
+    <string name="july_13">Zondag 13 juli</string>
+    <string name="july_14">Maandag 14 juli</string>
+    <string name="july_15">Dinsdag 15 juli</string>
+    <string name="july_16">Woensdag 16 juli</string>
+    <string name="july_17">Donderdag 17 juli</string>
     <string name="july_18">Vrijdag 18 juli</string>
     <string name="july_19">Zaterdag 19 juli</string>
     <string name="july_20">Zondag 20 juli</string>

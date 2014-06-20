@@ -14,6 +14,7 @@
         <item>@string/sort_by_distance</item>
     </string-array>
 
+    <!-- Dates for the 'official' Gentse feesten -->
     <string-array name="dates_full">
         <item>@string/july_18</item>
         <item>@string/july_19</item>
@@ -28,6 +29,49 @@
     </string-array>
 
     <integer-array name="dates_int">
+        <item>1405641600</item>
+        <item>1405728000</item>
+        <item>1405814400</item>
+        <item>1405900800</item>
+        <item>1405987200</item>
+        <item>1406073600</item>
+        <item>1406160000</item>
+        <item>1406246400</item>
+        <item>1406332800</item>
+        <item>1406419200</item>
+    </integer-array>
+
+    <!-- Dates for all of Gentse Feesten, e.g. also including Gent Jazz etc -->
+    <string-array name="dates_full_all">
+        <item>@string/july_10</item>
+        <item>@string/july_11</item>
+        <item>@string/july_12</item>
+        <item>@string/july_13</item>
+        <item>@string/july_14</item>
+        <item>@string/july_15</item>
+        <item>@string/july_16</item>
+        <item>@string/july_17</item>
+        <item>@string/july_18</item>
+        <item>@string/july_19</item>
+        <item>@string/july_20</item>
+        <item>@string/july_21</item>
+        <item>@string/july_22</item>
+        <item>@string/july_23</item>
+        <item>@string/july_24</item>
+        <item>@string/july_25</item>
+        <item>@string/july_26</item>
+        <item>@string/july_27</item>
+    </string-array>
+
+    <integer-array name="dates_int_all">
+        <item>1404950400</item>
+        <item>1405036800</item>
+        <item>1405123200</item>
+        <item>1405209600</item>
+        <item>1405296000</item>
+        <item>1405382400</item>
+        <item>1405468800</item>
+        <item>1405555200</item>
         <item>1405641600</item>
         <item>1405728000</item>
         <item>1405814400</item>

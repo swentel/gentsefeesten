@@ -18,7 +18,7 @@
     <color name="main_menu_on">#cda300</color>
     <color name="main_menu_text_color">#ffffff</color>
     <color name="child_menu_text_color">#333333</color>
-    <color name="child_menu_off">#f6f6f6</color>
+    <color name="child_menu_off">#eae8f8</color>
     <color name="child_menu_on">#cda300</color>
 
     <color name="separator_color">#f8f7f1</color>
