@@ -6,7 +6,7 @@
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">My favorites</string>
     <string name="no_events_found_on_home">No events found. Go to settings to change your preferences or update the program. \n\nClick here to go to settings.</string>
-    <string name="no_events_after_end_date">The Gentse Feesten are over, see you next year!</string>
+    <string name="no_events_after_end_date">It\'s over, see you next year!</string>
     <string name="menu_switch">Change</string>
 
     <!-- Home activity -->
@@ -50,7 +50,7 @@
     <string name="bicycle_info"><![CDATA[<em>Bewaakte fietsparkings</em><br /><br />Om uw fiets helemaal veilig achter te laten, kunt u één van de twee gratis bewaakte fietsenparkings aan de Baudelokaai of Korenmarkt gebruiken. Die zijn 24/24 uur open. Baudelokaai is bewaakt van 14 uur ’s middags tot 6 uur ’s morgens, onder de Sint-Michielsbrug is er 24/24u bewaking.<br />Op deze twee plaatsen kan u een voetluchtpomp ontlenen bij de bewakers voor het oppompen van platte banden. Opgelet: de fietsparking E. Braunplein zal gesloten zijn.<br /><br /><em>Onbewaakte fietsstallingen</em><br /><br />Extra stallingen vindt u op de volgende locaties: Sint-Jacobsnieuwstraat,, Hoogpoort, Limburgstraat, Maaseikstraat, Sint-Niklaasstraat, Steendam, Kouter, Vlaanderenstraat, Baudelokaai, Justitiepaleis (parking Koophandelsplein), Sint-Baafssite, Drabstraat, Rode Torenkaai, Laurentbrug, Sint-Jorisbrug en Minnemeersbrug<br /><br />Verder kunt u ook fietsen huren bij Max Mobiel.<br /><br />Info: MAX MOBIEL - 09 242 80 46 -&nbsp;<a href="mailto:max-mobiel@gent.be">max-mobiel@gent.be</a> - <a href="http://www.max-mobiel.be">www.max-mobiel.be</a><br /><br />]]></string>
 
     <!-- Gent info -->
-    <string name="gent_info"><![CDATA[<em>09 210 10 10</em><br /><br />Open every day from 8 untill 19 uur for all questions and reports.<br />]]></string>
+    <string name="gent_info"><![CDATA[<em>09 210 10 10</em><br /><br />Open every day from 8 until 19 uur for all questions and reports.<br />]]></string>
 
     <!-- Search and facet -->
     <string name="search_hint">Search event</string>

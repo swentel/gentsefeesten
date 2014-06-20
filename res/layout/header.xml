@@ -13,6 +13,7 @@
         android:layout_weight=".15"
         android:layout_height="wrap_content"
         android:background="@null"
+        android:paddingTop="@dimen/menu_bar_top_padding"
         android:paddingLeft="@dimen/menu_bar_left_padding"
         android:layout_gravity="center"
         android:contentDescription="@string/menu_bar_go_to_menu"
@@ -22,7 +23,7 @@
     <TextView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="0dp"
-        android:layout_weight=".65"
+        android:layout_weight=".70"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:gravity="center"
@@ -33,7 +34,7 @@
     <ImageButton
         android:id="@+id/menu_bar_go_to_favorites"
         android:layout_width="0dp"
-        android:layout_weight=".25"
+        android:layout_weight=".15"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:background="@null"

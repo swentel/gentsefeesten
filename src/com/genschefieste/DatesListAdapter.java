@@ -56,8 +56,8 @@ public class DatesListAdapter extends ArrayAdapter<String> implements OnClickLis
                 String backColor = ((position % 2) == 0) ? "#f6f6f6" :  "#ffffff";
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        row.setBackgroundColor(Color.parseColor("#ef4f3f"));
-                        textView.setTextColor(Color.parseColor("#ffffff"));
+                        row.setBackgroundColor(Color.parseColor("#cda300"));
+                        textView.setTextColor(Color.parseColor("#333333"));
                         break;
                     case MotionEvent.ACTION_CANCEL:
                         row.setBackgroundColor(Color.parseColor(backColor));
