@@ -314,7 +314,7 @@
 
         </TableRow>
 
-        <View
+        <!--<View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="@color/main_menu_separator_color"
@@ -341,7 +341,7 @@
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
                 android:textSize="@dimen/menu_text_size"/>
-        </TableRow>
+        </TableRow>-->
 
         <View
             android:layout_width="fill_parent"
@@ -367,35 +367,6 @@
                 android:textColor="@color/child_menu_text_color"
                 android:layout_span="2"
                 android:text="@string/menu_parking"
-                android:gravity="center_vertical"
-                android:layout_gravity="bottom"
-                android:textSize="@dimen/menu_text_size"/>
-        </TableRow>
-
-        <View
-            android:layout_width="fill_parent"
-            android:layout_height="0.2dp"
-            android:background="@color/child_menu_separator_color"
-            android:visibility="visible"/>
-
-        <TableRow
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:background="@drawable/menu_row_child"
-            android:paddingTop="10dp"
-            android:id="@+id/menu_gent_info"
-            android:layout_gravity="bottom"
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:paddingBottom="5dp"
-            android:paddingLeft="20dp">
-
-            <TextView
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginLeft="23dp"
-                android:textColor="@color/child_menu_text_color"
-                android:layout_span="2"
-                android:text="@string/menu_gent_info"
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
                 android:textSize="@dimen/menu_text_size"/>
@@ -439,6 +410,35 @@
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="@drawable/menu_row_child"
             android:paddingTop="10dp"
+            android:id="@+id/menu_gent_info"
+            android:layout_gravity="bottom"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="5dp"
+            android:paddingLeft="20dp">
+
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="23dp"
+                android:textColor="@color/child_menu_text_color"
+                android:layout_span="2"
+                android:text="@string/menu_gent_info"
+                android:gravity="center_vertical"
+                android:layout_gravity="bottom"
+                android:textSize="@dimen/menu_text_size"/>
+        </TableRow>
+
+        <View
+            android:layout_width="fill_parent"
+            android:layout_height="0.2dp"
+            android:background="@color/child_menu_separator_color"
+            android:visibility="visible"/>
+
+        <!--<TableRow
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            android:background="@drawable/menu_row_child"
+            android:paddingTop="10dp"
             android:id="@+id/menu_toilets"
             android:layout_gravity="bottom"
             android:layout_width="fill_parent"
@@ -462,7 +462,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="@color/main_menu_separator_color"
-            android:visibility="visible"/>
+            android:visibility="visible"/>-->
 
         <TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"

@@ -50,7 +50,7 @@
     <string name="bicycle_info"><![CDATA[<em>Bewaakte fietsparkings</em><br /><br />Om uw fiets helemaal veilig achter te laten, kunt u één van de twee gratis bewaakte fietsenparkings aan de Baudelokaai of Korenmarkt gebruiken. Die zijn 24/24 uur open. Baudelokaai is bewaakt van 14 uur ’s middags tot 6 uur ’s morgens, onder de Sint-Michielsbrug is er 24/24u bewaking.<br />Op deze twee plaatsen kan u een voetluchtpomp ontlenen bij de bewakers voor het oppompen van platte banden. Opgelet: de fietsparking E. Braunplein zal gesloten zijn.<br /><br /><em>Onbewaakte fietsstallingen</em><br /><br />Extra stallingen vindt u op de volgende locaties: Sint-Jacobsnieuwstraat,, Hoogpoort, Limburgstraat, Maaseikstraat, Sint-Niklaasstraat, Steendam, Kouter, Vlaanderenstraat, Baudelokaai, Justitiepaleis (parking Koophandelsplein), Sint-Baafssite, Drabstraat, Rode Torenkaai, Laurentbrug, Sint-Jorisbrug en Minnemeersbrug<br /><br />Verder kunt u ook fietsen huren bij Max Mobiel.<br /><br />Info: MAX MOBIEL - 09 242 80 46 -&nbsp;<a href="mailto:max-mobiel@gent.be">max-mobiel@gent.be</a> - <a href="http://www.max-mobiel.be">www.max-mobiel.be</a><br /><br />]]></string>
 
     <!-- Gent info -->
-    <string name="gent_info"><![CDATA[<em>09 210 10 10</em><br /><br />Open every day from 8 until 19 uur for all questions and reports.<br />]]></string>
+    <string name="gent_info"><![CDATA[<em>09 210 10 10</em><br /><br />Open every day from 8am until 7pm for all questions and reports.<br />]]></string>
 
     <!-- Search and facet -->
     <string name="search_hint">Search event</string>
@@ -84,14 +84,8 @@
     <string name="back_to_event">Back to event</string>
 
     <!-- About activity -->
-    <!-- TODO add translators
-
-    Jakub Piasecki - @zaporylie (Polish)
-    Zsófi M. - @zsofimajor (Hungarian)
-
-    -->
     <string name="about_title">About this application</string>
-    <string name="about_info"><![CDATA[Open source mobile application for the Ghent Festivities 2014. We are not responsible for the accuracy of the information provided. Data available at &lt;a href=\"http://data.gent.be/\"&gt; http://data.gent.be/ &lt;/ a&gt; &lt;br /&gt; &lt;br /&gt; &lt;b&gt; Credits &lt;/ b&gt; &lt;br /&gt; &lt;br /&gt; &lt;a href=\"https://twitter.com/TimLeytens\"&gt; @ TimLeytens &lt;/ a&gt; - iOS &amp; Drupal developer &lt;br /&gt; &lt;a href = \"https://twitter. com / swentel \"&gt; @ swentel &lt;/ a&gt; - Android &amp; Drupal developer &lt;br /&gt; &lt;a href=\"https://twitter.com/leenvs\"&gt; @ LeenVS &lt;/ a&gt; - Graphic designer &lt;br /&gt; &lt; br /&gt; &lt;b&gt; Source &lt;/ b&gt; &lt;br /&gt; &lt;br /&gt; iOS &lt;a href=\"http://github.com/TimLeytens/GF13\"&gt; GitHub &lt;/ a&gt; &lt;br /&gt; Android: &lt;a href=\"https://github.com/swentel/gentsefeesten\"&gt; GitHub &lt;/ a&gt;]]></string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2014. We're not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><a href="https://twitter.com/rteijeiro">@rteijeiro</a> - Spanish translator<br /><br /><a href="https://twitter.com/@aporylie">@zaporylie</a> - Polish translator<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_category">Program</string>
