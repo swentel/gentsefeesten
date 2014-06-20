@@ -153,12 +153,12 @@ public class BaseActivity extends Activity implements LocationListener {
     public boolean onCreateOptionsMenu(Menu menu) {
         super.onCreateOptionsMenu(menu);
         if (showHomebutton) {
-            menu.add(Menu.NONE, 0, 0, getString(R.string.menu_home)).setIcon(R.drawable.menu_home);
+            menu.add(Menu.NONE, 0, 0, getString(R.string.menu_home)).setIcon(android.R.drawable.ic_menu_today);
         }
-        menu.add(Menu.NONE, 1, 0, getString(R.string.menu_bar_go_to_menu)).setIcon(R.drawable.menu_menu);
-        menu.add(Menu.NONE, 2, 0, getString(R.string.menu_bar_go_to_favorites)).setIcon(R.drawable.menu_favorites);
-        menu.add(Menu.NONE, 3, 0, getString(R.string.menu_search)).setIcon(R.drawable.menu_search);
-        menu.add(Menu.NONE, 4, 0, getString(R.string.menu_settings)).setIcon(R.drawable.menu_settings);
+        menu.add(Menu.NONE, 1, 0, getString(R.string.menu_bar_go_to_menu)).setIcon(android.R.drawable.ic_menu_help);
+        menu.add(Menu.NONE, 2, 0, getString(R.string.menu_bar_go_to_favorites)).setIcon(android.R.drawable.ic_menu_my_calendar);
+        menu.add(Menu.NONE, 3, 0, getString(R.string.menu_search)).setIcon(android.R.drawable.ic_menu_search);
+        menu.add(Menu.NONE, 4, 0, getString(R.string.menu_settings)).setIcon(android.R.drawable.ic_menu_edit);
         return true;
     }
 

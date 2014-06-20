@@ -208,9 +208,9 @@ public class Prefs extends PreferenceActivity {
                         int count = 0;
                         String line;
 
+                        // Always remove everything when importing.
                         DatabaseHandler handler = new DatabaseHandler(getApplicationContext());
                         handler.truncateTable();
-                        SQLiteDatabase db = handler.getWritableDatabase();
 
                         // Remove favorites if needed. This happens we we change the version.
                         // usually when there's a new year.
@@ -219,6 +219,9 @@ public class Prefs extends PreferenceActivity {
                             handler.truncateFavoritesTable();
                             pref.edit().putInt("version", BaseActivity.version).commit();
                         }
+
+                        // Get the database.
+                        SQLiteDatabase db = handler.getWritableDatabase();
 
                         // TODO check SQL insert errors
                         @SuppressWarnings("static-access")
@@ -293,7 +296,7 @@ public class Prefs extends PreferenceActivity {
 
         @Override
         protected void onPostExecute(String sResponse) {
-            if (sResponse == "servicedown") {
+            if (sResponse.equals("servicedown")) {
                 serviceDown(dialog);
             }
             else {
