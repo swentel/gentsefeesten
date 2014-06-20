@@ -37,13 +37,14 @@
                 android:layout_marginBottom="5dp"
                 android:textColor="@color/event_detail"
                 android:background="@color/white"
+                android:gravity="center"
                 android:textSize="@dimen/event_title_text_size"
                 android:padding="@dimen/event_title_padding" />
 
             <View
+                android:background="@drawable/divider"
                 android:layout_width="fill_parent"
                 android:layout_height="0.2dp"
-                android:background="@color/gold"
                 android:visibility="visible"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
@@ -69,7 +70,7 @@
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="0.2dp"
-                android:background="@color/gold"
+                android:background="@drawable/divider"
                 android:visibility="visible"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
@@ -115,7 +116,7 @@
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="0.2dp"
-                android:background="@color/gold"
+                android:background="@drawable/divider"
                 android:visibility="visible"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
@@ -163,7 +164,7 @@
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="0.2dp"
-                android:background="@color/gold"
+                android:background="@drawable/divider"
                 android:visibility="visible"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
@@ -209,7 +210,7 @@
             <View
                 android:layout_width="fill_parent"
                 android:layout_height="0.2dp"
-                android:background="@color/gold"
+                android:background="@drawable/divider"
                 android:visibility="visible"
                 android:layout_marginLeft="5dp"
                 android:layout_marginRight="5dp"/>
