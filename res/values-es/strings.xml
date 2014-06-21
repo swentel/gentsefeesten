@@ -2,7 +2,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Festival de Ghent</string>
-    <string name="menu_bar_title"># GF14</string>
+    <string name="menu_bar_title">#GF14</string>
     <string name="menu_bar_go_to_menu">Menú</string>
     <string name="menu_bar_go_to_favorites">Mis favoritos</string>
     <string name="no_events_found_on_home">Eventos no disponibles. Cambia tus preferencias o actualiza el programa del evento en Configuración. \n\nPresiona aquí para ir a Configuración.</string>

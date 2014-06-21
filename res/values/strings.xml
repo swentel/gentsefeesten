@@ -2,7 +2,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title"># GF14</string>
+    <string name="menu_bar_title">#GF14</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">My favorites</string>
     <string name="no_events_found_on_home">No events found. Go to settings to change your preferences or update the program. \n\nClick here to go to settings.</string>
@@ -39,7 +39,7 @@
     <string name="menu_around_me_not_connected">To find out what is in your neighborhood you need to be connected to 3G or WiFi.</string>
 
     <!-- Around me -->
-    <string name="no_events_around_me">No activities found nearby.\n\nThere are three possible reasons why no events are found: \n\n1. You\'re not in Ghent and we only look within a radius of 5 kilometers.\n\ n2. We were not able yet to pinpoint your exact location. \n\ n3. This feature only starts working well when the festivities have started.</string>
+    <string name="no_events_around_me">No activities found nearby.\n\nThere are three possible reasons why no events are found: \n\n1. You\'re not in Ghent and we only look within a radius of 5 kilometers.\n\n2. We were not able yet to pinpoint your exact location. \n\n3. This feature only starts working well when the festivities have started.</string>
     <string name="around_me_refresh">Screen is reloaded</string>
     <string name="change_sort">Sort by</string>
     <string name="sort_by_hour">Time</string>
