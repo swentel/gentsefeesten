@@ -45,11 +45,15 @@ foreach ($decode->GentseFeestenEvents as $key => $event) {
   $event->omsch = $new;
 
   // Locatie.
-  $loc = $event->locatie;
+  $loc = trim($event->locatie);
   if (!empty($event->straat)) {
-    $loc .= "\n" . trim($event->straat);
+    $street = trim($event->straat);
     if (!empty($event->huisnummer)) {
-      $loc .= " " . $event->huisnummer;
+      $street .= " " . $event->huisnummer;
+    }
+    $street = trim($street);
+    if ($street != $loc) {
+      $loc .= "\n" . $street;
     }
   }
   $loc = str_replace("\r", "", $loc);
