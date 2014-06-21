@@ -4,7 +4,7 @@ Gentse Feesten
 Android application to look at the program of the 'Gentse feesten' on an Android device.
 Used for GF 2013 & 2014: https://play.google.com/store/apps/details?id=com.genschefieste
 
-For 2013, following apps are available:
+Builds for other platforms:
 
 The iOS version is available at https://github.com/TimLeytens/Gentse-Feesten-2013  
 The Firefox OS version is available at https://github.com/jyve/GF-FxOS  
