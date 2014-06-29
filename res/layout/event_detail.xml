@@ -261,7 +261,7 @@
                 android:src="@drawable/map_states"
                 android:background="@color/detail_button_background"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="192dp"
+                android:layout_marginRight="200dp"
                 android:scaleType="center"
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="13dp"/>
