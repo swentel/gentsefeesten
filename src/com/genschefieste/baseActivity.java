@@ -51,6 +51,8 @@ public class BaseActivity extends Activity implements LocationListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        initializeGa();
+
         // Start location listening.
         if (latitude == -1 && longitude == -1) {
             geoListening = true;
@@ -68,8 +70,6 @@ public class BaseActivity extends Activity implements LocationListener {
             go_to_favorites.setId(2);
             go_to_favorites.setOnClickListener(topBar);
         }
-
-        initializeGa();
     }
 
     @Override

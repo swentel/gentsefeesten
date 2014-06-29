@@ -9,12 +9,12 @@ public class Parking extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.parking);
 
-        BaseActivity.sendGaView("Parking", getApplicationContext());
-
         WebView webView = (WebView) findViewById(R.id.parkingView);
         webView.getSettings().setJavaScriptEnabled(true);
         webView.loadUrl("http://parkingent.be");
 
         super.onCreate(savedInstanceState);
+
+        BaseActivity.sendGaView("Parking", getApplicationContext());
     }
 }

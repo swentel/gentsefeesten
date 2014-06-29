@@ -29,8 +29,6 @@ public class EventDetail extends BaseActivity {
         DatabaseHandler db = new DatabaseHandler(this);
         event = db.getEvent(eventId);
 
-        BaseActivity.sendGaView("Event: " + event.getTitle(), getApplicationContext());
-
         // Set title.
         TextView title = (TextView) findViewById(R.id.event_title);
         title.setText(event.getTitle());
@@ -112,6 +110,8 @@ public class EventDetail extends BaseActivity {
         menu.setOnClickListener(actionShare);
 
         super.onCreate(savedInstanceState);
+
+        BaseActivity.sendGaView("Event: " + event.getTitle(), getApplicationContext());
     }
 
     /**

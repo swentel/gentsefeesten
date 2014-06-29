@@ -38,8 +38,6 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
 
         setContentView(R.layout.around_me);
 
-        BaseActivity.sendGaView("Around me", getApplicationContext());
-
         // Get the list view.
         ListView list = (ListView) findViewById(R.id.list);
 
@@ -67,6 +65,8 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
         sortButton.setOnClickListener(this);
 
         super.onCreate(savedInstanceState);
+
+        BaseActivity.sendGaView("Around me", getApplicationContext());
     }
 
     @Override

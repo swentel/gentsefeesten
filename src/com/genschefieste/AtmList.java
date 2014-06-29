@@ -20,8 +20,6 @@ public class AtmList extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.atm_list);
 
-        BaseActivity.sendGaView("Atm list", getApplicationContext());
-
         // Set listener on map button.
         TextView goToMapRow = (TextView) findViewById(R.id.go_to_atm_map);
         // Add listener on goToMap button.
@@ -45,6 +43,8 @@ public class AtmList extends BaseActivity {
         list.setAdapter(adapter);
 
         super.onCreate(savedInstanceState);
+
+        BaseActivity.sendGaView("Atm list", getApplicationContext());
     }
 
     /**
