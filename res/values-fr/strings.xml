@@ -105,7 +105,7 @@
     <string name="setting_front_ongoing_info">Montrez également des événements qui ne sont pas enonre longtemps en cours</string>
     <string name="ga_category">Google Analytics</string>
     <string name="setting_ga_title">Statistiques</string>
-    <string name="setting_ga_summary">Cliquez si vous ne voulez pas envoyer de statistiques à Google</string>
+    <string name="setting_ga_summary">Cliquez si vous voulez envoyer de statistiques à Google</string>
     <string name="language_category">Langue</string>
     <string name="setting_language_gensch">Mettez langue en dialecte de Gand</string>
     <string name="setting_language_gensch_summary">L\' application sera affichée complètement en dialecte de Gand.</string>

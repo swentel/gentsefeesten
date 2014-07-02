@@ -108,7 +108,7 @@
     <string name="setting_front_ongoing_info">Zeigen Sie auch Angelegenheiten, die nocht nicht so lange im Gange sind</string>
     <string name="ga_category">Google Analytics</string>
     <string name="setting_ga_title">Statistiken</string>
-    <string name="setting_ga_summary">Andeuten um keine Statistiken nach Google zu senden.</string>
+    <string name="setting_ga_summary">Andeuten um Statistiken nach Google zu senden.</string>
     <string name="language_category">Sprache</string>
     <string name="setting_language_gensch">die \"Genter\" Sprache</string>
     <string name="setting_language_gensch_summary">Sie werden die App in Genter Sprache lesen können</string>
