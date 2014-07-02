@@ -1,0 +1,193 @@
+<resources>
+
+    <!-- Global strings -->
+    <string name="app_name">Fêtes de Gand</string>
+    <string name="menu_bar_title"># GF14</string>
+    <string name="menu_bar_go_to_menu">Index</string>
+    <string name="menu_bar_go_to_favorites">Mes favoris</string>
+    <string name="no_events_found_on_home">Aucune manifestation trouvée. Cliquer sur paramètres si vous voulez adapter vos préférences ou modifier le programme. \n\nVeuillez cliquer ici pour aller aux paramètres</string>
+    <string name="no_events_after_july_29">Les Fêtes de Gand sont finies, à l'année prochaine! \n\nLà ells commencent le vendredi.</string>
+    <string name="menu_switch">Changez</string>
+
+    <!-- Home activity -->
+    <string name="upcoming">Événements à venir</string>
+
+    <!-- Favorites activity -->
+    <string name="my_favorites">Mes favoris</string>
+    <string name="no_favorites">Vous n'avez pas encore de favoris. Pour les détails des événements, vous pouvez cliquer sur le bouton gris étoile pour les ajouter dans la liste.</string>
+
+    <!-- Menu activity -->
+    <string name="menu_home">Acceuil</string>
+    <string name="menu_favorites">Mes favoris</string>
+    <string name="menu_program">Programme</string>
+    <string name="menu_categories">Catégories</string>
+    <string name="menu_free">gratuit</string>
+    <string name="menu_festival">Evénements</string>
+    <string name="menu_locations">Lieux</string>
+    <string name="menu_parking">Parking</string>
+    <string name="menu_parking_offline">Pour afficher les informations de stationnement, vous devez être connecté à la 3G ou WiFi.</string>
+    <string name="menu_bicycle">Stationnement des vélos</string>
+    <string name="menu_gent_info">Gent info</string>
+    <string name="menu_atm">Distributeurs automatiques de billets </string>
+    <string name="menu_search">Rechercher</string>
+    <string name="menu_practical">Pratiquement</string>
+    <string name="menu_toilet">Toilettes publiques</string>
+    <string name="menu_settings">Paramètres</string>
+    <string name="menu_about">À propos de cette appli</string>
+    <string name="menu_around_me">Proche</string>
+    <string name="menu_language">Langue</string>
+    <string name="menu_around_me_not_connected">Pour savoir ce que vous trouvez dans votre quartier, vous devez être connecté à la 3G ou WiFi.</string>
+
+    <!-- Around me -->
+    <string name="no_events_around_me">Aucune activité dans votre quartier \n\nTrois raisons possibles: \n\n1. Vous n'êtes pas à Gand et nous cherchons que dans un rayon de 5 km. \n\n2. Nous ne vous avons pas encore déterminé. Cliquer de nouveau. \n\n3. Cette app ne fonctionne que dès le premier jour des festivités. </string>
+    <string name="around_me_refresh">Écran est rechargé</string>
+    <string name="change_sort">Trier par</string>
+    <string name="sort_by_hour">Moment</string>
+    <string name="sort_by_distance">Distance</string>
+    <string name="around_me_search">Nous cherchons des événements dans quartier, attendez s'il vous plaît. \n\nNous recherchons dans un rayon de 5 kilomètres autour de vous. Vous pouvez trier par distance ou temps. \n\n</string>
+
+    <!-- Bicycle info -->
+    <string name="bicycle_info">&lt;! [CDATA [&lt;em&gt; parking vélo gardé &lt;/ em&gt; &lt;br /&gt; &lt;br /&gt; votre vélo en toute sécurité, vous pouvez utiliser un des deux parkings vélo gardé au Baudelokaai ou au Korenmarkt. Les parkings sont ouverts 24/24 heures. Baudelokaai est surveillée de 14 h à 6 h, sous Sint-Michielsbrug 24/24h surveillance. &lt;br /&gt; Dans ces deux endroits, vous pouvez louer une pompe à pied chez les gardes pour gonfler les pneus à plat . Attention: Le parkin vélo E. Braunplein sera fermé &lt;br /&gt; &lt;br /&gt; &lt;em&gt; parking surveillé de vélos &lt;/ em&gt; &lt;br /&gt; &lt;br /&gt; écuries supplémentaires peuvent être trouvés dans les endroits suivants:. St. Jacobsnieuwstraat, Hoogpoort, Limburgstraat, Maaseikstraat, Sint-Niklaasstraat, Steendam, Kouter, Vlaanderenstraat, Baudelokaai, Justitiepaleis (parking Koophandelsplein), Sint-Baafssite, Drabstraat,Rode Torenkaai, Laurentbrug, Sint-Jorisbrug et Minnemeersbrug &lt;br /&gt; &lt;br /&gt; Vous pouvez louer un vélo chez Max Mobiel &lt;br /&gt; &lt;br /&gt; Info: MAX MOBIEL - 09 242 80 46 - &lt;a href=\"mailto: max-mobiel@gent.be\"&gt; max-mobiel@gent.be &lt;. / a&gt; - &lt;a href=\"http://www.max-mobiel.be\"&gt; www.max-mobiel.be &lt;/ a&gt; &lt;br /&gt; &lt;br /&gt;</string>
+
+    <!-- Gent info -->
+    <string name="gent_info"><![CDATA[<em>09 210 10 10</em><br /><br />Open every day from 8am until 7pm for all questions and reports.<br />]]></string>
+
+    <!-- Search and facet -->
+    <string name="search_hint">Recherche événement</string>
+    <string name="search_results">Résultats</string>
+    <string name="change_day">Changement de jour</string>
+    <string name="change_category">Changement de catégorie</string>
+    <string name="change_location">Changement de lieu</string>
+    <string name="change_type">Changement de type</string>
+    <string name="no_search_results">Aucun résultat trouvé, cliquez ici pour commencer une nouvelle recherche.</string>
+    <string name="no_search_results_facet">Aucun résultat trouvé, vous pouvez cliquer dessus pour changer la date ou le type.</string>
+
+    <!-- Program activities -->
+    <string name="select_a_day">Choisissez un jour</string>
+    <string name="select_a_category">Choisissez une catégorie</string>
+    <string name="select_a_location">Choisissez une place</string>
+    <string name="select_a_festival">Choisissez un festival</string>
+
+    <!-- Event detail activity -->
+    <string name="date_period">Date</string>
+    <string name="category">Catégorie</string>
+    <string name="event_price">Prix</string>
+    <string name="event_free">gratuit</string>
+    <string name="event_festival">Festivals</string>
+    <string name="event_whole_day">Toute la journée</string>
+    <string name="event_pre_sale">Prévente</string>
+    <string name="view_on_map">Recherche sur la carte</string>
+    <string name="add_or_remove_from_favorite">Ajouter ou supprimer des favoris</string>
+    <string name="info_online">Plus d'infos en ligne</string>
+    <string name="info_map">Regardez sur la carte</string>
+    <string name="info_directions">Itinéraire:</string>
+    <string name="back_to_event">Retour à l'événement</string>
+
+    <!-- About activity -->
+    <string name="about_title">À propos de cette appli</string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2014. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><a href="https://twitter.com/rteijeiro">@rteijeiro</a> - Spanish translator<br /><a href="https://twitter.com/@aporylie">@zaporylie</a> - Polish translator<br />Katrien Van Damme - German / French translator<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+
+    <!-- Settings screen -->
+    <string name="program_category">Programme</string>
+    <string name="program_title">Mise à jour du programme</string>
+    <string name="homepage_category">Événements sur l'écran d'accueil</string>
+    <string name="setting_front_limit">Quantité</string>
+    <string name="setting_front_limit_info">Sélectionnez le nombre que vous voyez dans l'affichage sur l'écran d'accueil</string>
+    <string name="setting_category_title">Filtrez par catégorie</string>
+    <string name="setting_location_title">Filtrez par emplacement</string>
+    <string name="setting_category_info">Choisissez une catégorie</string>
+    <string name="setting_location_info">Choisissez l'emplacement</string>
+    <string name="share_category">Partagez</string>
+    <string name="share_message_title">Médias sociaux</string>
+    <string name="share_message_info">Message pour les médias sociaux. Utilisez! \"Remplacer\" pour utiliser le titre de l'événement automatiquement</string>
+    <string name="share_default">Au Fêtes de Gand. ! Pour remplacer le chèque. # GF14</string>
+    <string name="setting_front_ongoing">en cours</string>
+    <string name="setting_front_ongoing_info">Montrez également des événements qui ne sont pas enonre longtemps en cours</string>
+    <string name="ga_category">Google Analytics</string>
+    <string name="setting_ga_title">Statistiques</string>
+    <string name="setting_ga_summary">Cliquez si vous ne voulez pas envoyer de statistiques à Google</string>
+    <string name="language_category">Langue</string>
+    <string name="setting_language_gensch">Mettez langue en dialecte de Gand</string>
+    <string name="setting_language_gensch_summary">L' application sera affichée complètement en dialecte de Gand.</string>
+    <string name="notification_category">Notifications</string>
+    <string name="setting_notification">Activez les notifications</string>
+    <string name="setting_notification_summary">Chaque événement dans vos favoris déclenchera une notification</string>
+    <string name="setting_notification_buzz">Vibrez chez chaque notification</string>
+    <string name="setting_notification_time">La notification doit être lieu combien de minutes d'avance?</string>
+
+    <!-- Manage updates + tour -->
+    <string name="updating">Mise à jour du programme</string>
+    <string name="updating_message">Nous recevons maintenant plus de 4000 événements. Cela prendra environ 1 minute, attendez s'il vous plaît. \n\nSi vous avez moins d'événements, ou rien du tout, essayez à nouveau. \n\n  Après vous verrez l'écran d'accueil.</string>
+    <string name="update_offline">Vous devez être connecté à la 3G ou WiFi pour récupérer le programme. Essayez lorsque vous êtes connecté à Internet.\n</string>
+    <string name="updating_info">Cliquez ici pour obtenir la dernière version du programme. Nombre d'événements </string>
+    <string name="service_offline">Notre service est offline, veuillez nous excuser s'il vous plaît.</string>
+    <string name="updating_done">Le programme pour les Fêtes de Gand est mis à jour.</string>
+
+    <!-- ATM -->
+    <string name="back_to_atm_list">Liste</string>
+    <string name="no_atms">Aucun distributeur trouvé</string>
+    <string name="atm_map">Carte</string>
+    <string name="close_bubble">Fermez</string>
+    <string name="atm_offline">Vous devez être connecté à la 3G ou Wi-Fi pour consulter la carte</string>
+
+    <!-- Dates -->
+    <string name="july_10">Jeudi le 10 juillet</string>
+    <string name="july_11">Vendredi le 11 juillet</string>
+    <string name="july_12">Samedi le 12 juillet</string>
+    <string name="july_13">Dimanche le 13 juillet</string>
+    <string name="july_14">Lundi le 14 juillet</string>
+    <string name="july_15">Mardi le 15 juillet</string>
+    <string name="july_16">Mercredi le 16 juillet</string>
+    <string name="july_17">Jeudi le 17 juillet</string>
+    <string name="july_18">Vendredi le 18 juillet</string>
+    <string name="july_19">Samedi le 21 juillet</string>
+    <string name="july_20">Dimanche le 22 juillet</string>
+    <string name="july_21">Lundi le 23 juillet</string>
+    <string name="july_22">Mardi le 24 juillet</string>
+    <string name="july_23">Mercredi le 25 juillet</string>
+    <string name="july_24">Jeudi le 26 juillet</string>
+    <string name="july_25">Vendredi le 27 juillet</string>
+    <string name="july_26">Samedi le 28 juillet</string>
+    <string name="july_27">Dimanche le 29 juillet</string>
+
+    <!-- Categories -->
+    <string name="bals_dans">Bal / Danse</string>
+    <string name="circus">Cirque</string>
+    <string name="comedy">Comédie</string>
+    <string name="concerts_divers">Concerts divers</string>
+    <string name="concerts_jazz">Jazz</string>
+    <string name="concerts_classic">Concerts</string>
+    <string name="concerts_rock_pop">Rock, pop, techno, blues, folk</string>
+    <string name="children">Enfants</string>
+    <string name="market">Marchés</string>
+    <string name="sports">Sports et loisirs</string>
+    <string name="exhibition">Expositions</string>
+    <string name="theatre">Théâtre</string>
+    <string name="varia">Divers</string>
+    <string name="poetry">Poésie</string>
+    <string name="fireworks">Feu d'artifice</string>
+    <string name="walks">Promenades</string>
+
+    <!-- Locations -->
+    <string name="baudeloo">Baudelohof</string>
+    <string name="beverhout">Beverhoutplein</string>
+    <string name="sint_jacobs">Bij Sint-Jacobs</string>
+    <string name="bisdomplein">Bisdomplein</string>
+    <string name="emile_braunplein">Emile Braunplein</string>
+    <string name="francois_laurent">Francois-Laurentplein</string>
+    <string name="gravensteen">Gravensteen</string>
+    <string name="groentemarkt">Groentemarkt</string>
+    <string name="maria_hendrik">Koningin Maria Hendrikaplein</string>
+    <string name="korenlei">Korenlei - Graslei</string>
+    <string name="korenmarkt">Korenmarkt</string>
+    <string name="kouter">Coulter</string>
+    <string name="portus_ganda">Portus Ganda, Voorhoutkaai</string>
+    <string name="sint_bavo">Sint-Bavo Humaniora - Reep 4</string>
+    <string name="sint_baafs">St-Baafsplein</string>
+    <string name="sint_veerle">St-Veerleplein</string>
+    <string name="vlasmarkt">Vlasmarkt</string>
+    <string name="vrijdagmarkt">Vrijdagmarkt</string>
+    <string name="watersportbaan">Watersportbaan</string>
+    <string name="woodrow_wilson">Woodrow Wilsonplein</string>
+
+</resources>

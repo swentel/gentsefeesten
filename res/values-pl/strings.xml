@@ -85,7 +85,7 @@
 
     <!-- About activity -->
     <string name="about_title">O tej aplikacji</string>
-    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2014. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><a href="https://twitter.com/rteijeiro">@rteijeiro</a> - Spanish translator<br /><a href="https://twitter.com/@aporylie">@zaporylie</a> - Polish translator<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2014. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><a href="https://twitter.com/rteijeiro">@rteijeiro</a> - Spanish translator<br /><a href="https://twitter.com/@aporylie">@zaporylie</a> - Polish translator<br />Katrien Van Damme - German / French translator<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_category">Program</string>
@@ -117,7 +117,7 @@
 
     <!-- Manage updates + tour -->
     <string name="updating">Aktualizacja programu</string>
-    <string name="updating_message">Pobieranie ponad 4000 zdarzeń. Może to potrwać około 1 minuty, proszę czekać. \n\ nJeżeli masz mniej zdarzeń lub nie masz ich w ogóle, wrócić do ustawień i spróbuj ponownie. \n\nPo zakończeniu zostanie załadowany ekran główny.</string>
+    <string name="updating_message">Pobieranie ponad 4000 zdarzeń. Może to potrwać około 1 minuty, proszę czekać. \n\nJeżeli masz mniej zdarzeń lub nie masz ich w ogóle, wrócić do ustawień i spróbuj ponownie. \n\nPo zakończeniu zostanie załadowany ekran główny.</string>
     <string name="update_offline">Musi być podłączony do sieci 3G lub WiFi, aby pobrać program. \n\nSpróbuj ponownie, gdy będziesz jest podłączony do Internetu.</string>
     <string name="updating_info">Kliknij tutaj, aby pobrać najnowszą wersję. Liczba zdarzeń: </string>
     <string name="service_offline">Nasz program jest aktualnie niedostępny, proszę nam wybaczyć.</string>
