@@ -6,7 +6,7 @@
     <string name="menu_bar_go_to_menu">Index</string>
     <string name="menu_bar_go_to_favorites">Mes favoris</string>
     <string name="no_events_found_on_home">Aucune manifestation trouvée. Cliquer sur paramètres si vous voulez adapter vos préférences ou modifier le programme. \n\nVeuillez cliquer ici pour aller aux paramètres</string>
-    <string name="no_events_after_july_29">Les Fêtes de Gand sont finies, à l'année prochaine! \n\nLà ells commencent le vendredi.</string>
+    <string name="no_events_after_july_29">Les Fêtes de Gand sont finies, à l\'année prochaine! \n\nLà ells commencent le vendredi.</string>
     <string name="menu_switch">Changez</string>
 
     <!-- Home activity -->
@@ -14,7 +14,7 @@
 
     <!-- Favorites activity -->
     <string name="my_favorites">Mes favoris</string>
-    <string name="no_favorites">Vous n'avez pas encore de favoris. Pour les détails des événements, vous pouvez cliquer sur le bouton gris étoile pour les ajouter dans la liste.</string>
+    <string name="no_favorites">Vous n\'avez pas encore de favoris. Pour les détails des événements, vous pouvez cliquer sur le bouton gris étoile pour les ajouter dans la liste.</string>
 
     <!-- Menu activity -->
     <string name="menu_home">Acceuil</string>
@@ -39,12 +39,12 @@
     <string name="menu_around_me_not_connected">Pour savoir ce que vous trouvez dans votre quartier, vous devez être connecté à la 3G ou WiFi.</string>
 
     <!-- Around me -->
-    <string name="no_events_around_me">Aucune activité dans votre quartier \n\nTrois raisons possibles: \n\n1. Vous n'êtes pas à Gand et nous cherchons que dans un rayon de 5 km. \n\n2. Nous ne vous avons pas encore déterminé. Cliquer de nouveau. \n\n3. Cette app ne fonctionne que dès le premier jour des festivités. </string>
+    <string name="no_events_around_me">Aucune activité dans votre quartier \n\nTrois raisons possibles: \n\n1. Vous n\'êtes pas à Gand et nous cherchons que dans un rayon de 5 km. \n\n2. Nous ne vous avons pas encore déterminé. Cliquer de nouveau. \n\n3. Cette app ne fonctionne que dès le premier jour des festivités. </string>
     <string name="around_me_refresh">Écran est rechargé</string>
     <string name="change_sort">Trier par</string>
     <string name="sort_by_hour">Moment</string>
     <string name="sort_by_distance">Distance</string>
-    <string name="around_me_search">Nous cherchons des événements dans quartier, attendez s'il vous plaît. \n\nNous recherchons dans un rayon de 5 kilomètres autour de vous. Vous pouvez trier par distance ou temps. \n\n</string>
+    <string name="around_me_search">Nous cherchons des événements dans quartier, attendez s\'il vous plaît. \n\nNous recherchons dans un rayon de 5 kilomètres autour de vous. Vous pouvez trier par distance ou temps.\n\n</string>
 
     <!-- Bicycle info -->
     <string name="bicycle_info">&lt;! [CDATA [&lt;em&gt; parking vélo gardé &lt;/ em&gt; &lt;br /&gt; &lt;br /&gt; votre vélo en toute sécurité, vous pouvez utiliser un des deux parkings vélo gardé au Baudelokaai ou au Korenmarkt. Les parkings sont ouverts 24/24 heures. Baudelokaai est surveillée de 14 h à 6 h, sous Sint-Michielsbrug 24/24h surveillance. &lt;br /&gt; Dans ces deux endroits, vous pouvez louer une pompe à pied chez les gardes pour gonfler les pneus à plat . Attention: Le parkin vélo E. Braunplein sera fermé &lt;br /&gt; &lt;br /&gt; &lt;em&gt; parking surveillé de vélos &lt;/ em&gt; &lt;br /&gt; &lt;br /&gt; écuries supplémentaires peuvent être trouvés dans les endroits suivants:. St. Jacobsnieuwstraat, Hoogpoort, Limburgstraat, Maaseikstraat, Sint-Niklaasstraat, Steendam, Kouter, Vlaanderenstraat, Baudelokaai, Justitiepaleis (parking Koophandelsplein), Sint-Baafssite, Drabstraat,Rode Torenkaai, Laurentbrug, Sint-Jorisbrug et Minnemeersbrug &lt;br /&gt; &lt;br /&gt; Vous pouvez louer un vélo chez Max Mobiel &lt;br /&gt; &lt;br /&gt; Info: MAX MOBIEL - 09 242 80 46 - &lt;a href=\"mailto: max-mobiel@gent.be\"&gt; max-mobiel@gent.be &lt;. / a&gt; - &lt;a href=\"http://www.max-mobiel.be\"&gt; www.max-mobiel.be &lt;/ a&gt; &lt;br /&gt; &lt;br /&gt;</string>
@@ -78,10 +78,10 @@
     <string name="event_pre_sale">Prévente</string>
     <string name="view_on_map">Recherche sur la carte</string>
     <string name="add_or_remove_from_favorite">Ajouter ou supprimer des favoris</string>
-    <string name="info_online">Plus d'infos en ligne</string>
+    <string name="info_online">Plus d\'infos en ligne</string>
     <string name="info_map">Regardez sur la carte</string>
     <string name="info_directions">Itinéraire:</string>
-    <string name="back_to_event">Retour à l'événement</string>
+    <string name="back_to_event">Retour à l\'événement</string>
 
     <!-- About activity -->
     <string name="about_title">À propos de cette appli</string>
@@ -90,16 +90,16 @@
     <!-- Settings screen -->
     <string name="program_category">Programme</string>
     <string name="program_title">Mise à jour du programme</string>
-    <string name="homepage_category">Événements sur l'écran d'accueil</string>
+    <string name="homepage_category">Événements sur l\'écran d\'accueil</string>
     <string name="setting_front_limit">Quantité</string>
-    <string name="setting_front_limit_info">Sélectionnez le nombre que vous voyez dans l'affichage sur l'écran d'accueil</string>
+    <string name="setting_front_limit_info">Sélectionnez le nombre que vous voyez dans l\'affichage sur l\'écran d\'accueil</string>
     <string name="setting_category_title">Filtrez par catégorie</string>
     <string name="setting_location_title">Filtrez par emplacement</string>
     <string name="setting_category_info">Choisissez une catégorie</string>
-    <string name="setting_location_info">Choisissez l'emplacement</string>
+    <string name="setting_location_info">Choisissez l\'emplacement</string>
     <string name="share_category">Partagez</string>
     <string name="share_message_title">Médias sociaux</string>
-    <string name="share_message_info">Message pour les médias sociaux. Utilisez! \"Remplacer\" pour utiliser le titre de l'événement automatiquement</string>
+    <string name="share_message_info">Message pour les médias sociaux. Utilisez! "Remplacer" pour utiliser le titre de l\'événement automatiquement</string>
     <string name="share_default">Au Fêtes de Gand. ! Pour remplacer le chèque. # GF14</string>
     <string name="setting_front_ongoing">en cours</string>
     <string name="setting_front_ongoing_info">Montrez également des événements qui ne sont pas enonre longtemps en cours</string>
@@ -108,19 +108,19 @@
     <string name="setting_ga_summary">Cliquez si vous ne voulez pas envoyer de statistiques à Google</string>
     <string name="language_category">Langue</string>
     <string name="setting_language_gensch">Mettez langue en dialecte de Gand</string>
-    <string name="setting_language_gensch_summary">L' application sera affichée complètement en dialecte de Gand.</string>
+    <string name="setting_language_gensch_summary">L\' application sera affichée complètement en dialecte de Gand.</string>
     <string name="notification_category">Notifications</string>
     <string name="setting_notification">Activez les notifications</string>
     <string name="setting_notification_summary">Chaque événement dans vos favoris déclenchera une notification</string>
     <string name="setting_notification_buzz">Vibrez chez chaque notification</string>
-    <string name="setting_notification_time">La notification doit être lieu combien de minutes d'avance?</string>
+    <string name="setting_notification_time">La notification doit être lieu combien de minutes d\'avance?</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Mise à jour du programme</string>
-    <string name="updating_message">Nous recevons maintenant plus de 4000 événements. Cela prendra environ 1 minute, attendez s'il vous plaît. \n\nSi vous avez moins d'événements, ou rien du tout, essayez à nouveau. \n\n  Après vous verrez l'écran d'accueil.</string>
+    <string name="updating_message">Nous recevons maintenant plus de 4000 événements. Cela prendra environ 1 minute, attendez s\'il vous plaît. \n\nSi vous avez moins d\'événements, ou rien du tout, essayez à nouveau.\n\nAprès vous verrez l\'écran d\'accueil.</string>
     <string name="update_offline">Vous devez être connecté à la 3G ou WiFi pour récupérer le programme. Essayez lorsque vous êtes connecté à Internet.\n</string>
-    <string name="updating_info">Cliquez ici pour obtenir la dernière version du programme. Nombre d'événements </string>
-    <string name="service_offline">Notre service est offline, veuillez nous excuser s'il vous plaît.</string>
+    <string name="updating_info">Cliquez ici pour obtenir la dernière version du programme. Nombre d\'événements</string>
+    <string name="service_offline">Notre service est offline, veuillez nous excuser s\'il vous plaît.</string>
     <string name="updating_done">Le programme pour les Fêtes de Gand est mis à jour.</string>
 
     <!-- ATM -->
@@ -165,7 +165,7 @@
     <string name="theatre">Théâtre</string>
     <string name="varia">Divers</string>
     <string name="poetry">Poésie</string>
-    <string name="fireworks">Feu d'artifice</string>
+    <string name="fireworks">Feu d\'artifice</string>
     <string name="walks">Promenades</string>
 
     <!-- Locations -->
