@@ -12,6 +12,8 @@ The Windows version is available at https://github.com/Depechie/GF13
 
 Data available from http://data.gent.be
 
+This also contains an experimental script (gf-enrich.php) to generate pages with enriched data per artist.
+
 Features
 --------
 
