@@ -1,6 +1,7 @@
 <?php
 
-// This converts the events from the open data website of Gent.
+// This converts the events from the open data website of Gent for use in the
+// Android application.
 
 // http://datatank.gent.be/Toerisme/GentseFeestenEvents.json
 // http://datatank.gent.be/Cultuur-Sport-VrijeTijd/GentseFeestenLocaties.json
