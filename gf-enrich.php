@@ -3,7 +3,7 @@
 /**
  * @file
  *
- * This converts the events from the open data website of Gent to generate a rich page per artist.
+ * This converts the events from the open data website of Gent to generate a rich data page.
  * Download the events file locally in a file called 'events.json':
  * http://datatank.gent.be/Toerisme/GentseFeestenEvents.json
  *
@@ -72,11 +72,10 @@ foreach ($decode->GentseFeestenEvents as $key => $event) {
 // Write to file.
 file_put_contents('events.enrich', implode("\n", $lines));
 
-// Generate pages.
+// Generate page.
 if (!file_exists('enrich')) {
   mkdir('enrich');
 }
-
 
 $links = "";
 foreach ($lines as $line) {
@@ -86,6 +85,5 @@ foreach ($lines as $line) {
   }
 }
 
-$html = '<html><head><title>Enriched data for Gentse feesten 2014</title></head><body>' . $links . '</body></html>';
-file_put_contents('enrich/enrich.html', $html);
+file_put_contents('enrich/enrich.html', $links);
 
