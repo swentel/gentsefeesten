@@ -1,6 +1,8 @@
+local.properties
 out
 .idea
 bin
+build/
 gen/com/genschefieste/BuildConfig.java
 gen/com/genschefieste/Manifest.java
 gen/com/genschefieste/R.java
