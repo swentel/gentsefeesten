@@ -22,6 +22,6 @@
     <color name="child_menu_on">#b4c8cd</color>
 
     <color name="separator_color">#f8f7f1</color>
-    <color name="main_menu_separator_color">#31297e</color>
-    <color name="child_menu_separator_color">#726cac</color>
+    <color name="main_menu_separator_color">#325b6f</color>
+    <color name="child_menu_separator_color">#2c5366</color>
 </resources>
