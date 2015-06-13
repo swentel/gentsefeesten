@@ -54,16 +54,16 @@ public class TypeListAdapter extends ArrayAdapter<String> implements OnClickList
                 String backColor = ((position % 2) == 0) ? "#f6f6f6" :  "#ffffff";
                 switch(motionEvent.getAction()) {
                     case MotionEvent.ACTION_DOWN:
-                        row.setBackgroundColor(Color.parseColor("#cda300"));
-                        textView.setTextColor(Color.parseColor("#333333"));
+                        row.setBackgroundColor(Color.parseColor("#323232"));
+                        textView.setTextColor(Color.parseColor("#ffffff"));
                         break;
                     case MotionEvent.ACTION_CANCEL:
                         row.setBackgroundColor(Color.parseColor(backColor));
-                        textView.setTextColor(context.getResources().getColor(R.color.global_background));
+                        textView.setTextColor(context.getResources().getColor(R.color.global_textcolor));
                         break;
                     case MotionEvent.ACTION_UP:
                         row.setBackgroundColor(Color.parseColor(backColor));
-                        textView.setTextColor(context.getResources().getColor(R.color.global_background));
+                        textView.setTextColor(context.getResources().getColor(R.color.global_textcolor));
                         Intent intent = new Intent(context, DaysOverview.class);
                         intent.putExtra("facetId", facetId);
                         intent.putExtra("typeIndex", position);

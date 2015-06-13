@@ -15,7 +15,7 @@
     <color name="red">#ef4f3f</color>
     <color name="event_detail">#587b8a</color>
 
-    <color name="main_menu_off">#323232</color>
+    <color name="main_menu_off">#325b6f</color>
     <color name="main_menu_on">#b4c8cd</color>
     <color name="main_menu_text_color">#ffffff</color>
     <color name="child_menu_text_color">#ffffff</color>
@@ -23,6 +23,6 @@
     <color name="child_menu_on">#b4c8cd</color>
 
     <color name="separator_color">#f8f7f1</color>
-    <color name="main_menu_separator_color">#323232</color>
+    <color name="main_menu_separator_color">#325b6f</color>
     <color name="child_menu_separator_color">#2c5366</color>
 </resources>
