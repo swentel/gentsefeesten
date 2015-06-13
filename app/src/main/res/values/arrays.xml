@@ -86,46 +86,32 @@
         <item>@string/baudeloo</item>
         <item>@string/beverhout</item>
         <item>@string/sint_jacobs</item>
-        <item>@string/bisdomplein</item>
         <item>@string/emile_braunplein</item>
         <item>@string/francois_laurent</item>
-        <item>@string/gravensteen</item>
         <item>@string/groentemarkt</item>
-        <item>@string/maria_hendrik</item>
         <item>@string/korenlei</item>
         <item>@string/korenmarkt</item>
         <item>@string/kouter</item>
-        <item>@string/portus_ganda</item>
-        <item>@string/sint_bavo</item>
         <item>@string/sint_baafs</item>
         <item>@string/sint_veerle</item>
         <item>@string/vlasmarkt</item>
-        <item>@string/vrijdagmarkt</item>
-        <item>@string/watersportbaan</item>
-        <item>@string/woodrow_wilson</item>
+        <item>@string/willem</item>
     </string-array>
 
     <integer-array name="location_ids">
         <item>376</item>
         <item>390</item>
         <item>230</item>
-        <item>385</item>
         <item>615</item>
         <item>382</item>
-        <item>394</item>
         <item>380</item>
-        <item>395</item>
         <item>379</item>
         <item>378</item>
         <item>384</item>
-        <item>470</item>
-        <item>392</item>
         <item>377</item>
         <item>381</item>
         <item>383</item>
-        <item>386</item>
-        <item>393</item>
-        <item>387</item>
+        <item>1781</item>
     </integer-array>
 
     <!-- Android preferences are so dumb, you actually can't give it an integer array
@@ -134,23 +120,16 @@
         <item>376</item>
         <item>390</item>
         <item>230</item>
-        <item>385</item>
         <item>615</item>
         <item>382</item>
-        <item>394</item>
         <item>380</item>
-        <item>395</item>
         <item>379</item>
         <item>378</item>
         <item>384</item>
-        <item>470</item>
-        <item>392</item>
         <item>377</item>
         <item>381</item>
         <item>383</item>
-        <item>386</item>
-        <item>393</item>
-        <item>387</item>
+        <item>1781</item>
     </string-array>
 
     <string-array name="category_strings">
