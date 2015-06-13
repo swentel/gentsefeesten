@@ -112,7 +112,7 @@ foreach ($decode as $key => $event) {
       //echo "$hours - $sort\n";
     }
  
-    // In case hours is after midnight, untill 5 in the morning
+    // In case hours is after midnight, until 5 in the morning
     // add 24 hours more for sorting.
     if ($hours == '00' || $hours < 5) {
       $hours = 24 + $hours;
