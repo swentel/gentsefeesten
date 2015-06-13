@@ -23,6 +23,7 @@ public class Event  {
     String longitude = "";
     String discount = "";
     int festival = 0;
+    String media = "";
     int favorite = 0;
 
     // Empty constructor.
@@ -39,7 +40,7 @@ public class Event  {
     }
 
     // Full constructor.
-    public Event(int id, String title, int externalId, int free, String price, String pricePresale, String description, int date, String datePeriod, String startHour, int dateSort, String category, int categoryId, String url, int locationId, String location, String latitude, String longitude, String discount, int festival, int favorite) {
+    public Event(int id, String title, int externalId, int free, String price, String pricePresale, String description, int date, String datePeriod, String startHour, int dateSort, String category, int categoryId, String url, int locationId, String location, String latitude, String longitude, String discount, int festival, String video, int favorite) {
         this.id = id;
         this.title = title;
         this.externalId = externalId;
@@ -60,6 +61,7 @@ public class Event  {
         this.longitude = longitude;
         this.discount = discount;
         this.festival = festival;
+        this.media = video;
         this.favorite = favorite;
     }
 
@@ -221,6 +223,14 @@ public class Event  {
 
     public int getFavorite() {
         return favorite;
+    }
+
+    public String getMedia() {
+        return media;
+    }
+
+    public void setMedia(String video) {
+        this.media = video;
     }
 
     public void setFavorite(int favorite) {

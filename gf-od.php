@@ -137,6 +137,15 @@ foreach ($decode as $key => $event) {
     $korting = '';
   }
 
+  // Media.
+  $media = '';
+  if (!empty($event->afbeelding)) {
+    $media = $event->afbeelding;
+  }
+  //if (!empty($event->videos) && strpos($event->videos->input, 'youtube') !== FALSE) {
+  //  $media['video'] = $event->videos->input;
+  //}
+
   $query .= "" . $timestamp . ",";
   $query .= "'" . my_mysql_escape_string($event->categorie_naam) . "',";
   $query .= "'" . $event->categorie_id . "',";
@@ -146,7 +155,8 @@ foreach ($decode as $key => $event) {
   $query .= "'" . $event->latitude . "',";
   $query .= "'" . $event->longitude . "',";
   $query .= "'" . my_mysql_escape_string($korting) . "',";
-  $query .= "'" . $event->festival . "'";
+  $query .= "'" . $event->festival . "',";
+  $query .= "'" . $media . "'";
   $query .= ")";
 
   if ($event->festival) {

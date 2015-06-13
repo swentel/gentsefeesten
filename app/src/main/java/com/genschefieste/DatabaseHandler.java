@@ -42,6 +42,8 @@ public class DatabaseHandler extends SQLiteOpenHelper {
     public static final String KEY_LONG = "longitude";
     public static final String KEY_DISCOUNT = "discount";
     public static final String KEY_FESTIVAL = "festival";
+    // This now stores media in the form of image||video - we don't update the
+    // column name so we don't have to care about upgrades.
     public static final String KEY_ORG = "organisatie";
 
     // Favorites table name.
@@ -173,6 +175,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getString(17),
                     cursor.getString(18),
                     cursor.getInt(19),
+                    cursor.getString(20),
                     cursor.getInt(21)
                 );
 
@@ -230,6 +233,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
                     cursor.getString(17),
                     cursor.getString(18),
                     cursor.getInt(19),
+                    cursor.getString(20),
                     cursor.getInt(21)
                 );
 
@@ -318,6 +322,7 @@ public class DatabaseHandler extends SQLiteOpenHelper {
             cursor.getString(17),
             cursor.getString(18),
             cursor.getInt(19),
+            cursor.getString(20),
             cursor.getInt(21)
         );
 

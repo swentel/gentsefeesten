@@ -12,6 +12,9 @@ import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+
 public class EventDetail extends BaseActivity {
 
     // Event and shared preference.
@@ -108,6 +111,17 @@ public class EventDetail extends BaseActivity {
         // Add listener on share button.
         ImageButton menu = (ImageButton) findViewById(R.id.share);
         menu.setOnClickListener(actionShare);
+
+        // Media.
+        String media = event.getMedia();
+        ImageView eventImage = (ImageView) findViewById(R.id.event_image);
+        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+            ImageLoader imageLoader = ImageLoader.getInstance();
+            imageLoader.displayImage(media, eventImage);
+        }
+        else {
+            eventImage.setVisibility(ImageView.GONE);
+        }
 
         super.onCreate(savedInstanceState);
 

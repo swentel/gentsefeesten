@@ -18,7 +18,7 @@
         android:text="@string/back_to_atm_list"
         android:layout_width="wrap_content"
         android:layout_gravity="center"
-        android:background="#726cac"
+        android:background="@color/global_background"
         android:padding="@dimen/main_padding"
         android:layout_height="wrap_content"
         android:gravity="center"

@@ -244,7 +244,8 @@ public class Prefs extends PreferenceActivity {
                                 "" + handler.KEY_LAT + "," +
                                 "" + handler.KEY_LONG + "," +
                                 "" + handler.KEY_DISCOUNT + "," +
-                                "" + handler.KEY_FESTIVAL + "" +
+                                "" + handler.KEY_FESTIVAL + "," +
+                                "" + handler.KEY_ORG + "" +
                                 ") VALUES ";
 
                             do {
