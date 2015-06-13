@@ -44,8 +44,8 @@ foreach ($decode as $key => $event) {
   // They used html this in 2015, so do some fiddling on it.
   $description = $event->omschrijving;
   $description = html_entity_decode($description, ENT_QUOTES);
-  // Replace p tags.
-  $description = str_replace(array('<p>', '</p>'), array('', "\n"), $description);
+  // Replace p and br tags.
+  $description = str_replace(array('<p>', '<br />', '<br>', '</p>'), array('', "\n", "\n", "\n"), $description);
   // Replace &nbsp;
   $description = str_replace('&nbsp;', ' ', $description);
   // Now convert our newlines.
@@ -105,15 +105,28 @@ foreach ($decode as $key => $event) {
     $minutes = substr($sort, -2);
     if (strlen($sort) == 3) {
       $hours = substr($sort, 0, 1);
-      echo "$hours - $sort\n";
+      //echo "$hours - $sort\n";
     }
     else {
       $hours = substr($sort, 0, 2);
-      echo "$hours - $sort\n";
+      //echo "$hours - $sort\n";
     }
+ 
+    // In case hours is after midnight, untill 5 in the morning
+    // add 24 hours more for sorting.
+    if ($hours == '00' || $hours < 5) {
+      $hours = 24 + $hours;
+    }
+
     $total = ($hours * 3600) + $minutes;
     $timestamp = $event->datum + $total + 7200; // + two hours because datum is in GMT.
+    echo "$event->datum - $hours - $sort - $total - $timestamp\n";
   }
+
+  /*if ($event->id == 13235) {
+    print $timestamp . "\n";
+    die();
+  }*/
 
   // Korting is an array or false.
   $korting = $event->korting;

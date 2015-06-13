@@ -45,9 +45,9 @@ public class MenuList extends BaseActivity {
         goLocations.setId(4);
         goLocations.setOnClickListener(actionMenu);
 
-        TableRow goFestival = (TableRow) findViewById(R.id.menu_festival);
+        /*TableRow goFestival = (TableRow) findViewById(R.id.menu_festival);
         goFestival.setId(5);
-        goFestival.setOnClickListener(actionMenu);
+        goFestival.setOnClickListener(actionMenu);*/
 
         TableRow goFree = (TableRow) findViewById(R.id.menu_free);
         goFree.setId(6);
