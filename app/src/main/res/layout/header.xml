@@ -11,14 +11,13 @@
         android:id="@+id/menu_bar_go_to_menu"
         android:layout_width="0dp"
         android:layout_weight=".15"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
         android:background="@null"
         android:paddingTop="@dimen/menu_bar_top_padding"
         android:paddingLeft="@dimen/menu_bar_left_padding"
         android:layout_gravity="center"
         android:contentDescription="@string/menu_bar_go_to_menu"
-        android:src="@drawable/menu_button_states"
-        android:scaleType="centerInside"/>
+        android:src="@drawable/menu_button_states" />
 
     <TextView
         xmlns:android="http://schemas.android.com/apk/res/android"
