@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string-array name="front_limit_numbers">
+    <string-array name="front_limit_numbers" translatable="false">
         <item>20</item>
         <item>40</item>
         <item>60</item>
@@ -116,7 +116,7 @@
 
     <!-- Android preferences are so dumb, you actually can't give it an integer array
         for the values of ListPreference, so here they are again ... -->
-    <string-array name="location_ids_strings">
+    <string-array name="location_ids_strings" translatable="false">
         <item>376</item>
         <item>390</item>
         <item>230</item>
@@ -178,7 +178,7 @@
 
     <!-- Android preferences are so dumb, you actually can't give it an integer array
         for the values of ListPreference, so here they are again ... -->
-    <string-array name="category_ids_strings">
+    <string-array name="category_ids_strings" translatable="false">
         <item>10</item>
         <item>26</item>
         <item>24</item>
@@ -202,7 +202,7 @@
 
     <!-- List of ATM's from the enter of Gent. This way we don't have to call the
          atm or google json service all the time and we can show the list while offline -->
-    <string-array name="atms">
+    <string-array name="atms" translatable="false">
         <item>Belfius bank;Vlaanderenstraat 25;51.050941;3.729384</item>
         <item>Belfius bank;Zonnestraat 23;51.050431;3.7218</item>
         <item>BNP Paribas Fortis;Belfortstraat 41;51.055822;3.727413</item>
