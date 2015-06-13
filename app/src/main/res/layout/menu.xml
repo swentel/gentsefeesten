@@ -171,7 +171,7 @@
             android:background="@color/child_menu_separator_color"
             android:visibility="visible"/>
 
-        <TableRow
+        <!--<TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="@drawable/menu_row_child"
             android:paddingTop="10dp"
@@ -192,7 +192,7 @@
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
                 android:textSize="@dimen/menu_text_size"/>
-        </TableRow>
+        </TableRow>-->
 
         <View
             android:layout_width="fill_parent"
