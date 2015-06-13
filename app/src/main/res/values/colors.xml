@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="global_background">#31297e</color>
-    <color name="global_textcolor">#333333</color>
-    <color name="menu_bar_background">#726cac</color>
-    <color name="menu_bar_text_color">#cda300</color>
+    <color name="global_background">#587b8a</color>
+    <color name="global_textcolor">#325b6f</color>
+    <color name="menu_bar_background">#eddec0</color>
+    <color name="menu_bar_text_color">#2c5366</color>
     <color name="gold">#cda300</color>
     <color name="light_gold">#f8f7f1</color>
     <color name="big_title_background">#ffffff</color>
