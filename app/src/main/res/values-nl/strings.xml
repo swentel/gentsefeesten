@@ -115,6 +115,8 @@
     <string name="setting_notification_summary">Elk event in je favorieten zal een notificatie triggeren</string>
     <string name="setting_notification_buzz">Tril bij notificatie</string>
     <string name="setting_notification_time">Hoeveel minuten op voorhand moet de notificatie gebeuren ?</string>
+    <string name="setting_load_images">Afbeeldingen inladen</string>
+    <string name="setting_load_images_info">Toon afbeeldingen op evenement detail wanneer er internet connectie is.</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>

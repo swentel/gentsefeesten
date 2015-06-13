@@ -13,7 +13,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class EventDetail extends BaseActivity {
 
@@ -24,6 +23,8 @@ public class EventDetail extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.event_detail);
+
+        pref = PreferenceManager.getDefaultSharedPreferences(EventDetail.this);
 
         // Get event.
         Bundle extras = getIntent().getExtras();
@@ -115,7 +116,8 @@ public class EventDetail extends BaseActivity {
         // Media.
         String media = event.getMedia();
         ImageView eventImage = (ImageView) findViewById(R.id.event_image);
-        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+        boolean loadImages = pref.getBoolean("pref_load_images", true);
+        if (loadImages && (cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             ImageLoader imageLoader = ImageLoader.getInstance();
             imageLoader.displayImage(media, eventImage);
         }
@@ -161,7 +163,6 @@ public class EventDetail extends BaseActivity {
      */
     private final View.OnClickListener actionShare = new View.OnClickListener() {
         public void onClick(View v) {
-            pref = PreferenceManager.getDefaultSharedPreferences(EventDetail.this);
             String share_message = pref.getString("share_message", "");
 
             BaseActivity.sendGaView("Share: " + event.getTitle(), getApplicationContext());

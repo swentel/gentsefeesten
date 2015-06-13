@@ -114,6 +114,8 @@
     <string name="setting_notification_summary">Each event in your favorites will trigger a notification</string>
     <string name="setting_notification_buzz">Vibrate on notification</string>
     <string name="setting_notification_time">How many minutes in advance do you want a notification ?</string>
+    <string name="setting_load_images">Load images</string>
+    <string name="setting_load_images_info">Load images on event details when online.</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Update program</string>
