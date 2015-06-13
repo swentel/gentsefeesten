@@ -90,19 +90,19 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
                     String backColor = ((position % 2) == 0) ? "#f8f7f1" :  "#ffffff";
                     switch(motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN:
-                            row.setBackgroundColor(Color.parseColor("#cda300"));
-                            th.setTextColor(Color.parseColor("#333333"));
-                            tt.setTextColor(Color.parseColor("#333333"));
+                            row.setBackgroundColor(Color.parseColor("#323232"));
+                            th.setTextColor(Color.parseColor("#ffffff"));
+                            tt.setTextColor(Color.parseColor("#ffffff"));
                             break;
                         case MotionEvent.ACTION_CANCEL:
                             row.setBackgroundColor(Color.parseColor(backColor));
-                            th.setTextColor(Color.parseColor("#cda300"));
-                            tt.setTextColor(Color.parseColor("#333333"));
+                            th.setTextColor(Color.parseColor("#ef4f3f"));
+                            tt.setTextColor(Color.parseColor("#323232"));
                             break;
                         case MotionEvent.ACTION_UP:
                             row.setBackgroundColor(Color.parseColor(backColor));
-                            th.setTextColor(Color.parseColor("#cda300"));
-                            tt.setTextColor(Color.parseColor("#333333"));
+                            th.setTextColor(Color.parseColor("#ef4f3f"));
+                            tt.setTextColor(Color.parseColor("#323232"));
                             Intent intent = new Intent(context, EventDetail.class);
                             intent.putExtra("eventId", event.getId());
                             context.startActivity(intent);
