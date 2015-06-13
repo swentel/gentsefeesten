@@ -30,7 +30,7 @@ public class BaseActivity extends Activity implements LocationListener {
 
     // Version. This is stored in shared preferences so we can trigger an updated
     // and remove favorites.
-    public static int version = 1;
+    public static int version = 2;
 
     // Location variables.
     public static double longitude = -1;

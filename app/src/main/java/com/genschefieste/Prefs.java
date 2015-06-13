@@ -41,14 +41,14 @@ public class Prefs extends PreferenceActivity {
 
     // Number of lines to read, this is just approximate, might change in the future,
     // but this allows us to create a progress bar.
-    public int numberOfEvents = 779;
+    public int numberOfEvents = 750;
 
     // URI to the event services. In theory we could import 2 other services which describe
     // the locations and categories, however, we have made those available in the resources
     // so they are also easily translatable. Note that for the Android version we just
     // have a file with the values part of a query which allows us to import in around 30 seconds.
     // A conversion of the open data to that file is also available, @see gf.php and @gf-od.php
-    public static String eventUrl = "http://realize.be/events-2014.data";
+    public static String eventUrl = "http://realize.be/events-2015.data";
 
     // The name of the data file.
     public static String fileName = "events.data";
@@ -217,7 +217,7 @@ public class Prefs extends PreferenceActivity {
                         SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(Prefs.this);
                         if (pref.getInt("version", 0) != BaseActivity.version) {
                             handler.truncateFavoritesTable();
-                            pref.edit().putInt("version", BaseActivity.version).commit();
+                            pref.edit().putInt("version", BaseActivity.version).apply();
                         }
 
                         // Get the database.

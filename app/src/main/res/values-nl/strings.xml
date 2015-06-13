@@ -3,7 +3,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF14</string>
+    <string name="menu_bar_title">#GF15</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Mijn favorieten</string>
     <string name="no_events_found_on_home">Geen evenementen gevonden. Ga naar settings om je voorkeuren of om het programma aan te passen.\n\nKlik hier om naar settings te gaan.</string>
@@ -86,13 +86,13 @@
 
     <!-- About activity -->
     <string name="about_title">Over deze applicatie</string>
-    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2014. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><a href="https://twitter.com/rteijeiro">@rteijeiro</a> - Spanish translator<br /><a href="https://twitter.com/@aporylie">@zaporylie</a> - Polish translator<br />Katrien Van Damme - German / French translator<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2015. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_category">Programma</string>
     <string name="program_title">Programma bijwerken</string>
     <string name="homepage_category">Evenementen op startscherm</string>
-    <string name="setting_front_limit">Aantal</string>
+    <string name="setting_front_limit">Start aantal</string>
     <string name="setting_front_limit_info">Kies het aantal dat in de lijst wordt getoond op het startscherm</string>
     <string name="setting_category_title">Filter op categorie</string>
     <string name="setting_location_title">Filter op locatie</string>
@@ -101,12 +101,12 @@
     <string name="share_category">Share</string>
     <string name="share_message_title">Sociale media</string>
     <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin te plaatsen.</string>
-    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF14</string>
+    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF15</string>
     <string name="setting_front_ongoing">Al bezig</string>
     <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
     <string name="ga_category">Google Analytics</string>
     <string name="setting_ga_title">Statistieken</string>
-    <string name="setting_ga_summary">Vink uit om geen statistieken te verzenden naar Google.</string>
+    <string name="setting_ga_summary">Laat toe om statistieken door te zenden naar Google Analytics.</string>
     <string name="language_category">Taal</string>
     <string name="setting_language_gensch">Zet taal in Gents</string>
     <string name="setting_language_gensch_summary">De app interface zal helemaal in het Gentse dialect weergegeven worden.</string>
@@ -120,7 +120,7 @@
     <string name="updating">Programma bijwerken</string>
     <string name="updating_message">We halen nu meer dan 4000 evenementen op. Dit duurt ongeveer 1 minuut, even geduld.\n\nIndien je minder evenementen hebt of helemaal niks, keer terug naar settings en probeer opnieuw.\n\nHierna wordt het startscherm geladen.</string>
     <string name="update_offline">Je moet verbonden zijn met 3G of WiFi om het programma te kunnen ophalen.\n\nGelieve opnieuw te proberen wanneer je verbonden bent met het internet.</string>
-    <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Aantal evenementen: </string>
+    <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Elke vrijdag tot aan de start zal er een nieuwe update zijn. Aantal evenementen: </string>
     <string name="service_offline">Onze service met het programma is even offline, gelieve later opnieuw te proberen.</string>
     <string name="updating_done">Het programma voor de Gentse Feesten is bijgewerkt.</string>
 
@@ -132,27 +132,27 @@
     <string name="atm_offline">Je moet verbonden zijn met 3G of WiFi om de kaart te kunnen bekijken</string>
 
     <!-- Dates -->
-    <string name="july_10">Donderdag 10 juli</string>
-    <string name="july_11">Vrijdag 11 juli</string>
-    <string name="july_12">Zaterdag 12 juli</string>
-    <string name="july_13">Zondag 13 juli</string>
-    <string name="july_14">Maandag 14 juli</string>
-    <string name="july_15">Dinsdag 15 juli</string>
-    <string name="july_16">Woensdag 16 juli</string>
-    <string name="july_17">Donderdag 17 juli</string>
-    <string name="july_18">Vrijdag 18 juli</string>
-    <string name="july_19">Zaterdag 19 juli</string>
-    <string name="july_20">Zondag 20 juli</string>
-    <string name="july_21">Maandag 21 juli</string>
-    <string name="july_22">Dinsdag 22 juli</string>
-    <string name="july_23">Woensdag 23 juli</string>
-    <string name="july_24">Donderdag 24 juli</string>
-    <string name="july_25">Vrijdag 25 juli</string>
-    <string name="july_26">Zaterdag 26 juli</string>
-    <string name="july_27">Zondag 27 juli</string>
+    <string name="july_10">Vrijdag 10 juli</string>
+    <string name="july_11">Zaterdag 11 juli</string>
+    <string name="july_12">Zondag 12 juli</string>
+    <string name="july_13">Maandag 13 juli</string>
+    <string name="july_14">Dinsdag 14 juli</string>
+    <string name="july_15">Woensdag 15 juli</string>
+    <string name="july_16">Donderdag 16 juli</string>
+    <string name="july_17">Vrijdag 17 juli</string>
+    <string name="july_18">Zaterdag 18 juli</string>
+    <string name="july_19">Zondag 19 juli</string>
+    <string name="july_20">Maandag 20 juli</string>
+    <string name="july_21">Dinsdag 21 juli</string>
+    <string name="july_22">Woensdag 22 juli</string>
+    <string name="july_23">Donderdag 23 juli</string>
+    <string name="july_24">Vrijdag 24 juli</string>
+    <string name="july_25">Zaterdag 25 juli</string>
+    <string name="july_26">Zondag 26 juli</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dans</string>
+    <string name="boottocht">Boottochten</string>
     <string name="circus">Circus</string>
     <string name="comedy">Comedy</string>
     <string name="concerts_divers">Concerten divers</string>
@@ -161,6 +161,8 @@
     <string name="concerts_rock_pop">Rock, pop, techno, blues, folk</string>
     <string name="children">Kinderen</string>
     <string name="market">Markten</string>
+    <string name="miramiro">MiramirO</string>
+    <string name="puppet">Puppetbuskers festival</string>
     <string name="sports">Sport en recreatie</string>
     <string name="exhibition">Tentoonstellingen</string>
     <string name="theatre">Theater</string>

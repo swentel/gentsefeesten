@@ -34,14 +34,14 @@ public class Main extends BaseActivity {
 
         // Check on size of events. In case there are no events, show the messages
         // row so people can go to settings and change them or import the program.
-        // In case the Gentse Feesten is past july 29, show a different message.
+        // In case the Gentse Feesten is past july 28, show a different message.
         if (events.size() == 0) {
             long unixTime = (System.currentTimeMillis() / 1000L);
             TextView noEvents = (TextView) findViewById(R.id.no_events);
             ViewGroup.LayoutParams params = noEvents.getLayoutParams();
             params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             noEvents.setLayoutParams(params);
-            if (unixTime > 1406548800) {
+            if (unixTime > 1438041600) {
                 noEvents.setText(getString(R.string.no_events_after_end_date));
             }
             else {
@@ -65,8 +65,8 @@ public class Main extends BaseActivity {
 
         // First run ever.
         if (pref.getBoolean("firstrun", true)) {
-            pref.edit().putBoolean("firstrun", false).commit();
-            pref.edit().putInt("version", BaseActivity.version).commit();
+            pref.edit().putBoolean("firstrun", false).apply();
+            pref.edit().putInt("version", BaseActivity.version).apply();
             // Go to prefs activity and start download.
             Intent intent = new Intent(getBaseContext(), Prefs.class);
             intent.putExtra("firstrun", true);

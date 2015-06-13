@@ -2,7 +2,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF14</string>
+    <string name="menu_bar_title">#GF15</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">My favorites</string>
     <string name="no_events_found_on_home">No events found. Go to settings to change your preferences or update the program. \n\nClick here to go to settings.</string>
@@ -85,13 +85,13 @@
 
     <!-- About activity -->
     <string name="about_title">About this application</string>
-    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2014. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><a href="https://twitter.com/rteijeiro">@rteijeiro</a> - Spanish translator<br /><a href="https://twitter.com/@aporylie">@zaporylie</a> - Polish translator<br />Katrien Van Damme - German / French translator<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2015. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_category">Program</string>
     <string name="program_title">Update program</string>
     <string name="homepage_category">Events on homescreen</string>
-    <string name="setting_front_limit">Amount</string>
+    <string name="setting_front_limit">Home limit</string>
     <string name="setting_front_limit_info">Select the number in the list that is displayed on the home screen</string>
     <string name="setting_category_title">Filter by category</string>
     <string name="setting_location_title">Filter by location</string>
@@ -100,12 +100,12 @@
     <string name="share_category">Share</string>
     <string name="share_message_title">Social media</string>
     <string name="share_message_info">Default message for social media. "!replace" will be replaced by the title of the event.</string>
-    <string name="share_default">At the Gentse Feesten. Checking out !replace. Way cool! #GF14</string>
+    <string name="share_default">At the Gentse Feesten. Checking out !replace. Way cool! #GF15</string>
     <string name="setting_front_ongoing">Already started</string>
     <string name="setting_front_ongoing_info">Also show events that have just started</string>
     <string name="ga_category">Google Analytics</string>
     <string name="setting_ga_title">Statistics</string>
-    <string name="setting_ga_summary">Check to send data to Google.</string>
+    <string name="setting_ga_summary">Allow sending data to Google Analytics.</string>
     <string name="language_category">Language</string>
     <string name="setting_language_gensch">Set language to Gentsch</string>
     <string name="setting_language_gensch_summary">The app interface will be displayed in the Ghent dialect.</string>
@@ -119,7 +119,7 @@
     <string name="updating">Update program</string>
     <string name="updating_message">Downloading over 4000 events. This takes about 1 minute, please wait. \n\nIf you have less events, or nothing at all, go back to settings and try again. \n\nThe home screen will be loaded when done.</string>
     <string name="update_offline">You must be connected to 3G or WiFi to retrieve the program.\n\nTry again when you are connected to the internet.</string>
-    <string name="updating_info">Click here to get the latest version. Number of events: </string>
+    <string name="updating_info">Click here to get the latest version. A new update will be available every friday until the festival starts. Number of events: </string>
     <string name="service_offline">Our program service is currently offline, please try again later.</string>
     <string name="updating_done">The program has been updated.</string>
 
@@ -131,27 +131,27 @@
     <string name="atm_offline">You must be connected to 3G or Wi-Fi to view the map</string>
 
     <!-- Dates -->
-    <string name="july_10">Thursday, July 10</string>
-    <string name="july_11">Friday, July 11</string>
-    <string name="july_12">Saturday, July 12</string>
-    <string name="july_13">Sunday, July 13</string>
-    <string name="july_14">Monday, July 14</string>
-    <string name="july_15">Tuesday, July 15</string>
-    <string name="july_16">Wednesday, July 16</string>
-    <string name="july_17">Thursday, July 17</string>
-    <string name="july_18">Friday, July 18</string>
-    <string name="july_19">Saturday, July 19</string>
-    <string name="july_20">Sunday, July 20</string>
-    <string name="july_21">Monday, July 21</string>
-    <string name="july_22">Tuesday, July 22</string>
-    <string name="july_23">Wednesday, July 23</string>
-    <string name="july_24">Thursday, July 24</string>
-    <string name="july_25">Friday, July 25</string>
-    <string name="july_26">Saturday, July 26</string>
-    <string name="july_27">Sunday, July 27</string>
+    <string name="july_10">Friday, July 10</string>
+    <string name="july_11">Saturday, July 11</string>
+    <string name="july_12">Sunday, July 12</string>
+    <string name="july_13">Monday, July 13</string>
+    <string name="july_14">Tuesday, July 14</string>
+    <string name="july_15">Wednesday, July 15</string>
+    <string name="july_16">Thursday, July 16</string>
+    <string name="july_17">Friday, July 17</string>
+    <string name="july_18">Saturday, July 18</string>
+    <string name="july_19">Sunday, July 19</string>
+    <string name="july_20">Monday, July 20</string>
+    <string name="july_21">Tuesday, July 21</string>
+    <string name="july_22">Wednesday, July 22</string>
+    <string name="july_23">Thursday, July 23</string>
+    <string name="july_24">Friday, July 24</string>
+    <string name="july_25">Saturday, July 25</string>
+    <string name="july_26">Sunday, July 26</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dance</string>
+    <string name="boottocht">Boottochten</string>
     <string name="circus">Circus</string>
     <string name="comedy">Comedy</string>
     <string name="concerts_divers">Concerts diverse</string>
@@ -160,6 +160,8 @@
     <string name="concerts_rock_pop">Rock, pop, techno, blues, folk</string>
     <string name="children">Children</string>
     <string name="market">Market</string>
+    <string name="miramiro">MiramirO</string>
+    <string name="puppet">Puppetbuskers festival</string>
     <string name="sports">Sports and recreation</string>
     <string name="exhibition">Exhibitions</string>
     <string name="theatre">Theater</string>

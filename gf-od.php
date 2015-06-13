@@ -29,21 +29,29 @@ $statements = "";
 $number = 0;
 $lines = array();
 $unique_dates = array();
-foreach ($decode->GentseFeestenEvents as $key => $event) {
+foreach ($decode as $key => $event) {
 
   //print_r($event);
   //echo "\n --------------------------------------------------- \n";
   //continue;
 
   // The data contains too much info
-  if ($event->datum < 1404943200 || $event->datum > 1406584800) {
+  if ($event->datum < 1436486400 || $event->datum > 1437976800) {
     continue;
   }
 
   // Omschrijving.
-  $new = str_replace("\r", "", trim($event->omschrijving));
-  $new = str_replace("\n", "|NEWLINE|", $new);
-  $event->omsch = $new;
+  // They used html this in 2015, so do some fiddling on it.
+  $description = $event->omschrijving;
+  $description = html_entity_decode($description, ENT_QUOTES);
+  // Replace p tags.
+  $description = str_replace(array('<p>', '</p>'), array('', "\n"), $description);
+  // Replace &nbsp;
+  $description = str_replace('&nbsp;', ' ', $description);
+  // Now convert our newlines.
+  $description = str_replace("\r", "", trim($description));
+  $description = str_replace("\n", "|NEWLINE|", $description);
+  $event->omsch = $description;
 
   // Locatie.
   $loc = trim($event->locatie);
@@ -107,6 +115,15 @@ foreach ($decode->GentseFeestenEvents as $key => $event) {
     $timestamp = $event->datum + $total + 7200; // + two hours because datum is in GMT.
   }
 
+  // Korting is an array or false.
+  $korting = $event->korting;
+  if (is_array($korting)) {
+    $korting = implode(', ', $korting);
+  }
+  else {
+    $korting = '';
+  }
+
   $query .= "" . $timestamp . ",";
   $query .= "'" . my_mysql_escape_string($event->categorie_naam) . "',";
   $query .= "'" . $event->categorie_id . "',";
@@ -115,7 +132,7 @@ foreach ($decode->GentseFeestenEvents as $key => $event) {
   $query .= "'" . my_mysql_escape_string($event->locatie) . "',";
   $query .= "'" . $event->latitude . "',";
   $query .= "'" . $event->longitude . "',";
-  $query .= "'" . my_mysql_escape_string($event->korting) . "',";
+  $query .= "'" . my_mysql_escape_string($korting) . "',";
   $query .= "'" . $event->festival . "'";
   $query .= ")";
 
@@ -144,4 +161,4 @@ krsort($unique_dates);
 print_r($unique_dates);
 
 // Write to file.
-file_put_contents('events-2014.data', $statements);
+file_put_contents('events-2015.data', $statements);

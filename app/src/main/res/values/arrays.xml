@@ -16,6 +16,7 @@
 
     <!-- Dates for the 'official' Gentse feesten -->
     <string-array name="dates_full">
+        <item>@string/july_17</item>
         <item>@string/july_18</item>
         <item>@string/july_19</item>
         <item>@string/july_20</item>
@@ -25,20 +26,19 @@
         <item>@string/july_24</item>
         <item>@string/july_25</item>
         <item>@string/july_26</item>
-        <item>@string/july_27</item>
     </string-array>
 
     <integer-array name="dates_int">
-        <item>1405641600</item>
-        <item>1405728000</item>
-        <item>1405814400</item>
-        <item>1405900800</item>
-        <item>1405987200</item>
-        <item>1406073600</item>
-        <item>1406160000</item>
-        <item>1406246400</item>
-        <item>1406332800</item>
-        <item>1406419200</item>
+        <item>1437091200</item>
+        <item>1437177600</item>
+        <item>1437264000</item>
+        <item>1437350400</item>
+        <item>1437436800</item>
+        <item>1437523200</item>
+        <item>1437609600</item>
+        <item>1437696000</item>
+        <item>1437782400</item>
+        <item>1437868800</item>
     </integer-array>
 
     <!-- Dates for all of Gentse Feesten, e.g. also including Gent Jazz etc -->
@@ -60,28 +60,26 @@
         <item>@string/july_24</item>
         <item>@string/july_25</item>
         <item>@string/july_26</item>
-        <item>@string/july_27</item>
     </string-array>
 
     <integer-array name="dates_int_all">
-        <item>1404950400</item>
-        <item>1405036800</item>
-        <item>1405123200</item>
-        <item>1405209600</item>
-        <item>1405296000</item>
-        <item>1405382400</item>
-        <item>1405468800</item>
-        <item>1405555200</item>
-        <item>1405641600</item>
-        <item>1405728000</item>
-        <item>1405814400</item>
-        <item>1405900800</item>
-        <item>1405987200</item>
-        <item>1406073600</item>
-        <item>1406160000</item>
-        <item>1406246400</item>
-        <item>1406332800</item>
-        <item>1406419200</item>
+        <item>1436486400</item>
+        <item>1436572800</item>
+        <item>1436659200</item>
+        <item>1436745600</item>
+        <item>1436832000</item>
+        <item>1436918400</item>
+        <item>1437004800</item>
+        <item>1437091200</item>
+        <item>1437177600</item>
+        <item>1437264000</item>
+        <item>1437350400</item>
+        <item>1437436800</item>
+        <item>1437523200</item>
+        <item>1437609600</item>
+        <item>1437696000</item>
+        <item>1437782400</item>
+        <item>1437868800</item>
     </integer-array>
 
     <string-array name="location_strings">
@@ -157,6 +155,7 @@
 
     <string-array name="category_strings">
         <item>@string/bals_dans</item>
+        <item>@string/boottocht</item>
         <item>@string/circus</item>
         <item>@string/comedy</item>
         <item>@string/concerts_divers</item>
@@ -165,6 +164,8 @@
         <item>@string/concerts_rock_pop</item>
         <item>@string/children</item>
         <item>@string/market</item>
+        <item>@string/miramiro</item>
+        <item>@string/puppet</item>
         <item>@string/sports</item>
         <item>@string/exhibition</item>
         <item>@string/theatre</item>
@@ -176,6 +177,7 @@
 
     <integer-array name="category_ids">
         <item>10</item>
+        <item>26</item>
         <item>24</item>
         <item>11</item>
         <item>12</item>
@@ -184,6 +186,8 @@
         <item>15</item>
         <item>16</item>
         <item>17</item>
+        <item>36</item>
+        <item>31</item>
         <item>18</item>
         <item>19</item>
         <item>20</item>
@@ -197,6 +201,7 @@
         for the values of ListPreference, so here they are again ... -->
     <string-array name="category_ids_strings">
         <item>10</item>
+        <item>26</item>
         <item>24</item>
         <item>11</item>
         <item>12</item>
@@ -205,6 +210,8 @@
         <item>15</item>
         <item>16</item>
         <item>17</item>
+        <item>36</item>
+        <item>31</item>
         <item>18</item>
         <item>19</item>
         <item>20</item>
