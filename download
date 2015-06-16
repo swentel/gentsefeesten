@@ -1,0 +1,4 @@
+mv events-2015.data events-2015.data.bak 
+wget http://datatank4.gent.be//toerisme/gentsefeestenevents.json
+mv gentsefeestenevents.json
+php -q gf-od.php
