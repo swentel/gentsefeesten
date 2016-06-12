@@ -2,7 +2,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF15</string>
+    <string name="menu_bar_title">#GF16</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">My favorites</string>
     <string name="no_events_found_on_home">No events found. Go to settings to change your preferences or update the program. \n\nClick here to go to settings.</string>

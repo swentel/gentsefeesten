@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- #003f4f -->
     <color name="global_background">#587b8a</color>
     <color name="global_textcolor">#323232</color>
-    <!--<color name="global_textcolor">#323232</color>-->
     <color name="menu_bar_background">#b4c8cd</color>
     <color name="menu_bar_text_color">#2c5366</color>
     <color name="gold">#cda300</color>

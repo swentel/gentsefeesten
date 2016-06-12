@@ -3,7 +3,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF15</string>
+    <string name="menu_bar_title">#GF16</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Mijn favorieten</string>
     <string name="no_events_found_on_home">Geen evenementen gevonden. Ga naar settings om je voorkeuren of om het programma aan te passen.\n\nKlik hier om naar settings te gaan.</string>

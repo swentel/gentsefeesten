@@ -13,7 +13,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:src="@drawable/gf15"
+        android:src="@drawable/gf16"
         android:id="@+id/imageView"/>
 
     <TextView
