@@ -11,6 +11,7 @@
 
     <!-- Home activity -->
     <string name="upcoming">Upcoming events</string>
+    <string name="location_permission">Please enable the location permission in the app</string>
 
     <!-- Favorites activity -->
     <string name="my_favorites">My favorites</string>

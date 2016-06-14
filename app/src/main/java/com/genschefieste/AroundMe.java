@@ -90,7 +90,7 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
             @Override
             public void onClick(DialogInterface dialog, int sortBy) {
                 // Safe setting.
-                pref.edit().putInt("around_me_sort", sortBy).commit();
+                pref.edit().putInt("around_me_sort", sortBy).apply();
                 // Dismiss and reload.
                 dialog.dismiss();
                 // Go to to intermediate screen first.

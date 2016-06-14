@@ -12,6 +12,7 @@
 
     <!-- Home activity -->
     <string name="upcoming">Komende activiteiten</string>
+    <string name="location_permission">Gelieve de permissie aan te zetten in de app settings.</string>
 
     <!-- Favorites activity -->
     <string name="my_favorites">Mijn favorieten</string>

@@ -2,12 +2,12 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 'Google Inc.:Google APIs:10'
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '23.0.2'
 
     defaultConfig {
         applicationId "com.genschefieste"
         minSdkVersion 10
-        targetSdkVersion 24
+        targetSdkVersion 23
     }
 
     buildTypes {

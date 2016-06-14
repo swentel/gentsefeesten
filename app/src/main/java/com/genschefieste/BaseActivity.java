@@ -7,12 +7,14 @@ import android.content.SharedPreferences;
 import android.location.Location;
 import android.location.LocationListener;
 import android.location.LocationManager;
+import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.GAServiceManager;
@@ -20,8 +22,6 @@ import com.google.analytics.tracking.android.GoogleAnalytics;
 import com.google.analytics.tracking.android.Logger;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
-import com.nostra13.universalimageloader.core.ImageLoader;
-import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
 public class BaseActivity extends Activity implements LocationListener {
 
@@ -32,7 +32,7 @@ public class BaseActivity extends Activity implements LocationListener {
 
     // Version. This is stored in shared preferences so we can trigger an updated
     // and remove favorites.
-    public static int version = 2;
+    public static int version = 3;
 
     // Location variables.
     public static double longitude = -1;
@@ -84,7 +84,10 @@ public class BaseActivity extends Activity implements LocationListener {
     protected void onStop() {
         super.onStop();
         geoListening = false;
-        locationManager.removeUpdates(this);
+        try {
+            locationManager.removeUpdates(this);
+        }
+        catch (SecurityException ignored) {}
     }
 
     @Override
@@ -99,7 +102,10 @@ public class BaseActivity extends Activity implements LocationListener {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        locationManager.removeUpdates(this);
+        try {
+            locationManager.removeUpdates(this);
+        }
+        catch (SecurityException ignored) {}
     }
 
     @Override
@@ -107,7 +113,10 @@ public class BaseActivity extends Activity implements LocationListener {
         longitude = location.getLongitude();
         latitude = location.getLatitude();
         if (geoListening) {
-            locationManager.removeUpdates(this);
+            try {
+                locationManager.removeUpdates(this);
+            }
+            catch (SecurityException ignored) {}
             geoListening = false;
         }
     }
@@ -129,8 +138,21 @@ public class BaseActivity extends Activity implements LocationListener {
      */
     public void startLocationListening() {
         geoListening = true;
-        locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-        locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+        locationManager = null;
+        try {
+            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+        }
+        catch (SecurityException ignored) {
+            if (Build.VERSION.SDK_INT >= 23) {
+                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
+                int seen_toast = pref.getInt("seen_permission", 0);
+                if (seen_toast == 0) {
+                    Toast.makeText(getApplicationContext(), getString(R.string.location_permission), Toast.LENGTH_LONG).show();
+                    pref.edit().putInt("seen_permission", 1).apply();
+                }
+            }
+        }
     }
 
     /**

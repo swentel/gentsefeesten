@@ -22,7 +22,6 @@ $json = file_get_contents('events.json');
 
 // Decode.
 $decode = json_decode($json);
-
 // Create sql queries.
 $statements = "";
 
@@ -36,7 +35,7 @@ foreach ($decode as $key => $event) {
   //continue;
 
   // The data contains too much info
-  if ($event->datum < 1436486400 || $event->datum > 1437976800) {
+  if ($event->datum < 1467849600 || $event->datum > 1469404800) {
     continue;
   }
 
