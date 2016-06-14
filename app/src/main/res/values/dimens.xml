@@ -6,7 +6,7 @@
     <dimen name="big_title_text_size">20sp</dimen>
     <dimen name="menu_bar_title_size">22sp</dimen>
     <dimen name="menu_bar_top_padding">1dp</dimen>
-    <dimen name="menu_bar_left_padding">7dp</dimen>
+    <dimen name="menu_bar_left_padding">0dp</dimen>
     <dimen name="menu_text_size">17sp</dimen>
     <dimen name="main_text_size">15sp</dimen>
     <dimen name="main_padding">10dp</dimen>
