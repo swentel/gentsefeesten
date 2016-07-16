@@ -87,7 +87,7 @@
 
     <!-- About activity -->
     <string name="about_title">Over deze applicatie</string>
-    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2015. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2016. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_category">Programma</string>
@@ -102,7 +102,7 @@
     <string name="share_category">Share</string>
     <string name="share_message_title">Sociale media</string>
     <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin te plaatsen.</string>
-    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF15</string>
+    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF16</string>
     <string name="setting_front_ongoing">Al bezig</string>
     <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
     <string name="ga_category">Google Analytics</string>
