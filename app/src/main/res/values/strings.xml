@@ -2,7 +2,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF16</string>
+    <string name="menu_bar_title">#GF17</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">My favorites</string>
     <string name="no_events_found_on_home">No events found. Go to settings to change your preferences or update the program. \n\nClick here to go to settings.</string>
@@ -86,7 +86,7 @@
 
     <!-- About activity -->
     <string name="about_title">About this application</string>
-    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2016. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2017. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_category">Program</string>
@@ -101,7 +101,7 @@
     <string name="share_category">Share</string>
     <string name="share_message_title">Social media</string>
     <string name="share_message_info">Default message for social media. "!replace" will be replaced by the title of the event.</string>
-    <string name="share_default">At the Gentse Feesten. Checking out !replace. Way cool! #GF16</string>
+    <string name="share_default">At the Gentse Feesten. Checking out !replace. Way cool! #GF17</string>
     <string name="setting_front_ongoing">Already started</string>
     <string name="setting_front_ongoing_info">Also show events that have just started</string>
     <string name="ga_category">Google Analytics</string>
@@ -134,23 +134,24 @@
     <string name="atm_offline">You must be connected to 3G or Wi-Fi to view the map</string>
 
     <!-- Dates -->
-    <string name="july_08">Friday, July 8</string>
-    <string name="july_09">Saturday, July 9</string>
-    <string name="july_10">Sunday, July 10</string>
-    <string name="july_11">Monday, July 11</string>
-    <string name="july_12">Tuesday, July 12</string>
-    <string name="july_13">Wednesday, July 13</string>
-    <string name="july_14">Thursday, July 14</string>
-    <string name="july_15">Friday, July 15</string>
-    <string name="july_16">Saturday, July 16</string>
-    <string name="july_17">Sunday, July 17</string>
-    <string name="july_18">Monday, July 18</string>
-    <string name="july_19">Tuesday, July 19</string>
-    <string name="july_20">Wednesday, July 20</string>
-    <string name="july_21">Thursday, July 21</string>
-    <string name="july_22">Friday, July 22</string>
-    <string name="july_23">Saturday, July 23</string>
-    <string name="july_24">Sunday, July 24</string>
+    <string name="july_06">Thursday, July 6</string>
+    <string name="july_07">Friday, July 7</string>
+    <string name="july_08">Saturday, July 8</string>
+    <string name="july_09">Sunday, July 9</string>
+    <string name="july_10">Monday, July 10</string>
+    <string name="july_11">Tuesday, July 11</string>
+    <string name="july_12">Wednesday, July 12</string>
+    <string name="july_13">Thursday, July 13</string>
+    <string name="july_14">Friday, July 14</string>
+    <string name="july_15">Saturday, July 15</string>
+    <string name="july_16">Sunday, July 16</string>
+    <string name="july_17">Monday, July 17</string>
+    <string name="july_18">Tuesday, July 18</string>
+    <string name="july_19">Wednesday, July 19</string>
+    <string name="july_20">Thursday, July 20</string>
+    <string name="july_21">Friday, July 21</string>
+    <string name="july_22">Saturday, July 22</string>
+    <string name="july_23">Sunday, July 23</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dance</string>

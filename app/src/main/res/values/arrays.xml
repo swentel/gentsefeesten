@@ -16,6 +16,7 @@
 
     <!-- Dates for the 'official' Gentse feesten -->
     <string-array name="dates_full">
+        <item>@string/july_14</item>
         <item>@string/july_15</item>
         <item>@string/july_16</item>
         <item>@string/july_17</item>
@@ -25,7 +26,6 @@
         <item>@string/july_21</item>
         <item>@string/july_22</item>
         <item>@string/july_23</item>
-        <item>@string/july_24</item>
     </string-array>
 
     <integer-array name="dates_int">
@@ -43,6 +43,8 @@
 
     <!-- Dates for all of Gentse Feesten, e.g. also including Gent Jazz etc -->
     <string-array name="dates_full_all">
+        <item>@string/july_06</item>
+        <item>@string/july_07</item>
         <item>@string/july_08</item>
         <item>@string/july_09</item>
         <item>@string/july_10</item>
@@ -59,7 +61,6 @@
         <item>@string/july_21</item>
         <item>@string/july_22</item>
         <item>@string/july_23</item>
-        <item>@string/july_24</item>
     </string-array>
 
     <integer-array name="dates_int_all">
