@@ -64,23 +64,24 @@
     </string-array>
 
     <integer-array name="dates_int_all">
-        <item>1467936000</item>
-        <item>1468022400</item>
-        <item>1468108800</item>
-        <item>1468195200</item>
-        <item>1468281600</item>
-        <item>1468368000</item>
-        <item>1468454400</item>
-        <item>1468540800</item>
-        <item>1468627200</item>
-        <item>1468713600</item>
-        <item>1468800000</item>
-        <item>1468886400</item>
-        <item>1468972800</item>
-        <item>1469059200</item>
-        <item>1469145600</item>
-        <item>1469232000</item>
-        <item>1469318400</item>
+        <item>1499299200</item>
+        <item>1499385600</item>
+        <item>1499472000</item>
+        <item>1499558400</item>
+        <item>1499644800</item>
+        <item>1499731200</item>
+        <item>1499817600</item>
+        <item>1499904000</item>
+        <item>1499990400</item>
+        <item>1500076800</item>
+        <item>1500163200</item>
+        <item>1500249600</item>
+        <item>1500336000</item>
+        <item>1500422400</item>
+        <item>1500508800</item>
+        <item>1500595200</item>
+        <item>1500681600</item>
+        <item>1500768000</item>
     </integer-array>
 
     <string-array name="location_strings">

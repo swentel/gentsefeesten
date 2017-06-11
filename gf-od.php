@@ -4,7 +4,7 @@
 // Android application.
 
 // https://datatank.stad.gent/4/toerisme/gentsefeestenevents.json
-// https://datatank.stad.gent/4/cultuursportvrijetijd/gentsefeestenlocaties
+// https://datatank.stad.gent/4/cultuursportvrijetijd/gentsefeestenlocaties.json
 // https://datatank.stad.gent/4/toerisme/gentsefeestencategorien.json
 
 // http://datatank.gent.be/Cultuur-Sport-VrijeTijd/GentseFeestenData.json
@@ -35,7 +35,7 @@ foreach ($decode as $key => $event) {
   //continue;
 
   // The data contains too much info
-  if ($event->datum < 1467849600 || $event->datum > 1469404800) {
+  if ($event->datum < 1499299200 || $event->datum > 1500854400) {
     continue;
   }
 
