@@ -1,6 +1,6 @@
 rm gentsefeestenevents.json
 rm events.json
-mv events-2016.data events-2016.data.bak
-wget http://datatank4.gent.be//toerisme/gentsefeestenevents.json
+mv events-2017.data events-2017.data.bak
+wget https://datatank.stad.gent/4/toerisme/gentsefeestenevents.json
 mv gentsefeestenevents.json events.json
 php -q gf-od.php
