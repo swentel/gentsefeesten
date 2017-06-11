@@ -3,11 +3,11 @@
 // This converts the events from the open data website of Gent for use in the
 // Android application.
 
-// http://datatank.gent.be/Toerisme/GentseFeestenEvents.json
-// http://datatank.gent.be/Cultuur-Sport-VrijeTijd/GentseFeestenLocaties.json
-// http://datatank.gent.be/Toerisme/GentseFeestenCategorie%C3%ABn.json
-// http://datatank.gent.be/Cultuur-Sport-VrijeTijd/GentseFeestenData.json
+// https://datatank.stad.gent/4/toerisme/gentsefeestenevents.json
+// https://datatank.stad.gent/4/cultuursportvrijetijd/gentsefeestenlocaties
+// https://datatank.stad.gent/4/toerisme/gentsefeestencategorien.json
 
+// http://datatank.gent.be/Cultuur-Sport-VrijeTijd/GentseFeestenData.json
 // Download the events file locally in a file called 'events.json'.
 // You can ignore the other files, their data is small and defined in the
 // arrays in the app.
