@@ -29,16 +29,16 @@
     </string-array>
 
     <integer-array name="dates_int">
-        <item>1468540800</item>
-        <item>1468627200</item>
-        <item>1468713600</item>
-        <item>1468800000</item>
-        <item>1468886400</item>
-        <item>1468972800</item>
-        <item>1469059200</item>
-        <item>1469145600</item>
-        <item>1469232000</item>
-        <item>1469318400</item>
+        <item>1499990400</item>
+        <item>1500076800</item>
+        <item>1500163200</item>
+        <item>1500249600</item>
+        <item>1500336000</item>
+        <item>1500422400</item>
+        <item>1500508800</item>
+        <item>1500595200</item>
+        <item>1500681600</item>
+        <item>1500768000</item>
     </integer-array>
 
     <!-- Dates for all of Gentse Feesten, e.g. also including Gent Jazz etc -->

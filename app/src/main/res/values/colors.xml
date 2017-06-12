@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- #003f4f -->
-    <color name="global_background">#023548</color>
-    <color name="global_textcolor">#00303c</color>
-    <color name="menu_bar_background">#023548</color>
+    <color name="global_background">#4f998c</color>
+    <color name="global_textcolor">#717171</color>
+    <color name="menu_bar_background">#ea554b</color>
     <color name="menu_bar_text_color">#ffffff</color>
     <color name="gold">#cda300</color>
     <color name="light_gold">#f8f7f1</color>
@@ -12,17 +12,17 @@
     <color name="detail_button_background">#ffffff</color>
     <color name="list_background">#f8f7f1</color>
     <color name="white">#ffffff</color>
-    <color name="red">#ef4f3f</color>
+    <color name="red">#ea554b</color>
     <color name="event_detail">#587b8a</color>
 
-    <color name="main_menu_off">#325b6f</color>
-    <color name="main_menu_on">#b4c8cd</color>
+    <color name="main_menu_off">#4f998c</color>
+    <color name="main_menu_on">#79cdbe</color>
     <color name="main_menu_text_color">#ffffff</color>
     <color name="child_menu_text_color">#ffffff</color>
-    <color name="child_menu_off">#2c5366</color>
-    <color name="child_menu_on">#b4c8cd</color>
+    <color name="child_menu_off">#79cdbe</color>
+    <color name="child_menu_on">#b9e7df</color>
 
     <color name="separator_color">#f8f7f1</color>
-    <color name="main_menu_separator_color">#325b6f</color>
-    <color name="child_menu_separator_color">#2c5366</color>
+    <color name="main_menu_separator_color">#4f998c</color>
+    <color name="child_menu_separator_color">#79cdbe</color>
 </resources>

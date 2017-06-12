@@ -20,6 +20,12 @@ if (!file_exists('events.json')) {
 
 $json = file_get_contents('events.json');
 
+// Event uuids - ids.
+$uuid_events = unserialize(file_get_contents('uuid_events.json'));
+
+// Debugging
+$debug = isset($argv[1]) ? TRUE : FALSE;
+
 // Decode.
 $decode = json_decode($json);
 // Create sql queries.
@@ -28,11 +34,45 @@ $statements = "";
 $number = 0;
 $lines = array();
 $unique_dates = array();
-foreach ($decode as $key => $event) {
+foreach ($decode as $key => $new_event) {
 
-  //print_r($event);
-  //echo "\n --------------------------------------------------- \n";
-  //continue;
+  $array = (array) $new_event;
+
+  // The scheme is different, convert it.
+  $event = new stdClass();
+  $full_unix = strtotime($new_event->startDate);
+  $unix_day = strtotime(date('d-m-Y', $full_unix));
+  $startuur = date('G:i', $full_unix);
+  $event->startuur = $startuur;
+  $event->einduur = $startuur;
+  $event->tijdstip_sortering = $full_unix;
+  $event->datum = $unix_day;
+  $event->titel = $new_event->name->nl;
+  $event->omschrijving = !empty($new_event->description->nl) ? $new_event->description->nl : '';
+  $event->url = isset($new_event->url) ? $new_event->url : '';
+  $event->gratis = isset($new_event->isAccessibleForFree) ? (int) $new_event->isAccessibleForFree : 0;
+
+  // ID.
+  $uuid = $array['@id'];
+  if (isset($uuid_events[$uuid])) {
+    $id = $uuid_events[$uuid];  
+  }
+  else {
+    $id_number = count($uuid_events);
+    $id_number++;
+    $id = $id_number;
+    $uuid_events[$uuid] = $id;
+  }
+  $event->id = $id;
+
+  if ($debug) {
+    if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
+      print_r($new_event);
+      print "-------------------------------------------\n";
+      //print "$full_unix - $unix_day\n";
+    }
+    continue;
+  }
 
   // The data contains too much info
   if ($event->datum < 1499299200 || $event->datum > 1500854400) {
@@ -184,3 +224,6 @@ print_r($unique_dates);
 
 // Write to file.
 file_put_contents('events-2017.data', $statements);
+
+// Write
+file_put_contents('uuid_events.json', serialize($uuid_events));

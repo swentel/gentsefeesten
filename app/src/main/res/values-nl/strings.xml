@@ -135,23 +135,24 @@
     <string name="atm_offline">Je moet verbonden zijn met 3G of WiFi om de kaart te kunnen bekijken</string>
 
     <!-- Dates -->
-    <string name="july_08">Vrijdag 8 juli</string>
-    <string name="july_09">Zaterdag 9 juli</string>
-    <string name="july_10">Zondag 10 juli</string>
-    <string name="july_11">Maandag 11 juli</string>
-    <string name="july_12">Dinsdag 12 juli</string>
-    <string name="july_13">Woensdag 13 juli</string>
-    <string name="july_14">Donderdag 14 juli</string>
-    <string name="july_15">Vrijdag 15 juli</string>
-    <string name="july_16">Zaterdag 16 juli</string>
-    <string name="july_17">Zondag 17 juli</string>
-    <string name="july_18">Maandag 18 juli</string>
-    <string name="july_19">Dinsdag 19 juli</string>
-    <string name="july_20">Woensdag 20 juli</string>
-    <string name="july_21">Donderdag 21 juli</string>
-    <string name="july_22">Vrijdag 22 juli</string>
-    <string name="july_23">Zaterdag 23 juli</string>
-    <string name="july_24">Zondag 24 juli</string>
+    <string name="july_06">Donderdag 8 juli</string>
+    <string name="july_07">Vrijdag 8 juli</string>
+    <string name="july_08">Zaterdag 8 juli</string>
+    <string name="july_09">Zondag 9 juli</string>
+    <string name="july_10">Maandag 10 juli</string>
+    <string name="july_11">Dinsdag 11 juli</string>
+    <string name="july_12">Woensdag 12 juli</string>
+    <string name="july_13">Donderdag 13 juli</string>
+    <string name="july_14">Vrijdag 14 juli</string>
+    <string name="july_15">Zaterdag 15 juli</string>
+    <string name="july_16">Zondag 16 juli</string>
+    <string name="july_17">Maandag 17 juli</string>
+    <string name="july_18">Dinsdag 18 juli</string>
+    <string name="july_19">Woensdag 19 juli</string>
+    <string name="july_20">Donderdag 20 juli</string>
+    <string name="july_21">Vrijdag 21 juli</string>
+    <string name="july_22">Zaterdag 22 juli</string>
+    <string name="july_23">Zondag 23 juli</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dans</string>
