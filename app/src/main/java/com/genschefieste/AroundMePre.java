@@ -16,12 +16,12 @@ public class AroundMePre extends BaseActivity {
         addTopbarListeners = false;
 
         try {
-            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
+            //locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
+            //locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
         }
         catch (SecurityException ignored) {
             if (Build.VERSION.SDK_INT >= 23) {
-                Toast.makeText(getApplicationContext(), getString(R.string.location_permission), Toast.LENGTH_LONG).show();
+             //   Toast.makeText(getApplicationContext(), getString(R.string.location_permission), Toast.LENGTH_LONG).show();
             }
         }
 

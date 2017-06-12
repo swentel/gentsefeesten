@@ -53,9 +53,9 @@ public class MenuList extends BaseActivity {
         goFree.setId(6);
         goFree.setOnClickListener(actionMenu);
 
-        TableRow goAroundMe = (TableRow) findViewById(R.id.menu_around_me);
+        /*TableRow goAroundMe = (TableRow) findViewById(R.id.menu_around_me);
         goAroundMe.setId(7);
-        goAroundMe.setOnClickListener(actionMenu);
+        goAroundMe.setOnClickListener(actionMenu);*/
 
         TableRow goSearch = (TableRow) findViewById(R.id.menu_search);
         goSearch.setId(8);
@@ -65,17 +65,17 @@ public class MenuList extends BaseActivity {
         goBicyle.setId(9);
         goBicyle.setOnClickListener(actionMenu);*/
 
-        TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
+        /*TableRow goParking = (TableRow) findViewById(R.id.menu_parking);
         goParking.setId(10);
-        goParking.setOnClickListener(actionMenu);
+        goParking.setOnClickListener(actionMenu);*/
 
         /*TableRow goGentInfo = (TableRow) findViewById(R.id.menu_gent_info);
         goGentInfo.setId(11);
         goGentInfo.setOnClickListener(actionMenu);*/
 
-        TableRow goAtm = (TableRow) findViewById(R.id.menu_atm);
+        /*TableRow goAtm = (TableRow) findViewById(R.id.menu_atm);
         goAtm.setId(12);
-        goAtm.setOnClickListener(actionMenu);
+        goAtm.setOnClickListener(actionMenu);*/
 
         /*TableRow goToilet = (TableRow) findViewById(R.id.menu_toilets);
         goToilet.setId(13);

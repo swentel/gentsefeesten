@@ -23,7 +23,7 @@ import com.google.analytics.tracking.android.Logger;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
 
-public class BaseActivity extends Activity implements LocationListener {
+public class BaseActivity extends Activity {
 
     // Variables for this activity.
     public boolean showHomebutton = true;
@@ -38,10 +38,6 @@ public class BaseActivity extends Activity implements LocationListener {
     public static double longitude = -1;
     public static double latitude = -1;
 
-    // Location manager.
-    public static LocationManager locationManager;
-    public static boolean geoListening = false;
-
     // Google analytics.
     private static GoogleAnalytics mGa;
     private static Tracker mTracker;
@@ -55,12 +51,6 @@ public class BaseActivity extends Activity implements LocationListener {
 
         initializeGa();
 
-        // Start location listening.
-        if (latitude == -1 && longitude == -1) {
-            geoListening = true;
-            startLocationListening();
-        }
-
         if (addTopbarListeners) {
             // Add listener on menu button.
             ImageButton go_to_menu = (ImageButton) findViewById(R.id.menu_bar_go_to_menu);
@@ -71,87 +61,6 @@ public class BaseActivity extends Activity implements LocationListener {
             ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
             go_to_favorites.setId(2);
             go_to_favorites.setOnClickListener(topBar);
-        }
-    }
-
-    @Override
-    protected void onRestart() {
-        super.onRestart();
-        geoListening = true;
-    }
-
-    @Override
-    protected void onStop() {
-        super.onStop();
-        geoListening = false;
-        try {
-            locationManager.removeUpdates(this);
-        }
-        catch (SecurityException ignored) {}
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
-        if (latitude == -1 && longitude == -1) {
-            geoListening = true;
-            startLocationListening();
-        }
-    }
-
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
-        try {
-            locationManager.removeUpdates(this);
-        }
-        catch (SecurityException ignored) {}
-    }
-
-    @Override
-    public void onLocationChanged(Location location) {
-        longitude = location.getLongitude();
-        latitude = location.getLatitude();
-        if (geoListening) {
-            try {
-                locationManager.removeUpdates(this);
-            }
-            catch (SecurityException ignored) {}
-            geoListening = false;
-        }
-    }
-
-    @Override
-    public void onStatusChanged(String s, int i, Bundle bundle) {
-    }
-
-    @Override
-    public void onProviderEnabled(String s) {
-    }
-
-    @Override
-    public void onProviderDisabled(String s) {
-    }
-
-    /**
-     * Start location listening
-     */
-    public void startLocationListening() {
-        geoListening = true;
-        locationManager = null;
-        try {
-            locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-            locationManager.requestLocationUpdates(LocationManager.NETWORK_PROVIDER, 0, 0, this);
-        }
-        catch (SecurityException ignored) {
-            if (Build.VERSION.SDK_INT >= 23) {
-                SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(this);
-                int seen_toast = pref.getInt("seen_permission", 0);
-                if (seen_toast == 0) {
-                    Toast.makeText(getApplicationContext(), getString(R.string.location_permission), Toast.LENGTH_LONG).show();
-                    pref.edit().putInt("seen_permission", 1).apply();
-                }
-            }
         }
     }
 

@@ -224,7 +224,7 @@
 
         </TableRow>
 
-        <View
+        <!--<View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="@color/child_menu_separator_color"
@@ -252,7 +252,7 @@
                 android:layout_gravity="bottom"
                 android:textSize="@dimen/menu_text_size"/>
 
-        </TableRow>
+        </TableRow>-->
 
         <View
             android:layout_width="fill_parent"
@@ -290,7 +290,7 @@
             android:background="@color/main_menu_separator_color"
             android:visibility="visible"/>
 
-        <TableRow
+        <!--<TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
             android:background="@drawable/menu_row_main"
             android:paddingTop="10dp"
@@ -312,7 +312,7 @@
                 android:layout_gravity="bottom"
                 android:textSize="@dimen/menu_text_size"/>
 
-        </TableRow>
+        </TableRow>-->
 
         <!--<View
             android:layout_width="fill_parent"
@@ -343,7 +343,7 @@
                 android:textSize="@dimen/menu_text_size"/>
         </TableRow>-->
 
-        <View
+        <!--<View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="@color/child_menu_separator_color"
@@ -370,9 +370,9 @@
                 android:gravity="center_vertical"
                 android:layout_gravity="bottom"
                 android:textSize="@dimen/menu_text_size"/>
-        </TableRow>
+        </TableRow>-->
 
-        <View
+        <!--<View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="@color/child_menu_separator_color"
@@ -404,7 +404,7 @@
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="@color/child_menu_separator_color"
-            android:visibility="visible"/>
+            android:visibility="visible"/>-->
 
         <!--<TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"
@@ -429,11 +429,11 @@
                 android:textSize="@dimen/menu_text_size"/>
         </TableRow>-->
 
-        <View
+        <!--<View
             android:layout_width="fill_parent"
             android:layout_height="0.2dp"
             android:background="@color/child_menu_separator_color"
-            android:visibility="visible"/>
+            android:visibility="visible"/>-->
 
         <!--<TableRow
             xmlns:android="http://schemas.android.com/apk/res/android"

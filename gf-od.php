@@ -130,14 +130,16 @@ foreach ($decode as $key => $new_event) {
   $event->id = $id;
 
   // TODO
-  $event->festival = 0;
-  $event->korting = 0;
   $event->categorie_naam = '';
   $event->categorie_id = 0;
-  $event->latitude = '';
-  $event->longitude = '';
   $event->prijs = '';
   $event->prijs_vvk = '';
+
+  // Lat and long are not exported.
+  $event->latitude = '';
+  $event->longitude = '';
+  $event->korting = 0;
+  $event->festival = 0;
 
   // Image.
   $event->afbeelding = '';
