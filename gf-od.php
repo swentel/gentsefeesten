@@ -41,8 +41,8 @@ foreach ($locations_decoded as $location) {
 }
 
 //print_r($locations);
-print_r($locations_sum);
-die();
+//print_r($locations_sum);
+//die();
 
 // Debugging
 $debug = isset($argv[1]) ? TRUE : FALSE;
@@ -64,8 +64,15 @@ foreach ($decode as $key => $new_event) {
   $full_unix = strtotime($new_event->startDate);
   $unix_day = strtotime(date('d-m-Y', $full_unix));
   $startuur = date('G:i', $full_unix);
+  
+  $einduur = '';
+  if (!empty($new_event->endDate)) {
+    $end_full_unix = strtotime($new_event->endDate);
+    $einduur = date('G:i', $end_full_unix);
+  }
+
   $event->startuur = $startuur;
-  $event->einduur = $startuur;
+  $event->einduur = $einduur;
   $event->tijdstip_sortering = $full_unix;
   $event->datum = $unix_day;
   $event->titel = $new_event->name->nl;
@@ -92,8 +99,24 @@ foreach ($decode as $key => $new_event) {
   }
   $event->id = $id;
 
+  // TODO
+  $event->festival = 0;
+  $event->korting = 0;
+  $event->categorie_naam = '';
+  $event->categorie_id = 0;
+  $event->latitude = '';
+  $event->longitude = '';
+  $event->prijs = '';
+  $event->prijs_vvk = '';
+
+  // Image.
+  if (!empty($new_event->image->thumbnailUrl)) {
+    $event->afbeelding = $new_event->image->thumbnailUrl;
+  }
+
   if ($debug) {
-    if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
+    if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
+    //if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
       print_r($new_event);
       print_r($event);
       print "-------------------------------------------\n";
@@ -103,7 +126,7 @@ foreach ($decode as $key => $new_event) {
   }
 
   // The data contains too much info
-  if ($event->datum < 1499299200 || $event->datum > 1500854400) {
+  if ($event->datum < 1499904000 || $event->datum > 1500854400) {
     continue;
   }
 
@@ -156,7 +179,10 @@ foreach ($decode as $key => $new_event) {
   $query .= "'" . ($event->datum + 7200) . "',";
   $hour_string = "";
   if (!empty($event->startuur)) {
-    $hour_string = $event->startuur . " - " . $event->einduur;
+    $hour_string = $event->startuur;
+    if (!empty($event->einduur)) {
+      $hour_string .= ' - ' . $event->einduur;
+    }
   }
   $query .= "'" . $hour_string . "',";
   $query .= "'" . my_mysql_escape_string($event->startuur) . "',";
@@ -169,25 +195,26 @@ foreach ($decode as $key => $new_event) {
   $timestamp = 0;
   $hours = 0;
   if (!empty($sort)) {
-    $minutes = substr($sort, -2);
-    if (strlen($sort) == 3) {
-      $hours = substr($sort, 0, 1);
+    //$minutes = substr($sort, -2);
+    //if (strlen($sort) == 3) {
+    //  $hours = substr($sort, 0, 1);
       //echo "$hours - $sort\n";
-    }
-    else {
-      $hours = substr($sort, 0, 2);
+    //}
+    //else {
+    //  $hours = substr($sort, 0, 2);
       //echo "$hours - $sort\n";
-    }
+    //}
  
     // In case hours is after midnight, until 5 in the morning
     // add 24 hours more for sorting.
-    if ($hours == '00' || $hours < 5) {
-      $hours = 24 + $hours;
-    }
+    //if ($hours == '00' || $hours < 5) {
+    //  $hours = 24 + $hours;
+    //}
 
-    $total = ($hours * 3600) + $minutes;
-    $timestamp = $event->datum + $total + 7200; // + two hours because datum is in GMT.
-    echo "$event->datum - $hours - $sort - $total - $timestamp\n";
+    //$total = ($hours * 3600) + $minutes;
+    //$timestamp = $event->datum + $total + 7200; // + two hours because datum is in GMT.
+    $timestamp = $sort;
+    //echo "$event->datum - $hours - $sort - $total - $timestamp\n";
   }
 
   /*if ($event->id == 13235) {
