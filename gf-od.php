@@ -37,12 +37,29 @@ foreach ($locations_decoded as $location) {
     'name' => $location['name']->nl,
   );
 
+  // Salsabar, tref.club -> baudelo
+  //if ($i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 351 || $i == 383) {
+  if ($i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 351) {
+    $locations[$location['@id']]['locatie_id'] = 7;
+  }
+
+  // Sint-baafs
+  if ($i == 248 || $i == 249 || $i == 250) {
+    $locations[$location['@id']]['locatie_id'] = 2;
+  }
+
+  // Willem
+  if ($i == 20 || $i == 21) {
+    $locations[$location['@id']]['locatie_id'] = 19;
+  }
+
   $i++;
 }
 
-//print_r($locations);
+print_r($locations);
 //print_r($locations_sum);
-//die();
+//file_put_contents('locationssum', print_r($locations_sum, 1));
+die();
 
 // Debugging
 $debug = isset($argv[1]) ? TRUE : FALSE;
@@ -71,9 +88,17 @@ foreach ($decode as $key => $new_event) {
     $einduur = date('G:i', $end_full_unix);
   }
 
+  // Switch date one day back.
+  $hour = date('G', $full_unix);
+  $sorting = $full_unix;
+  if ($hour >= 0 && $hour < 6) {
+    $full_unix -= 86400;
+    $unix_day = strtotime(date('d-m-Y', $full_unix));
+  }
+
   $event->startuur = $startuur;
   $event->einduur = $einduur;
-  $event->tijdstip_sortering = $full_unix;
+  $event->tijdstip_sortering = $sorting;
   $event->datum = $unix_day;
   $event->titel = $new_event->name->nl;
   $event->omschrijving = !empty($new_event->description->nl) ? $new_event->description->nl : '';
@@ -85,7 +110,12 @@ foreach ($decode as $key => $new_event) {
     $event->locatie = $locations[$location]['name']->nl;
     $event->locatie_id = $locations[$location]['locatie_id'];
   }
-  
+
+  // Ignore location id 383
+  if (!empty($event->locatie_id) && $event->locatie_id == 383) {
+    continue;
+  }
+ 
   // ID.
   $uuid = $array['@id'];
   if (isset($uuid_events[$uuid])) {
@@ -110,12 +140,14 @@ foreach ($decode as $key => $new_event) {
   $event->prijs_vvk = '';
 
   // Image.
-  if (!empty($new_event->image->thumbnailUrl)) {
-    $event->afbeelding = $new_event->image->thumbnailUrl;
-  }
+  $event->afbeelding = '';
+  //if (!empty($new_event->image->thumbnailUrl)) {
+  //  $event->afbeelding = $new_event->image->thumbnailUrl;
+  //}
 
   if ($debug) {
-    if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
+    if (strpos($event->titel, 'Soul Shakers (BE)') !== FALSE) {
+    //if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
     //if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
       print_r($new_event);
       print_r($event);
@@ -176,6 +208,7 @@ foreach ($decode as $key => $new_event) {
   $query .= "'" . my_mysql_escape_string($event->prijs) . "',";
   $query .= "'" . my_mysql_escape_string($event->prijs_vvk) . "',";
   $query .= "'" . my_mysql_escape_string($event->omsch) . "',";
+  //$query .= "'" . ($event->datum + 7200) . "',";
   $query .= "'" . ($event->datum + 7200) . "',";
   $hour_string = "";
   if (!empty($event->startuur)) {

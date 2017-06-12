@@ -101,37 +101,37 @@
     </string-array>
 
     <integer-array name="location_ids">
-        <item>376</item>
-        <item>390</item>
-        <item>230</item>
-        <item>615</item>
-        <item>382</item>
-        <item>380</item>
-        <item>379</item>
-        <item>378</item>
-        <item>384</item>
-        <item>377</item>
-        <item>381</item>
-        <item>383</item>
-        <item>1781</item>
+        <item>7</item>
+        <item>17</item>
+        <item>4</item>
+        <item>18</item>
+        <item>14</item>
+        <item>12</item>
+        <item>10</item>
+        <item>3</item>
+        <item>16</item>
+        <item>2</item>
+        <item>13</item>
+        <item>15</item>
+        <item>19</item>
     </integer-array>
 
     <!-- Android preferences are so dumb, you actually can't give it an integer array
         for the values of ListPreference, so here they are again ... -->
     <string-array name="location_ids_strings" translatable="false">
-        <item>376</item>
-        <item>390</item>
-        <item>230</item>
-        <item>615</item>
-        <item>382</item>
-        <item>380</item>
-        <item>379</item>
-        <item>378</item>
-        <item>384</item>
-        <item>377</item>
-        <item>381</item>
-        <item>383</item>
-        <item>1781</item>
+        <item>7</item>
+        <item>17</item>
+        <item>4</item>
+        <item>18</item>
+        <item>14</item>
+        <item>12</item>
+        <item>10</item>
+        <item>3</item>
+        <item>16</item>
+        <item>2</item>
+        <item>13</item>
+        <item>15</item>
+        <item>19</item>
     </string-array>
 
     <string-array name="category_strings">

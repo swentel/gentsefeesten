@@ -69,9 +69,9 @@ public class MenuList extends BaseActivity {
         goParking.setId(10);
         goParking.setOnClickListener(actionMenu);
 
-        TableRow goGentInfo = (TableRow) findViewById(R.id.menu_gent_info);
+        /*TableRow goGentInfo = (TableRow) findViewById(R.id.menu_gent_info);
         goGentInfo.setId(11);
-        goGentInfo.setOnClickListener(actionMenu);
+        goGentInfo.setOnClickListener(actionMenu);*/
 
         TableRow goAtm = (TableRow) findViewById(R.id.menu_atm);
         goAtm.setId(12);

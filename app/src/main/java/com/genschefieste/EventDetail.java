@@ -95,28 +95,28 @@ public class EventDetail extends BaseActivity {
 
         // Set listener on 'go online' and 'google map'.
         ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
-        ImageButton goOglemap = (ImageButton) findViewById(R.id.map);
+        ///ImageButton goOglemap = (ImageButton) findViewById(R.id.map);
         ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
         if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             // Add listener on online button.
             goOnlineButton.setOnClickListener(actionOnline);
             // Add listener on map button.
-            goOglemap.setOnClickListener(actionMap);
+            //goOglemap.setOnClickListener(actionMap);
         }
         else {
             // Make invisible.
-            goOglemap.setVisibility(TextView.GONE);
+            //goOglemap.setVisibility(TextView.GONE);
             goOnlineButton.setVisibility(TextView.GONE);
         }
 
         // Add listener on share button.
-        ImageButton menu = (ImageButton) findViewById(R.id.share);
-        menu.setOnClickListener(actionShare);
+        //ImageButton menu = (ImageButton) findViewById(R.id.share);
+        //menu.setOnClickListener(actionShare);
 
         // Media.
         String media = event.getMedia();
         ImageView eventImage = (ImageView) findViewById(R.id.event_image);
-        boolean loadImages = pref.getBoolean("pref_load_images", true);
+        boolean loadImages = pref.getBoolean("pref_load_images", false);
         if (loadImages && (cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             ImageLoader imageLoader = ImageLoader.getInstance();
             imageLoader.displayImage(media, eventImage);
@@ -133,7 +133,7 @@ public class EventDetail extends BaseActivity {
     /**
      * Map listener.
      */
-    private final View.OnClickListener actionMap = new View.OnClickListener() {
+    /*private final View.OnClickListener actionMap = new View.OnClickListener() {
         public void onClick(View v) {
         BaseActivity.sendGaView("Map: " + event.getTitle(), getApplicationContext());
         Intent goMap = new Intent(getBaseContext(), MapBase.class);
@@ -142,7 +142,7 @@ public class EventDetail extends BaseActivity {
         goMap.putExtra("longitude", longitude);
         startActivity(goMap);
         }
-    };
+    };*/
 
     /**
      * Go online listener.
@@ -161,7 +161,7 @@ public class EventDetail extends BaseActivity {
     /**
      * Share listener.
      */
-    private final View.OnClickListener actionShare = new View.OnClickListener() {
+    /*private final View.OnClickListener actionShare = new View.OnClickListener() {
         public void onClick(View v) {
             String share_message = pref.getString("share_message", "");
 
@@ -173,7 +173,7 @@ public class EventDetail extends BaseActivity {
             intent.putExtra(Intent.EXTRA_TEXT, share_message.replace("!replace", event.getTitle()));
             startActivity(Intent.createChooser(intent, "Share"));
         }
-    };
+    };*/
 
     /**
      * Favorite listener.
