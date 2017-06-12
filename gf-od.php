@@ -103,6 +103,12 @@ foreach ($decode as $key => $new_event) {
     $einduur = date('G:i', $end_full_unix);
   }
 
+  // 'all day' is einduur 5:59
+  if ($einduur == '5:59') {
+    $startuur = '';
+    $einduur = '';
+  }
+
   // Switch date one day back.
   $hour = date('G', $full_unix);
   $sorting = $full_unix;
@@ -180,7 +186,8 @@ foreach ($decode as $key => $new_event) {
 
   if ($debug) {
     //if (strpos($event->titel, 'Soul Shakers (BE)') !== FALSE) {
-    if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
+    //if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
+    if (strpos($event->titel, 'Bound') !== FALSE) {
     //if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
       print_r($new_event);
       print_r($event);
