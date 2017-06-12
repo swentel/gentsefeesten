@@ -56,10 +56,25 @@ foreach ($locations_decoded as $location) {
   $i++;
 }
 
-print_r($locations);
+$cats = array();
+$cats_decoded = json_decode(file_get_contents('gentsefeestencategorien.json'));
+$ii = 1;
+foreach ($cats_decoded as $caty) {
+  $caty = (array) $caty;
+  $cats[$caty['@id']] = $caty; 
+  $cats[$caty['@id']]['categorie_id'] = $ii;
+  $ii++;
+
+}
+
+//print_r($cats);
+//file_put_contents('catssum', print_r($cats, 1));
+//die();
+
+//print_r($locations);
 //print_r($locations_sum);
 //file_put_contents('locationssum', print_r($locations_sum, 1));
-die();
+//die();
 
 // Debugging
 $debug = isset($argv[1]) ? TRUE : FALSE;
@@ -109,6 +124,9 @@ foreach ($decode as $key => $new_event) {
   if (isset($locations[$location])) {
     $event->locatie = $locations[$location]['name']->nl;
     $event->locatie_id = $locations[$location]['locatie_id'];
+    $event->straat = !empty($locations[$location]['address']->streetAddress) ? $locations[$location]['address']->streetAddress : '';
+    $event->huisnummer = ''; 
+    
   }
 
   // Ignore location id 383
@@ -129,10 +147,23 @@ foreach ($decode as $key => $new_event) {
   }
   $event->id = $id;
 
-  // TODO
+  // Categories
   $event->categorie_naam = '';
   $event->categorie_id = 0;
-  $event->prijs = '';
+  $catje = isset($new_event->theme[0]) ? $new_event->theme[0] : 'nope';
+//print $catje . "\n";
+  if (isset($cats[$catje])) {
+    $event->categorie_naam = $cats[$catje]['name']->nl;
+    $event->categorie_id = $cats[$catje]['categorie_id'];
+  }
+ 
+  // Price 
+  if (!empty($new_event->offers[0]->price)) {
+    $event->prijs = $new_event->offers[0]->price;
+  }
+  else {
+    $event->prijs = '';
+  }
   $event->prijs_vvk = '';
 
   // Lat and long are not exported.
@@ -148,8 +179,8 @@ foreach ($decode as $key => $new_event) {
   //}
 
   if ($debug) {
-    if (strpos($event->titel, 'Soul Shakers (BE)') !== FALSE) {
-    //if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
+    //if (strpos($event->titel, 'Soul Shakers (BE)') !== FALSE) {
+    if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
     //if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
       print_r($new_event);
       print_r($event);

@@ -94,36 +94,36 @@ public class EventDetail extends BaseActivity {
 
 
         // Set listener on 'go online' and 'google map'.
-        ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
+        //ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
         ///ImageButton goOglemap = (ImageButton) findViewById(R.id.map);
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+        //ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        //if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             // Add listener on online button.
-            goOnlineButton.setOnClickListener(actionOnline);
+            //goOnlineButton.setOnClickListener(actionOnline);
             // Add listener on map button.
             //goOglemap.setOnClickListener(actionMap);
-        }
-        else {
+        //}
+        //else {
             // Make invisible.
             //goOglemap.setVisibility(TextView.GONE);
-            goOnlineButton.setVisibility(TextView.GONE);
-        }
+            //goOnlineButton.setVisibility(TextView.GONE);
+        //}
 
         // Add listener on share button.
         //ImageButton menu = (ImageButton) findViewById(R.id.share);
         //menu.setOnClickListener(actionShare);
 
         // Media.
-        String media = event.getMedia();
-        ImageView eventImage = (ImageView) findViewById(R.id.event_image);
-        boolean loadImages = pref.getBoolean("pref_load_images", false);
-        if (loadImages && (cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+        //String media = event.getMedia();
+        //ImageView eventImage = (ImageView) findViewById(R.id.event_image);
+        //boolean loadImages = pref.getBoolean("pref_load_images", false);
+        /*if (loadImages && (cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             ImageLoader imageLoader = ImageLoader.getInstance();
             imageLoader.displayImage(media, eventImage);
         }
         else {
             eventImage.setVisibility(ImageView.GONE);
-        }
+        }*/
 
         super.onCreate(savedInstanceState);
 

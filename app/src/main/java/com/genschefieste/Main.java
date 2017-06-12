@@ -109,14 +109,14 @@ public class Main extends BaseActivity {
         // Create query.
         List<String> whereClauses = new ArrayList<String>();
         // Location and category.
-        /*if (filterOnLocation || filterOnCategory) {
+        if (filterOnLocation || filterOnCategory) {
             if (filterOnLocation) {
                 whereClauses.add(DatabaseHandler.KEY_LOC_ID + " = " + prefLocationId);
             }
             if (filterOnCategory) {
                 whereClauses.add(DatabaseHandler.KEY_CAT_ID + " = " + prefCategoryId);
             }
-        }*/
+        }
 
         DatabaseHandler db = new DatabaseHandler(this);
         String selectQuery = "SELECT * FROM " + DatabaseHandler.TABLE_EVENTS;
