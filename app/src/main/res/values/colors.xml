@@ -2,7 +2,7 @@
 <resources>
     <!-- #003f4f -->
     <color name="global_background">#4f998c</color>
-    <color name="global_textcolor">#717171</color>
+    <color name="global_textcolor">#202020</color>
     <color name="menu_bar_background">#ea554b</color>
     <color name="menu_bar_text_color">#ffffff</color>
     <color name="gold">#cda300</color>
@@ -13,16 +13,16 @@
     <color name="list_background">#f8f7f1</color>
     <color name="white">#ffffff</color>
     <color name="red">#ea554b</color>
-    <color name="event_detail">#587b8a</color>
+    <color name="event_detail">#2db8c5</color>
 
-    <color name="main_menu_off">#4f998c</color>
-    <color name="main_menu_on">#79cdbe</color>
+    <color name="main_menu_off">#3999bd</color>
+    <color name="main_menu_on">#55b5d9</color>
     <color name="main_menu_text_color">#ffffff</color>
     <color name="child_menu_text_color">#ffffff</color>
-    <color name="child_menu_off">#79cdbe</color>
-    <color name="child_menu_on">#b9e7df</color>
+    <color name="child_menu_off">#55b5d9</color>
+    <color name="child_menu_on">#89d5f1</color>
 
     <color name="separator_color">#f8f7f1</color>
-    <color name="main_menu_separator_color">#4f998c</color>
-    <color name="child_menu_separator_color">#79cdbe</color>
+    <color name="main_menu_separator_color">#3999bd</color>
+    <color name="child_menu_separator_color">#55b5d9</color>
 </resources>

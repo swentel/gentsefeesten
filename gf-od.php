@@ -23,6 +23,27 @@ $json = file_get_contents('events.json');
 // Event uuids - ids.
 $uuid_events = unserialize(file_get_contents('uuid_events.json'));
 
+$locations_sum = array();
+$locations_decoded = json_decode(file_get_contents('gentsefeestenlocaties.json'));
+$locations = array();
+$i = 1;
+foreach ($locations_decoded as $location) {
+  $location = (array) $location;
+  $locations[$location['@id']] = $location;
+  $locations[$location['@id']]['locatie_id'] = $i;
+
+  $locations_sum[] = array(
+    'id' => $i,
+    'name' => $location['name']->nl,
+  );
+
+  $i++;
+}
+
+//print_r($locations);
+print_r($locations_sum);
+die();
+
 // Debugging
 $debug = isset($argv[1]) ? TRUE : FALSE;
 
@@ -52,6 +73,12 @@ foreach ($decode as $key => $new_event) {
   $event->url = isset($new_event->url) ? $new_event->url : '';
   $event->gratis = isset($new_event->isAccessibleForFree) ? (int) $new_event->isAccessibleForFree : 0;
 
+  $location = $new_event->location;
+  if (isset($locations[$location])) {
+    $event->locatie = $locations[$location]['name']->nl;
+    $event->locatie_id = $locations[$location]['locatie_id'];
+  }
+  
   // ID.
   $uuid = $array['@id'];
   if (isset($uuid_events[$uuid])) {
@@ -68,6 +95,7 @@ foreach ($decode as $key => $new_event) {
   if ($debug) {
     if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
       print_r($new_event);
+      print_r($event);
       print "-------------------------------------------\n";
       //print "$full_unix - $unix_day\n";
     }
