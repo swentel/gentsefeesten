@@ -12,7 +12,11 @@ The Windows version is available at https://github.com/Depechie/GF13
 
 Data available from http://data.gent.be
 
-This also contains an experimental script (gf-enrich.php) to generate pages with enriched data per artist.
+Two experimental features:
+
+- service to generate an AppCache version (cf appcache folder)
+- experimental script (gf-enrich.php) to generate pages with enriched data per artist.
+  (outdated for 2017)
 
 Features
 --------
@@ -22,13 +26,13 @@ Features
 3. List of favorites
 4. Browse fast 'facet-style'
 5. Free text search
-6. Share functionality
+6. Share functionality (disabled in 2017)
 7. Settings for homepage listing
-8. Google maps integration (when online)
+8. Google maps integration (when online) (disabled in 2017)
 9. Geolocation integration
-10. ATM locations
-11. Add events to agenda
-12. Parking info
+10. ATM locations (disabled in 2017)
+11. Add events to agenda (not yet in)
+12. Parking info (disabled in 2017)
 13. Home widget
 14. Android 2.3.3 (used to be 2.2) and up
 
