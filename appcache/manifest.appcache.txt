@@ -1,0 +1,14 @@
+CACHE MANIFEST
+# Timestamp: {timestamp}
+/{public_dir}assets/offline.css
+/{public_dir}assets/offline.js
+/{public_dir}assets/maps.svg
+/{public_dir}assets/logo.png
+/{public_dir}assets/agenda.svg
+/{public_dir}assets/jquery-2.2.1.min.js
+/{public_dir}index.html
+{pages}
+FALLBACK:
+/ /{public_dir}index.html
+NETWORK:
+*

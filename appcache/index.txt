@@ -1,0 +1,3 @@
+<p>Welkom op het programma van de Gentse feesten!</p>
+<p>Dit programma is gebaseerd op de open data geleverd door Stad Gent. Opgelet, het programma bevat enkel evenementen vanaf 12u.</p>
+<p>U kan deze pagina aan uw startscherm toevoegen op een mobiel toestel:<ul><li>Android: via opties menu, 'Add to Home screen'</li><li>iOS: via de share knop, 'Add to Home Screen'.</li></ul>Daarna kan u het programma altijd openen zonder online te moeten gaan!</p>
