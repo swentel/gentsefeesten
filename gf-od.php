@@ -242,14 +242,6 @@ foreach ($decode as $key => $new_event) {
     $unique_dates[$udate] = date('d m Y', $udate);
   }
 
-  $query = "('" . my_mysql_escape_string($event->titel) . "',";
-  $query .= "'" . $event->id . "',";
-  $query .= "'" . $event->gratis . "',";
-  $query .= "'" . my_mysql_escape_string($event->prijs) . "',";
-  $query .= "'" . my_mysql_escape_string($event->prijs_vvk) . "',";
-  $query .= "'" . my_mysql_escape_string($event->omsch) . "',";
-  //$query .= "'" . ($event->datum + 7200) . "',";
-  $query .= "'" . ($event->datum + 7200) . "',";
   $hour_string = "";
   if (!empty($event->startuur)) {
     $hour_string = $event->startuur;
@@ -257,8 +249,6 @@ foreach ($decode as $key => $new_event) {
       $hour_string .= ' - ' . $event->einduur;
     }
   }
-  $query .= "'" . $hour_string . "',";
-  $query .= "'" . my_mysql_escape_string($event->startuur) . "',";
 
   // Date sort is broken in so many ways. We thus take the timestamp
   // and add the sort which is in the format of hhmm (wihout leading 0)
@@ -312,19 +302,6 @@ foreach ($decode as $key => $new_event) {
   //if (!empty($event->videos) && strpos($event->videos->input, 'youtube') !== FALSE) {
   //  $media['video'] = $event->videos->input;
   //}
-
-  $query .= "" . $timestamp . ",";
-  $query .= "'" . my_mysql_escape_string($event->categorie_naam) . "',";
-  $query .= "'" . $event->categorie_id . "',";
-  $query .= "'" . my_mysql_escape_string($event->url) . "',";
-  $query .= "'" . $event->locatie_id . "',";
-  $query .= "'" . my_mysql_escape_string($event->locatie) . "',";
-  $query .= "'" . $event->latitude . "',";
-  $query .= "'" . $event->longitude . "',";
-  $query .= "'" . my_mysql_escape_string($korting) . "',";
-  $query .= "'" . $event->festival . "',";
-  $query .= "'" . $media . "'";
-  $query .= ")";
 
   if ($event->festival) {
     print $event->titel . "\n";
