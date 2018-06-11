@@ -39,7 +39,7 @@ Features
 Screenshot (2013)
 -----------------
 
-![ScreenShot](http://realize.be/files/Screenshot_2013-06-19-15-35-04.png)
+![ScreenShot](https://realize.be/sites/default/files/Screenshot_2013-06-19-15-35-04.png)
 
 License
 -------
