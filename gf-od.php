@@ -198,7 +198,7 @@ foreach ($decode as $key => $new_event) {
   }
 
   // The data contains too much info
-  if ($event->datum < 1499904000 || $event->datum > 1500854400) {
+  if ($event->datum < 1530748800 || $event->datum > 1532217600) {
     continue;
   }
 
@@ -328,7 +328,7 @@ krsort($unique_dates);
 print_r($unique_dates);
 
 // Write to file.
-file_put_contents('events-2017.data', $statements);
+file_put_contents('events-2018.data', $statements);
 
 // Write
 file_put_contents('uuid_events.json', serialize($uuid_events));

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- #003f4f -->
-    <color name="global_background">#4f998c</color>
+    <color name="global_background">#f0e8d5</color>
     <color name="global_textcolor">#202020</color>
-    <color name="menu_bar_background">#ea554b</color>
+    <color name="menu_bar_background">#c21818</color>
     <color name="menu_bar_text_color">#ffffff</color>
     <color name="gold">#cda300</color>
     <color name="light_gold">#f8f7f1</color>

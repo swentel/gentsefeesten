@@ -16,6 +16,7 @@
 
     <!-- Dates for the 'official' Gentse feesten -->
     <string-array name="dates_full">
+        <item>@string/july_13</item>
         <item>@string/july_14</item>
         <item>@string/july_15</item>
         <item>@string/july_16</item>
@@ -25,24 +26,11 @@
         <item>@string/july_20</item>
         <item>@string/july_21</item>
         <item>@string/july_22</item>
-        <item>@string/july_23</item>
     </string-array>
-
-    <integer-array name="dates_int">
-        <item>1499990400</item>
-        <item>1500076800</item>
-        <item>1500163200</item>
-        <item>1500249600</item>
-        <item>1500336000</item>
-        <item>1500422400</item>
-        <item>1500508800</item>
-        <item>1500595200</item>
-        <item>1500681600</item>
-        <item>1500768000</item>
-    </integer-array>
 
     <!-- Dates for all of Gentse Feesten, e.g. also including Gent Jazz etc -->
     <string-array name="dates_full_all">
+        <item>@string/july_05</item>
         <item>@string/july_06</item>
         <item>@string/july_07</item>
         <item>@string/july_08</item>
@@ -60,28 +48,40 @@
         <item>@string/july_20</item>
         <item>@string/july_21</item>
         <item>@string/july_22</item>
-        <item>@string/july_23</item>
     </string-array>
 
+    <integer-array name="dates_int">
+        <item>1531440000</item>
+        <item>1531526400</item>
+        <item>1531612800</item>
+        <item>1531699200</item>
+        <item>1531785600</item>
+        <item>1531872000</item>
+        <item>1531958400</item>
+        <item>1532044800</item>
+        <item>1532131200</item>
+        <item>1532217600</item>
+    </integer-array>
+
     <integer-array name="dates_int_all">
-        <item>1499299200</item>
-        <item>1499385600</item>
-        <item>1499472000</item>
-        <item>1499558400</item>
-        <item>1499644800</item>
-        <item>1499731200</item>
-        <item>1499817600</item>
-        <item>1499904000</item>
-        <item>1499990400</item>
-        <item>1500076800</item>
-        <item>1500163200</item>
-        <item>1500249600</item>
-        <item>1500336000</item>
-        <item>1500422400</item>
-        <item>1500508800</item>
-        <item>1500595200</item>
-        <item>1500681600</item>
-        <item>1500768000</item>
+        <item>1530748800</item>
+        <item>1530835200</item>
+        <item>1530921600</item>
+        <item>1531008000</item>
+        <item>1531094400</item>
+        <item>1531180800</item>
+        <item>1531267200</item>
+        <item>1531353600</item>
+        <item>1531440000</item>
+        <item>1531526400</item>
+        <item>1531612800</item>
+        <item>1531699200</item>
+        <item>1531785600</item>
+        <item>1531872000</item>
+        <item>1531958400</item>
+        <item>1532044800</item>
+        <item>1532131200</item>
+        <item>1532217600</item>
     </integer-array>
 
     <string-array name="location_strings">

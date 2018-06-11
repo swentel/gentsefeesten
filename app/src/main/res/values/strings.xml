@@ -134,24 +134,24 @@
     <string name="atm_offline">You must be connected to 3G or Wi-Fi to view the map</string>
 
     <!-- Dates -->
-    <string name="july_06">Thursday, July 6</string>
-    <string name="july_07">Friday, July 7</string>
-    <string name="july_08">Saturday, July 8</string>
-    <string name="july_09">Sunday, July 9</string>
-    <string name="july_10">Monday, July 10</string>
-    <string name="july_11">Tuesday, July 11</string>
-    <string name="july_12">Wednesday, July 12</string>
-    <string name="july_13">Thursday, July 13</string>
-    <string name="july_14">Friday, July 14</string>
-    <string name="july_15">Saturday, July 15</string>
-    <string name="july_16">Sunday, July 16</string>
-    <string name="july_17">Monday, July 17</string>
-    <string name="july_18">Tuesday, July 18</string>
-    <string name="july_19">Wednesday, July 19</string>
-    <string name="july_20">Thursday, July 20</string>
-    <string name="july_21">Friday, July 21</string>
-    <string name="july_22">Saturday, July 22</string>
-    <string name="july_23">Sunday, July 23</string>
+    <string name="july_05">Thursday, July 5</string>
+    <string name="july_06">Friday, July 6</string>
+    <string name="july_07">Saturday, July 7</string>
+    <string name="july_08">Sunday, July 8</string>
+    <string name="july_09">Monday, July 9</string>
+    <string name="july_10">Tuesday, July 10</string>
+    <string name="july_11">Wednesday, July 11</string>
+    <string name="july_12">Thursday, July 12</string>
+    <string name="july_13">Friday, July 13</string>
+    <string name="july_14">Saturday, July 14</string>
+    <string name="july_15">Sunday, July 15</string>
+    <string name="july_16">Monday, July 16</string>
+    <string name="july_17">Tuesday, July 17</string>
+    <string name="july_18">Wednesday, July 18</string>
+    <string name="july_19">Thursday, July 19</string>
+    <string name="july_20">Friday, July 20</string>
+    <string name="july_21">Saturday, July 21</string>
+    <string name="july_22">Sunday, July 22</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dance</string>
