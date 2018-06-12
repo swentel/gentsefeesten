@@ -55,8 +55,6 @@ public class Main extends BaseActivity {
         list.setAdapter(adapter);
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Home", getApplicationContext());
     }
 
     @Override

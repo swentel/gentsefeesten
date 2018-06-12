@@ -59,14 +59,12 @@ public class AroundMe extends BaseActivity implements View.OnClickListener {
         list.setAdapter(adapter);
 
         // Listener on sorting.
-        sortRow = (RelativeLayout) findViewById(R.id.sort_change);
+        sortRow = findViewById(R.id.sort_change);
         sortRow.setOnClickListener(this);
-        sortButton = (ImageButton) findViewById(R.id.sort_change_button);
+        sortButton = findViewById(R.id.sort_change_button);
         sortButton.setOnClickListener(this);
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Around me", getApplicationContext());
     }
 
     @Override

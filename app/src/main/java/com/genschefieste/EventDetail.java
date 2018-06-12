@@ -126,8 +126,6 @@ public class EventDetail extends BaseActivity {
         }*/
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Event: " + event.getTitle(), getApplicationContext());
     }
 
     /**

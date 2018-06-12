@@ -12,13 +12,11 @@ public class Bicycle extends BaseActivity {
         setContentView(R.layout.bicycle);
 
         String text = (String)getResources().getText(R.string.bicycle_info);
-        TextView t = (TextView) findViewById(R.id.bicycle_info);
+        TextView t = findViewById(R.id.bicycle_info);
         t.setMovementMethod(LinkMovementMethod.getInstance());
         t.setText(Html.fromHtml(text));
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Bicycle info", getApplicationContext());
     }
 
 }

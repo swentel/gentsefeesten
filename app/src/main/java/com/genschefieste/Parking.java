@@ -14,7 +14,5 @@ public class Parking extends BaseActivity {
         webView.loadUrl("http://parkingent.be");
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Parking", getApplicationContext());
     }
 }

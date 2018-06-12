@@ -26,19 +26,19 @@ public class MenuList extends BaseActivity {
         setContentView(R.layout.menu);
 
         // Add listeners on rows.
-        TableRow goHome = (TableRow) findViewById(R.id.menu_home);
+        TableRow goHome = findViewById(R.id.menu_home);
         goHome.setId(1);
         goHome.setOnClickListener(actionMenu);
 
-        TableRow goFavorites = (TableRow) findViewById(R.id.menu_favorites);
+        TableRow goFavorites = findViewById(R.id.menu_favorites);
         goFavorites.setId(2);
         goFavorites.setOnClickListener(actionMenu);
 
-        TableRow goCategories = (TableRow) findViewById(R.id.menu_categories);
+        TableRow goCategories = findViewById(R.id.menu_categories);
         goCategories.setId(3);
         goCategories.setOnClickListener(actionMenu);
 
-        TableRow goLocations = (TableRow) findViewById(R.id.menu_locations);
+        TableRow goLocations = findViewById(R.id.menu_locations);
         goLocations.setId(4);
         goLocations.setOnClickListener(actionMenu);
 
@@ -46,7 +46,7 @@ public class MenuList extends BaseActivity {
         goFestival.setId(5);
         goFestival.setOnClickListener(actionMenu);*/
 
-        TableRow goFree = (TableRow) findViewById(R.id.menu_free);
+        TableRow goFree = findViewById(R.id.menu_free);
         goFree.setId(6);
         goFree.setOnClickListener(actionMenu);
 
@@ -54,7 +54,7 @@ public class MenuList extends BaseActivity {
         goAroundMe.setId(7);
         goAroundMe.setOnClickListener(actionMenu);*/
 
-        TableRow goSearch = (TableRow) findViewById(R.id.menu_search);
+        TableRow goSearch = findViewById(R.id.menu_search);
         goSearch.setId(8);
         goSearch.setOnClickListener(actionMenu);
 
@@ -78,11 +78,11 @@ public class MenuList extends BaseActivity {
         goToilet.setId(13);
         goToilet.setOnClickListener(actionMenu);*/
 
-        TableRow manageUpdates = (TableRow) findViewById(R.id.menu_settings);
+        TableRow manageUpdates = findViewById(R.id.menu_settings);
         manageUpdates.setId(14);
         manageUpdates.setOnClickListener(actionMenu);
 
-        TableRow goAbout = (TableRow) findViewById(R.id.menu_about);
+        TableRow goAbout = findViewById(R.id.menu_about);
         goAbout.setId(15);
         goAbout.setOnClickListener(actionMenu);
 

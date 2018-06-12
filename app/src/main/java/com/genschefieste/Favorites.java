@@ -36,7 +36,5 @@ public class Favorites extends BaseActivity {
         list.setAdapter(adapter);
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Favorites", getApplicationContext());
     }
 }

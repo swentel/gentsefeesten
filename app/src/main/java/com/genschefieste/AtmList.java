@@ -43,8 +43,6 @@ public class AtmList extends BaseActivity {
         list.setAdapter(adapter);
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Atm list", getApplicationContext());
     }
 
     /**

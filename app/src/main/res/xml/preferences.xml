@@ -68,15 +68,4 @@
             android:summary="@string/share_message_info"/>
     </PreferenceCategory>-->
 
-    <PreferenceCategory
-        android:title="@string/ga_category">
-
-        <CheckBoxPreference
-            android:key="send_ga"
-            android:title="@string/setting_ga_title"
-            android:summary="@string/setting_ga_summary"
-            android:defaultValue="true" />
-
-    </PreferenceCategory>
-
 </PreferenceScreen>

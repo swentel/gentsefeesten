@@ -12,12 +12,11 @@ public class About extends BaseActivity {
         setContentView(R.layout.about);
 
         String text = (String)getResources().getText(R.string.about_info);
-        TextView t = (TextView) findViewById(R.id.about_info);
+        TextView t = findViewById(R.id.about_info);
         t.setMovementMethod(LinkMovementMethod.getInstance());
         t.setText(Html.fromHtml(text));
 
         super.onCreate(savedInstanceState);
 
-        BaseActivity.sendGaView("About", getApplicationContext());
     }
 }

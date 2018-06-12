@@ -12,13 +12,11 @@ public class GentInfo extends BaseActivity {
         setContentView(R.layout.gent_info);
 
         String text = (String)getResources().getText(R.string.gent_info);
-        TextView t = (TextView) findViewById(R.id.gent_info);
+        TextView t = findViewById(R.id.gent_info);
         t.setMovementMethod(LinkMovementMethod.getInstance());
         t.setText(Html.fromHtml(text));
 
         super.onCreate(savedInstanceState);
-
-        BaseActivity.sendGaView("Gent info", getApplicationContext());
     }
 
 }
