@@ -196,7 +196,7 @@ foreach ($decode as $key => $new_event) {
   if ($debug) {
     //if (strpos($event->titel, 'Soul Shakers (BE)') !== FALSE) {
     //if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
-    if (strpos($event->titel, 'Bound') !== FALSE) {
+    if (strpos($event->titel, 'De Buck') !== FALSE) {
     //if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
       print_r($new_event);
       print_r($event);
@@ -258,7 +258,7 @@ foreach ($decode as $key => $new_event) {
   $query .= "'" . my_mysql_escape_string($event->prijs_vvk) . "',";
   $query .= "'" . my_mysql_escape_string($event->omsch) . "',";
   //$query .= "'" . ($event->datum + 7200) . "',";
-  $query .= "'" . ($event->datum + 7200) . "',";
+  $query .= "'" . ($event->datum) . "',";
 
   $hour_string = "";
   if (!empty($event->startuur)) {

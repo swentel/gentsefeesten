@@ -45,8 +45,8 @@ public class Prefs extends PreferenceActivity {
     // the locations and categories, however, we have made those available in the resources
     // so they are also easily translatable. Note that for the Android version we just
     // have a file with the values part of a query which allows us to import in around 30 seconds.
-    // A conversion of the open data to that file is also available, @see gf.php and @gf-od.php
-    public static String eventUrl = "https://realize.be/events-2018-1.data";
+    // A conversion of the open data to that file is also available, see @gf-od.php
+    public static String eventUrl = "https://realize.be/events-2018-3.data";
 
     // The name of the data file.
     public static String fileName = "events.data";
