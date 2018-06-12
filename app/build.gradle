@@ -6,7 +6,7 @@ android {
 
     defaultConfig {
         applicationId "com.genschefieste"
-        minSdkVersion 15
+        minSdkVersion 16
         targetSdkVersion 27
     }
 
@@ -18,7 +18,10 @@ android {
     }
 }
 
+ext.supportLibVersion = '27.1.1'
+
 dependencies {
+    implementation "com.android.support:appcompat-v7:${supportLibVersion}"
     implementation files('libs/libGoogleAnalyticsServices.jar')
     implementation 'com.nostra13.universalimageloader:universal-image-loader:1.9.4'
 }

@@ -25,9 +25,6 @@ public class MenuList extends BaseActivity {
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.menu);
 
-        // Do not add topbar listeners.
-        addTopbarListeners = false;
-
         // Add listeners on rows.
         TableRow goHome = (TableRow) findViewById(R.id.menu_home);
         goHome.setId(1);

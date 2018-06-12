@@ -17,8 +17,8 @@
 
     <application
         android:icon="@drawable/starticon"
-        android:theme="@android:style/Theme.NoTitleBar"
         android:label="@string/app_name"
+        android:theme="@style/AppTheme"
         android:name="com.genschefieste.GF"
         android:allowBackup="true">
 
@@ -43,7 +43,13 @@
         <activity android:name=".MenuList" />
         <activity android:name=".DaysOverview" />
         <activity android:name=".TypeOverview" />
-        <activity android:name=".EventDetail" />
+        <activity android:name=".EventDetail"
+            android:parentActivityName=".Main">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.genschefieste.Main" />
+
+        </activity>
         <!--<activity android:name=".MapBase"/>-->
         <activity android:name=".Favorites" />
         <activity android:name=".EventResultFacetList" />

@@ -1,20 +1,14 @@
 package com.genschefieste;
 
-import android.app.Activity;
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.location.Location;
-import android.location.LocationListener;
-import android.location.LocationManager;
-import android.os.Build;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
+import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.ImageButton;
-import android.widget.Toast;
 
 import com.google.analytics.tracking.android.Fields;
 import com.google.analytics.tracking.android.GAServiceManager;
@@ -23,11 +17,11 @@ import com.google.analytics.tracking.android.Logger;
 import com.google.analytics.tracking.android.MapBuilder;
 import com.google.analytics.tracking.android.Tracker;
 
-public class BaseActivity extends Activity {
+@SuppressLint("Registered")
+public class BaseActivity extends AppCompatActivity {
 
     // Variables for this activity.
     public boolean showHomebutton = true;
-    public boolean addTopbarListeners = true;
     Intent intent;
 
     // Version. This is stored in shared preferences so we can trigger an updated
@@ -51,36 +45,7 @@ public class BaseActivity extends Activity {
 
         initializeGa();
 
-        if (addTopbarListeners) {
-            // Add listener on menu button.
-            ImageButton go_to_menu = (ImageButton) findViewById(R.id.menu_bar_go_to_menu);
-            go_to_menu.setId(1);
-            go_to_menu.setOnClickListener(topBar);
-
-            // Add listener on favorites button.
-            ImageButton go_to_favorites = (ImageButton) findViewById(R.id.menu_bar_go_to_favorites);
-            go_to_favorites.setId(2);
-            go_to_favorites.setOnClickListener(topBar);
-        }
     }
-
-    /**
-     * topBar button listener.
-     */
-    private final View.OnClickListener topBar = new View.OnClickListener() {
-        public void onClick(View v) {
-        switch (v.getId()) {
-            case 1:
-                Intent menu = new Intent(getBaseContext(), MenuList.class);
-                startActivity(menu);
-                break;
-            case 2:
-                Intent favorites = new Intent(getBaseContext(), Favorites.class);
-                startActivity(favorites);
-                break;
-        }
-        }
-    };
 
     /**
      * Create options menu.

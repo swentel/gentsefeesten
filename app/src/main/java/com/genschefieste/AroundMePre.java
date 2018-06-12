@@ -13,7 +13,6 @@ public class AroundMePre extends BaseActivity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.around_me_pre);
-        addTopbarListeners = false;
 
         try {
             //locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
