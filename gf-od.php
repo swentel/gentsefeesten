@@ -106,8 +106,8 @@ foreach ($decode as $key => $new_event) {
     $einduur = date('G:i', $end_full_unix);
   }
 
-  // 'all day' is einduur 5:59
-  if ($einduur == '5:59') {
+  // 'all day' is einduur 3:59
+  if ($einduur == '3:59') {
     $startuur = '';
     $einduur = '';
   }
