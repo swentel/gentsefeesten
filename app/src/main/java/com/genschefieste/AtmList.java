@@ -21,9 +21,9 @@ public class AtmList extends BaseActivity {
         setContentView(R.layout.atm_list);
 
         // Set listener on map button.
-        TextView goToMapRow = (TextView) findViewById(R.id.go_to_atm_map);
+        //TextView goToMapRow = (TextView) findViewById(R.id.go_to_atm_map);
         // Add listener on goToMap button.
-        goToMapRow.setOnClickListener(goToMap);
+        //goToMapRow.setOnClickListener(goToMap);
 
         atms = new ArrayList<Atm>();
         String[] atmList = this.getResources().getStringArray(R.array.atms);
@@ -50,7 +50,7 @@ public class AtmList extends BaseActivity {
     /**
      * GoToMap onClickListener.
      */
-    private final View.OnClickListener goToMap = new View.OnClickListener() {
+    /*private final View.OnClickListener goToMap = new View.OnClickListener() {
         public void onClick(View v) {
             ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
             if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
@@ -64,6 +64,6 @@ public class AtmList extends BaseActivity {
                 Toast.makeText(AtmList.this, getString(R.string.atm_offline), Toast.LENGTH_LONG).show();
             }
         }
-    };
+    };*/
 
 }

@@ -44,7 +44,7 @@
         <activity android:name=".DaysOverview" />
         <activity android:name=".TypeOverview" />
         <activity android:name=".EventDetail" />
-        <activity android:name=".MapBase"/>
+        <!--<activity android:name=".MapBase"/>-->
         <activity android:name=".Favorites" />
         <activity android:name=".EventResultFacetList" />
         <activity android:name=".About" />
@@ -53,7 +53,7 @@
         <activity android:name=".Bicycle" />
         <activity android:name=".GentInfo" />
         <activity android:name=".AtmList" />
-        <activity android:name=".AtmMap" />
+        <!--<activity android:name=".AtmMap" />-->
         <activity android:noHistory="true" android:name=".AroundMePre" />
         <activity android:noHistory="true" android:name=".Prefs" android:screenOrientation="portrait" />
 

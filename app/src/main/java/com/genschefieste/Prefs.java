@@ -18,8 +18,6 @@ import android.view.MenuItem;
 import android.view.WindowManager;
 import android.widget.Toast;
 
-import org.apache.http.client.ClientProtocolException;
-
 import java.io.BufferedReader;
 import java.io.FileOutputStream;
 import java.io.IOException;
@@ -48,7 +46,7 @@ public class Prefs extends PreferenceActivity {
     // so they are also easily translatable. Note that for the Android version we just
     // have a file with the values part of a query which allows us to import in around 30 seconds.
     // A conversion of the open data to that file is also available, @see gf.php and @gf-od.php
-    public static String eventUrl = "http://realize.be/events-2017.data";
+    public static String eventUrl = "https://realize.be/events-2018-1.data";
 
     // The name of the data file.
     public static String fileName = "events.data";
@@ -177,7 +175,6 @@ public class Prefs extends PreferenceActivity {
             httpConnection.disconnect();
         }
         catch (UnsupportedEncodingException ignored) {}
-        catch (ClientProtocolException ignored) {}
         catch (IOException ignored) {}
 
         return siteStatus;
