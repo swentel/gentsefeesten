@@ -13,6 +13,8 @@ public class BaseActivity extends AppCompatActivity {
 
     // Variables for this activity.
     public boolean showHomebutton = true;
+    public boolean showFavorites = true;
+
     Intent intent;
 
     // Version. This is stored in shared preferences so we can trigger an updated
@@ -44,10 +46,16 @@ public class BaseActivity extends AppCompatActivity {
         if (showHomebutton) {
             menu.add(Menu.NONE, 0, 0, getString(R.string.menu_home)).setIcon(android.R.drawable.ic_menu_today);
         }
-        menu.add(Menu.NONE, 1, 0, getString(R.string.menu_bar_go_to_menu)).setIcon(android.R.drawable.ic_menu_help);
-        menu.add(Menu.NONE, 2, 0, getString(R.string.menu_bar_go_to_favorites)).setIcon(android.R.drawable.ic_menu_my_calendar);
-        menu.add(Menu.NONE, 3, 0, getString(R.string.menu_search)).setIcon(android.R.drawable.ic_menu_search);
-        menu.add(Menu.NONE, 4, 0, getString(R.string.menu_settings)).setIcon(android.R.drawable.ic_menu_edit);
+        //menu.add(Menu.NONE, 1, 0, getString(R.string.menu_bar_go_to_menu)).setIcon(android.R.drawable.ic_menu_help);
+        menu.add(Menu.NONE, 1, 0, getString(R.string.menu_categories)).setIcon(android.R.drawable.ic_menu_help);
+        menu.add(Menu.NONE, 2, 0, getString(R.string.menu_locations)).setIcon(android.R.drawable.ic_menu_help);
+        menu.add(Menu.NONE, 3, 0, getString(R.string.menu_free)).setIcon(android.R.drawable.ic_menu_help);
+        if (showFavorites) {
+            menu.add(Menu.NONE, 4, 0, getString(R.string.menu_bar_go_to_favorites)).setIcon(android.R.drawable.ic_menu_my_calendar).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        }
+        menu.add(Menu.NONE, 5, 0, getString(R.string.menu_search)).setIcon(android.R.drawable.ic_menu_search).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+        menu.add(Menu.NONE, 6, 0, getString(R.string.menu_settings)).setIcon(android.R.drawable.ic_menu_edit);
+        menu.add(Menu.NONE, 7, 0, getString(R.string.menu_about)).setIcon(android.R.drawable.ic_menu_edit);
         return true;
     }
 
@@ -60,19 +68,39 @@ public class BaseActivity extends AppCompatActivity {
                 intent = new Intent(getBaseContext(), Main.class);
                 startActivity(intent);
                 return true;
-            case 1:
+            /*case 1:
                 intent = new Intent(getBaseContext(), MenuList.class);
                 startActivity(intent);
+                return true;*/
+            case 1:
+                Intent goTypeOverview = new Intent(getBaseContext(), TypeOverview.class);
+                goTypeOverview.putExtra("facetId", 1);
+                startActivity(goTypeOverview);
                 return true;
             case 2:
+                goTypeOverview = new Intent(getBaseContext(), TypeOverview.class);
+                goTypeOverview.putExtra("facetId", 3);
+                startActivity(goTypeOverview);
+                return true;
+            case 3:
+                Intent freeOverview = new Intent(getBaseContext(), DaysOverview.class);
+                freeOverview.putExtra("facetId", 2);
+                freeOverview.putExtra("typeIndex", "");
+                startActivity(freeOverview);
+                break;
+            case 4:
                 intent = new Intent(getBaseContext(), Favorites.class);
                 startActivity(intent);
                 return true;
-            case 3:
+            case 5:
                 onSearchRequested();
                 return true;
-            case 4:
+            case 6:
                 intent = new Intent(getBaseContext(), Prefs.class);
+                startActivity(intent);
+                return true;
+            case 7:
+                intent = new Intent(getBaseContext(), About.class);
                 startActivity(intent);
                 return true;
         }

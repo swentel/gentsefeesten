@@ -1,18 +1,13 @@
 package com.genschefieste;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
-import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
-
-import com.nostra13.universalimageloader.core.ImageLoader;
 
 public class EventDetail extends BaseActivity {
 
@@ -36,6 +31,7 @@ public class EventDetail extends BaseActivity {
         // Set title.
         TextView title = (TextView) findViewById(R.id.event_title);
         title.setText(event.getTitle());
+        this.setTitle(event.getTitle());
 
         // Set location.
         TextView location = (TextView) findViewById(R.id.event_location);

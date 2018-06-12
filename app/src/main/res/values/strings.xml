@@ -4,7 +4,7 @@
     <string name="app_name">Gentse Feesten</string>
     <string name="menu_bar_title">#GF18</string>
     <string name="menu_bar_go_to_menu">Menu</string>
-    <string name="menu_bar_go_to_favorites">My favorites</string>
+    <string name="menu_bar_go_to_favorites">Favorites</string>
     <string name="no_events_found_on_home">No events found. Go to settings to change your preferences or update the program. \n\nClick here to go to settings.</string>
     <string name="no_events_after_end_date">It\'s over, see you next year!</string>
     <string name="menu_switch">Change</string>
@@ -14,15 +14,15 @@
     <string name="location_permission">Please enable the location permission in the app</string>
 
     <!-- Favorites activity -->
-    <string name="my_favorites">My favorites</string>
+    <string name="my_favorites">Favorites</string>
     <string name="no_favorites">You have no favorites yet. On the detail of any event you can click on the star button to add them to this list.</string>
 
     <!-- Menu activity -->
     <string name="menu_home">Home </string>
-    <string name="menu_favorites">My favorites</string>
+    <string name="menu_favorites">Favorites</string>
     <string name="menu_program">Program</string>
     <string name="menu_categories">Categories</string>
-    <string name="menu_free">Free</string>
+    <string name="menu_free">Free events</string>
     <string name="menu_festival">Festivals</string>
     <string name="menu_locations">Locations</string>
     <string name="menu_parking">Parking</string>
@@ -34,7 +34,7 @@
     <string name="menu_practical">Practical</string>
     <string name="menu_toilet">Public toilets</string>
     <string name="menu_settings">Settings</string>
-    <string name="menu_about">About this application</string>
+    <string name="menu_about">About this app</string>
     <string name="menu_around_me">Nearby</string>
     <string name="menu_language">Language</string>
     <string name="menu_around_me_not_connected">To find out what is in your neighborhood you need to be connected to 3G or WiFi.</string>

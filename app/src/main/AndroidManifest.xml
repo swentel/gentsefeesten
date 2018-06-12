@@ -25,7 +25,7 @@
         <uses-library android:name="com.google.android.maps" />
         <meta-data android:name="android.app.default_searchable" android:value=".EventSearch" />
 
-        <activity android:name=".Main" android:label="@string/app_name" >
+        <activity android:name=".Main" android:label="@string/menu_bar_title">
             <meta-data android:name="android.app.default_searchable" android:value=".EventSearch" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -51,9 +51,20 @@
 
         </activity>
         <!--<activity android:name=".MapBase"/>-->
-        <activity android:name=".Favorites" />
+        <activity android:name=".Favorites" android:label="@string/my_favorites"
+            android:parentActivityName=".Main">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.genschefieste.Main" />
+
+        </activity>
         <activity android:name=".EventResultFacetList" />
-        <activity android:name=".About" />
+        <activity android:name=".About" android:label="@string/about_title"
+            android:parentActivityName=".Main">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.genschefieste.Main" />
+        </activity>
         <activity android:name=".AroundMe" />
         <activity android:name=".Parking" />
         <activity android:name=".Bicycle" />

@@ -21,7 +21,7 @@ public class DaysOverview extends BaseActivity {
         typeIndex = extras.getInt("typeIndex");
 
         // Get the list view.
-        ListView list = (ListView) findViewById(R.id.list);
+        ListView list = findViewById(R.id.list);
 
         // Fire the list adapter.
         String[] date_string_resources = getResources().getStringArray(R.array.dates_full);
