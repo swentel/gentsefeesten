@@ -7,7 +7,6 @@
 // https://datatank.stad.gent/4/cultuursportvrijetijd/gentsefeestenlocaties.json
 // https://datatank.stad.gent/4/toerisme/gentsefeestencategorien.json
 
-// http://datatank.gent.be/Cultuur-Sport-VrijeTijd/GentseFeestenData.json
 // Download the events file locally in a file called 'events.json'.
 // You can ignore the other files, their data is small and defined in the
 // arrays in the app.
@@ -84,10 +83,14 @@ $decode = json_decode($json);
 // Create sql queries.
 $statements = "";
 
+//print_r($decode);
+//die();
+
 $number = 0;
 $lines = array();
 $unique_dates = array();
 foreach ($decode as $key => $new_event) {
+
 
   $array = (array) $new_event;
 
@@ -128,11 +131,17 @@ foreach ($decode as $key => $new_event) {
 
   $location = $new_event->location;
   if (isset($locations[$location])) {
+    //print "location found";
     $event->locatie = $locations[$location]['name']->nl;
     $event->locatie_id = $locations[$location]['locatie_id'];
     $event->straat = !empty($locations[$location]['address']->streetAddress) ? $locations[$location]['address']->streetAddress : '';
-    $event->huisnummer = ''; 
-    
+    $event->huisnummer = '';
+  }
+  else {
+    $event->location = "";
+    $event->locatie_id = 0;
+    $event->straat = '';
+    //print "location not set\n";
   }
 
   // Ignore location id 383
@@ -216,7 +225,7 @@ foreach ($decode as $key => $new_event) {
   $event->omsch = $description;
 
   // Locatie.
-  $loc = trim($event->locatie);
+  $loc = isset($event->locatie) ? trim($event->locatie) : '';
   if (!empty($event->straat)) {
     $street = trim($event->straat);
     if (!empty($event->huisnummer)) {
@@ -242,6 +251,15 @@ foreach ($decode as $key => $new_event) {
     $unique_dates[$udate] = date('d m Y', $udate);
   }
 
+  $query = "('" . my_mysql_escape_string($event->titel) . "',";
+  $query .= "'" . $event->id . "',";
+  $query .= "'" . $event->gratis . "',";
+  $query .= "'" . my_mysql_escape_string($event->prijs) . "',";
+  $query .= "'" . my_mysql_escape_string($event->prijs_vvk) . "',";
+  $query .= "'" . my_mysql_escape_string($event->omsch) . "',";
+  //$query .= "'" . ($event->datum + 7200) . "',";
+  $query .= "'" . ($event->datum + 7200) . "',";
+
   $hour_string = "";
   if (!empty($event->startuur)) {
     $hour_string = $event->startuur;
@@ -249,6 +267,9 @@ foreach ($decode as $key => $new_event) {
       $hour_string .= ' - ' . $event->einduur;
     }
   }
+
+  $query .= "'" . $hour_string . "',";
+  $query .= "'" . my_mysql_escape_string($event->startuur) . "',";
 
   // Date sort is broken in so many ways. We thus take the timestamp
   // and add the sort which is in the format of hhmm (wihout leading 0)
@@ -303,9 +324,24 @@ foreach ($decode as $key => $new_event) {
   //  $media['video'] = $event->videos->input;
   //}
 
+  $query .= "" . $timestamp . ",";
+  $query .= "'" . my_mysql_escape_string($event->categorie_naam) . "',";
+  $query .= "'" . $event->categorie_id . "',";
+  $query .= "'" . my_mysql_escape_string($event->url) . "',";
+  $query .= "'" . $event->locatie_id . "',";
+  $query .= "'" . my_mysql_escape_string($event->locatie) . "',";
+  $query .= "'" . $event->latitude . "',";
+  $query .= "'" . $event->longitude . "',";
+  $query .= "'" . my_mysql_escape_string($korting) . "',";
+  $query .= "'" . $event->festival . "',";
+  $query .= "'" . $media . "'";
+  $query .= ")";
+
   if ($event->festival) {
     print $event->titel . "\n";
   }
+
+  //print_r($event);
 
   $lines[] = $query;
   $number++;
