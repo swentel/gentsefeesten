@@ -1,5 +1,6 @@
 package com.genschefieste;
 
+import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
 import android.content.DialogInterface;
@@ -31,12 +32,14 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
     private ImageButton dayButton;
     private ImageButton listButton;
     private Context mContext;
+    private Activity activity;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         setContentView(R.layout.event_facet_list);
 
         mContext = this;
+        activity = this;
 
         // Get type and date.
         Bundle extras = getIntent().getExtras();
@@ -46,28 +49,28 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
         dateIndex = extras.getInt("dateIndex");
 
         // Day dialog changer.
-        dayRow = (RelativeLayout) findViewById(R.id.day_change);
+        dayRow = findViewById(R.id.day_change);
         dayRow.setOnClickListener(this);
-        dayButton = (ImageButton) findViewById(R.id.day_row_button);
+        dayButton = findViewById(R.id.day_row_button);
         dayButton.setOnClickListener(this);
 
         // Type dialog changer. Only set onlistener and the image
         // for categories and locations.
         if (facetId != 2 && facetId != 4) {
-            typeRow = (RelativeLayout) findViewById(R.id.type_change);
+            typeRow = findViewById(R.id.type_change);
             typeRow.setOnClickListener(this);
-            listButton = (ImageButton) findViewById(R.id.type_row_button);
+            listButton = findViewById(R.id.type_row_button);
             listButton.setImageResource(R.drawable.list);
             listButton.setOnClickListener(this);
         }
 
         // Get the list view.
-        ListView list = (ListView) findViewById(R.id.list);
+        ListView list = findViewById(R.id.list);
 
         // Set day row text.
         timestamp = getTimestampFromIndex(dateIndex, this);
         date_text = getDateFromTimestamp(timestamp, this);
-        TextView day_row = (TextView) findViewById(R.id.day_row);
+        TextView day_row = findViewById(R.id.day_row);
         day_row.setText(date_text);
 
         // Set facet type row text.
@@ -159,6 +162,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
             intent.putExtra("typeIndex", typeIndex);
             intent.putExtra("dateIndex", newDateIndex);
             startActivity(intent);
+            activity.finish();
             }
         });
         AlertDialog changeDay = builder.create();
@@ -192,6 +196,7 @@ public class EventResultFacetList extends BaseActivity implements View.OnClickLi
             intent.putExtra("typeIndex", newTypeIndex);
             intent.putExtra("dateIndex", dateIndex);
             startActivity(intent);
+            activity.finish();
             }
         });
         AlertDialog changeType = builder.create();

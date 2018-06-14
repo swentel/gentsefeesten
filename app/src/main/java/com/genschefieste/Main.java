@@ -41,7 +41,7 @@ public class Main extends BaseActivity {
             ViewGroup.LayoutParams params = noEvents.getLayoutParams();
             params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             noEvents.setLayoutParams(params);
-            if (unixTime > 1500854400) {
+            if (unixTime > 1532217600 + 86400) {
                 noEvents.setText(getString(R.string.no_events_after_end_date));
             }
             else {

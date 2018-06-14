@@ -1,9 +1,7 @@
 package com.genschefieste;
 
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -92,33 +90,23 @@ public class EventDetail extends BaseActivity {
         i.setOnClickListener(actionFavorite);
 
 
-        // Set listener on 'go online' and 'google map'.
-        ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
-        ///ImageButton goOglemap = (ImageButton) findViewById(R.id.map);
-        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-            // Add listener on online button.
-            goOnlineButton.setOnClickListener(actionOnline);
-            // Add listener on map button.
-            //goOglemap.setOnClickListener(actionMap);
-        }
-        else {
-            // Make invisible.
-            //goOglemap.setVisibility(TextView.GONE);
-            goOnlineButton.setVisibility(TextView.GONE);
-        }
+        ImageButton goOnlineButton = findViewById(R.id.external_link);
+        //ImageButton map = findViewById(R.id.map);
+        goOnlineButton.setOnClickListener(actionOnline);
+        //map.setOnClickListener(actionMap);
 
         // Add listener on share button.
-        //ImageButton menu = (ImageButton) findViewById(R.id.share);
+        //ImageButton menu = findViewById(R.id.share);
         //menu.setOnClickListener(actionShare);
 
         // Media.
-        //String media = event.getMedia();
-        //ImageView eventImage = (ImageView) findViewById(R.id.event_image);
-        //boolean loadImages = pref.getBoolean("pref_load_images", false);
-        /*if (loadImages && (cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
-            ImageLoader imageLoader = ImageLoader.getInstance();
-            imageLoader.displayImage(media, eventImage);
+        /*String media = event.getMedia();
+        ImageView eventImage = findViewById(R.id.event_image);
+        boolean loadImages = pref.getBoolean("pref_load_images", false);
+        if (loadImages && hasConnection() && media.length() > 0) {
+            Glide.with(this)
+                    .load(media)
+                    .into(eventImage);
         }
         else {
             eventImage.setVisibility(ImageView.GONE);
@@ -132,7 +120,6 @@ public class EventDetail extends BaseActivity {
      */
     /*private final View.OnClickListener actionMap = new View.OnClickListener() {
         public void onClick(View v) {
-        BaseActivity.sendGaView("Map: " + event.getTitle(), getApplicationContext());
         Intent goMap = new Intent(getBaseContext(), MapBase.class);
         goMap.putExtra("eventId", event.getId());
         goMap.putExtra("latitude", latitude);
@@ -162,7 +149,6 @@ public class EventDetail extends BaseActivity {
         public void onClick(View v) {
             String share_message = pref.getString("share_message", "");
 
-            BaseActivity.sendGaView("Share: " + event.getTitle(), getApplicationContext());
             Intent intent = new Intent(Intent.ACTION_SEND);
             intent.setType("text/plain");
             intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_WHEN_TASK_RESET);

@@ -86,7 +86,7 @@
 
     <!-- About activity -->
     <string name="about_title">About this application</string>
-    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2017. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
+    <string name="about_info"><![CDATA[Open source application for Gentse Feesten 2018. We\'re not responsible for the supplied data available from via <a href="http://data.gent.be/">http://data.gent.be/</a><br /><br /><b>Credits</b><br /><br /><a href="https://twitter.com/swentel">@swentel</a> - Android & Drupal developer<br /><a href="https://twitter.com/leenvs">@LeenVS</a> - Graphic designer<br /><br /><b>Sourcecode</b><br />Android: <a href="https://github.com/swentel/gentsefeesten">GitHub</a>]]></string>
 
     <!-- Settings screen -->
     <string name="program_category">Program</string>
@@ -101,7 +101,7 @@
     <string name="share_category">Share</string>
     <string name="share_message_title">Social media</string>
     <string name="share_message_info">Default message for social media. "!replace" will be replaced by the title of the event.</string>
-    <string name="share_default">At the Gentse Feesten. Checking out !replace. Way cool! #GF17</string>
+    <string name="share_default">At the Gentse Feesten. Checking out !replace. Way cool! #GF18</string>
     <string name="setting_front_ongoing">Already started</string>
     <string name="setting_front_ongoing_info">Also show events that have just started</string>
     <string name="ga_category">Google Analytics</string>
@@ -116,11 +116,11 @@
     <string name="setting_notification_buzz">Vibrate on notification</string>
     <string name="setting_notification_time">How many minutes in advance do you want a notification ?</string>
     <string name="setting_load_images">Load images</string>
-    <string name="setting_load_images_info">Load images on event details when online.</string>
+    <string name="setting_load_images_info">Load images on event details when online</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Update program</string>
-    <string name="updating_message">Downloading over 4000 events. This takes about 1 minute, please wait. \n\nIf you have less events, or nothing at all, go back to settings and try again. \n\nThe home screen will be loaded when done.</string>
+    <string name="updating_message">Downloading over 3500 events. This takes about 1 minute, please wait. \n\nIf you have less events, or nothing at all, go back to settings and try again. \n\nThe home screen will be loaded when done.</string>
     <string name="update_offline">You must be connected to 3G or WiFi to retrieve the program.\n\nTry again when you are connected to the internet.</string>
     <string name="updating_info">Click here to get the latest version. A new update will be available every friday until the festival starts. Number of events: </string>
     <string name="service_offline">Our program service is currently offline, please try again later.</string>
@@ -197,5 +197,6 @@
     <string name="watersportbaan">Watersportbaan</string>
     <string name="woodrow_wilson">Woodrow Wilson Square</string>
     <string name="willem">Willem de Beersteeg</string>
+    <string name="image">image</string>
 
 </resources>

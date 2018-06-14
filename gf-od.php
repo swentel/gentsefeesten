@@ -107,10 +107,14 @@ foreach ($decode as $key => $new_event) {
     $einduur = date('G:i', $end_full_unix);
   }
 
-  // 'all day' is einduur 5:59
-  if ($einduur == '5:59') {
+  // 'all day' is einduur 5:59 and startuur not on 6:00
+  if ($einduur == '5:59' && $startuur == '6:00') {
     $startuur = '';
     $einduur = '';
+  }
+
+  if ($einduur == '5:59' && $startuur != '6:00') {
+    $einduur = date('G:i', $full_unix + 7200);
   }
 
   // Switch date one day back.
@@ -190,14 +194,16 @@ foreach ($decode as $key => $new_event) {
 
   // Image.
   $event->afbeelding = '';
-  //if (!empty($new_event->image->thumbnailUrl)) {
-  //  $event->afbeelding = $new_event->image->thumbnailUrl;
-  //}
+  /*if (!empty($new_event->image->thumbnailUrl)) {
+    $event->afbeelding = $new_event->image->thumbnailUrl;
+  }*/
 
   if ($debug) {
     //if (strpos($event->titel, 'Soul Shakers (BE)') !== FALSE) {
     //if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
-    if (strpos($event->titel, 'De Buck') !== FALSE) {
+    if (strpos($event->titel, 'Steverlinck') !== FALSE) {
+    //if (strpos($event->titel, 'SHHT') !== FALSE) {
+    //if (strpos($event->titel, '25e wandelzoektocht Gentse Feesten') !== FALSE) {
     //if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
       print_r($new_event);
       print_r($event);

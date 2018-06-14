@@ -40,8 +40,21 @@
         </activity>
 
         <activity android:name=".MenuList" />
-        <activity android:name=".DaysOverview" />
-        <activity android:name=".TypeOverview" />
+        <activity android:name=".DaysOverview"
+            android:parentActivityName=".BackActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.genschefieste.BackActivity" />
+        </activity>
+
+        <activity android:name=".TypeOverview"
+            android:parentActivityName=".BackActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.genschefieste.BackActivity" />
+
+        </activity>
+
         <activity android:name=".EventDetail"
             android:parentActivityName=".BackActivity">
             <meta-data
@@ -57,7 +70,13 @@
                 android:value="com.genschefieste.Main" />
 
         </activity>
-        <activity android:name=".EventResultFacetList" />
+        <activity android:name=".EventResultFacetList"
+            android:parentActivityName=".BackActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.genschefieste.BackActivity" />
+        </activity>
+
         <activity android:name=".About" android:label="@string/about_title"
             android:parentActivityName=".Main">
             <meta-data

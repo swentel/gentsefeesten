@@ -27,9 +27,7 @@ public class TypeListAdapter extends ArrayAdapter<String> implements OnClickList
         this.facetId = facetId;
     }
 
-    public void onClick(View view) {
-
-    }
+    public void onClick(View view) { }
 
     public View getView(final int position, View convertView, ViewGroup parent) {
 
@@ -40,11 +38,11 @@ public class TypeListAdapter extends ArrayAdapter<String> implements OnClickList
 
         // Change color of row.
         assert convertView != null;
-        final LinearLayout row = (LinearLayout) convertView.findViewById(R.id.single_row);
+        final LinearLayout row = convertView.findViewById(R.id.single_row);
         String backColor = ((position % 2) == 0) ? "#f6f6f6" : "#ffffff";
         row.setBackgroundColor(Color.parseColor(backColor));
 
-        final TextView textView = (TextView) convertView.findViewById(R.id.single_row_item);
+        final TextView textView = convertView.findViewById(R.id.single_row_item);
         textView.setText(values[position]);
 
         // Set on touch listener.
@@ -68,12 +66,12 @@ public class TypeListAdapter extends ArrayAdapter<String> implements OnClickList
                         intent.putExtra("facetId", facetId);
                         intent.putExtra("typeIndex", position);
                         context.startActivity(intent);
+
                         break;
                 }
                 return true;
             }
         });
-
 
         return convertView;
     }

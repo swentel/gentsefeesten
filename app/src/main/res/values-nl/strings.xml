@@ -102,7 +102,7 @@
     <string name="share_category">Share</string>
     <string name="share_message_title">Sociale media</string>
     <string name="share_message_info">Boodschap voor sociale media. Gebruik "!replace" om de titel van het evenement automatisch erin te plaatsen.</string>
-    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF17</string>
+    <string name="share_default">Op de Gentse feesten. !replace aan het uitchecken. Wijs maat! #GF18</string>
     <string name="setting_front_ongoing">Al bezig</string>
     <string name="setting_front_ongoing_info">Toon ook evenementen die nog niet zo lang bezig zijn</string>
     <string name="ga_category">Google Analytics</string>
@@ -116,12 +116,12 @@
     <string name="setting_notification_summary">Elk event in je favorieten zal een notificatie triggeren</string>
     <string name="setting_notification_buzz">Tril bij notificatie</string>
     <string name="setting_notification_time">Hoeveel minuten op voorhand moet de notificatie gebeuren ?</string>
-    <string name="setting_load_images">Afbeeldingen inladen</string>
-    <string name="setting_load_images_info">Toon afbeeldingen op evenement detail wanneer er internet connectie is.</string>
+    <string name="setting_load_images">Afbeeldingen</string>
+    <string name="setting_load_images_info">Toon afbeeldingen op evenement detail wanneer er internet connectie is</string>
 
     <!-- Manage updates + tour -->
     <string name="updating">Programma bijwerken</string>
-    <string name="updating_message">We halen nu meer dan 4000 evenementen op. Dit duurt ongeveer 1 minuut, even geduld.\n\nIndien je minder evenementen hebt of helemaal niks, keer terug naar settings en probeer opnieuw.\n\nHierna wordt het startscherm geladen.</string>
+    <string name="updating_message">We halen nu meer dan 3500 evenementen op. Dit duurt ongeveer 1 minuut, even geduld.\n\nIndien je minder evenementen hebt of helemaal niks, keer terug naar settings en probeer opnieuw.\n\nHierna wordt het startscherm geladen.</string>
     <string name="update_offline">Je moet verbonden zijn met 3G of WiFi om het programma te kunnen ophalen.\n\nGelieve opnieuw te proberen wanneer je verbonden bent met het internet.</string>
     <string name="updating_info">Klik hier om de laatste versie van het programma binnen te halen. Elke vrijdag tot aan de start zal er een nieuwe update zijn. Aantal evenementen: </string>
     <string name="service_offline">Onze service met het programma is even offline, gelieve later opnieuw te proberen.</string>

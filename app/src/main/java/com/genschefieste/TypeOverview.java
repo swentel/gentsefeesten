@@ -22,7 +22,7 @@ public class TypeOverview extends BaseActivity {
         facetId = extras.getInt("facetId");
 
         // Get the list view.
-        ListView list = (ListView) findViewById(R.id.list);
+        ListView list = findViewById(R.id.list);
 
         // Set facet type title.
         switch (facetId) {
@@ -35,7 +35,7 @@ public class TypeOverview extends BaseActivity {
                 typeTitle = getString(R.string.select_a_location);
                 break;
         }
-        TextView textView = (TextView) findViewById(R.id.type_title);
+        TextView textView = findViewById(R.id.type_title);
         textView.setText(typeTitle);
 
         // Fire the list adapter.

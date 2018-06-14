@@ -3,6 +3,7 @@ package com.genschefieste;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.net.ConnectivityManager;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
@@ -201,35 +202,16 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     /**
-     * Initialize Google Analytics tracker.
+     * Check if we have a connection.
+     *
+     * @return boolean.
      */
-    /*private void initializeGa() {
-        mGa = GoogleAnalytics.getInstance(this);
-        mTracker = mGa.getTracker(GA_PROPERTY_ID);
-
-        // Set dispatch period.
-        GAServiceManager.getInstance().setLocalDispatchPeriod(GA_DISPATCH_PERIOD);
-
-        // Set Logger verbosity.
-        mGa.getLogger().setLogLevel(GA_LOG_VERBOSITY);
-    }*/
-
-    /*
-    * Returns the Google Analytics tracker.
-    */
-    /*public static Tracker getGaTracker() {
-        return mTracker;
-    }*/
-
-    /**
-     * Send a screen view.
-     */
-    /*public static void sendGaView(String action, Context context) {
-        SharedPreferences pref = PreferenceManager.getDefaultSharedPreferences(context);
-        Boolean sendGa = pref.getBoolean("send_ga", true);
-        if (sendGa) {
-            BaseActivity.getGaTracker().set(Fields.SCREEN_NAME, action);
-            BaseActivity.getGaTracker().send(MapBuilder.createAppView().build());
+    public boolean hasConnection() {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+            return true;
         }
-    }*/
+        return false;
+    }
+
 }

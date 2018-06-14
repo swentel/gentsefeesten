@@ -26,7 +26,7 @@
             android:layout_marginRight="@dimen/global_margin_horizontal">
 
             <!--<ImageView
-                android:contentDescription="image"
+                android:contentDescription="@string/image"
                 android:id="@+id/event_image"
                 android:paddingTop="10dp"
                 android:layout_width="fill_parent"
@@ -280,10 +280,10 @@
                 android:src="@drawable/external_link_states"
                 android:background="@color/detail_button_background"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="50dp"
+                android:layout_marginRight="60dp"
                 android:scaleType="center"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="13dp"/>
+                android:layout_marginTop="16dp"/>
 
             <!--<ImageButton
                 android:layout_height="wrap_content"
