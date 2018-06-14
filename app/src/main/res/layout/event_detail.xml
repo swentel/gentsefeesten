@@ -270,7 +270,7 @@
                 android:layout_gravity="center_vertical"
                 android:layout_marginTop="13dp"/>-->
 
-            <!--<ImageButton
+            <ImageButton
                 android:layout_height="wrap_content"
                 android:layout_width="wrap_content"
                 android:contentDescription="@string/info_online"
@@ -280,10 +280,10 @@
                 android:src="@drawable/external_link_states"
                 android:background="@color/detail_button_background"
                 android:layout_marginLeft="5dp"
-                android:layout_marginRight="145dp"
+                android:layout_marginRight="50dp"
                 android:scaleType="center"
                 android:layout_gravity="center_vertical"
-                android:layout_marginTop="13dp"/>-->
+                android:layout_marginTop="13dp"/>
 
             <!--<ImageButton
                 android:layout_height="wrap_content"

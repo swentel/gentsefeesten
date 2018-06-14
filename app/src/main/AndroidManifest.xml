@@ -43,10 +43,10 @@
         <activity android:name=".DaysOverview" />
         <activity android:name=".TypeOverview" />
         <activity android:name=".EventDetail"
-            android:parentActivityName=".Main">
+            android:parentActivityName=".BackActivity">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.genschefieste.Main" />
+                android:value="com.genschefieste.BackActivity" />
 
         </activity>
         <!--<activity android:name=".MapBase"/>-->
@@ -72,6 +72,7 @@
         <!--<activity android:name=".AtmMap" />-->
         <activity android:noHistory="true" android:name=".AroundMePre" />
         <activity android:noHistory="true" android:name=".Prefs" android:screenOrientation="portrait" />
+        <activity android:name=".BackActivity" />
 
     </application>
 

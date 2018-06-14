@@ -98,16 +98,17 @@ foreach ($decode as $key => $new_event) {
   $event = new stdClass();
   $full_unix = strtotime($new_event->startDate);
   $unix_day = strtotime(date('d-m-Y', $full_unix));
+  $full_unix += 7200;
   $startuur = date('G:i', $full_unix);
   
   $einduur = '';
   if (!empty($new_event->endDate)) {
-    $end_full_unix = strtotime($new_event->endDate);
+    $end_full_unix = strtotime($new_event->endDate) + 7200;
     $einduur = date('G:i', $end_full_unix);
   }
 
-  // 'all day' is einduur 3:59
-  if ($einduur == '3:59') {
+  // 'all day' is einduur 5:59
+  if ($einduur == '5:59') {
     $startuur = '';
     $einduur = '';
   }

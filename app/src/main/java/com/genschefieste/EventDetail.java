@@ -1,11 +1,14 @@
 package com.genschefieste;
 
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.ConnectivityManager;
 import android.net.Uri;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -29,12 +32,12 @@ public class EventDetail extends BaseActivity {
         event = db.getEvent(eventId);
 
         // Set title.
-        TextView title = (TextView) findViewById(R.id.event_title);
+        TextView title = findViewById(R.id.event_title);
         title.setText(event.getTitle());
         this.setTitle(event.getTitle());
 
         // Set location.
-        TextView location = (TextView) findViewById(R.id.event_location);
+        TextView location = findViewById(R.id.event_location);
         location.setText(event.getLocation());
 
         // Set date.
@@ -45,7 +48,7 @@ public class EventDetail extends BaseActivity {
             if (event.getDatePeriod().length() > 0) {
                 date_text += "\n" + event.getDatePeriod();
             }
-            TextView date = (TextView) findViewById(R.id.event_date);
+            TextView date = findViewById(R.id.event_date);
             date.setText(date_text);
         }
 
@@ -61,16 +64,16 @@ public class EventDetail extends BaseActivity {
                 price_text += "\n" + getString(R.string.event_pre_sale) + ": € " + event.getPricePresale();
             }
         }
-        TextView price = (TextView) findViewById(R.id.event_price);
+        TextView price = findViewById(R.id.event_price);
         price.setText(price_text);
 
         // Category.
-        TextView category = (TextView) findViewById(R.id.event_category);
+        TextView category = findViewById(R.id.event_category);
         category.setText(event.getCategory());
 
         // Set description and URL.
         String descriptionText = "";
-        TextView description = (TextView) findViewById(R.id.event_description);
+        TextView description = findViewById(R.id.event_description);
         if (event.getDescription().length() > 0) {
             descriptionText += event.getDescription() + "\n";
         }
@@ -80,7 +83,7 @@ public class EventDetail extends BaseActivity {
         description.setText(descriptionText);
 
         // Set favorite image and onclickListener.
-        ImageView i = (ImageView) findViewById(R.id.favorite);
+        ImageView i = findViewById(R.id.favorite);
         if (event.getFavorite() == 0) {
             i.setImageResource(R.drawable.fav_off);
         } else {
@@ -90,20 +93,20 @@ public class EventDetail extends BaseActivity {
 
 
         // Set listener on 'go online' and 'google map'.
-        //ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
+        ImageButton goOnlineButton = (ImageButton) findViewById(R.id.external_link);
         ///ImageButton goOglemap = (ImageButton) findViewById(R.id.map);
-        //ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
-        //if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
+        ConnectivityManager cm = (ConnectivityManager) getSystemService(Context.CONNECTIVITY_SERVICE);
+        if ((cm.getActiveNetworkInfo() != null) && cm.getActiveNetworkInfo().isAvailable() && cm.getActiveNetworkInfo().isConnected()) {
             // Add listener on online button.
-            //goOnlineButton.setOnClickListener(actionOnline);
+            goOnlineButton.setOnClickListener(actionOnline);
             // Add listener on map button.
             //goOglemap.setOnClickListener(actionMap);
-        //}
-        //else {
+        }
+        else {
             // Make invisible.
             //goOglemap.setVisibility(TextView.GONE);
-            //goOnlineButton.setVisibility(TextView.GONE);
-        //}
+            goOnlineButton.setVisibility(TextView.GONE);
+        }
 
         // Add listener on share button.
         //ImageButton menu = (ImageButton) findViewById(R.id.share);
@@ -178,7 +181,7 @@ public class EventDetail extends BaseActivity {
         int favorite = event.getFavorite();
 
         // Switch image.
-        ImageView i = (ImageView) findViewById(R.id.favorite);
+        ImageView i = findViewById(R.id.favorite);
         int setFavorite;
         if (favorite == 0) {
             setFavorite = 1;
