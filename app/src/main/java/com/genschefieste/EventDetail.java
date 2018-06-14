@@ -91,8 +91,13 @@ public class EventDetail extends BaseActivity {
 
 
         ImageButton goOnlineButton = findViewById(R.id.external_link);
+        if (event.getUrl().length() == 0) {
+            goOnlineButton.setVisibility(View.GONE);
+        }
+        else {
+            goOnlineButton.setOnClickListener(actionOnline);
+        }
         //ImageButton map = findViewById(R.id.map);
-        goOnlineButton.setOnClickListener(actionOnline);
         //map.setOnClickListener(actionMap);
 
         // Add listener on share button.
