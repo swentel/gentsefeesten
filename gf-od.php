@@ -36,6 +36,10 @@ foreach ($locations_decoded as $location) {
     'name' => $location['name']->nl,
   );
 
+  if (strpos($location['name']->nl, 'Baafs') !== FALSE || strpos($location['name']->nl, 'Brewery') !== FALSE || strpos($location['name']->nl, 'Stage') !== FALSE) {
+    print $location['name']->nl . ' - ' . $i . "\n";  
+  }
+
   // Salsabar, tref.club -> baudelo
   //if ($i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 351 || $i == 383) {
   if ($i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 351) {
@@ -43,7 +47,7 @@ foreach ($locations_decoded as $location) {
   }
 
   // Sint-baafs
-  if ($i == 248 || $i == 249 || $i == 250) {
+  if ($i == 248 || $i == 249 || $i == 250 || $i == 2 || $i == 453 || $i == 454 || $i == 213 || $i == 212) {
     $locations[$location['@id']]['locatie_id'] = 2;
   }
 
@@ -54,6 +58,9 @@ foreach ($locations_decoded as $location) {
 
   $i++;
 }
+
+//print_r($locations_decoded);
+//return;
 
 $cats = array();
 $cats_decoded = json_decode(file_get_contents('gentsefeestencategorien.json'));
