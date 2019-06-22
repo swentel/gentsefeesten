@@ -20,7 +20,12 @@ if (!file_exists('events.json')) {
 $json = file_get_contents('events.json');
 
 // Event uuids - ids.
-$uuid_events = unserialize(file_get_contents('uuid_events.json'));
+if (file_exists('uuid_events.json')) {
+  $uuid_events = unserialize(file_get_contents('uuid_events.json'));
+}
+else {
+  $uuid_events = array();
+}
 
 $locations_sum = array();
 $locations_decoded = json_decode(file_get_contents('gentsefeestenlocaties.json'));
@@ -221,12 +226,12 @@ foreach ($decode as $key => $new_event) {
   }
 
   // The data contains too much info
-  if ($event->datum < 1530748800 || $event->datum > 1532217600) {
+  if ($event->datum < 1563408000 || $event->datum > 1564272000) {
     continue;
   }
 
   // Omschrijving.
-  // They used html this in 2015, so do some fiddling on it.
+  // They used html this since 2015, so do some fiddling on it.
   $description = $event->omschrijving;
   $description = html_entity_decode($description, ENT_QUOTES);
   // Replace p and br tags.
@@ -378,7 +383,7 @@ krsort($unique_dates);
 print_r($unique_dates);
 
 // Write to file.
-file_put_contents('events-2018.data', $statements);
+file_put_contents('events-2019.data', $statements);
 
 // Write
 file_put_contents('uuid_events.json', serialize($uuid_events));
