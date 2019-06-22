@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- #003f4f -->
-    <color name="global_background">#f0e8d5</color>
-    <color name="global_textcolor">#202020</color>
+    <color name="global_background">#e8f4f4</color>
+    <color name="global_textcolor">#1e2d44</color>
     <color name="menu_bar_background">#c21818</color>
     <color name="menu_bar_text_color">#ffffff</color>
     <color name="gold">#cda300</color>
     <color name="light_gold">#f8f7f1</color>
-    <color name="big_title_background">#ffffff</color>
+    <color name="big_title_background">#e8f4f4</color>
     <color name="main_text_background">#ffffff</color>
     <color name="detail_button_background">#ffffff</color>
     <color name="list_background">#f8f7f1</color>

@@ -27,7 +27,7 @@ public class Main extends BaseActivity {
         showHomebutton = false;
 
         // Get the list view.
-        ListView list = (ListView) findViewById(R.id.list);
+        ListView list = findViewById(R.id.list);
 
         // Get events.
         events = getMainEvents();
@@ -37,7 +37,7 @@ public class Main extends BaseActivity {
         // In case the Gentse Feesten is past july 28, show a different message.
         if (events.size() == 0) {
             long unixTime = (System.currentTimeMillis() / 1000L);
-            TextView noEvents = (TextView) findViewById(R.id.no_events);
+            TextView noEvents = findViewById(R.id.no_events);
             ViewGroup.LayoutParams params = noEvents.getLayoutParams();
             params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             noEvents.setLayoutParams(params);
@@ -105,7 +105,7 @@ public class Main extends BaseActivity {
         boolean ongoing = pref.getBoolean("pref_front_ongoing", false);
 
         // Create query.
-        List<String> whereClauses = new ArrayList<String>();
+        List<String> whereClauses = new ArrayList<>();
         // Location and category.
         if (filterOnLocation || filterOnCategory) {
             if (filterOnLocation) {
