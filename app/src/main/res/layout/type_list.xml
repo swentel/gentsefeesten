@@ -9,7 +9,6 @@
     <TextView
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
-        android:layout_marginTop="@dimen/global_margin_vertical"
         android:layout_height="@dimen/big_title_height"
         android:layout_marginLeft="@dimen/global_margin_horizontal"
         android:layout_marginRight="@dimen/global_margin_horizontal"

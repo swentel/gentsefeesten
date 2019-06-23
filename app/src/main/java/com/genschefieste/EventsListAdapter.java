@@ -55,12 +55,12 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
 
             // Change color of row.
             assert convertView != null;
-            String color = ((position % 2) == 0) ? "#f8f7f1" :  "#ffffff";
-            final LinearLayout row = (LinearLayout) convertView.findViewById(R.id.event_row);
+            String color = ((position % 2) == 0) ? "#f6f6f6" :  "#ffffff";
+            final LinearLayout row = convertView.findViewById(R.id.event_row);
             row.setBackgroundColor(Color.parseColor(color));
 
             // Hour.
-            final TextView th = (TextView) convertView.findViewById(R.id.event_hour);
+            final TextView th = convertView.findViewById(R.id.event_hour);
             String hour = event.getStartHour();
             if (hour.length() == 0) {
                 hour = context.getString(R.string.event_whole_day);
@@ -68,12 +68,12 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             th.setText(hour);
 
             // Title.
-            final TextView tt = (TextView) convertView.findViewById(R.id.event_title);
+            final TextView tt = convertView.findViewById(R.id.event_title);
             String title = event.getTitle();
             tt.setText(title);
 
             // Favorite.
-            ImageView i = (ImageView) convertView.findViewById(R.id.event_favorite);
+            ImageView i = convertView.findViewById(R.id.event_favorite);
             if (event.getFavorite() == 0) {
                 i.setImageResource(R.drawable.fav_off_small);
                 i.setScaleType(ImageView.ScaleType.CENTER);
@@ -87,7 +87,7 @@ public class EventsListAdapter extends BaseAdapter implements OnClickListener {
             row.setOnTouchListener(new View.OnTouchListener() {
                 @Override
                 public boolean onTouch(View view, MotionEvent motionEvent) {
-                    String backColor = ((position % 2) == 0) ? "#f8f7f1" :  "#ffffff";
+                    String backColor = ((position % 2) == 0) ? "#f6f6f6" :  "#ffffff";
                     switch(motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN:
                             row.setBackgroundColor(Color.parseColor("#323232"));

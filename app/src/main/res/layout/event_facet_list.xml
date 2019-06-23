@@ -8,7 +8,6 @@
 
     <RelativeLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:layout_marginTop="@dimen/global_margin_vertical"
         android:layout_width="fill_parent"
         android:layout_height="@dimen/big_title_height"
         android:background="@drawable/list_bar_states"

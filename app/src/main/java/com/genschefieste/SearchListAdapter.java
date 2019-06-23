@@ -76,14 +76,14 @@ public class SearchListAdapter extends BaseAdapter implements OnClickListener {
             switch (type) {
                 case DAY:
                     convertView = mInflater.inflate(R.layout.day_item, null);
-                    holder.day = (TextView)convertView.findViewById(R.id.day_title);
+                    holder.day = convertView.findViewById(R.id.day_title);
                     break;
                 case EVENT:
                     convertView = mInflater.inflate(R.layout.search_list_item, null);
-                    holder.hour = (TextView)convertView.findViewById(R.id.event_hour);
-                    holder.title = (TextView)convertView.findViewById(R.id.event_title);
-                    holder.image = (ImageView)convertView.findViewById(R.id.event_favorite);
-                    holder.row = (LinearLayout) convertView.findViewById(R.id.event_row);
+                    holder.hour = convertView.findViewById(R.id.event_hour);
+                    holder.title = convertView.findViewById(R.id.event_title);
+                    holder.image = convertView.findViewById(R.id.event_favorite);
+                    holder.row = convertView.findViewById(R.id.event_row);
                     holder.eventId = event.getId();
                     break;
             }

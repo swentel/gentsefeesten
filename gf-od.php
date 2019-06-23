@@ -56,6 +56,11 @@ foreach ($locations_decoded as $location) {
     $locations[$location['@id']]['locatie_id'] = 4;
   }
 
+  // Luisterplein
+  if ($i == 530) {
+    $locations[$location['@id']]['locatie_id'] = 14;
+  }
+
   // Special
   if ($i == 723) {
     $locations[$location['@id']]['locatie_id'] = 22;
@@ -113,7 +118,6 @@ $lines = array();
 $unique_dates = array();
 foreach ($decode as $key => $new_event) {
 
-
   $array = (array) $new_event;
 
   // The scheme is different, convert it.
@@ -152,6 +156,12 @@ foreach ($decode as $key => $new_event) {
   $event->tijdstip_sortering = $sorting;
   $event->datum = $unix_day;
   $event->titel = $new_event->name->nl;
+
+  //if (strpos($event->titel, 'Helder') !== FALSE) {
+  //  print_r($event);
+  //  die();
+  //}
+
   $event->omschrijving = !empty($new_event->description->nl) ? $new_event->description->nl : '';
   $event->url = isset($new_event->url) ? $new_event->url : '';
   $event->gratis = isset($new_event->isAccessibleForFree) ? (int) $new_event->isAccessibleForFree : 0;
