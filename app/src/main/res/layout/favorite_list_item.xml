@@ -15,7 +15,8 @@
         android:paddingBottom="5dp"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
-        android:textColor="@color/red" />
+        android:textColor="@color/red"
+        android:layout_marginStart="5dp" />
 
     <TextView
         android:id="@+id/event_title"

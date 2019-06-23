@@ -51,6 +51,16 @@ foreach ($locations_decoded as $location) {
     $locations[$location['@id']]['locatie_id'] = 7;
   }
 
+  // Sint jacobs
+  if (strpos($location['name']->nl, 'Sint-Jacobs') !== FALSE) {
+    $locations[$location['@id']]['locatie_id'] = 4;
+  }
+
+  // Special
+  if ($i == 723) {
+    $locations[$location['@id']]['locatie_id'] = 22;
+  }
+
   // Sint-baafs
   if ($i == 248 || $i == 249 || $i == 250 || $i == 2 || $i == 453 || $i == 454 || $i == 213 || $i == 212) {
     $locations[$location['@id']]['locatie_id'] = 2;

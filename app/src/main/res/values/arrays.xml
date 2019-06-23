@@ -16,72 +16,56 @@
 
     <!-- Dates for the 'official' Gentse feesten -->
     <string-array name="dates_full">
-        <item>@string/july_13</item>
-        <item>@string/july_14</item>
-        <item>@string/july_15</item>
-        <item>@string/july_16</item>
-        <item>@string/july_17</item>
-        <item>@string/july_18</item>
         <item>@string/july_19</item>
         <item>@string/july_20</item>
         <item>@string/july_21</item>
         <item>@string/july_22</item>
+        <item>@string/july_23</item>
+        <item>@string/july_24</item>
+        <item>@string/july_25</item>
+        <item>@string/july_26</item>
+        <item>@string/july_27</item>
+        <item>@string/july_28</item>
     </string-array>
 
     <!-- Dates for all of Gentse Feesten, e.g. also including Gent Jazz etc -->
     <string-array name="dates_full_all">
-        <item>@string/july_05</item>
-        <item>@string/july_06</item>
-        <item>@string/july_07</item>
-        <item>@string/july_08</item>
-        <item>@string/july_09</item>
-        <item>@string/july_10</item>
-        <item>@string/july_11</item>
-        <item>@string/july_12</item>
-        <item>@string/july_13</item>
-        <item>@string/july_14</item>
-        <item>@string/july_15</item>
-        <item>@string/july_16</item>
-        <item>@string/july_17</item>
-        <item>@string/july_18</item>
         <item>@string/july_19</item>
         <item>@string/july_20</item>
         <item>@string/july_21</item>
         <item>@string/july_22</item>
+        <item>@string/july_23</item>
+        <item>@string/july_24</item>
+        <item>@string/july_25</item>
+        <item>@string/july_26</item>
+        <item>@string/july_27</item>
+        <item>@string/july_28</item>
     </string-array>
 
     <integer-array name="dates_int">
-        <item>1531440000</item>
-        <item>1531526400</item>
-        <item>1531612800</item>
-        <item>1531699200</item>
-        <item>1531785600</item>
-        <item>1531872000</item>
-        <item>1531958400</item>
-        <item>1532044800</item>
-        <item>1532131200</item>
-        <item>1532217600</item>
+        <item>1563487200</item>
+        <item>1563573600</item>
+        <item>1563660000</item>
+        <item>1563746400</item>
+        <item>1563832800</item>
+        <item>1563919200</item>
+        <item>1564005600</item>
+        <item>1564092000</item>
+        <item>1564178400</item>
+        <item>1564264800</item>
     </integer-array>
 
     <integer-array name="dates_int_all">
-        <item>1530748800</item>
-        <item>1530835200</item>
-        <item>1530921600</item>
-        <item>1531008000</item>
-        <item>1531094400</item>
-        <item>1531180800</item>
-        <item>1531267200</item>
-        <item>1531353600</item>
-        <item>1531440000</item>
-        <item>1531526400</item>
-        <item>1531612800</item>
-        <item>1531699200</item>
-        <item>1531785600</item>
-        <item>1531872000</item>
-        <item>1531958400</item>
-        <item>1532044800</item>
-        <item>1532131200</item>
-        <item>1532217600</item>
+        <item>1563487200</item>
+        <item>1563573600</item>
+        <item>1563660000</item>
+        <item>1563746400</item>
+        <item>1563832800</item>
+        <item>1563919200</item>
+        <item>1564005600</item>
+        <item>1564092000</item>
+        <item>1564178400</item>
+        <item>1564264800</item>
     </integer-array>
 
     <string-array name="location_strings">
@@ -98,6 +82,7 @@
         <item>@string/sint_veerle</item>
         <item>@string/vlasmarkt</item>
         <item>@string/willem</item>
+        <item>@string/woodrow_wilson</item>
     </string-array>
 
     <integer-array name="location_ids">
@@ -114,6 +99,7 @@
         <item>13</item>
         <item>15</item>
         <item>19</item>
+        <item>22</item>
     </integer-array>
 
     <!-- Android preferences are so dumb, you actually can't give it an integer array
@@ -132,6 +118,7 @@
         <item>13</item>
         <item>15</item>
         <item>19</item>
+        <item>22</item>
     </string-array>
 
     <string-array name="category_strings">

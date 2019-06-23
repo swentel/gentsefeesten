@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <!-- #003f4f -->
-    <color name="global_background">#e8f4f4</color>
+    <color name="global_background">#ffffff</color>
     <color name="global_textcolor">#1e2d44</color>
     <color name="menu_bar_background">#c21818</color>
     <color name="menu_bar_text_color">#ffffff</color>
     <color name="gold">#cda300</color>
     <color name="light_gold">#f8f7f1</color>
-    <color name="big_title_background">#e8f4f4</color>
+    <color name="big_title_background">#ffffff</color>
     <color name="main_text_background">#ffffff</color>
     <color name="detail_button_background">#ffffff</color>
     <color name="list_background">#f8f7f1</color>
     <color name="white">#ffffff</color>
     <color name="red">#ea554b</color>
-    <color name="event_detail">#025f63</color>
+    <color name="event_detail">#ea554b</color>
 
     <color name="main_menu_off">#3999bd</color>
     <color name="main_menu_on">#55b5d9</color>

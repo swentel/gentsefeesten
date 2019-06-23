@@ -3,7 +3,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF18</string>
+    <string name="menu_bar_title">#GF19</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Favorieten</string>
     <string name="no_events_found_on_home">Geen evenementen gevonden. Ga naar settings om je voorkeuren of om het programma aan te passen.\n\nKlik hier om naar settings te gaan.</string>
@@ -135,24 +135,16 @@
     <string name="atm_offline">Je moet verbonden zijn met 3G of WiFi om de kaart te kunnen bekijken</string>
 
     <!-- Dates -->
-    <string name="july_05">Donderdag 5 juli</string>
-    <string name="july_06">Vrijdag 6 juli</string>
-    <string name="july_07">Zaterdag 7 juli</string>
-    <string name="july_08">Zondag 8 juli</string>
-    <string name="july_09">Maandag 9 juli</string>
-    <string name="july_10">Dinsdag 10 juli</string>
-    <string name="july_11">Woensdag 11 juli</string>
-    <string name="july_12">Donderdag 12 juli</string>
-    <string name="july_13">Vrijdag 13 juli</string>
-    <string name="july_14">Zaterdag 14 juli</string>
-    <string name="july_15">Zondag 15 juli</string>
-    <string name="july_16">Maandag 16 juli</string>
-    <string name="july_17">Dinsdag 17 juli</string>
-    <string name="july_18">Woensdag 18 juli</string>
-    <string name="july_19">Donderdag 19 juli</string>
-    <string name="july_20">Vrijdag 20 juli</string>
-    <string name="july_21">Zaterdag 21 juli</string>
-    <string name="july_22">Zondag 22 juli</string>
+    <string name="july_19">Vrijdag 19 juli</string>
+    <string name="july_20">Zaterday 20 juli</string>
+    <string name="july_21">Zondag 21 juli</string>
+    <string name="july_22">Maandag 22 juli</string>
+    <string name="july_23">Dinsdag 23 juli</string>
+    <string name="july_24">Woensdag 20 juli</string>
+    <string name="july_25">Donderdag 21 juli</string>
+    <string name="july_26">Vrijdag 21 juli</string>
+    <string name="july_27">Zaterdag 22 juli</string>
+    <string name="july_28">Zondag 22 juli</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dans</string>
@@ -198,5 +190,7 @@
     <string name="watersportbaan">Watersportbaan</string>
     <string name="woodrow_wilson">Woodrow Wilsonplein</string>
     <string name="willem">Willem de Beersteeg</string>
+
+    <string name="image">afbeelding</string>
 
 </resources>

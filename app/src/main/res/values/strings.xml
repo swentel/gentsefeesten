@@ -2,7 +2,7 @@
 
     <!-- Global strings -->
     <string name="app_name">Gentse Feesten</string>
-    <string name="menu_bar_title">#GF18</string>
+    <string name="menu_bar_title">#GF19</string>
     <string name="menu_bar_go_to_menu">Menu</string>
     <string name="menu_bar_go_to_favorites">Favorites</string>
     <string name="no_events_found_on_home">No events found. Go to settings to change your preferences or update the program. \n\nClick here to go to settings.</string>
@@ -134,24 +134,16 @@
     <string name="atm_offline">You must be connected to 3G or Wi-Fi to view the map</string>
 
     <!-- Dates -->
-    <string name="july_05">Thursday, July 5</string>
-    <string name="july_06">Friday, July 6</string>
-    <string name="july_07">Saturday, July 7</string>
-    <string name="july_08">Sunday, July 8</string>
-    <string name="july_09">Monday, July 9</string>
-    <string name="july_10">Tuesday, July 10</string>
-    <string name="july_11">Wednesday, July 11</string>
-    <string name="july_12">Thursday, July 12</string>
-    <string name="july_13">Friday, July 13</string>
-    <string name="july_14">Saturday, July 14</string>
-    <string name="july_15">Sunday, July 15</string>
-    <string name="july_16">Monday, July 16</string>
-    <string name="july_17">Tuesday, July 17</string>
-    <string name="july_18">Wednesday, July 18</string>
-    <string name="july_19">Thursday, July 19</string>
-    <string name="july_20">Friday, July 20</string>
-    <string name="july_21">Saturday, July 21</string>
-    <string name="july_22">Sunday, July 22</string>
+    <string name="july_19">Friday, July 19</string>
+    <string name="july_20">Saturday, July 20</string>
+    <string name="july_21">Sunday, July 21</string>
+    <string name="july_22">Monday, July 22</string>
+    <string name="july_23">Tuesday, July 19</string>
+    <string name="july_24">Wednesday, July 20</string>
+    <string name="july_25">Thursday, July 21</string>
+    <string name="july_26">Friday, July 22</string>
+    <string name="july_27">Saturday, July 22</string>
+    <string name="july_28">Sunday, July 22</string>
 
     <!-- Categories -->
     <string name="bals_dans">Bals / Dance</string>
