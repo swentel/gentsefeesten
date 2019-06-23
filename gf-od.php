@@ -61,6 +61,11 @@ foreach ($locations_decoded as $location) {
     $locations[$location['@id']]['locatie_id'] = 14;
   }
 
+  // Kinky
+  if (strpos($location['name']->nl, 'Kinky') !== FALSE) {
+    $locations[$location['@id']]['locatie_id'] = 15;
+  }
+
   // Special
   if ($i == 723) {
     $locations[$location['@id']]['locatie_id'] = 22;
@@ -120,16 +125,22 @@ foreach ($decode as $key => $new_event) {
 
   $array = (array) $new_event;
 
+  if (empty($new_event->startDate)) {
+    //print "Empty start date: " . $new_event->name->nl . "<br />";
+    continue;
+  }
+
   // The scheme is different, convert it.
   $event = new stdClass();
   $full_unix = strtotime($new_event->startDate);
   $unix_day = strtotime(date('d-m-Y', $full_unix));
-  $full_unix += 7200;
+  //$full_unix += 7200;
   $startuur = date('G:i', $full_unix);
   
   $einduur = '';
   if (!empty($new_event->endDate)) {
-    $end_full_unix = strtotime($new_event->endDate) + 7200;
+    $end_full_unix = strtotime($new_event->endDate);
+    //$end_full_unix += 7200;
     $einduur = date('G:i', $end_full_unix);
   }
 
@@ -140,7 +151,7 @@ foreach ($decode as $key => $new_event) {
   }
 
   if ($einduur == '5:59' && $startuur != '6:00') {
-    $einduur = date('G:i', $full_unix + 7200);
+    $einduur = date('G:i', $full_unix);
   }
 
   // Switch date one day back.
@@ -156,11 +167,6 @@ foreach ($decode as $key => $new_event) {
   $event->tijdstip_sortering = $sorting;
   $event->datum = $unix_day;
   $event->titel = $new_event->name->nl;
-
-  //if (strpos($event->titel, 'Helder') !== FALSE) {
-  //  print_r($event);
-  //  die();
-  //}
 
   $event->omschrijving = !empty($new_event->description->nl) ? $new_event->description->nl : '';
   $event->url = isset($new_event->url) ? $new_event->url : '';
@@ -233,7 +239,8 @@ foreach ($decode as $key => $new_event) {
   if ($debug) {
     //if (strpos($event->titel, 'Soul Shakers (BE)') !== FALSE) {
     //if (strpos($event->titel, 'Ertebrekers') !== FALSE) {
-    if (strpos($event->titel, 'Steverlinck') !== FALSE) {
+    //if (strpos($event->titel, 'Helder') !== FALSE) {
+    if (strpos($event->titel, 'Ponykamp') !== FALSE) {
     //if (strpos($event->titel, 'SHHT') !== FALSE) {
     //if (strpos($event->titel, '25e wandelzoektocht Gentse Feesten') !== FALSE) {
     //if (strpos($event->titel, 'De fantastische Anna') !== FALSE) {
