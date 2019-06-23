@@ -20,7 +20,7 @@ public class BaseActivity extends AppCompatActivity {
 
     // Version. This is stored in shared preferences so we can trigger an update
     // and remove favorites.
-    public static int version = 5;
+    public static int version = 6;
 
     // Location variables.
     public static double longitude = -1;
