@@ -47,7 +47,7 @@ foreach ($locations_decoded as $location) {
 
   // Salsabar, tref.club -> baudelo
   //if ($i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 351 || $i == 383) {
-  if ($i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 351) {
+  if ($i == 4 || $i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 284 || $i == 396) {
     $locations[$location['@id']]['locatie_id'] = 7;
   }
 
@@ -72,7 +72,7 @@ foreach ($locations_decoded as $location) {
   }
 
   // Sint-baafs
-  if ($i == 248 || $i == 249 || $i == 250 || $i == 2 || $i == 453 || $i == 454 || $i == 213 || $i == 212) {
+  if ($i == 204 || $i == 203) {
     $locations[$location['@id']]['locatie_id'] = 2;
   }
 
