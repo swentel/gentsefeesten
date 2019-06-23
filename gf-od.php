@@ -52,7 +52,7 @@ foreach ($locations_decoded as $location) {
   }
 
   // Sint jacobs
-  if (strpos($location['name']->nl, 'Sint-Jacobs') !== FALSE) {
+  if (strpos($location['name']->nl, 'Sint-Jacobs') !== FALSE || strpos($location['name']->nl, 'Walter De Buckplein') !== FALSE) {
     $locations[$location['@id']]['locatie_id'] = 4;
   }
 
@@ -62,7 +62,7 @@ foreach ($locations_decoded as $location) {
   }
 
   // Kinky
-  if (strpos($location['name']->nl, 'Kinky') !== FALSE) {
+  if (strpos($location['name']->nl, 'Kinky') !== FALSE || strpos($location['name']->nl, 'Charlatan') !== FALSE) {
     $locations[$location['@id']]['locatie_id'] = 15;
   }
 
@@ -127,6 +127,10 @@ foreach ($decode as $key => $new_event) {
 
   if (empty($new_event->startDate)) {
     //print "Empty start date: " . $new_event->name->nl . "<br />";
+    continue;
+  }
+
+  if ($new_event->name->nl == '22 jaar Gentse Feesten @ Kinky Star') {
     continue;
   }
 
