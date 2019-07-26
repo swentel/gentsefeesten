@@ -121,7 +121,7 @@ public class Main extends BaseActivity {
         selectQuery += " te LEFT JOIN " + DatabaseHandler.TABLE_FAVORITES + " tf ON te." + DatabaseHandler.EXTERNAL_ID + " = tf." + DatabaseHandler.FAVORITES_KEY_ID + " ";
 
         // Current time.
-        int addTime = ongoing ? 5400 : 7200;
+        int addTime = ongoing ? -1800 : 0;
         long unixTime = (System.currentTimeMillis() / 1000L) + addTime;
         whereClauses.add(DatabaseHandler.KEY_DATE_SORT + " > " + unixTime);
 
