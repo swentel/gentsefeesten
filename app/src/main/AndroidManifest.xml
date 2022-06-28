@@ -3,8 +3,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.genschefieste"
     android:installLocation="auto"
-    android:versionCode="19"
-    android:versionName="19">
+    android:versionCode="20"
+    android:versionName="20">
 	<supports-screens
 		android:largeScreens="true"
 		android:normalScreens="true"
@@ -13,7 +13,6 @@
 
     <uses-permission android:name="android.permission.INTERNET"/>
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
     <application
         android:icon="@drawable/starticon"

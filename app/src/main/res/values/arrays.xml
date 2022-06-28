@@ -83,23 +83,25 @@
         <item>@string/vlasmarkt</item>
         <item>@string/willem</item>
         <item>@string/woodrow_wilson</item>
+        <item>@string/other_place</item>
     </string-array>
 
     <integer-array name="location_ids">
-        <item>7</item>
-        <item>17</item>
-        <item>4</item>
-        <item>18</item>
+        <item>7</item> <!-- baudeloo -->
+        <item>17</item> <!-- beverhout -->
+        <item>4</item> <!-- sint jacobs -->
+        <item>18</item> <!-- emile braun -->
         <item>14</item> <!-- luister -->
-        <item>12</item>
-        <item>10</item>
-        <item>3</item>
-        <item>16</item>
-        <item>2</item>
-        <item>13</item>
-        <item>15</item>
-        <item>19</item>
-        <item>22</item>
+        <item>12</item> <!-- groente -->
+        <item>10</item> <!-- korenlei -->
+        <item>3</item> <!-- korenmarkt -->
+        <item>16</item> <!-- kouter -->
+        <item>2</item> <!-- sint baafs -->
+        <item>13</item> <!-- sint veerle -->
+        <item>15</item> <!-- vlasmarkt -->
+        <item>19</item> <!-- willem de beer -->
+        <item>22</item> <!-- woodrow wilson/zuid -->
+        <item>10000</item> <!-- other -->
     </integer-array>
 
     <!-- Android preferences are so dumb, you actually can't give it an integer array
@@ -119,6 +121,7 @@
         <item>15</item>
         <item>19</item>
         <item>22</item>
+        <item>10000</item>
     </string-array>
 
     <string-array name="category_strings">
@@ -144,49 +147,49 @@
     </string-array>
 
     <integer-array name="category_ids">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
+        <item>15</item> <!-- bals -->
+        <item>16</item> <!-- boot -->
+        <item>1</item> <!-- circus -->
+        <item>17</item> <!-- comedy -->
+        <item>2</item> <!-- c divers -->
+        <item>18</item> <!-- c jazz -->
+        <item>3</item> <!-- c classic -->
+        <item>4</item> <!-- c rock/pop/... -->
+        <item>5</item> <!-- kinderen -->
+        <item>6</item> <!-- markt -->
+        <item>7</item> <!-- miromiro -->
+        <item>19</item> <!-- puppet -->
+        <item>8</item> <!-- sports -->
+        <item>13</item> <!-- tentoonste -->
+        <item>14</item> <!-- theater -->
+        <item>9</item> <!-- varia -->
+        <item>10</item> <!-- poezie -->
+        <item>11</item> <!-- vuurwerk -->
+        <item>12</item> <!-- wanderlingen -->
     </integer-array>
 
     <!-- Android preferences are so dumb, you actually can't give it an integer array
         for the values of ListPreference, so here they are again ... -->
     <string-array name="category_ids_strings" translatable="false">
-        <item>1</item>
-        <item>2</item>
-        <item>3</item>
-        <item>4</item>
-        <item>5</item>
-        <item>6</item>
-        <item>7</item>
-        <item>8</item>
-        <item>9</item>
-        <item>10</item>
-        <item>11</item>
-        <item>12</item>
-        <item>13</item>
-        <item>14</item>
-        <item>15</item>
-        <item>16</item>
-        <item>17</item>
-        <item>18</item>
-        <item>19</item>
+        <item>15</item> <!-- bals -->
+        <item>16</item> <!-- boot -->
+        <item>1</item> <!-- circus -->
+        <item>17</item> <!-- comedy -->
+        <item>2</item> <!-- c divers -->
+        <item>18</item> <!-- c jazz -->
+        <item>3</item> <!-- c classic -->
+        <item>4</item> <!-- c rock/pop/... -->
+        <item>5</item> <!-- kinderen -->
+        <item>6</item> <!-- markt -->
+        <item>7</item> <!-- miromiro -->
+        <item>19</item> <!-- puppet -->
+        <item>8</item> <!-- sports -->
+        <item>13</item> <!-- tentoonste -->
+        <item>14</item> <!-- theater -->
+        <item>9</item> <!-- varia -->
+        <item>10</item> <!-- poezie -->
+        <item>11</item> <!-- vuurwerk -->
+        <item>12</item> <!-- wanderlingen -->
     </string-array>
 
     <!-- List of ATM's from the enter of Gent. This way we don't have to call the

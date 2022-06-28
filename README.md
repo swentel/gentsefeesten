@@ -2,7 +2,7 @@ Gentse Feesten
 ==============
 
 Android application to look at the program of the 'Gentse feesten' on an Android device.
-Used for GF 2013, 2014, 2015, 2016, 2017, 2018 and 2019: https://play.google.com/store/apps/details?id=com.genschefieste
+Used for GF 2013, 2014, 2015, 2016, 2017, 2018, 2019 and 2022: https://play.google.com/store/apps/details?id=com.genschefieste
 
 Builds for other platforms (only 2013):
 

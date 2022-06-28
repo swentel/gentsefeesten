@@ -42,6 +42,7 @@ foreach ($locations_decoded as $location) {
   $locations[$id]['locatie_id'] = $i;
   $name = $location['fields']->name_nl;
 
+  $l_set = FALSE;
   $locations_sum[] = array(
     'id' => $i,
     'name' => $name,
@@ -53,38 +54,93 @@ foreach ($locations_decoded as $location) {
 
   // Salsabar, tref.club -> baudelo
   //if ($i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 351 || $i == 383) {
-  if ($i == 4 || $i == 8 || $i == 6 || $i == 5 || $i == 88 || $i == 284 || $i == 396) {
+  if ($i == 776 || $i == 1233 || $i == 415 || $i == 1232 || $i == 1234 || $i == 903) {
     $locations[$id]['locatie_id'] = 7;
+    $l_set = TRUE;
   }
 
   // Sint jacobs
   if (strpos($name, 'Sint-Jacobs') !== FALSE || strpos($name, 'Walter De Buckplein') !== FALSE) {
     $locations[$id]['locatie_id'] = 4;
+    $l_set = TRUE;
   }
 
   // Luisterplein
-  if ($i == 530) {
+  if ($i == 609 || $i == 392) {
     $locations[$id]['locatie_id'] = 14;
+    $l_set = TRUE;
   }
 
   // Kinky
-  if (strpos($name, 'Kinky') !== FALSE || strpos($name, 'Charlatan') !== FALSE) {
+  if (strpos($name, 'Kinky') !== FALSE || strpos($name, 'Charlatan') !== FALSE || $i == 938) {
     $locations[$id]['locatie_id'] = 15;
+    $l_set = TRUE;
   }
 
   // Special
-  if ($i == 723) {
+  if ($i == 397 || $i == 416 || $i == 417 || $i == 895 || $i == 1087 || $i == 1132) {
     $locations[$id]['locatie_id'] = 22;
+    $l_set = TRUE;
   }
 
+  // Kouter
+  if ($i == 889 || $i == 891 || $i == 1174 || $i == 1204 || $i == 47 || $i == 13 || $i == 939 || $i == 1214) {
+    $locations[$id]['locatie_id'] = 16;
+    $l_set = TRUE;
+  }
+
+  // Korenmarkt
+  if ($i == 608) {
+    $locations[$id]['locatie_id'] = 3;
+    $l_set = TRUE;
+  }
+
+  // Korenlei-Gralei
+  if ($i == 423) {
+    $locations[$id]['locatie_id'] = 10;
+    $l_set = TRUE;
+  }
+
+
+  // Groentenmarkt
+  if ($i == 42 || $i == 115) {
+    $locations[$id]['locatie_id'] = 12;
+    $l_set = TRUE;
+  }
+
+  // Emile
+  if ($i == 610 || $i == 837) {
+    $locations[$id]['locatie_id'] = 18;
+    $l_set = TRUE;
+  }
+
+
   // Sint-baafs
-  if ($i == 204 || $i == 203) {
+  if ($i == 607) {
     $locations[$id]['locatie_id'] = 2;
+    $l_set = TRUE;
+  }
+
+  // Beverhout
+  if ($i == 43) {
+    $locations[$id]['locatie_id'] = 17;
+    $l_set = TRUE;
   }
 
   // Willem
-  if ($i == 20 || $i == 21) {
+  if ($i == 611) {
     $locations[$id]['locatie_id'] = 19;
+    $l_set = TRUE;
+  }
+
+  // Veerle
+  if ($i == 937 || $i == 726) {
+    $locations[$id]['locatie_id'] = 13;
+    $l_set = TRUE;
+  }
+
+  if (!$l_set) {
+    $locations[$id]['locatie_id'] = 10000;
   }
 
   $i++;
@@ -92,18 +148,20 @@ foreach ($locations_decoded as $location) {
 
 
 $cats = array();
+$cats_small = array();
 $cats_decoded = json_decode(file_get_contents('gentsefeestencategorien.json'));
 $ii = 1;
 foreach ($cats_decoded as $caty) {
-  $caty = (array) $caty;
+  $caty = $caty->fields;
   //print_r($caty);
-  $cats[$caty['@id']] = $caty; 
-  $cats[$caty['@id']]['categorie_id'] = $ii;
+  $cats[$caty->id] = $caty; 
+  $cats[$caty->id]->categorie_id = $ii;
+  $cats_small[$ii] = $caty->name;
   $ii++;
 
 }
 
-//print_r($cats);
+//print_r($cats_small);
 file_put_contents('catssum', print_r($cats, 1));
 //die();
 
@@ -123,9 +181,14 @@ $statements = "";
 //print_r($decode);
 //die();
 
+$total_events = 0;
 $number = 0;
+$double = 0;
 $lines = array();
 $unique_dates = array();
+$location_ids_unique = array();
+$names = array();
+$doubles = array();
 foreach ($decode as $key => $jevent) {
 
   $new_event = $jevent->fields;
@@ -135,9 +198,9 @@ foreach ($decode as $key => $jevent) {
     continue;
   }
 
-  if ($new_event->name_nl == '22 jaar Gentse Feesten @ Kinky Star') {
-    continue;
-  }
+  //if ($new_event->name_nl == 'EXIT - Circumstances') {
+  //  continue;
+  //}
 
   //print_r($new_event);
   //die();
@@ -181,26 +244,43 @@ foreach ($decode as $key => $jevent) {
   $event->datum = $unix_day;
   $event->titel = $new_event->name_nl;
 
+
+  //if (strpos($event->titel, 'Mardi Gras') !== FALSE) {
+    $n = $event->titel . $event->datum . $event->startuur . $event->einduur;
+    $doubles[] = $n;
+    if (isset($names[$n])) {
+      $double++;	    
+      continue;
+    }
+    $names[$n] = TRUE;
+  //}
+
   $desc = isset($new_event->description) ? json_decode($new_event->description) : '';
   $event->omschrijving = !empty($desc->nl) ? $desc->nl : '';
   $event->url = isset($new_event->url) ? $new_event->url : '';
-  $event->gratis = isset($new_event->isAccessibleforfree) ? (int) $new_event->isAccessibleforfree : 0;
+  $event->gratis = isset($new_event->isaccessibleforfree) ? (int) $new_event->isaccessibleforfree : 0;
 
   $location = $new_event->location;
   if (isset($locations[$location])) {
-    //print "location found";
+    //print "location found\n";
     //print_r($locations[$location]);
     //die();
     $event->locatie = $locations[$location]['fields']->name_nl;
     $event->locatie_id = $locations[$location]['locatie_id'];
     $event->straat = !empty($locations[$location]['fields']->address_streetaddress) ? $locations[$location]['fields']->address_streetaddress : '';
     $event->huisnummer = '';
+
+    if (!isset($location_ids_unique[$event->locatie_id])) {
+      $location_ids_unique[$event->locatie_id] = $event->locatie;
+    }
+
+    //print $event->locatie_id . "\n";
   }
   else {
-    $event->location = "";
-    $event->locatie_id = 0;
+    $event->location = "Anders";
+    $event->locatie_id = 1000;
     $event->straat = '';
-    //print "location not set\n";
+    print "location not set\n";
   }
 
   // Ignore location id 383
@@ -226,20 +306,25 @@ foreach ($decode as $key => $jevent) {
   // Categories
   $event->categorie_naam = '';
   $event->categorie_id = 0;
-  $catje = isset($new_event->theme[0]) ? $new_event->theme[0] : 'nope';
-//print $catje . "\n";
-  if (isset($cats[$catje])) {
-    $event->categorie_naam = $cats[$catje]['name']->nl;
-    $event->categorie_id = $cats[$catje]['categorie_id'];
+  $catje = isset($new_event->theme) ? explode(';', $new_event->theme) : 'nope';
+  //print_r($new_event);
+  //print_r($cats);
+  if (isset($cats[$catje[0]])) {
+    $event->categorie_naam = $cats[$catje[0]]->name;
+    $event->categorie_id = $cats[$catje[0]]->categorie_id;
+    //print $event->categorie_id . " - " . $event->categorie_naam . "\n";
   }
- 
+
   // Price 
-  if (!empty($new_event->offers[0]->price)) {
-    $event->prijs = $new_event->offers[0]->price;
+  $off = !empty($new_event->offers) ? json_decode($new_event->offers) : '';
+  //print_r($off)
+  if (!empty($off[0]->price)) {
+    $event->prijs = $off[0]->price;
   }
   else {
     $event->prijs = '';
   }
+  //print "price: " . $event->prijs . "\n";
   $event->prijs_vvk = '';
 
   // Lat and long are not exported.
@@ -413,6 +498,7 @@ foreach ($decode as $key => $jevent) {
 
   $lines[] = $query;
   $number++;
+  $total_events++;
   if ($number == 5) {
     $number = 0;
     $statements .= implode(":SPLIT:", $lines) . "\n";
@@ -428,8 +514,16 @@ function my_mysql_escape_string($string) {
   return str_replace("'", "''", $string);
 }
 
+//ksort($location_ids_unique);
+//print_r($location_ids_unique);
+
 krsort($unique_dates);
 print_r($unique_dates);
+
+print "Total events: $total_events - doubles: " . $double . " \n";
+
+//print_r($names);
+//print_r($doubles);
 
 // Write to file.
 //print $statements;
