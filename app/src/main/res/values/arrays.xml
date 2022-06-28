@@ -16,56 +16,56 @@
 
     <!-- Dates for the 'official' Gentse feesten -->
     <string-array name="dates_full">
+        <item>@string/july_15</item>
+        <item>@string/july_16</item>
+        <item>@string/july_17</item>
+        <item>@string/july_18</item>
         <item>@string/july_19</item>
         <item>@string/july_20</item>
         <item>@string/july_21</item>
         <item>@string/july_22</item>
         <item>@string/july_23</item>
         <item>@string/july_24</item>
-        <item>@string/july_25</item>
-        <item>@string/july_26</item>
-        <item>@string/july_27</item>
-        <item>@string/july_28</item>
     </string-array>
 
     <!-- Dates for all of Gentse Feesten, e.g. also including Gent Jazz etc -->
     <string-array name="dates_full_all">
+        <item>@string/july_15</item>
+        <item>@string/july_16</item>
+        <item>@string/july_17</item>
+        <item>@string/july_18</item>
         <item>@string/july_19</item>
         <item>@string/july_20</item>
         <item>@string/july_21</item>
         <item>@string/july_22</item>
         <item>@string/july_23</item>
         <item>@string/july_24</item>
-        <item>@string/july_25</item>
-        <item>@string/july_26</item>
-        <item>@string/july_27</item>
-        <item>@string/july_28</item>
     </string-array>
 
     <integer-array name="dates_int">
-        <item>1563487200</item>
-        <item>1563573600</item>
-        <item>1563660000</item>
-        <item>1563746400</item>
-        <item>1563832800</item>
-        <item>1563919200</item>
-        <item>1564005600</item>
-        <item>1564092000</item>
-        <item>1564178400</item>
-        <item>1564264800</item>
+        <item>1657836000</item>
+        <item>1657922400</item>
+        <item>1658008800</item>
+        <item>1658095200</item>
+        <item>1658181600</item>
+        <item>1658268000</item>
+        <item>1658354400</item>
+        <item>1658440800</item>
+        <item>1658527200</item>
+        <item>1658613600</item>
     </integer-array>
 
     <integer-array name="dates_int_all">
-        <item>1563487200</item>
-        <item>1563573600</item>
-        <item>1563660000</item>
-        <item>1563746400</item>
-        <item>1563832800</item>
-        <item>1563919200</item>
-        <item>1564005600</item>
-        <item>1564092000</item>
-        <item>1564178400</item>
-        <item>1564264800</item>
+        <item>1657836000</item>
+        <item>1657922400</item>
+        <item>1658008800</item>
+        <item>1658095200</item>
+        <item>1658181600</item>
+        <item>1658268000</item>
+        <item>1658354400</item>
+        <item>1658440800</item>
+        <item>1658527200</item>
+        <item>1658613600</item>
     </integer-array>
 
     <string-array name="location_strings">

@@ -8,14 +8,12 @@
     android:background="@color/global_background">
 
     <LinearLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <TextView
             android:layout_marginTop="@dimen/global_margin_vertical"
-            xmlns:android="http://schemas.android.com/apk/res/android"
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
             android:id="@+id/about_info"

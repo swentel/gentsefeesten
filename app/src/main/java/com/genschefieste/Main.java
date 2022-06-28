@@ -34,14 +34,14 @@ public class Main extends BaseActivity {
 
         // Check on size of events. In case there are no events, show the messages
         // row so people can go to settings and change them or import the program.
-        // In case the Gentse Feesten is past july 28, show a different message.
+        // In case the Gentse Feesten is past july 24, show a different message.
         if (events.size() == 0) {
             long unixTime = (System.currentTimeMillis() / 1000L);
             TextView noEvents = findViewById(R.id.no_events);
             ViewGroup.LayoutParams params = noEvents.getLayoutParams();
             params.height = ViewGroup.LayoutParams.WRAP_CONTENT;
             noEvents.setLayoutParams(params);
-            if (unixTime > 1564264800 + 86400) {
+            if (unixTime > 1658700000 + 86400) {
                 noEvents.setText(getString(R.string.no_events_after_end_date));
             }
             else {

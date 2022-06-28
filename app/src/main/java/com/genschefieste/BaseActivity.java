@@ -20,7 +20,7 @@ public class BaseActivity extends AppCompatActivity {
 
     // Version. This is stored in shared preferences so we can trigger an update
     // and remove favorites.
-    public static int version = 6;
+    public static int version = 7;
 
     // Location variables.
     public static double longitude = -1;
@@ -52,7 +52,7 @@ public class BaseActivity extends AppCompatActivity {
         menu.add(Menu.NONE, 2, 0, getString(R.string.menu_locations)).setIcon(android.R.drawable.ic_menu_help);
         menu.add(Menu.NONE, 3, 0, getString(R.string.menu_free)).setIcon(android.R.drawable.ic_menu_help);
         if (showFavorites) {
-            menu.add(Menu.NONE, 4, 0, getString(R.string.menu_bar_go_to_favorites)).setIcon(android.R.drawable.ic_menu_my_calendar).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
+            menu.add(Menu.NONE, 4, 0, getString(R.string.menu_bar_go_to_favorites)).setIcon(android.R.drawable.btn_star).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         }
         menu.add(Menu.NONE, 5, 0, getString(R.string.menu_search)).setIcon(android.R.drawable.ic_menu_search).setShowAsAction(MenuItem.SHOW_AS_ACTION_IF_ROOM);
         menu.add(Menu.NONE, 6, 0, getString(R.string.menu_settings)).setIcon(android.R.drawable.ic_menu_edit);

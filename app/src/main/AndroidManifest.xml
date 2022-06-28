@@ -24,7 +24,8 @@
         <uses-library android:name="com.google.android.maps" />
         <meta-data android:name="android.app.default_searchable" android:value=".EventSearch" />
 
-        <activity android:name=".Main" android:label="@string/menu_bar_title">
+        <activity android:name=".Main" android:label="@string/menu_bar_title"
+            android:exported="true">
             <meta-data android:name="android.app.default_searchable" android:value=".EventSearch" />
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -32,7 +33,8 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".EventSearch" android:launchMode="singleTop">
+        <activity android:name=".EventSearch" android:launchMode="singleTop"
+            android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.SEARCH" />
             </intent-filter>
@@ -90,7 +92,7 @@
         <activity android:name=".AtmList" />
         <!--<activity android:name=".AtmMap" />-->
         <activity android:noHistory="true" android:name=".AroundMePre" />
-        <activity android:noHistory="true" android:name=".Prefs" android:screenOrientation="portrait" />
+        <activity android:noHistory="true" android:name=".Prefs" android:screenOrientation="fullSensor" />
         <activity android:name=".BackActivity" />
 
     </application>
