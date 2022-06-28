@@ -1,7 +1,7 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 27
+    compileSdkVersion 32
     buildToolsVersion "27.0.3"
 
     lintOptions {
@@ -14,7 +14,7 @@ android {
     defaultConfig {
         applicationId "com.genschefieste"
         minSdkVersion 16
-        targetSdkVersion 27
+        targetSdkVersion 32
     }
 
     buildTypes {
